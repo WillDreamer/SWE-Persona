@@ -15,7 +15,7 @@ The Lite selection contains the same 100 task/persona pairs; public profile name
 
 ## 1. Install
 
-Use Linux, Python 3.12, Docker Engine with the Compose plugin, and permission to run Docker. The harness pins Harbor 0.23.0 and mini-swe-agent 2.4.6. Image downloads and builds require network access and sufficient disk space. Task CPU, memory, storage and GPU requirements are recorded in Parquet.
+Use Linux, Python 3.12, Docker Engine with the Compose plugin, and permission to run Docker. On macOS, use Docker Desktop 4.86.0 or newer. The harness pins Harbor 0.23.0 and mini-swe-agent 2.4.6. Image downloads and builds require network access and sufficient disk space. Task CPU, memory, storage and GPU requirements are recorded in Parquet.
 
 The SWE-Pro mini network-probe cache reads the host's Linux `boot_id` when available. On macOS, it uses `sysctl -n kern.boottime` with a five-second timeout instead. If neither provides a reboot token, caching is disabled and the Docker kernel probe still runs; missing host metadata alone does not block startup. A failed kernel probe still blocks execution under the required network policy. This cache compatibility does not certify all profiles or tasks on macOS.
 
