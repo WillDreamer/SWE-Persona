@@ -1,0 +1,9 @@
+{
+  "group": "main--medium--deep-swe",
+  "returncode": 0,
+  "allowed": true,
+  "markers": [
+    "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/cache/main/medium/calibration/55655c7920f65ecfd4e9/gate.json"
+  ],
+  "sampled_at": "2026-10-23T22:15:52.386131+00:00"
+}

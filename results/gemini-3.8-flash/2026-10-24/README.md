@@ -1,16 +1,15 @@
-# Gemini 3.8 Flash evaluation summaries
+# Gemini 3.8 Flash evaluation results and evidence
 
-This is a **partial results delivery** containing summary metrics and
-configuration metadata for low, medium, and high reasoning effort. The frozen
+This delivery contains summary metrics, configuration metadata, and the complete
+recorded evidence archives for low, medium, and high reasoning effort. The frozen
 selection contains 99 CPU task/persona pairs per effort; `tb3/exam-pdf-eval`
 requires an H100 and is excluded.
 
-The full local archives contain evaluator-only evidence and have **not been
-uploaded**. Their public release is pending approval. This PR alone is not a
-complete evidence handoff and cannot support a claim of complete end-to-end
-reproducibility. Archive identities are recorded in
-[retained-evidence.json](retained-evidence.json), without pointers or download
-links to unavailable payloads.
+The full archives include transcripts, calibration and grading records, task
+artifacts, native reference evidence, historical attempts, and runtime source
+snapshots. Archive identities are in [evidence-archives.json](evidence-archives.json).
+All recorded evidence is provided, but the 24 unresolved evaluations still prevent
+a claim that every selected pair completed valid end-to-end evaluation.
 
 ## Interpretation
 
@@ -46,8 +45,10 @@ also includes the cumulative view; do not sum those rows as independent tasks.
 [per-profile.csv](per-profile.csv) and `campaigns/*/*/scores.json` retain coverage,
 provisional outcomes, timeout counts, and observed-grade denominators.
 [unresolved-evaluations.csv](unresolved-evaluations.csv) lists the 24 current errors.
-Evidence paths in the CSVs are provenance labels for the retained archives; their
-targets are not part of this partial export.
+Evidence paths in the CSVs resolve after extracting the evidence archive into
+`report/`, as described below. Original absolute paths inside historical records
+remain unchanged; [report/path-map.json](report/path-map.json) maps them to the
+archived repositories.
 
 ## Configuration
 
@@ -71,25 +72,52 @@ were not multiplied. See [configuration.json](configuration.json).
 The benchmark base commit is `842e5a6a665ade335e4d3be3c3fb8887ac5ba19a`.
 The four local runtime hashes are in
 [runtime-fingerprints.json](runtime-fingerprints.json). Source changes, exact
-per-attempt configs, and detailed audits remain in the retained full archives.
+per-attempt configs, and detailed audits are included in `report/` and the full
+evidence archive.
 This PR does not modify the executable benchmark or dataset.
 
 ## Git LFS and validation
 
-`public-summary.zip` contains only the files in this public summary directory,
-excluding itself and the outer manifest. It contains no raw conversations,
-prompts, calibration fixtures, native reference assets, or task submissions.
-Both the readable files and the ZIP are covered by `bundle_manifest.json`.
+Three downloadable archives are tracked with Git LFS:
+
+- [public-summary.zip](public-summary.zip): compact metrics and metadata. Its
+  exact members are listed in `bundle_manifest.json`; it excludes `artifacts/`
+  and `report/`.
+- [gemini38-results.zip](artifacts/gemini38-results.zip): the original 5,324,779-byte
+  detailed report package, including calibration reports and provenance.
+- [gemini38-evidence.tar.gz](artifacts/gemini38-evidence.tar.gz): the original
+  1,989,528,968-byte full evidence archive, containing 83,242 recorded files and
+  about 8.90 GB of uncompressed data. Every archived file was verified against
+  its recorded SHA-256 before packaging.
+
+The original two archives are byte-identical to their locally verified packages.
+The readable files and all three archives are covered by `bundle_manifest.json`.
+Historical READMEs inside the original packages describe their creation-time
+state; this README describes the Git LFS delivery.
 
 After cloning this branch, run from the repository root:
 
 ```bash
 git lfs install --local
-git lfs pull --include="results/gemini-3.8-flash/2026-10-24/public-summary.zip"
+git lfs pull --include="results/gemini-3.8-flash/2026-10-24/*.zip,results/gemini-3.8-flash/2026-10-24/artifacts/*"
 python results/gemini-3.8-flash/2026-10-24/verify_delivery.py
+```
+
+To extract the evidence or optionally reverify all individual archive members:
+
+```bash
+cd results/gemini-3.8-flash/2026-10-24
+tar -xzf artifacts/gemini38-evidence.tar.gz -C report
+python report/verify_package.py artifacts/gemini38-evidence.tar.gz
 ```
 
 The verifier checks the delivered file sizes/hashes, ZIP membership and contents,
 297 cumulative task/effort identities, 600 campaign ledger entries, the 24 error
 records, and the explicit null formal full-selection rates. A fresh checkout
-must retrieve the actual LFS ZIP for these checks to pass.
+must retrieve all three actual LFS objects for these checks to pass.
+
+The original targeted scan for known live credentials found no matches. Its
+scope is recorded in [report/credential-scan.json](report/credential-scan.json).
+Credentials, `.env` files, virtual environments, and Git metadata are excluded.
+Synthetic task credentials and evaluator-only materials remain evidence.
+Upstream assets retain their original licenses and notices.

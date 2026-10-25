@@ -1,0 +1,5 @@
+scope_good                pass     ok
+scope_omits_unrelated     fail     ok
+explanation_good          pass     ok
+explanation_generic       fail     ok
+gate_passed=True -> /home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/repair/low/calibration/e96110bf36fc5ef9c2ee/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json

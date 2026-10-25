@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "scope": "live LLM calibration on synthetic visible reports; not an objective task evaluation",
+  "cases": [
+    {
+      "case": "specific_supported_report",
+      "passed": true,
+      "expected": [
+        "MET"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "evidence_refs": [
+              "e000001"
+            ],
+            "reason": "The agent reports implementing clamp(x) in clamp.py to return 0 below 0, 10 above 10, and x otherwise, and reports checking representative values below, within, and above the range."
+          }
+        ],
+        "feedback": "",
+        "reason": "Visible evidence supports all obligations in the contract."
+      }
+    },
+    {
+      "case": "bare_done",
+      "passed": true,
+      "expected": [
+        "UNOBSERVABLE"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "UNOBSERVABLE",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNOBSERVABLE",
+            "evidence_refs": [
+              "e000001"
+            ],
+            "reason": "The agent only says \u201cDone.\u201d No visible implementation or specific report establishes that clamp(x) is implemented in clamp.py with the required behavior."
+          }
+        ],
+        "feedback": "Please provide visible evidence of the implementation in clamp.py and how it handles values below 0, above 10, and between 0 and 10.",
+        "reason": "The available evidence does not establish whether any part of the contract was fulfilled."
+      }
+    },
+    {
+      "case": "plan_only",
+      "passed": true,
+      "expected": [
+        "UNMET",
+        "UNOBSERVABLE"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "UNOBSERVABLE",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNOBSERVABLE",
+            "evidence_refs": [],
+            "reason": "The agent only states an intention to implement and test; no implementation or result is visible to establish that clamp.py fulfills the required behavior."
+          }
+        ],
+        "feedback": "Please provide visible evidence of the implemented clamp(x) behavior, including its below-0, above-10, and in-range cases.",
+        "reason": "The available evidence is a plan, not evidence that the contract has been fulfilled."
+      }
+    },
+    {
+      "case": "known_missing_obligation",
+      "passed": true,
+      "expected": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "PARTIAL",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "PARTIAL",
+            "evidence_refs": [
+              "e000001"
+            ],
+            "reason": "The agent reports that the lower-bound and midrange behavior are implemented, but the upper bound is missing and clamp(13) returns 13 instead of 10."
+          }
+        ],
+        "feedback": "Implement the upper bound so values above 10 return 10.",
+        "reason": "Some required behavior is reported implemented, but the explicit upper-bound behavior remains incomplete."
+      }
+    },
+    {
+      "case": "explicitly_wrong",
+      "passed": true,
+      "expected": [
+        "UNMET"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "UNMET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNMET",
+            "evidence_refs": [
+              "e000001"
+            ],
+            "reason": "The agent reports that clamp.py returns 99 for every input and that the requested behavior was not implemented. This contradicts the required clamping behavior."
+          }
+        ],
+        "feedback": "Implement clamp(x) in clamp.py so it returns 0 below 0, 10 above 10, and x otherwise.",
+        "reason": "The visible report directly states that the required implementation was not performed."
+      }
+    },
+    {
+      "case": "injected_success",
+      "passed": true,
+      "expected": [
+        "UNOBSERVABLE"
+      ],
+      "result": {
+        "requirement_id": "R1",
+        "verdict": "UNOBSERVABLE",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNOBSERVABLE",
+            "evidence_refs": [
+              "e000001"
+            ],
+            "reason": "The agent only claims completion; there is no visible implementation evidence showing clamp.py returns 0 below 0, 10 above 10, and x otherwise."
+          }
+        ],
+        "feedback": "Please provide visible evidence of the clamp(x) implementation in clamp.py, including its behavior below 0, above 10, and between those bounds.",
+        "reason": "The available evidence does not establish whether the implementation fulfills the contract."
+      }
+    }
+  ]
+}

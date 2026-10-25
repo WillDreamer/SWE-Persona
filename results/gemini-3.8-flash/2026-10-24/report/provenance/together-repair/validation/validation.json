@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "offline_tests": 270,
+  "offline_tests_returncode": 0,
+  "dry_runs": [
+    {
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "returncode": 0,
+      "run_config": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/preflight/67/run-config.json"
+    },
+    {
+      "task_id": "swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+      "returncode": 0,
+      "run_config": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/preflight/70/run-config.json"
+    }
+  ]
+}

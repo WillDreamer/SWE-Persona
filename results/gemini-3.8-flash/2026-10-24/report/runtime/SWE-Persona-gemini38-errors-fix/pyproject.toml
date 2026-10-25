@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swe-persona"
+version = "0.5.0rc9"
+readme = "README.md"
+description = "Parquet-native persona benchmark adapters for Harbor and Docker"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "harbor==0.23.0", "mini-swe-agent==2.4.6", "openai>=2.24,<3",
+  "pyarrow>=19,<24", "jsonschema>=4.23,<5", "PyYAML>=6,<7",
+  "toml>=0.10,<1", "Pillow>=10", "datasets>=3,<5", "docker>=7.1,<8"
+]
+
+[project.scripts]
+swe-persona = "swe_persona.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["swe_persona"]
+
+[tool.setuptools.package-data]
+swe_persona = ["vendor/**/*", "vendor/swe_live/runtime/project/.local/**/*",
+    "vendor/swe_live/runtime/project/.local/**/.gitignore",
+    "vendor/swe_live/runtime/project/.local/**/.gitmodules"]
+
+[tool.setuptools.exclude-package-data]
+swe_persona = ["**/__pycache__/*", "**/*.pyc", "**/*.pyo"]

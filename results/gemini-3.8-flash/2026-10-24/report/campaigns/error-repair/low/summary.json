@@ -1,0 +1,125 @@
+{
+  "selected": 1,
+  "attempted": 1,
+  "running": 0,
+  "active_tasks": [],
+  "workers": 4,
+  "selection": [
+    {
+      "task_id": "deepswe/numba-stencil-boundary-modes--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    }
+  ],
+  "results": [
+    {
+      "task_id": "deepswe/numba-stencil-boundary-modes--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "source_subset": "deep-swe",
+      "content_sha256": "0c06e5571b91228086b66f9ff748eb185fd74feffc98adb5b981118d7ed01d9a",
+      "harness_version": "0.5.0rc9",
+      "profile": "deep-swe",
+      "status": "infrastructure_error",
+      "native_pass": null,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 2,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "end_reason": "action_budget_exhausted",
+      "simulator_message_recoveries": [
+        {
+          "operation": "message_recovery",
+          "policy": "selected-public-documents-recovery-v1",
+          "status": "recovered",
+          "attempt": 3,
+          "mode": "selected_public_documents",
+          "document_ids": [
+            "block_0",
+            "block_1",
+            "block_2",
+            "block_3",
+            "block_4",
+            "block_5",
+            "block_6",
+            "block_7"
+          ],
+          "surrounding_prose": "",
+          "rejected_drafts_delivered": false,
+          "extra_agent_turns": 0
+        }
+      ],
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 12,
+          "max_agent_queries_per_turn": 80,
+          "max_simulator_decisions": 150,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "deepswe_separate_coding_interaction_final_review_v1"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 272228.887653676,
+              "deadline_monotonic": 280328.887653676,
+              "limit_sec": 8100.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 274839.490496444,
+              "deadline_monotonic": 276339.490496444,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2610.602842768014,
+            "verification": 1007.1724215070135,
+            "preparation": 46.318686298967805
+          },
+          "elapsed_sec": 3664.0939505739952,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 2,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/low/0088",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/low/0088",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0088/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    }
+  ],
+  "status_counts": {
+    "infrastructure_error": 1
+  },
+  "time_limit_multiplier": 3
+}

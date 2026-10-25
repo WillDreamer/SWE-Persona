@@ -1,0 +1,5 @@
+scope_good                pass     ok
+scope_omits_unrelated     fail     ok
+explanation_good          pass     ok
+explanation_generic       unknown  FAIL
+gate_passed=False -> /home/sherryj/Desktop/SWE-Persona-gemini38-errors-fix/runs/error-repair/cache/repair/high/calibration/50d7a5b8242615822fd4/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json

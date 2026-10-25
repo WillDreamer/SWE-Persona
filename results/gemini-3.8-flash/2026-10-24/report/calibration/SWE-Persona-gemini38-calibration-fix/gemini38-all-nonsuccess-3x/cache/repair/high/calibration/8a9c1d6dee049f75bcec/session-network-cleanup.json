@@ -1,0 +1,24 @@
+{
+  "sessions": [
+    {
+      "project": "sp-harbor-06c10c2e9c9d",
+      "removed": false,
+      "errors": [],
+      "already_absent": true
+    },
+    {
+      "project": "sp-harbor-26177164a52d",
+      "removed": false,
+      "errors": [],
+      "already_absent": true
+    },
+    {
+      "project": "sp-harbor-b92b6018fbfe",
+      "removed": false,
+      "errors": [],
+      "already_absent": true
+    }
+  ],
+  "budget_exhausted": false,
+  "elapsed_sec": 0.03489804599666968
+}

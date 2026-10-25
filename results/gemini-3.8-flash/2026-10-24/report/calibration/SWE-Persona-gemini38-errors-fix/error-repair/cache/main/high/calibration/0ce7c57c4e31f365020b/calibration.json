@@ -1,0 +1,70 @@
+{
+  "model": "azure/openai/gpt-6-luna",
+  "fixture_protocol": "mini-repository-file-list-v2",
+  "passed": true,
+  "cases": [
+    {
+      "case": "met_concrete_report",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed files in the requested delivery file and leaving the changes uncommitted.",
+      "seconds": 6.34
+    },
+    {
+      "case": "generic_claim_is_unobservable",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm that /deliverables/pr/CHANGED_FILES.txt contains the exact repository-relative paths, one per line, and that nothing was committed.",
+      "seconds": 2.42
+    },
+    {
+      "case": "partial_obligations",
+      "expect": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please keep the fix uncommitted and ensure the delivery file contains the exact complete list of changed repository-relative paths, one per line.",
+      "seconds": 2.47
+    },
+    {
+      "case": "contradiction_is_unmet",
+      "expect": [
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please create /deliverables/pr/CHANGED_FILES.txt with the exact repository-relative paths, one per line, and do not commit the changes.",
+      "seconds": 2.9
+    },
+    {
+      "case": "evidence_before_disclosure_does_not_count",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact file list was written to /deliverables/pr/CHANGED_FILES.txt, one repository-relative path per line, and that you made no commit.",
+      "seconds": 2.57
+    },
+    {
+      "case": "undisclosed_requirement_is_invisible",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed file in the delivery artifact and leaving the change uncommitted.",
+      "undisclosed_text_absent_from_judge_input": true,
+      "seconds": 4.1
+    }
+  ],
+  "note": "calibration is not a benchmark result and not a positive/negative validation"
+}

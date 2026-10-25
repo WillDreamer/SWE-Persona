@@ -1,0 +1,69 @@
+{
+  "model": "azure/openai/gpt-6-luna",
+  "passed": true,
+  "cases": [
+    {
+      "case": "met_concrete_report",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed files and confirming that nothing was committed.",
+      "seconds": 4.7
+    },
+    {
+      "case": "generic_claim_is_unobservable",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact paths written to /deliverables/pr/CHANGED_FILES.txt and whether you left the change uncommitted.",
+      "seconds": 3.48
+    },
+    {
+      "case": "partial_obligations",
+      "expect": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please undo the commit and provide the exact list of changed files in the requested file, one repository-relative path per line.",
+      "seconds": 3.91
+    },
+    {
+      "case": "contradiction_is_unmet",
+      "expect": [
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please create /deliverables/pr/CHANGED_FILES.txt with the exact repository-relative paths, and do not commit anything.",
+      "seconds": 3.3
+    },
+    {
+      "case": "evidence_before_disclosure_does_not_count",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact repository-relative paths written to `/deliverables/pr/CHANGED_FILES.txt` and that no commit was made.",
+      "seconds": 2.53
+    },
+    {
+      "case": "undisclosed_requirement_is_invisible",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed file and leaving the work uncommitted.",
+      "undisclosed_text_absent_from_judge_input": true,
+      "seconds": 2.77
+    }
+  ],
+  "note": "calibration is not a benchmark result and not a positive/negative validation"
+}

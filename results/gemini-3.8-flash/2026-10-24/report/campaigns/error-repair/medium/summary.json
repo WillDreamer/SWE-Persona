@@ -1,0 +1,1255 @@
+{
+  "selected": 12,
+  "attempted": 12,
+  "running": 0,
+  "active_tasks": [],
+  "workers": 4,
+  "selection": [
+    {
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swelive/0744-java--founder_leaked_production_key",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0426-js--laptop_data_scientist",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0465-js--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0381-go--designer_after_hard_reset",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "deepswe/dateutil-rfc5545-timezone-interop--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/go-git-worktree-merge-conflicts--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/langchain-request-coalescing--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    }
+  ],
+  "results": [
+    {
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-mini",
+      "content_sha256": "e809c13390c792f7df985fdedea6196753495eee0ce497ed0853f6c7414eea73",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-mini",
+      "status": "pass",
+      "native_pass": true,
+      "persona_pass": true,
+      "joint_success": true,
+      "worker_exit_code": 0,
+      "details": [
+        "trials/swepro-r0484-fbf25c6bff-analyst/persona-20261023T151340/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-mini"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 272171.544274154,
+              "deadline_monotonic": 282971.544274154,
+              "limit_sec": 10800.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 278092.144803964,
+              "deadline_monotonic": 282892.144803964,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 5920.600529810006,
+            "verification": 166.12252290098695,
+            "preparation": 12.098310994973872
+          },
+          "elapsed_sec": 6098.821363705967,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0028",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0028",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0028/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-shell",
+      "content_sha256": "cee094c166c13b3e4752bef3a502ac08c5a5a8173814cf4707405bd5a78f8e61",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-shell",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "instance_ansible__ansible-a26c325bd8f6e2822d9d7e62f77a424c1db4fbf6-v0f01c69f1e2528b935359cfe578530722bca2c59-first_time_pr_contributor-20261002-a1/episode.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "persona_requirement_coverage": {
+        "expected_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "required_check_ids": [
+          "req.v4.first_time_pr_contributor.01"
+        ],
+        "loaded_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "checked_ids": [
+          "req.v4.first_time_pr_contributor.01"
+        ],
+        "missing_loaded_ids": [],
+        "missing_check_ids": [],
+        "complete": true,
+        "persona_pass": false
+      },
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 6,
+          "max_agent_queries_per_turn": 12,
+          "max_simulator_decisions": null,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-shell"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 272539.983029656,
+              "deadline_monotonic": 283339.983029656,
+              "limit_sec": 10800.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 273534.179088815,
+              "deadline_monotonic": 278334.179088815,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 994.1960591590032,
+            "verification": 78.91103832499357,
+            "preparation": 51.96381875796942
+          },
+          "elapsed_sec": 1125.0709162419662,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0031",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0031",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0031/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-shell",
+      "content_sha256": "746122e8480efbd0420abc0e7f398ef284a27393b9aef4601e9b3edd44675f59",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "native_pass": null,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4-student_needing_explanation-20261002-a1/episode.json"
+      ],
+      "note": "Native diagnostics are retained; missing persona loading or checks cannot earn joint credit.",
+      "persona_requirement_coverage": {
+        "expected_ids": [
+          "req.v4.student_needing_explanation.01"
+        ],
+        "required_check_ids": [],
+        "loaded_ids": [
+          "req.v4.student_needing_explanation.01"
+        ],
+        "checked_ids": [],
+        "missing_loaded_ids": [],
+        "missing_check_ids": [],
+        "complete": true,
+        "persona_pass": null
+      },
+      "outcome_reason": "persona_requirement_checks_missing",
+      "verification_complete": false,
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 6,
+          "max_agent_queries_per_turn": 12,
+          "max_simulator_decisions": null,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-shell"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 272798.662525387,
+              "deadline_monotonic": 283598.662525387,
+              "limit_sec": 10800.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 275374.204264903,
+              "deadline_monotonic": 280174.204264903,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2575.54173951596,
+            "verification": 3333.6236622050055,
+            "preparation": 194.7800842600409
+          },
+          "elapsed_sec": 6103.945485981007,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0032",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0032",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0032/result.json",
+      "prior_status": "invalid",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-shell",
+      "content_sha256": "911ca7e077f6c5bab3cb7bbb326b94b5b63de81c881e5d39da5310eef779f1d4",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-shell",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": true,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "instance_protonmail__webclients-8142704f447df6e108d53cab25451c8a94976b92-first_time_pr_contributor-20261002-a1/episode.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "persona_requirement_coverage": {
+        "expected_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "required_check_ids": [
+          "req.v4.first_time_pr_contributor.01"
+        ],
+        "loaded_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "checked_ids": [
+          "req.v4.first_time_pr_contributor.01"
+        ],
+        "missing_loaded_ids": [],
+        "missing_check_ids": [],
+        "complete": true,
+        "persona_pass": true
+      },
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 6,
+          "max_agent_queries_per_turn": 12,
+          "max_simulator_decisions": null,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-shell"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 273669.54990444,
+              "deadline_monotonic": 284469.54990444,
+              "limit_sec": 10800.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 274908.259375915,
+              "deadline_monotonic": 279708.259375915,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1238.7094714749837,
+            "verification": 913.5121015690384,
+            "preparation": 45.81820413901005
+          },
+          "elapsed_sec": 2198.039777183032,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0036",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0036",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0036/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-shell",
+      "content_sha256": "b87b8e24f1c34f775956f57c5ea249878b5bd3cf243638584c9462f1828818a6",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-shell",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "instance_element-hq__element-web-9a31cd0fa849da810b4fac6c6c015145e850b282-vnan-first_time_pr_contributor-20261002-a1/episode.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "persona_requirement_coverage": {
+        "expected_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "required_check_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "loaded_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "checked_ids": [
+          "req.v4.first_time_pr_contributor.01",
+          "req.v4.first_time_pr_contributor.02"
+        ],
+        "missing_loaded_ids": [],
+        "missing_check_ids": [],
+        "complete": true,
+        "persona_pass": false
+      },
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 6,
+          "max_agent_queries_per_turn": 12,
+          "max_simulator_decisions": null,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-shell"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 275885.694736068,
+              "deadline_monotonic": 286685.694736068,
+              "limit_sec": 10800.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 280999.743351187,
+              "deadline_monotonic": 285799.743351187,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 5114.048615118954,
+            "verification": 308.50689902401064,
+            "preparation": 52.30382818804355
+          },
+          "elapsed_sec": 5474.8593423310085,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0042",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0042",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0042/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swelive/0744-java--founder_leaked_production_key",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "source_subset": "swe-bench-live",
+      "content_sha256": "203175e091ceae4972f498d71c5f906a2b77bb434752da70726104f34ca79c56",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-live",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Agent/user interaction budget exhausted. Preparation and final grading are timed separately; missing grades are not synthesized.",
+      "verification_complete": false,
+      "outcome_reason": "total_timeout",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Interaction or task time budget exhausted; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": false,
+        "api_interrupted": true,
+        "native_pass": false,
+        "persona_pass": null,
+        "budget_exhausted": true,
+        "artifacts_available": true,
+        "agent_progress": true
+      },
+      "error": "API transport recovery exhausted after 1 attempts (APITimeoutError)",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 161.03974759999983,
+        "effective_sec": 483.1192427999995,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 161.03974759999983,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": 14,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 161.03974759999983,
+          "timing_policy_id": "swelive-whole-sample-v2"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 483.1192427999995,
+          "timed_out": true,
+          "timeout_phase": "interaction",
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 276255.505760916,
+              "deadline_monotonic": 276738.625003716,
+              "limit_sec": 483.1192427999995
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 276738.802289147,
+              "deadline_monotonic": 277638.802289147,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 483.2965282310033,
+            "verification": 22.450477845035493,
+            "preparation": 397.14123504800955
+          },
+          "elapsed_sec": 902.8882411240484,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "score": 0.0,
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0058",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0058",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0058/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swelive/0426-js--laptop_data_scientist",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "source_subset": "swe-bench-live",
+      "content_sha256": "6a191f44e5d23a06185c2e95373b5dc3a19cb1e4fcf36299b254bba08bb4f8ea",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-live",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Agent/user interaction budget exhausted. Preparation and final grading are timed separately; missing grades are not synthesized.",
+      "verification_complete": false,
+      "outcome_reason": "total_timeout",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Interaction or task time budget exhausted; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": false,
+        "api_interrupted": true,
+        "native_pass": false,
+        "persona_pass": null,
+        "budget_exhausted": true,
+        "artifacts_available": true,
+        "agent_progress": true
+      },
+      "error": "API transport recovery exhausted after 1 attempts (APITimeoutError)",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 160.68121109999993,
+        "effective_sec": 482.0436332999998,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 160.68121109999993,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": 14,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 160.68121109999993,
+          "timing_policy_id": "swelive-whole-sample-v2"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 482.0436332999998,
+          "timed_out": true,
+          "timeout_phase": "interaction",
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 276858.712562676,
+              "deadline_monotonic": 277340.756195976,
+              "limit_sec": 482.0436332999998
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 277340.901062387,
+              "deadline_monotonic": 278240.901062387,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 482.18849971098825,
+            "verification": 21.856068986991886,
+            "preparation": 86.08223683800315
+          },
+          "elapsed_sec": 590.1268055359833,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "score": 0.0,
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0059",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0059",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0059/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swelive/0465-js--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "source_subset": "swe-bench-live",
+      "content_sha256": "a8dccb5de2fd71d27ff335b4ac87c5a972c0fd0d41cf4b4a62f5a2a1799e75bc",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-live",
+      "status": "fail",
+      "native_pass": true,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Agent/user interaction budget exhausted. Preparation and final grading are timed separately; missing grades are not synthesized.",
+      "verification_complete": false,
+      "outcome_reason": "total_timeout",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Interaction or task time budget exhausted; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": false,
+        "api_interrupted": true,
+        "native_pass": true,
+        "persona_pass": null,
+        "budget_exhausted": true,
+        "artifacts_available": true,
+        "agent_progress": true
+      },
+      "error": "API transport recovery exhausted after 1 attempts (APITimeoutError)",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 157.71891049999977,
+        "effective_sec": 473.1567314999993,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 157.71891049999977,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": 14,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 157.71891049999977,
+          "timing_policy_id": "swelive-whole-sample-v2"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 473.1567314999993,
+          "timed_out": true,
+          "timeout_phase": "interaction",
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 277454.269695874,
+              "deadline_monotonic": 277927.426427374,
+              "limit_sec": 473.1567314999993
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 277927.694342467,
+              "deadline_monotonic": 278827.694342467,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 473.42464659299003,
+            "verification": 66.01912423799513,
+            "preparation": 81.03182112099603
+          },
+          "elapsed_sec": 620.4755919519812,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "score": 0.0,
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0065",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0065",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0065/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "swelive/0381-go--designer_after_hard_reset",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "source_subset": "swe-bench-live",
+      "content_sha256": "319823681222f16a54030ea9ccd49df98814d48227e598d30278f86833263c8c",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-live",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Agent/user interaction budget exhausted. Preparation and final grading are timed separately; missing grades are not synthesized.",
+      "verification_complete": false,
+      "outcome_reason": "total_timeout",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Interaction or task time budget exhausted; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": false,
+        "api_interrupted": true,
+        "native_pass": false,
+        "persona_pass": null,
+        "budget_exhausted": true,
+        "artifacts_available": true,
+        "agent_progress": true
+      },
+      "error": "API transport recovery exhausted after 1 attempts (APITimeoutError)",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 175.16230879999966,
+        "effective_sec": 525.486926399999,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 175.16230879999966,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": 14,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 175.16230879999966,
+          "timing_policy_id": "swelive-whole-sample-v2"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 525.486926399999,
+          "timed_out": true,
+          "timeout_phase": "interaction",
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 278109.083248038,
+              "deadline_monotonic": 278634.570174438,
+              "limit_sec": 525.486926399999
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 278634.698411116,
+              "deadline_monotonic": 279534.698411116,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 525.6151630780078,
+            "verification": 22.199483509990387,
+            "preparation": 103.23490948101971
+          },
+          "elapsed_sec": 651.0495560690179,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "score": 0.0,
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0066",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0066",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0066/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "deepswe/dateutil-rfc5545-timezone-interop--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "source_subset": "deep-swe",
+      "content_sha256": "a98ced395a2e3fcd043b447dbb6954cf4fcfa2b83cf3e468ca4b3bc502fa891e",
+      "harness_version": "0.5.0rc9",
+      "profile": "deep-swe",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "end_reason": "user_turn_budget_exhausted",
+      "simulator_message_recoveries": [],
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 12,
+          "max_agent_queries_per_turn": 80,
+          "max_simulator_decisions": 150,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "deepswe_separate_coding_interaction_final_review_v1"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 278311.911879296,
+              "deadline_monotonic": 286411.911879296,
+              "limit_sec": 8100.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 280069.585395496,
+              "deadline_monotonic": 281569.585395496,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1757.6735161999823,
+            "verification": 282.50706963503035,
+            "preparation": 42.153982700023334
+          },
+          "elapsed_sec": 2082.334568535036,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0076",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0076",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0076/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "deepswe/go-git-worktree-merge-conflicts--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "source_subset": "deep-swe",
+      "content_sha256": "a079255a1f0fcf3d4c339a9c037c031f0093eb4b7edaff4fa9b8927c546adebb",
+      "harness_version": "0.5.0rc9",
+      "profile": "deep-swe",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "end_reason": "action_budget_exhausted",
+      "simulator_message_recoveries": [
+        {
+          "operation": "message_recovery",
+          "policy": "selected-public-documents-recovery-v1",
+          "status": "recovered",
+          "attempt": 3,
+          "mode": "selected_public_documents",
+          "document_ids": [
+            "block_0",
+            "block_1",
+            "block_2",
+            "block_3",
+            "block_4"
+          ],
+          "surrounding_prose": "",
+          "rejected_drafts_delivered": false,
+          "extra_agent_turns": 0
+        }
+      ],
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 12,
+          "max_agent_queries_per_turn": 80,
+          "max_simulator_decisions": 150,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "deepswe_separate_coding_interaction_final_review_v1"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 278711.141417191,
+              "deadline_monotonic": 286811.141417191,
+              "limit_sec": 8100.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 280005.358172271,
+              "deadline_monotonic": 281505.358172271,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1294.2167550799786,
+            "verification": 233.2745198950288,
+            "preparation": 43.691687382000964
+          },
+          "elapsed_sec": 1571.1829623570084,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0081",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0081",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0081/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    },
+    {
+      "task_id": "deepswe/langchain-request-coalescing--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "source_subset": "deep-swe",
+      "content_sha256": "b91134b2711c485aead1d2c040edd847f9099f8312631422903a8fa146fa958f",
+      "harness_version": "0.5.0rc9",
+      "profile": "deep-swe",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "end_reason": "action_budget_exhausted",
+      "simulator_message_recoveries": [
+        {
+          "operation": "message_recovery",
+          "policy": "selected-public-documents-recovery-v1",
+          "status": "recovered",
+          "attempt": 3,
+          "mode": "selected_public_documents",
+          "document_ids": [
+            "block_0",
+            "block_1",
+            "block_2",
+            "block_3",
+            "block_4",
+            "block_5",
+            "block_6",
+            "block_7",
+            "block_8",
+            "block_9",
+            "block_10",
+            "block_11",
+            "block_12",
+            "block_13",
+            "block_14"
+          ],
+          "surrounding_prose": "",
+          "rejected_drafts_delivered": false,
+          "extra_agent_turns": 0
+        }
+      ],
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 10800.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 12,
+          "max_agent_queries_per_turn": 80,
+          "max_simulator_decisions": 150,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "deepswe_separate_coding_interaction_final_review_v1"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 10800.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 278764.942247173,
+              "deadline_monotonic": 286864.942247173,
+              "limit_sec": 8100.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 280175.294091053,
+              "deadline_monotonic": 281675.294091053,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1410.3518438800238,
+            "verification": 168.00680854701204,
+            "preparation": 46.318949789972976
+          },
+          "elapsed_sec": 1624.6776022170088,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0087",
+      "run_directory": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/attempts/medium/0087",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0087/result.json",
+      "prior_status": "infrastructure_error",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "time_limit_multiplier": 3.0,
+      "retry_api_timeouts": {
+        "agent": 360.0,
+        "user_simulator": 900.0
+      }
+    }
+  ],
+  "status_counts": {
+    "pass": 1,
+    "fail": 10,
+    "invalid": 1
+  },
+  "time_limit_multiplier": 3
+}

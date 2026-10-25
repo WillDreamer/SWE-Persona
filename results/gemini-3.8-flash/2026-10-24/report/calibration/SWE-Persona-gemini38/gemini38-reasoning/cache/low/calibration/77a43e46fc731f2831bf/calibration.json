@@ -1,0 +1,69 @@
+{
+  "model": "azure/openai/gpt-6-luna",
+  "passed": true,
+  "cases": [
+    {
+      "case": "met_concrete_report",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed files and confirming that nothing was committed.",
+      "seconds": 3.26
+    },
+    {
+      "case": "generic_claim_is_unobservable",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact file paths written to /deliverables/pr/CHANGED_FILES.txt and that you did not commit anything.",
+      "seconds": 2.53
+    },
+    {
+      "case": "partial_obligations",
+      "expect": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please undo the commit and leave the change uncommitted. Also confirm that the file lists the exact changed repository-relative paths, one per line.",
+      "seconds": 3.27
+    },
+    {
+      "case": "contradiction_is_unmet",
+      "expect": [
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please write the exact repository-relative paths of all changed files to /deliverables/pr/CHANGED_FILES.txt, one per line, and do not commit anything.",
+      "seconds": 3.21
+    },
+    {
+      "case": "evidence_before_disclosure_does_not_count",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please report the exact file paths written to /deliverables/pr/CHANGED_FILES.txt and confirm that you did not commit anything.",
+      "seconds": 2.94
+    },
+    {
+      "case": "undisclosed_requirement_is_invisible",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed file and leaving the change uncommitted.",
+      "undisclosed_text_absent_from_judge_input": true,
+      "seconds": 3.94
+    }
+  ],
+  "note": "calibration is not a benchmark result and not a positive/negative validation"
+}

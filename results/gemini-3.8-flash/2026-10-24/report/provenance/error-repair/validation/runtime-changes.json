@@ -1,0 +1,42 @@
+{
+  "base": "repositories/SWE-Persona-gemini38-calibration-fix",
+  "changes": [
+    {
+      "path": "src/swe_persona/cli.py",
+      "before_sha256": "79654d1946a93a068f3cef814928839b7fd1a300e70f0ea9fcd735f10a3a67c5",
+      "after_sha256": "7a025de5b8eced14bc56a195b02f222ec8c4b287c84165779c3d432d6e32980e"
+    },
+    {
+      "path": "src/swe_persona/swe_live.py",
+      "before_sha256": "85a96ce7121392df380df329031b119ecbf312f3fd7711c453b1144ee5d6f0a8",
+      "after_sha256": "4285fff2657734ee295c3d240fd1ae47c1cb5a09eb1838020c026ea427980022"
+    },
+    {
+      "path": "src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py",
+      "before_sha256": "591647782195bf03f774be5e1ec58cafe3153481fc0eedbe78c9c8d47c499246",
+      "after_sha256": "d0c27f2a9ab635dfdacee69195f920bf8f7e838c15be1e744ce651d07e446e06"
+    },
+    {
+      "path": "src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py",
+      "before_sha256": "5eea93dbb31811a2282460cad35eaac5395c708dab072c200143e748005b8878",
+      "after_sha256": "aabc4dba0e84a6896a68b5170327c6a4db3ab9b783c495b6f5270eb8a734b6a1"
+    },
+    {
+      "path": "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json",
+      "before_sha256": "8b06d049f4a53dee05978d224acb452d0c0b5bb8d46cf9410a85abdf32e87a24",
+      "after_sha256": "c46fb87254d93c3c748d4b542a4112fdad590723c59fd709d4ae9a83563caa2f"
+    },
+    {
+      "path": "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json",
+      "before_sha256": "79f027d6d825d1d0fe5263d92ac6df72319330258a29dcbd31fa33edecb1f3fb",
+      "after_sha256": "4a7a00b21983ff6a1c3f6634e61657ec6a00afce472b253e74a23bb38d47904f"
+    },
+    {
+      "path": "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py",
+      "before_sha256": "d22ba41f937c90e1d3b0ab0d496ffc326d3dcf146da9c645d7a923eb9cb41523",
+      "after_sha256": "d2e3fa2a5743aec22065f62ef30a87c37c4560f85c14804061f22b496fbdba9d"
+    }
+  ],
+  "python_environment": "repositories/SWE-Persona-gemini38-calibration-fix/.venv",
+  "dependencies_lock_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+}

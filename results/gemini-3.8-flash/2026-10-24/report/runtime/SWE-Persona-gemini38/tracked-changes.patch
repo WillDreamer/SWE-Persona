@@ -1,0 +1,530 @@
+diff --git a/README.md b/README.md
+index 772f46c..87f2d41 100644
+--- a/README.md
++++ b/README.md
+@@ -261,6 +261,21 @@ Optional batch selectors are `--source-benchmark "SWE-bench Pro"`, `--profile sw
+ 
+ ## 6. Time budgets
+ 
++This evaluation branch adds `--time-limit-multiplier N` to `run` and
++`scripts/evaluate.py`. It defaults to 1 and is mutually exclusive with the
++absolute timeout options. A multiplier of 2 doubles each task's original
++interaction duration and its profile's cumulative coding duration, including
++inner runtime deadlines. Preparation, final verification, per-request and
++per-command timeouts, and turn/action limits remain unchanged. The frozen
++dataset and binding files are unchanged. `time-limit.json` records the outer
++budget and multiplier; `internal-time-limits.jsonl` records scaled inner clocks.
++SWE-Pro shell directly consumes the effective outer interaction budget.
++
++The pinned upstream commit's release checksums were stale before these changes.
++The original manifests and a verification against all Git/LFS objects are
++retained under the evaluation's provenance directory. The manifests in this
++branch describe the local evaluation runtime, not a new upstream release.
++
+ All profiles expose the same agent/user interaction time override:
+ 
+ ```bash
+diff --git a/SHA256SUMS b/SHA256SUMS
+index fdcd462..7f4c95a 100644
+--- a/SHA256SUMS
++++ b/SHA256SUMS
+@@ -1,31 +1,32 @@
+ 30129f61f2a1b984b358279fb24769ff73836dc7f839a765b67775ae2af04a13  .gitattributes
+ da2decf207b4bb58e4f4a270120d0ca870fe55b4c68197abf802c32455c3e139  .gitignore
+ 35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8  LICENSE
+-67bdcbfb6d5448576594935ccf4eed8c83031d7a24b46b1cdc74d06afdcfece1  README.md
++7144645ac56e44b64b945cff0f1bd1bca4bf38f2f011d8613bbde49c039f131e  README.md
+ 031501b22b1112ed5ea24c03e2985b22bb617c2e2ef8bee9b70edd721cd9124f  configs/api.example.json
+ 6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b  pyproject.toml
+-7ef81baa77356851e06919012e619b8065e10f22e074f5869d02ebcb6f6b7a76  release.json
++88be790fc6060a88bde540fee7d8f810094ba14809d9cd15c2f2cf98e1f5e024  release.json
+ 907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171  requirements.lock.txt
+-9b740609824db080e524cfb989f10d32a716a257d2aeaf09b3e6ac51e1beb17a  scripts/check_live_native.py
+-fbfabf3ae8aa647c5cc764527e88605ea4f6d89322ff32a4f0fb6e4da15a49f8  scripts/evaluate.py
++85411ba8958a9a23787681e3a3fa15345accfcc6a81b31f50fe621ebd404aa45  scripts/check_live_native.py
++e2de109fcced975a7f1d69d63b6c45bc660f7f398965dd982cb32a76acec3e20  scripts/evaluate.py
++1e7b1b9adbed9cbede78511f3661a2a7ff24aa23e5a4ba8c7253a8df386cbbc1  scripts/run_gemini38.py
+ 09beb93557805043742b7d7810dcfdf35a190d8d005823eecada9da25a8e369d  scripts/score.py
+ 328c0a57e9c7417433723a7c75ed58ec6c3817df47e0255ee8af31890c9f35b4  src/swe_persona/__init__.py
+ 56c724ab103b56fe853996a70d68681d373d3e4f038d39af90209d7da2ddabc0  src/swe_persona/agent_output.py
+-9f8f1479bec8091abbc83e9d256726593afe47aab69ac26bdcb468563b10c894  src/swe_persona/api.py
+-ae9562d59bb6a1d2f37e8d5ba628e1626c53309ad118ae0bb1f28507c42042e0  src/swe_persona/api_output.py
+-ddb301f46994cbd2f788e33e2c68745d59fa6f4b66809691d3bfdbedd553c3d4  src/swe_persona/api_recovery.py
++d39d4eeb7ee92d3c8d637dafe9e102e1c99260164340b30f5ddb616ba87fd2b4  src/swe_persona/api.py
++15a7667d248b3852845210bbd465ae06da33f671afa68da0ca5dff0e2c2c981d  src/swe_persona/api_output.py
++abdc6e4400ac08d5e0523bc538f1b5529d9b0b0d057f66451c67669c376edef1  src/swe_persona/api_recovery.py
+ 6327b438567155f7861647a8701f01f9e1b46182a86361d969a18f743f53125c  src/swe_persona/asset_restoration.py
+-d5a60e541d5d389aa2f0be033d1d00cb38c504bbf4fe56aa55ed3cd94c914d0d  src/swe_persona/cli.py
++79654d1946a93a068f3cef814928839b7fd1a300e70f0ea9fcd735f10a3a67c5  src/swe_persona/cli.py
+ 9d908be0c1a3b69cd6d274d16e45f12c6eca1b30eae9f0b96a10ef5051cdb94e  src/swe_persona/dataset.py
+ b67da36e2958328260d197379a2111ff3b9f944e7398e214a536ab36cdc5d58f  src/swe_persona/deepswe.py
+-970c90fbebeb15b71a58e2d1b4d8d9eecc58c4ec669943c0e8c5b0f04c106369  src/swe_persona/harbor_bridge.py
++df32ebbc9cb58f5394d81ccde6bcd8858dacb7088b678df782c0736f9f433ecb  src/swe_persona/harbor_bridge.py
+ e1d7992c761782af1e125b2b38b64fd3477f690887ef56934ee180bebeb5ba9e  src/swe_persona/native_preflight.py
+ 036afef170d0d10d10552bcab3576c5e96db4ac73b1303320eba16938d70e06a  src/swe_persona/output_mode.py
+ f8de60a60d16ac7ab9d3237314f1ae175ddf630dd5fca44c425a817037f6f7ea  src/swe_persona/schema.py
+ ba069c65a7f2744b4cc61f44348313aae7df7ce667c8deba4ed8ee23c0de86c7  src/swe_persona/simulator_output.py
+-7ab56a9667a058c615aba1b21a1f67d2bc7dce574b4d53cbf6629a398bebd4e4  src/swe_persona/swe_live.py
+-3828c52ba831df0e80da1ae892698acebf18dd186284db6c00326fa953c2080d  src/swe_persona/swe_together.py
+-00f8e5b9ff118475e1f9dd64150850baa866a57cd8cbb0ae5136351102f3ee7e  src/swe_persona/time_limit.py
++85a96ce7121392df380df329031b119ecbf312f3fd7711c453b1144ee5d6f0a8  src/swe_persona/swe_live.py
++12e87f1877f832a9d053ab49ef4d34bb5a2f3ff8cbfbbbe5788e2c1c9eeef892  src/swe_persona/swe_together.py
++5ed9436c0255e6d47835a8826a8d0201f4a7878e0d2814331a6e026bd667e419  src/swe_persona/time_limit.py
+ 0fde81c573551ab643d51f15302504dfe6b0b0348168b42b95db523f084b719c  src/swe_persona/vendor/SOURCE.json
+ c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4  src/swe_persona/vendor/deepswe/notices/DeepSWE-LICENSE
+ 922e0155a67ab49bfbc9d4a0ed4b0b47f5d217a1481edef13c49f3eec88c5a13  src/swe_persona/vendor/deepswe/notices/NOTICE.md
+@@ -34,8 +35,8 @@ f2cad77bd81747e1b66917791cb0dfb1ed349c9f19ebcf2b8c0724151c9c73e8  src/swe_person
+ b28eb804f9544ab27f7c3069b35e99d7020b91d6fb20570c0d32f29e4e4a3152  src/swe_persona/vendor/deepswe/project/data/personas.v3.json
+ bd37640ddfc3768afe78a8a25a3caa59c006ba11ad9c07f818cb2116276e36de  src/swe_persona/vendor/deepswe/project/dspilot/__init__.py
+ 916301be366619e8ffc914bcbacef507ac8010985d92e75f162b31a9a220b42b  src/swe_persona/vendor/deepswe/project/dspilot/analysis.py
+-cca241e698866c07c28d4c7b964b0db16dc377a6d3cf66dad2f79682f1c4355d  src/swe_persona/vendor/deepswe/project/dspilot/api.py
+-b9560e174a0bcbd02d5867404ffee3139063de5e7e3483b31b716719c67485f9  src/swe_persona/vendor/deepswe/project/dspilot/api_codec.py
++df0391d00be474d40854dedc9d4648b47d722dcdda151c6aa14ab385b5737017  src/swe_persona/vendor/deepswe/project/dspilot/api.py
++7b1fad5a16d299e5329f8cbd584c7fefd4657e77d62357198d6ecd1ec92c3e1c  src/swe_persona/vendor/deepswe/project/dspilot/api_codec.py
+ 8234e4073af24778a013d045e2b6a598c5eb40a5414914799c1c51436e3f808d  src/swe_persona/vendor/deepswe/project/dspilot/api_config.py
+ c455d78e82a9ccfc2b8dd79194492e5ccabba10f04490fd6f9277e946b6ff144  src/swe_persona/vendor/deepswe/project/dspilot/calibrate.py
+ 49c588daa3ddaaa03e90e70286ec2043618fe730c73dd518aeb9ae728daae7f0  src/swe_persona/vendor/deepswe/project/dspilot/calibrate_staged.py
+@@ -46,7 +47,7 @@ fed27276f07c620550ad3fe75ce7f3de6117742250e0a0c650bb4cd965f649c9  src/swe_person
+ 591647782195bf03f774be5e1ec58cafe3153481fc0eedbe78c9c8d47c499246  src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
+ 092683385b8c9caab85fbfe0a3134b92f1da9333c76022473619a4a8278ae98a  src/swe_persona/vendor/deepswe/project/dspilot/coding_backend.py
+ 121e7ec0ec75736e0001adf7093f47185203d499e40315a5e4007c3db28673bf  src/swe_persona/vendor/deepswe/project/dspilot/coding_budget.py
+-3ce76b407d097ba1e9e9f3c7a6fe9fecf310e4d7d91536c7dda643743d6b7530  src/swe_persona/vendor/deepswe/project/dspilot/coding_json.py
++401de117031e42ecace2f15840ca65206d273eb87e3095b0f97107ee21e4efe5  src/swe_persona/vendor/deepswe/project/dspilot/coding_json.py
+ 1b311f0973b186db05379d84f03f150dde8f011039d2ef8509aa98dc5a9dfcdb  src/swe_persona/vendor/deepswe/project/dspilot/coding_native.py
+ 71726620c60ecce662371569cc28f098fa0ffe76493af2d37bd7e4561c5bec49  src/swe_persona/vendor/deepswe/project/dspilot/coding_terminus.py
+ 4ad230b4d0c3a4cd637720937b47fc902de5765f51f882174ab87a2e88129a06  src/swe_persona/vendor/deepswe/project/dspilot/coding_terminus_native.py
+@@ -66,7 +67,7 @@ af5f04a9d4c04e20660a4678b46cd829bc7eb7b33826df4bdbebbe1cbb410ae7  src/swe_person
+ c3af7be8e5cea5de8291d4439c8f55a45d72c813a0f1cff00d15001dfff0b7f5  src/swe_persona/vendor/deepswe/project/dspilot/delivery_rules.py
+ 85f6a9edfd18189d7946f6af05fac21066b2995e529cae8e2abd327256676f5d  src/swe_persona/vendor/deepswe/project/dspilot/delivery_runtime.py
+ 21333623e0721a277014be073aa55e2cf4e9b27e402c57591df1655f8249799e  src/swe_persona/vendor/deepswe/project/dspilot/delivery_timeouts.py
+-47025de3220dd495baf2b9221deb5a07229354e73ebd1396793c44f8e3592f74  src/swe_persona/vendor/deepswe/project/dspilot/delivery_worker.py
++a8e2a0dbe9bcc3b0c4c3188ff1cf276718d2e1ee3de7ec087a47a25008b1d82f  src/swe_persona/vendor/deepswe/project/dspilot/delivery_worker.py
+ 1d9ee2df78877e5f854ad179be8075cd5679a4848f830b527f9aebe4f12e7516  src/swe_persona/vendor/deepswe/project/dspilot/disclosure_design.py
+ 8684a626ad99d7d7f532de15a7886ba5e4b2f9262b33e6d6cdbc53d9462b7d8f  src/swe_persona/vendor/deepswe/project/dspilot/events_staged.py
+ 25d5bbc8d6de25c20e57bb835f4ff9b8b3f54d8bd10fc1661d9953ff46273508  src/swe_persona/vendor/deepswe/project/dspilot/export_deepswe_delivery.py
+@@ -78,7 +79,7 @@ bbbe43ade8223c06994b89833371b905ba0e1d3eb87ae00f2446d0c85275a226  src/swe_person
+ 77ff8b8e3467d2691519a1ff062bc064944057a2f8189dc49940299fad994a4d  src/swe_persona/vendor/deepswe/project/dspilot/fixture_repairs.py
+ 01504031049276fab1340724d4c50744b1451479ec5c924240efd8c3c40c0c30  src/swe_persona/vendor/deepswe/project/dspilot/frozen_staged.py
+ a9b6f06197be51423f23d4e44dd3ef5a1395035f794bddbdbe031b3dcf7e955b  src/swe_persona/vendor/deepswe/project/dspilot/full_persona.py
+-bb099b8b9ae9cdeb539c801cdd94d21b7867c88c592b90d5062b2261027758c5  src/swe_persona/vendor/deepswe/project/dspilot/harbor_runtime.py
++2fae51725d3e714bacf09be0799333caef1d36a5a3a3c53255b9fa6c600cab3d  src/swe_persona/vendor/deepswe/project/dspilot/harbor_runtime.py
+ a65978bab1843b54ff6b4f60bf6884d038c8dea670835d22a75783279a2e62b6  src/swe_persona/vendor/deepswe/project/dspilot/integrity.py
+ 8399bb19e66aef68f176d51de49672dddd93109f5621b81643eb7dd1a6fb5707  src/swe_persona/vendor/deepswe/project/dspilot/interaction_policy.py
+ 7e72d8db69a36be0e6b070f669d51a8091b718f45508b590805b425b1d52e8f6  src/swe_persona/vendor/deepswe/project/dspilot/launch.py
+@@ -109,7 +110,7 @@ fd88a3f63819da7e536e43261a8b606bda2f72106cf87c4065313dd07a2150e4  src/swe_person
+ f71aa38665d1cabaa1afddb380deac61b5bcca9d8491811d4b0d4330c6349c5f  src/swe_persona/vendor/deepswe/project/dspilot/rescore_obsidian.py
+ 316467079994b1c4fa391d33b1731a98380107b241b598c8e2b140bf3bb80642  src/swe_persona/vendor/deepswe/project/dspilot/resource_probe.py
+ fd09a74e16f5a4eeb05b67a907ded0ddfa474b265d6f49b40ee47a1cc32da0f6  src/swe_persona/vendor/deepswe/project/dspilot/run.py
+-f890e94e4146b57785fd645690ee9c0987607150dc2dad7df94c3ded6c351ca2  src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
++7662b21f63c30a3aaa8a7ce8d662f18e3e3b9c028f68eaadc51e5f3bd9163892  src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+ e68f4e58f22d32db82b184d7be0c54a682a3b767fdeebce6b72c267e41d85dbe  src/swe_persona/vendor/deepswe/project/dspilot/run_v3.py
+ 88ec15b1c35440b6cc36a8b32175b1ffffe605e4c4bca91fd1c66b7178ba6c82  src/swe_persona/vendor/deepswe/project/dspilot/runbook_probe.py
+ 5c21820bf38da265349500422509b4f565d725ae74222ceee24ae4c3c47b38d6  src/swe_persona/vendor/deepswe/project/dspilot/runtime_backend.py
+@@ -338,8 +339,8 @@ a58f9e781c99351851506cf71f8e8870412cf69181bef8a2231593b19d51f539  src/swe_person
+ a3b346354e6894cac193230e8ab7cc12525d5a15e45daabc8f2be863d4d1c073  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/test_runtime_output.py
+ 7186261cf3fc8c78e99e5ce76c8b341975e107142f6bc2e68381aaf15b08ddca  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/test_tb3_delivery_export.py
+ 3cfcfdb437beddc4309daf73a64809cde26a5543a8c6b78f6bbb83838e3eec9b  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/validate_tb3_delivery.py
+-5f49218b8a02cb01b63f6bc99103a2dd7780145dc2813849841959a0087fc182  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/agent.py
+-3081b3ca5e582643ca691fab4dc9de902dd99d61304707a39cc811e914498ee7  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/checkers.py
++4174e3711f146ca12ed90315b4e62be7dddd5681c126ac989e916d4e14bcc911  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/agent.py
++912d119ce53890c8e05bc518b2a6ed925ceb2e9cff2f23425b907910b144f4fb  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/checkers.py
+ 7d7f7222cb564bd60cf5850f46c06941cc99ea7ddafe4316b5b219443a0f5997  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/compare_arms.py
+ cf84167936aa19d4320d1d0b41de485e2e50b892cead76ce7eb95872a836ca0a  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/controller.py
+ 01e00112eec21e70b05c8b0bececdc9e78f58441879e97e98d596336cc73a876  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/dockerx.py
+@@ -370,9 +371,9 @@ de632a38842674eaf22a619520587c6731cbe6c76507d4a2685155ec77d6b915  src/swe_person
+ fa0de8f65e9ae848fdc914b72d27d29f5989b6880ee28641c5b08f25303cf428  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/__init__.py
+ 6182005cc63ad670e860fd12913553598fa26e62a4fe55a7d9808c6e17d7612a  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/agent_harbor.py
+ 60eff1262bf8cba167dcbc6560b5ee087325a939c9f4ebeca04cd46de467e9ed  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/harbor_mini_runtime.py
+-d59da630f83f141eb93e0d8b637155ac43c2eeb1b9bb32dfeda6572d180eb642  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/mini_sidecar.py
++71f54d2832298263eda55ddc3158335a0e423945c65d29f88736e7d5ea847f72  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/mini_sidecar.py
+ 3e03b4c79960725f54b0edc1dcf63739938ddee11ecf87569220042dfde16c3c  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/controller.py
+-2ac20bf88a24123046ef2e84d85148be0f0b171aa89ca9917c6d5c3481211f4d  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
++0502db5996b7dbeac1563b98791caaa885e274e4225b09fd8988b3433117c739  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+ 60934542d3873fed4cba6dd35d2781ccb2b073704568825ebf2d75907ec1f0bb  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/evaluate.py
+ 6aa56f4682588e9819ff60ea3629e99718ae4ac62ce11eeccceb0f9b6dc46cf2  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/experience.py
+ 25c12bbc44e63071a782fee2b0caa20a1c731b1b2781f8fd2e58d5ec20c02b10  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/judge.py
+@@ -387,10 +388,10 @@ ccd0b94a9e7312aecefe17ef1c5160c013ff1c030facd42cbbda07edda4c08db  src/swe_person
+ a0e7b154218bcfdcc5c87e4faf51afed93ab9b178963d8e32add759b71feb5ec  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/__init__.py
+ 3d534bd330bf19ae8cd3a11adb57cd97421a302f3bdc41418761e86de4d21431  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/agent.py
+ 016d86a4f25627b62ac93ad04ab8719df1c79a2851cad528a9abf42b6b3906e8  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/agent_mini.py
+-e61be0910a85ef96441f7ef388128941f69cf30d0a510cb3757513ca90e10a9c  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/checkers.py
++47e721bd7186976e9a41a648917ef1dbb95f7edc59f2c840401599a9e585bb17  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/checkers.py
+ 3e946d92d2725a413fa894e48cbf882026ef705c3f7ba8e2b8366bef80f2353c  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/controller.py
+ 07effe6edbd1d0ea3214b40ca5c67fc13c85afaaf4d7a0b283670060617ee34f  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/disclosure.py
+-7e59d4719b6922ab2084e52817ff8bf5f450c7e151ff4ccf74650809dcdcb8d6  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/dockerx.py
++13513502d5381342d48c19704efa9821a03a0a349daee9597387731c88b31770  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/dockerx.py
+ 28d99f30bb220a6a627a8c11307d0c13eca6f820b991ce680879fc80327d07d5  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/evidence_policy.py
+ b93e7ae4ba50350cd9400aad915e378183d2d2316165a450268fc52db25200e9  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/checker_driver.py
+ 0e5e4cc86c99ed69ccef47b84dbe9305d677157dad33c32a4e1c7328aa3a86cb  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/native-reference-controls.json
+@@ -402,14 +403,14 @@ b93e7ae4ba50350cd9400aad915e378183d2d2316165a450268fc52db25200e9  src/swe_person
+ cd7a26a75b0afbd766070a1d81ceeab07b51dc8fffdfc86ddf2831e5da21820d  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/portable_shell.py
+ 01355c49a5cf7f4c826122b359dd18ec2864c68b3a5531bb40c6c6376736fefb  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/registry.py
+ 571bd735808bc4db08cf12229ccd3b8789ff7892502f27acd913d6bb802c9590  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/rubric_checker.py
+-c2394a93344f18f1039fb746f2eac0ef755f634c4a970dc1ee3371cf1f710e26  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
++c3a6750bd8feb107f868f75f9bb98772e5551e27d9ad0c535de802f6a7ad4636  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
+ a71b6d7044af452178e200b914b8098bfad1089f7e811a71185089e4b46d5ad5  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/simulator.py
+ b73bb50bce716cf53531f91b059cbed2e6719baf91d016ace4f571fb68afcf44  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/task_adapter.py
+ 70b4e6f82978681e9e646fd7bd33822bea7e8f72ec617160fbe98945051ae97a  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_bindings.py
+ 86f02b7a1f5f6a17f4d63117595db3a9f428dc5521eebad2ae17343232de7fa7  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
+ 3ac0ecf6b345da4e7e91acd4b9f1e4e22520899f3708cde777873c85f93ab57b  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/verifier.py
+-afa5a8df5c0265f23c8355a3af3cd75795a571871cd46c8d56f7c1468a9bccef  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/agent.py
+-8b7948f3833b4b1da8c9892b4ea85a538321cc49c908cba793452822df2f6a85  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/checkers.py
++6269023b0acd34130a08c89c288cec75c5573fab9b18bd4329f4b600ffaf55d6  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/agent.py
++083e2353cb7b1f98c7e083a2381f37bb55d646019b0ad28c086a277643ddd992  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/checkers.py
+ bd64ba6b3fbfaa5ecbf5f16dc82704f314fb7062cd7aecf574e3be68708440b0  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/controller.py
+ a6d78aa26466aa6f3a6f0cf68670c0a40a0c4b3a0eca3d976e83dfcdbf48b004  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/dockerx.py
+ f88f270a8638718df96eaadf970ef43109c306c7ff50fb50837f84b6b8a8f157  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/gpt6.py
+@@ -482,12 +483,13 @@ d64de65a4c5d57c5d17a094220d2452f562b6e587362faa3934d5521f1b72469  src/swe_person
+ d22ba41f937c90e1d3b0ab0d496ffc326d3dcf146da9c645d7a923eb9cb41523  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+ 7756e406af1fdd7e2c3e2ceb228726fb70c35c468d57e019010fdd49cd6ac128  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_policy.py
+ 757b981827af79910023bc96d8c66643e800660f56ef3b6d2823182c44de180f  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/evaluation.py
+-8841bc9f6b1fdf560e20c0b288043078b3fffc31bd36d43e149de86ee72383e8  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/public_run.py
++9e0a3dd7a2659435e5abf03a2711325ce2cac382e9b4a8bee77302ae32264898  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/public_run.py
+ 836f910792d40951a1f5f6c4217e0a7f473d1b491716ccb5d1781aa94e102408  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/simulator.py
+ a42db0360a349371f504d36de6a18a82edf55a50e63e5f254105306627e021b9  src/swe_persona/vendor/tb3/calibrate_judge.py
+-211ae328645109df5522355b81abddae1c5791839a4adb4b040d684a8cad7266  src/swe_persona/vendor/tb3/run.py
++9fc6713b5d94d706447e9f742169c895ee82331b036b7d2fa3752238cfd6de4b  src/swe_persona/vendor/tb3/run.py
+ ab23c2da4c0585fab54c499cc60be2cf609388f8b67fa4ffa7f10b0a0917bac1  src/swe_persona/vendor/tb3/runtime/azure_client.py
+-39276188bb78c09bde26318583b125279b756c5279f24c2844942d639f2a4ad9  src/swe_persona/vendor/tb3/runtime/checker_runtime.py
++67aa54e7535d64b1472be56dcf15452e945e6ef361e99cb72339a75dbff39e6c  src/swe_persona/vendor/tb3/runtime/checker_permissions.py
++6ca86de01ad38f22dcc1308659e104db38fff8d5116c4a3bf786e6abee934602  src/swe_persona/vendor/tb3/runtime/checker_runtime.py
+ a24bd0c891984db2ab4726f75346b450a84e353a817f2ae8e8e2481f02cf0574  src/swe_persona/vendor/tb3/runtime/gpu_environment.py
+ 16a811f6eb16957b03e1e3793814ae15b7df9139c1a1632c1462d66c6fddcfec  src/swe_persona/vendor/tb3/runtime/persona_adapter.py
+ 247620ab9b8823790a9ad1342d23c9d307dbd0162afa74424634bb7b51e59d5e  src/swe_persona/vendor/tb3/runtime/personalization.py
+@@ -495,8 +497,8 @@ a24bd0c891984db2ab4726f75346b450a84e353a817f2ae8e8e2481f02cf0574  src/swe_person
+ 81787716968669412a5dfad5ffc744b08dd2c0016af581b4aca8e9c3e9fbab61  src/swe_persona/vendor/tb3/runtime/protocol.py
+ 3e762840203c102227003fd85f4103df80e5bea09ff89570d4dbc30cfe12813a  src/swe_persona/vendor/tb3/runtime/requirement_loop.py
+ 81ed24f19b3ccaeda2977cc5eb01c6aa200c28cc857af6d7e86f4e2500117e9a  src/swe_persona/vendor/tb3/runtime/screening.py
+-f33f59378f9487b1afa703c81f07e685d3fd4bc21cd6352da9f9fc62dde8c6e2  src/swe_persona/vendor/tb3/runtime/terminal_agent.py
+-b8479988e6acdb61d2fa91259a4d1282de7dbd530123fecd6ed11a418b794a8b  src/swe_persona/vendor/tb3/runtime/trial_adapter.py
++e6d722b5efa6c9429c4837161134983c29b00af0779fdadeef6104c8553040c1  src/swe_persona/vendor/tb3/runtime/terminal_agent.py
++8c5098599294b47ffee9b843dd8d7298b8fbfa8e79f84b602b72748569952b91  src/swe_persona/vendor/tb3/runtime/trial_adapter.py
+ c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/LICENSE
+ 36854cdc91657580ec999cc4f7aa8a095c37283e14ce09fcaf99c2dc56cde6ce  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/__init__.py
+ f4b8b9af10bbceb32a1aa2ef0de79282cbeff58d7e54fc66042fa19766816582  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/__init__.py
+@@ -507,27 +509,33 @@ f38f16526f42d0b875d38c5c557c682f0ab5f37ca0e9b92b64a995782d3e9ffa  src/swe_person
+ 1cb629a6661b5aace9281e6160590db64c4559fefd7879f70ed152acdcb42dd2  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/salience.py
+ c8097971daf433fe19a19af933fe82138f8effb7a3095e126a4caf946f15a20c  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/schema.py
+ 5a9ea9874d4cf27b19aee3e277b5753d7b316afd893c180704bba90b2ce3ae1e  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/simulator.py
+-d506bbb9c996291881f00a0ecf97bfa532e5dbe734b55a832aa466f274527c83  src/swe_persona/worker.py
+-e036d834f0fd0d8aab7c3476a4866dfe794ff503d0c92d71ea58700dc068d1fc  swe-persona-lite.parquet
+-c9df5dc4aa17501ef1991f555053a1648691fde3633731d1f43b7dc36c1ef4fd  tests/test_agent_output_protocol.py
++aba2e294acbf8a5c4a2dcc7d72d65a20f16f37113f1e68edea4939f7e288ba1b  src/swe_persona/worker.py
++1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed  swe-persona-lite.parquet
++f965ccd0a535bc75c100055500019bf3d42cd2b32b8e4cf291755e0891e5def6  tests/test_agent_output_protocol.py
+ 3a80f9feb6654040a2d5d81c63a7517fac0d080b403bb9baf95371c43288432c  tests/test_api_defaults.py
+-fea47ceb1cfd3937f9f6dd1db8b4b8532d02af9fecb73e3b5898b568ca163ca6  tests/test_api_output_recovery.py
+-db8de34a63156e70d33985ffdb85b5155c9c9d8cb429b29308e8e66b260fd42d  tests/test_api_recovery.py
+-e38f3d994b62ff8c36077a44bdbf879e73392fc9dff217bccff14ac3d08497d6  tests/test_deepswe_runtime_repair.py
++dfa7c0e54469a570752ce8bb35fa6f5d43a11b99c037a6dc7aa8cf50aeb6a532  tests/test_api_output_recovery.py
++28e581d2eb601468887be91480b9b515b099b036686bab89d1854db49f1528a3  tests/test_api_recovery.py
++a7f409d7098c2c2548f05cc2c9b792433a305a8e95da124c44056f8f709566c5  tests/test_cross_profile_agent_budgets.py
++9cd308b5bee4462c8fbd3885db27aff029041b1de04ff997e17d34bf0b26df45  tests/test_deepswe_runtime_repair.py
+ 55d4f60cee0023fab89e73b54741908232f8d1e4054f8b5de0c1ec42b5dea1b7  tests/test_evaluate.py
+-56309f363f06f5fe141ec50e519f95ae2782ae2aaa20256528c5e57f6cf9adf7  tests/test_harbor_cleanup.py
++7c08065a16a9fb50912ef182ad54a663a94f5f04484df227c910d8706ace8bed  tests/test_harbor_cleanup.py
+ 50c6eaf08a75301c958cc2940ab28af1da6ea15546490f616bf3bd9193b6f653  tests/test_infrastructure_recovery.py
+ df34a6b321b2e6748bec5b0ca44f29b9c8ba61214839edc2b2a703fcbf64fb34  tests/test_interaction_clock.py
+ 2375aa3bed6f1b4b181a8cfb2df0c2d28462eb428d7534bad16546663f3ab389  tests/test_invalid_flow_repairs.py
+ 086ed72f4421fe7477c50299d9d7684452ed7ef0675d9de79c4098d7d5954942  tests/test_live_judge_recovery.py
++7d7f913d64ee4078b84baaa1ef1e3e92703625fb250600c96dc02e0d0a9ba919  tests/test_live_launch.py
+ db7d3994be47e6a296af5bcf346dc22edc129cdaddf15fc54675919308ebf09f  tests/test_network_probe_boot_id.py
+ f04d1071c5830e17165da9f5e624487135c8cdbcc68138e21cd3ddb4ca1c8497  tests/test_online_judge_recovery.py
+ 25b4c1ed70fa22726b8502da2c6d31fbe70c4f381cfaf3f10988ad76c61995ff  tests/test_output_mode_fallback.py
++2ed39eb0af5788b4606bfdd82db01d27c1ff73a220b435b48272f15bdfcacec8  tests/test_parallel_docker_isolation.py
+ c8c1bd769dbda08b06509295b94e6605559cd996a884aa435825d2b6b79e07dd  tests/test_release_integrity.py
+ 732d10d71d2deacdcfdce12abc61d0222bb2cd43b4275fd294054efdd1ac1f04  tests/test_shell_calibration_fixture.py
++26839f98d21c5dbf0c190e5e6afda0cbf5fd0b9ebcd78d00fcfd0b7b5089f83e  tests/test_shell_check_line.py
+ 18cc63e4fa9471f5511db9a363f55592c24d8679d2b0dfc8636ba0fa7677b27d  tests/test_shell_clause_truth.py
+ c5d1f6bb1b7bca84f8c2228612790d94ea9a0c43c40432f8fff9a046c13b5f27  tests/test_shell_requirements.py
+ aab4b7df0b50c8b91736752108ce85f7deaf00c22717e5a0b1e60908f399d84d  tests/test_simulator_output_protocol.py
++d184c5b4774e6da07a625a482fb2e909c308683a79edd1d10128e05dd0f6a5c3  tests/test_tb3_checker_permissions.py
++d64cc73fa7150ea1d7471c1f09cc5fb1e8aafc627337a6f2dfeb4b17b9f58b79  tests/test_time_multiplier.py
+ 96092f0031962c69bea588f358564db0bff581cc951da96658d69809f14fe7cb  tests/test_together_calibration_fixtures.py
+ 815c47a3feda4d6671ba6f94499addef9061a7ee000cbeacc8efff070d9e433d  tests/test_together_calibration_policy.py
+ 3baecbb410480acd7168a311685e0867defd81f79500cb09d24c722cb6d42119  tests/test_together_runtime_limits.py
+diff --git a/release.json b/release.json
+index c2919f1..26cb667 100644
+--- a/release.json
++++ b/release.json
+@@ -7,8 +7,8 @@
+     "file": "swe-persona-lite.parquet",
+     "tasks": 100,
+     "unique_task_ids": 100,
+-    "sha256": "e036d834f0fd0d8aab7c3476a4866dfe794ff503d0c92d71ea58700dc068d1fc",
+-    "bytes": 114948733,
++    "sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
++    "bytes": 114985524,
+     "source_benchmarks": {
+       "Terminal-Bench 3.0": 23,
+       "SWE-bench Pro": 26,
+@@ -25,7 +25,7 @@
+     "swe-together": 4,
+     "deep-swe": 28
+   },
+-  "runtime_sha256": "99b75490df193a6c8431599617e4671a1d24e1fd1eb192c5da40ffb90eba7746",
++  "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+   "scoring_entrypoint": "scripts/score.py",
+   "evaluation_entrypoint": "swe-persona run",
+   "batch_entrypoint": "scripts/evaluate.py",
+@@ -55,5 +55,7 @@
+   "together_calibration_max_reviewed_positive_disagreements": 2,
+   "time_budget_policy": "agent-user-wall-clock-v2",
+   "preparation_timeout_default_sec": 7200,
+-  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)"
++  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)",
++  "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
++  "local_evaluation_variant": "gemini38-time-multiplier-v1"
+ }
+diff --git a/scripts/evaluate.py b/scripts/evaluate.py
+index 10e1661..5e844db 100644
+--- a/scripts/evaluate.py
++++ b/scripts/evaluate.py
+@@ -114,6 +114,8 @@ def evaluate(args, selected):
+                     command.append('--dry-run')
+                 if args.timeout_sec is not None:
+                     command += ['--timeout-sec', str(args.timeout_sec)]
++                elif getattr(args,'time_limit_multiplier',1) != 1:
++                    command += ['--time-limit-multiplier',str(args.time_limit_multiplier)]
+                 rc = run_command(command, args.output / f'{index:04d}.driver.log', interrupted)
+                 result_path = out / 'result.json'
+                 result = json.loads(result_path.read_text()) if result_path.exists() else {
+@@ -132,6 +134,7 @@ def evaluate(args, selected):
+     def summary():
+         ordered = [results[index] for index in sorted(results)]
+         data = {'selected': len(selected), 'workers': args.workers, 'started': started,
++                'time_limit_multiplier':getattr(args,'time_limit_multiplier',1),
+                 'attempted': len(ordered), 'running': len(active),
+                 'active_tasks': [selected[index]['task_id'] for index in sorted(active.values())],
+                 'status_counts': dict(Counter(r['status'] for r in ordered)),
+@@ -192,11 +195,16 @@ def main():
+     p.add_argument('--cpu-only', action='store_true', help='Select rows requiring no GPUs')
+     p.add_argument('--dry-run', action='store_true')
+     p.add_argument('--cache', type=Path, help='Directory for materialization and cached calibration')
+-    p.add_argument('--timeout-sec', '--total-timeout-sec', dest='timeout_sec', type=float,
++    timing=p.add_mutually_exclusive_group()
++    timing.add_argument('--timeout-sec', '--total-timeout-sec', dest='timeout_sec', type=float,
+                    help='Override agent/user interaction seconds; excludes preparation and final grading')
++    timing.add_argument('--time-limit-multiplier',type=float,default=1,
++                       help='Scale original interaction and cumulative coding limits per task (default: 1)')
+     args = p.parse_args()
+     if args.workers < 1:
+         p.error('--workers must be positive')
++    if not math.isfinite(args.time_limit_multiplier) or args.time_limit_multiplier <= 0:
++        p.error('--time-limit-multiplier must be finite and positive')
+     if args.timeout_sec is not None and (not math.isfinite(args.timeout_sec) or args.timeout_sec <= 0):
+         p.error('--timeout-sec must be finite and positive')
+     if args.limit is not None and args.limit < 1:
+diff --git a/src/swe_persona/cli.py b/src/swe_persona/cli.py
+index 1d71b2e..2cfce97 100644
+--- a/src/swe_persona/cli.py
++++ b/src/swe_persona/cli.py
+@@ -15,7 +15,7 @@ from . import __version__
+ from .api import load_config, fingerprint
+ from .dataset import rows, load_task, materialize, write, VENDOR
+ from .schema import PROFILES
+-from .time_limit import resolve_limit, run_bounded, positive_seconds, apply_timeout_result
++from .time_limit import resolve_limit, run_bounded, positive_seconds, apply_timeout_result, MULTIPLIER_ENV, BUDGET_AUDIT_ENV
+ 
+ def runtime_hash():
+     h=hashlib.sha256()
+@@ -29,6 +29,10 @@ def worker(root,mode,output,config=None,gate=None,time_limit=None):
+     if config:command+=['--config',str(Path(config).resolve())]
+     if gate:command+=['--gate-dir',str(gate)]
+     env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')
++    env[MULTIPLIER_ENV]=str(time_limit.get('time_limit_multiplier',1) if time_limit else 1)
++    env.pop(BUDGET_AUDIT_ENV,None)
++    if time_limit:
++        env[BUDGET_AUDIT_ENV]=str((Path(output)/'internal-time-limits.jsonl').resolve())
+     if time_limit and 'internal_budget' in time_limit:
+         env['SWE_PERSONA_NATIVE_VERIFICATION_SECONDS']=str(time_limit['internal_budget']['verifier_timeout_sec'])
+     env['PYTHONPATH']=str(Path(__file__).parents[1])+os.pathsep+env.get('PYTHONPATH','')
+@@ -231,8 +235,11 @@ def main():
+     run=sub.add_parser('run');run.add_argument('--task',required=True);run.add_argument('--config',type=Path,required=True)
+     run.add_argument('--output',type=Path,required=True);run.add_argument('--dry-run',action='store_true')
+     run.add_argument('--cache',type=Path,default=Path.home()/'.cache/swe-persona')
+-    run.add_argument('--timeout-sec','--total-timeout-sec',dest='timeout_sec',type=positive_seconds,
++    timing=run.add_mutually_exclusive_group()
++    timing.add_argument('--timeout-sec','--total-timeout-sec',dest='timeout_sec',type=positive_seconds,
+         help='Agent/user interaction wall-clock seconds; default: row budget.episode_timeout_sec. Excludes preparation, native preflight and final grading; existing inner limits remain in force.')
++    timing.add_argument('--time-limit-multiplier',type=positive_seconds,default=1,
++        help='Multiply original interaction and cumulative coding durations (default: 1); preserves setup, grading, command and request limits.')
+     args=ap.parse_args()
+     if args.command=='list':
+         table=pq.read_table(args.dataset,columns=['task_id','source_benchmark','source_subset'])
+@@ -266,7 +273,7 @@ def main():
+     config=load_config(args.config,require_keys=not args.dry_run)
+     if args.output.exists() and any(args.output.iterdir()):raise ValueError('Run output must be a new empty directory')
+     args.output.mkdir(parents=True,exist_ok=True)
+-    time_limit=resolve_limit(row,args.timeout_sec)
++    time_limit=resolve_limit(row,args.timeout_sec,args.time_limit_multiplier)
+     profile=row['interaction']['profile_id']
+     if profile=='swe-bench-pro-mini' and config['agent']['api']!='chat_completions':
+         raise ValueError('This profile uses mini-swe-agent Chat Completions; configure agent.api=chat_completions')
+diff --git a/src/swe_persona/swe_live.py b/src/swe_persona/swe_live.py
+index e11921a..cd94999 100644
+--- a/src/swe_persona/swe_live.py
++++ b/src/swe_persona/swe_live.py
+@@ -164,7 +164,8 @@ def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=Non
+     from run_reference import gold_proof
+     from whole_sample import supervise_sample
+     from run_batch import clean,trial_projection
+-    manifest=Manifest(task/'tests/native-task.jsonl');cap=row['budget']['episode_timeout_sec']
++    from .time_limit import scale_interaction_seconds
++    manifest=Manifest(task/'tests/native-task.jsonl');cap=scale_interaction_seconds(row['budget']['episode_timeout_sec'],'swe-bench-live.interaction')
+     source={'key':row['source']['task_id'],'path':str(manifest.task_path),'sha256':manifest.task_sha256,'instance_id':manifest.task_id}
+     client=docker.from_env(timeout=30)
+     try:
+diff --git a/src/swe_persona/swe_together.py b/src/swe_persona/swe_together.py
+index d8be94a..01fa1a2 100644
+--- a/src/swe_persona/swe_together.py
++++ b/src/swe_persona/swe_together.py
+@@ -6,6 +6,7 @@ import json
+ from pathlib import Path
+ import sys
+ from .dataset import write
++from .time_limit import scale_interaction_seconds
+ 
+ PROFILE='swe-together'
+ def digest(v):return hashlib.sha256(json.dumps(v,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+@@ -68,7 +69,7 @@ def execute(root,row,config,out,mode,gate=None):
+     if not calibration_allowed(calibration):raise ValueError('Incomplete or inconsistent calibration report')
+     if binding['binding_sha256'] not in calibration.get('binding_sha256s',[]):raise ValueError('Binding not covered by calibration')
+     result=asyncio.run(episode(binding,task,config,out/'episode',row['environment']['agent']['image'],
+-        seconds=row['budget']['episode_timeout_sec'],max_steps=json.loads(row['interaction']['config_json'])['max_agent_steps'],
++        seconds=scale_interaction_seconds(row['budget']['episode_timeout_sec'],'swe-together.interaction'),max_steps=json.loads(row['interaction']['config_json'])['max_agent_steps'],
+         verifier_seconds=row['budget']['verifier_timeout_sec']))
+     result['calibration']={k:calibration[k] for k in ('passed','status','execution_allowed','score_provisional','policy','mode')}
+     result['calibration'].update(controls=calibration['controls'],report=str(gate/'calibration.json'))
+diff --git a/src/swe_persona/time_limit.py b/src/swe_persona/time_limit.py
+index 0cace13..fd5d8e4 100644
+--- a/src/swe_persona/time_limit.py
++++ b/src/swe_persona/time_limit.py
+@@ -10,6 +10,8 @@ import time
+ POLICY = 'agent-user-wall-clock-v2'
+ SCOPE = 'agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification'
+ PHASE_ENV = 'SWE_PERSONA_CLOCK_FILE'
++MULTIPLIER_ENV = 'SWE_PERSONA_TIME_LIMIT_MULTIPLIER'
++BUDGET_AUDIT_ENV = 'SWE_PERSONA_BUDGET_AUDIT_FILE'
+ _alarm_state = None
+ 
+ 
+@@ -74,16 +76,39 @@ def positive_seconds(value):
+     return value
+ 
+ 
+-def resolve_limit(row, override=None):
++def scale_interaction_seconds(seconds, clock):
++    """Scale an original profile duration exactly once, at its consumption site.
++
++    Frozen task/binding files stay unchanged. Callers must not pass an already
++    scaled duration. Request, command and verification limits do not use this.
++    """
++    original = positive_seconds(seconds)
++    multiplier = positive_seconds(os.environ.get(MULTIPLIER_ENV, 1))
++    effective = positive_seconds(original * multiplier)
++    audit = os.environ.get(BUDGET_AUDIT_ENV)
++    if audit:
++        with Path(audit).open('a') as stream:
++            stream.write(json.dumps({'clock': clock, 'original_sec': original,
++                'effective_sec': effective, 'multiplier': multiplier}) + '\n')
++    return effective
++
++
++def resolve_limit(row, override=None, multiplier=1):
+     default=positive_seconds(row['budget']['episode_timeout_sec'])
++    multiplier=positive_seconds(multiplier)
++    if override is not None and multiplier != 1:
++        raise ValueError('Timeout override and time-limit multiplier are mutually exclusive')
++    effective=positive_seconds(default*multiplier) if override is None else positive_seconds(override)
+     return {'policy':POLICY, 'scope':SCOPE, 'default_sec':default,
+-            'effective_sec':default if override is None else positive_seconds(override),
+-            'overridden':override is not None, 'cleanup_grace_sec':30,
++            'effective_sec':effective, 'time_limit_multiplier':multiplier,
++            'overridden':override is not None or multiplier != 1, 'cleanup_grace_sec':30,
+             'preparation_sec':positive_seconds(os.environ.get('SWE_PERSONA_PREPARATION_TIMEOUT_SEC',7200)),
+             'verification_sec':positive_seconds(os.environ.get('SWE_PERSONA_VERIFICATION_TIMEOUT_SEC',
+                 max(900,positive_seconds(row['budget']['verifier_timeout_sec'])+600))),
+             'internal_budget':dict(row['budget']),
+-            'internal_limits_preserved':True}
++            'internal_limits_preserved':multiplier == 1,
++            'scaled_internal_limits':'episode interaction and cumulative coding durations only',
++            'internal_limit_audit':'internal-time-limits.jsonl'}
+ 
+ 
+ def apply_timeout_result(result, execution):
+diff --git a/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py b/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+index e6a4db5..f69e1d1 100644
+--- a/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
++++ b/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+@@ -132,11 +132,14 @@ def episode(run_id, arm, client_factory=Client, *, box_factory=None, backend_fac
+     delivery_blur=delivery_capture.from_plan(os.environ.get('DS_STAGED_PLAN_PATH'), EPISODE.task.id)
+     out=ROOT/'runs'/run_id; out.mkdir(parents=True,exist_ok=False)
+     start=time.monotonic(); budgets=plan['budgets']; timings={}
++    from swe_persona.time_limit import scale_interaction_seconds
+     coding_budget=CodingBudget(coding_seconds(plan))
++    coding_budget.limit=scale_interaction_seconds(coding_budget.limit,'deep-swe.cumulative-coding')
++    interaction_seconds=scale_interaction_seconds(budgets['interaction_seconds'],'deep-swe.interaction')
+     def coding_operation(kind, function):
+         try: return coding_budget.run(kind, function)
+         finally: dump(out/'coding-budget.json',coding_budget.receipt())
+-    client=client_factory(out/'api.jsonl',max_calls=budgets['interaction_calls'],deadline=start+budgets['interaction_seconds'])
++    client=client_factory(out/'api.jsonl',max_calls=budgets['interaction_calls'],deadline=start+interaction_seconds)
+     control_plan=copy.deepcopy(plan)
+     if not pivot:
+         control_plan.pop('initial_exchange',None)
+@@ -377,7 +380,7 @@ def episode(run_id, arm, client_factory=Client, *, box_factory=None, backend_fac
+             (out/'baseline-source.json').write_text(source)
+             timings['setup_seconds']=time.monotonic()-setup_start
+             from swe_persona.time_limit import begin_interaction, begin_verification
+-            client.deadline=begin_interaction(budgets['interaction_seconds'])
++            client.deadline=begin_interaction(interaction_seconds)
+             try:
+                 opening_start=time.monotonic()
+                 try:
+diff --git a/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py b/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+index 983016d..fa95feb 100644
+--- a/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
++++ b/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+@@ -194,7 +194,8 @@ class Episode:
+         self.out = Path(out_dir)
+         self.models = models
+         policy = task.policy.get("budget", {})
+-        self.budget = Budget(task.timeout_sec, policy.get("max_user_turns", 24),
++        from swe_persona.time_limit import scale_interaction_seconds
++        self.budget = Budget(scale_interaction_seconds(task.timeout_sec, 'swe-bench-pro-mini.interaction'), policy.get("max_user_turns", 24),
+                              policy.get("max_simulator_decisions", 64), clock=clock)
+         self.timing = Timing(clock=clock)
+         self.final_samples = int(task.policy.get("judge", {}).get("final_recheck_samples", 3))
+diff --git a/src/swe_persona/vendor/tb3/run.py b/src/swe_persona/vendor/tb3/run.py
+index 78354a7..6bf12f2 100644
+--- a/src/swe_persona/vendor/tb3/run.py
++++ b/src/swe_persona/vendor/tb3/run.py
+@@ -24,7 +24,8 @@ def configuration(task_id, output, arm='persona', *, dry_run=False):
+     load_bundle(binding, binding_path)
+     if not binding['accepted_for_screening']:
+         raise ValueError('Task did not pass construction review')
+-    limit = task.config.agent.timeout_sec
++    from swe_persona.time_limit import scale_interaction_seconds
++    limit = scale_interaction_seconds(task.config.agent.timeout_sec, 'terminal-bench-3.interaction')
+     config = {'task': {'path': str(task_dir)},
+               'trial_name': task_id + '-' + arm + '-' + uuid.uuid4().hex[:8],
+               'trials_dir': str(Path(output).resolve()),
+diff --git a/tests/test_deepswe_runtime_repair.py b/tests/test_deepswe_runtime_repair.py
+index 14c1b17..81ad4b5 100644
+--- a/tests/test_deepswe_runtime_repair.py
++++ b/tests/test_deepswe_runtime_repair.py
+@@ -120,8 +120,12 @@ class DeepSWENetworkTests(unittest.TestCase):
+         box = SimpleNamespace(name='test-box')
+         with patch.dict('os.environ',{'DS_HARBOR_WORK_ROOT':temp}), \
+                 patch.object(runtime,'metadata'), \
++                patch('swe_persona.harbor_bridge.prepare_egress_sidecar') as sidecar, \
+                 patch('harbor.environments.docker.docker.DockerEnvironment',return_value=env):
+-            runtime.start(box,None,'cpu-test-image',{'memory':'128m','cpus':1})
++            try:
++                runtime.start(box,None,'cpu-test-image',{'memory':'128m','cpus':1})
++            finally:
++                sidecar.assert_called_once_with('linux/amd64')
+         return box
+ 
+     def test_session_is_recorded_under_host_directory_and_normal_exit_cleans_network(self):

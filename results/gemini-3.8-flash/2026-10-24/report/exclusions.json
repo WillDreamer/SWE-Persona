@@ -1,0 +1,534 @@
+[
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/04-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/06-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/05-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/03-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0002/cli-2ph-simplex-persona-27b5dab2/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/00-before-R1/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/02-before-R2/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/02-before-R2/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/01-completion-attempt/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/01-completion-attempt/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/03-completion-attempt/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/agent-private/checkpoints/03-completion-attempt/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/medium/0000/batched-eval-parity-persona-89f8f995/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0002/cli-2ph-simplex-persona-9c78391d/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0002/cli-2ph-simplex-persona-9c78391d/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/04-completion-attempt/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/04-completion-attempt/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/03-before-R2/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/03-before-R2/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/00-before-R1/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/01-completion-attempt/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/01-completion-attempt/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/02-completion-attempt/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/agent-private/checkpoints/02-completion-attempt/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0000/batched-eval-parity-persona-d959be22/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0017/risk-scorer-replay-persona-a7a68e78/agent-private/checkpoints/06-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0017/risk-scorer-replay-persona-a7a68e78/agent-private/checkpoints/04-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0017/risk-scorer-replay-persona-a7a68e78/agent-private/checkpoints/05-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0017/risk-scorer-replay-persona-a7a68e78/agent-private/checkpoints/03-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0017/risk-scorer-replay-persona-a7a68e78/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/04-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/06-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/00-before-R1/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/05-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/03-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/medium/0005/cli-2ph-simplex-persona-7e0607c2/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/low/0005/cli-2ph-simplex-persona-e311abfc/agent-private/checkpoints/00-before-R1/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/low/0005/cli-2ph-simplex-persona-e311abfc/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/low/0005/cli-2ph-simplex-persona-e311abfc/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/smoke/low/0005/cli-2ph-simplex-persona-e311abfc/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/tb3_adapter/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/deepswe/project/dspilot/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/tb3/runtime/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/scripts/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0017/risk-scorer-replay-persona-fa0579b7/agent-private/checkpoints/02-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0017/risk-scorer-replay-persona-fa0579b7/agent-private/checkpoints/01-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0017/risk-scorer-replay-persona-fa0579b7/agent-private/checkpoints/03-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0017/risk-scorer-replay-persona-fa0579b7/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0000/batched-eval-parity-persona-a3874f3d/agent-private/checkpoints/01-before-R2/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0000/batched-eval-parity-persona-a3874f3d/agent-private/checkpoints/01-before-R2/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0000/batched-eval-parity-persona-a3874f3d/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0000/batched-eval-parity-persona-a3874f3d/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0017/risk-scorer-replay-persona-d5790b25/agent-private/checkpoints/01-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0017/risk-scorer-replay-persona-d5790b25/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/agent-private/checkpoints/04-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/agent-private/checkpoints/00-before-R1/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/agent-private/checkpoints/03-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0002/cli-2ph-simplex-persona-da8b0b7c/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0000/batched-eval-parity-persona-ef5543cc/agent-private/checkpoints/00-before-R1/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0000/batched-eval-parity-persona-ef5543cc/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0000/batched-eval-parity-persona-ef5543cc/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0017/risk-scorer-replay-persona-b6c3589d/agent-private/checkpoints/01-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0017/risk-scorer-replay-persona-b6c3589d/agent-private/checkpoints/03-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0017/risk-scorer-replay-persona-b6c3589d/agent-private/checkpoints/02-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0017/risk-scorer-replay-persona-b6c3589d/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/04-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/08-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/06-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/07-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/05-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/03-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0002/cli-2ph-simplex-persona-f9c0a034/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0000/batched-eval-parity-persona-78c642e5/agent-private/checkpoints/00-before-R1/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0000/batched-eval-parity-persona-78c642e5/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0000/batched-eval-parity-persona-78c642e5/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0017/risk-scorer-replay-persona-800b3d95/agent-private/checkpoints/01-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0017/risk-scorer-replay-persona-800b3d95/agent-private/checkpoints/02-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/high/0017/risk-scorer-replay-persona-800b3d95/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0002/cli-2ph-simplex-persona-998dbdd2/agent-private/checkpoints/01-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0002/cli-2ph-simplex-persona-998dbdd2/agent-private/checkpoints/02-completion-attempt/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0002/cli-2ph-simplex-persona-998dbdd2/artifacts/app/simplex/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0000/batched-eval-parity-persona-ff2fa07a/agent-private/checkpoints/00-before-R1/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0000/batched-eval-parity-persona-ff2fa07a/artifacts/app/evalbench/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0000/batched-eval-parity-persona-ff2fa07a/artifacts/app/evalbench/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0017/risk-scorer-replay-persona-158b7293/agent-private/checkpoints/04-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0017/risk-scorer-replay-persona-158b7293/agent-private/checkpoints/03-before-R2/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0017/risk-scorer-replay-persona-158b7293/agent-private/checkpoints/02-completion-attempt/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0017/risk-scorer-replay-persona-158b7293/artifacts/app/parityctl/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/tb3_adapter/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/deepswe/project/dspilot/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/tb3/runtime/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/mini/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/scripts/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/tests/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-together-fix/src/swe_persona/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-together-fix/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/__pycache__",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-timeout-audit",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers",
+    "reason": "metadata/cache/alias symlink"
+  },
+  {
+    "path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x",
+    "reason": "metadata/cache/alias symlink"
+  }
+]

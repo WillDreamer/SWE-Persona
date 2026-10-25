@@ -1,0 +1,6 @@
+met_concrete_report: MET (ok)
+generic_claim_is_unobservable: UNOBSERVABLE (ok)
+partial_obligations: UNMET (ok)
+contradiction_is_unmet: UNMET (ok)
+evidence_before_disclosure_does_not_count: UNOBSERVABLE (ok)
+undisclosed_requirement_is_invisible: PARTIAL (FAILED)

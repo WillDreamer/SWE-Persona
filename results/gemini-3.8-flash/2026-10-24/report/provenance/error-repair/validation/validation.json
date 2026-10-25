@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "unique_regression_tests": 297,
+  "initial_full_suite": "296 passed; one checksum-coverage failure",
+  "resolved_failure": "Added three existing historical tests to SHA256SUMS; all three release-integrity tests passed on rerun.",
+  "dry_runs": 24,
+  "dry_runs_passed": 24,
+  "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835"
+}

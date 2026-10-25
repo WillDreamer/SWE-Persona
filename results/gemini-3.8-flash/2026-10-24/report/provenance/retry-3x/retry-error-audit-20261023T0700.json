@@ -1,0 +1,312 @@
+{
+  "audited_at": "2026-10-23T07:01:18.661482+00:00",
+  "total": 28,
+  "counts": {
+    "malformed_agent_json": 2,
+    "empty_agent_output": 9,
+    "persona_grading_missing_after_turn_limit": 6,
+    "task_persona_incompatible": 1,
+    "judge_invalid_source_references": 1,
+    "api_timeout_exhausted": 8,
+    "official_test_results_missing": 1
+  },
+  "by_level": {
+    "low": {
+      "malformed_agent_json": 2,
+      "empty_agent_output": 7,
+      "persona_grading_missing_after_turn_limit": 3,
+      "task_persona_incompatible": 1,
+      "judge_invalid_source_references": 1
+    },
+    "medium": {
+      "api_timeout_exhausted": 8,
+      "official_test_results_missing": 1,
+      "persona_grading_missing_after_turn_limit": 3,
+      "empty_agent_output": 2
+    },
+    "high": {}
+  },
+  "excluded": "Two superseded medium SWE-Together calibration-error records; their repaired attempts are running separately.",
+  "cases": [
+    {
+      "level": "low",
+      "task_id": "tb3/formal-crypto",
+      "status": "invalid",
+      "category": "malformed_agent_json",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0004",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0004/formal-crypto-persona-2dca9aab/persona-result.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "tb3/interleaved-vigenere",
+      "status": "invalid",
+      "category": "malformed_agent_json",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0009",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0009/interleaved-vigenere-persona-6760bfe3/persona-result.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0032",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0032/instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0033",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0033/instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0034",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0034/instance_protonmail__webclients-09fcf0dbdb87fa4f4a27700800ee4a3caed8b413-boundary_case_test_reviewer-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0037",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0037/instance_NodeBB__NodeBB-97c8569a798075c50e93e585ac741ab55cb7c28b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0038",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0038/instance_ansible__ansible-5640093f1ca63fd6af231cc8a7fb7d40e1907b8c-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0039",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0039/instance_protonmail__webclients-f080ffc38e2ad7bddf2e93e5193e82c20c7a11e7-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0041",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0041/instance_NodeBB__NodeBB-087e6020e490b4a1759f38c1ad03869511928263-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0043",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0043/instance_element-hq__element-web-772df3021201d9c73835a626df8dcb6334ad9a3e-vnan-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0044",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0044/instance_navidrome__navidrome-6b3b4d83ffcf273b01985709c8bc5df12bbb8286-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0046",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0046/instance_internetarchive__openlibrary-91efee627df01e32007abf2d6ebf73f9d9053076-vbee42ad1b72fb23c6a1c874868a720b370983ed2-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "swelive/0325-go--senior_race_review_no_tutorial",
+      "status": "invalid",
+      "category": "task_persona_incompatible",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0061",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0061/persona-result.json"
+      ]
+    },
+    {
+      "level": "low",
+      "task_id": "deepswe/numba-stencil-boundary-modes--first_time_pr_contributor",
+      "status": "infrastructure_error",
+      "category": "judge_invalid_source_references",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0088",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0088/persona-result.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0028",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0028/trials/swepro-r0484-fbf25c6bff-analyst/persona-20261022T221200/persona-result.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0031",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0031/instance_ansible__ansible-a26c325bd8f6e2822d9d7e62f77a424c1db4fbf6-v0f01c69f1e2528b935359cfe578530722bca2c59-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "status": "invalid",
+      "category": "official_test_results_missing",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0032",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0032/instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0033",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0033/instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0036",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0036/instance_protonmail__webclients-8142704f447df6e108d53cab25451c8a94976b92-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0038",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0038/instance_ansible__ansible-5640093f1ca63fd6af231cc8a7fb7d40e1907b8c-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0040",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0040/instance_NodeBB__NodeBB-a917210c5b2c20637094545401f85783905c074c-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0042",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0042/instance_element-hq__element-web-9a31cd0fa849da810b4fac6c6c015145e850b282-vnan-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "status": "invalid",
+      "category": "empty_agent_output",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0044",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0044/instance_navidrome__navidrome-6b3b4d83ffcf273b01985709c8bc5df12bbb8286-first_time_pr_contributor-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "status": "invalid",
+      "category": "persona_grading_missing_after_turn_limit",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0046",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0046/instance_internetarchive__openlibrary-91efee627df01e32007abf2d6ebf73f9d9053076-vbee42ad1b72fb23c6a1c874868a720b370983ed2-student_needing_explanation-20261002-a1/episode.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swelive/0744-java--founder_leaked_production_key",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0058",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0058/persona-result.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swelive/0426-js--laptop_data_scientist",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0059",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0059/persona-result.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swelive/0465-js--student_needing_explanation",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0065",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0065/persona-result.json"
+      ]
+    },
+    {
+      "level": "medium",
+      "task_id": "swelive/0381-go--designer_after_hard_reset",
+      "status": "infrastructure_error",
+      "category": "api_timeout_exhausted",
+      "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0066",
+      "details": [
+        "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0066/persona-result.json"
+      ]
+    }
+  ]
+}

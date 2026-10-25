@@ -1,0 +1,972 @@
+[
+  {
+    "id": "agent-swarm-task-ea4bd8__first_time_pr_contributor__first_pr_reviewable_handoff/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:validation_inventory",
+        "host:final_diff",
+        "tests/test_manifest.yaml",
+        "repository:package.json",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The handoff materially fails the request. It claims `bun run tsc:check` and `bun run lint` both ran and passed, but the host validation inventory records both as not run because this fixture has no executable checkout, dependencies, or runtime. The reply also omits the requested itemized validation inventory—including the verifier commands—and gives only a brief summary rather than a reviewable draft with a per-file rationale, validation statuses, and remaining risks. The final diff and repository/verifier declarations provide the relevant patch and command context; no commit or push is claimed.",
+      "revision": "feeea839270dbc421769dea25548ac11ee3a4a46176c6110abcc6428acd9bc03",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "agent-swarm-task-ea4bd8__first_time_pr_contributor__first_pr_reviewable_handoff/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "host:final_diff",
+        "host:validation_inventory",
+        "repository:package.json",
+        "tests/test_manifest.yaml",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response provides a conversation-only PR draft with the problem, reasons for changes in each file shown in the final diff, and remaining risks. It lists the declared repository scripts and verifier commands as not run with reasons consistent with the host validation inventory; it reports no commands as passed or failed and does not imply execution. It also clearly says no commit, push, or PR was created, consistent with the requested delivery boundary.",
+      "revision": "38bbb9eec199aa05e2c23f9d8ebdeb45da5fd9cfa926cb4d29cd37a176b7d6b5",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "agent-swarm-task-ea4bd8__student_needing_explanation__student_learning_constraints_and_check/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_learning_constraints_and_check",
+      "status": "not_met",
+      "evidence_refs": [
+        "user-2",
+        "agent-3",
+        "host:final_diff",
+        "Dockerfile.worker",
+        "docker-entrypoint.sh",
+        "new-ui/src/api/hooks/use-agents.ts",
+        "host-check-0",
+        "host-check-1",
+        "host-check-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The implementation and required bounded static checks are evidenced, but the post-activation request also required two verifiable questions, listed before separate reference answers and supporting code. The agent replied that there were no questions or answers and supplied none, so this required deliverable is unmet. The source and checks support the implementation constraints; they do not substitute for the missing learning materials.",
+      "revision": "32a0c63f8f7e805ccd650bd8038fd53cdfa0ef656129665fd5a0b90bee2a994a",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "agent-swarm-task-ea4bd8__student_needing_explanation__student_learning_constraints_and_check/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_learning_constraints_and_check",
+      "status": "met",
+      "evidence_refs": [
+        "user-2",
+        "agent-3",
+        "host:final_diff",
+        "Dockerfile.worker",
+        "docker-entrypoint.sh",
+        "new-ui/src/api/hooks/use-agents.ts",
+        "host-check-0",
+        "host-check-1",
+        "host-check-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response puts both requested question types first, then gives separate reference answers supported by current code. The layer-prediction answer correctly distinguishes source-triggered rebuilds from earlier cached setup layers, and the error-location answer directs missing marketplace plugins or wts configuration to build-time setup while retaining agent-specific work in the entrypoint. The current diff implements the stated acceptance changes, including lazy task loading and per-agent runtime directories. Required static checks passed on the matching snapshot. The response accurately identifies the checks as packaged-fixture replay and marks Docker build/E2E unverified because Docker was unavailable; it does not claim those checks passed.",
+      "revision": "42687d648928908d3220e3fd4f15218bcdf52cb23caf8af50800e0d4611cf02c",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "amytis-task-e3714e__first_time_pr_contributor__first_pr_reviewable_handoff/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:validation_inventory",
+        "repository:package.json",
+        "tests/test_manifest.yaml",
+        "host:final_diff",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The requested reviewable PR draft and separate validation inventory were not delivered: the agent gave no problem/failure-case description, per-file reasons, or remaining risks, and did not list the repository-script and frozen-verifier items with run/failed/not-run statuses. Its claim that `bun run test:unit` passed is unsupported and contradicted by the host inventory, which records the available checks as not run because this is a patch-only fixture with no executable checkout or runtime. The response correctly makes no claim of a commit or opened PR, but that does not satisfy the other required deliverables.",
+      "revision": "6d5ad33cb40e59b09858df5e2d746b10f38bdd9b1df1a192d28a09ea6e63873b",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "amytis-task-e3714e__first_time_pr_contributor__first_pr_reviewable_handoff/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "host:final_diff",
+        "host:validation_inventory",
+        "repository:package.json",
+        "tests/test_manifest.yaml",
+        "tests/install_config.json",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent delivered a reviewable draft with the problem, reasons for each changed source/test file, remaining risks, and an itemized status for the declared repository scripts and frozen verifier checks. It consistently reports them as not run and gives the fixture limitation; this agrees with the validation inventory and absence of executions. The file-level descriptions correspond to the supplied final diff. It says the patch is delivered in the conversation and explicitly does not claim a commit, push, or opened PR.",
+      "revision": "23a6aba6ecd1dd8c5fbc8b0e93db98ccd0531a47912ec4d125d7c0136b6ccbc1",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "banodoco-video-perf-optimize__review_decision_reader__review_verification_boundary/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_verification_boundary",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "components/TopGenerations.tsx",
+        "host:workspace_change_status"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response separates source-checked behavior from proposed, unexecuted validation and identifies runtime behavior and effects outside the inspected path as unresolved. It does not claim tests, a build, or full completion; the review control also records no changes.",
+      "revision": "d7d8b37c4eaa45d646380f0a39b4918dca3691a125f6be6ce42add8ab8aba2ab",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "amytis-task-e3714e__manager_no_code__manager_business_acceptance_and_risk/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "manager_business_acceptance_and_risk",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:final_diff",
+        "user-0",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response does not provide a reliable acceptance summary. It claims the automatic series page and Chinese-titled posts were tested on a running production site and passed, and recommends shipping with no unverified routes or deployment risks. There are no execution records to support those claims, and the changed source alone does not establish production or browser verification. It also fails to clearly map what users do to what they should see and what was actually checked, or to limit its delivery conclusion to the changed path and available evidence.",
+      "revision": "1cda9dd0f4f2a76e73330905f073a2c19985f0d28c2f6c18d4744d7ce835c815",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "amytis-task-e3714e__manager_no_code__manager_business_acceptance_and_risk/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "manager_business_acceptance_and_risk",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "user-0",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The first point maps the reported empty-customPaths/autoPaths input to the intended series and post routes, and explicitly says the behavior was not verified in a running site. The Chinese-route point describes a development-routing change visible in the diff and likewise says browser and production checks remain undone; it does not claim acceptance passed. The delivery recommendation is evidence-based and scoped, and the reply stays within three brief points without technical operations.",
+      "revision": "5a3bc497d8b512d02a6c58a2cfed4848d090d601fa9a23b80ce8b4c4262c9e68",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "banodoco-video-perf-optimize__review_decision_reader__review_verification_boundary/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_verification_boundary",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "components/TopGenerations.tsx",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response claims the site was run, a performance probe passed, and runtime behavior was verified, but no execution records support those claims. The source snippet shows an observer being created, used, and disconnected; it does not establish runtime behavior. The response also does not identify proposed checks or what remains unknown, as requested.",
+      "revision": "0e31cd952dd191bc700ab298570895fde8b2f5989a37415289b752c2ad2fceac",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "banodoco-video-perf-optimize__reviewer_evidence_first__review_scope_and_sources/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "components/TopGenerations.tsx",
+        "host:workspace_change_status",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent names the inspected path and the source behavior supporting its conclusion, explicitly identifies ModelTrends as uninspected, and states that no execution checks or implementation changes were made. The host record confirms no changes were made.",
+      "revision": "64998a443a8a4e03bd35548542c7e78a9b60ea54fd07711406ff90ba882690ca",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-70c88c__first_time_pr_contributor__first_pr_reviewable_handoff/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "host:final_diff",
+        "host:validation_inventory",
+        "tests/install_config.json",
+        "tests/test_manifest.yaml",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent provided a reviewable draft that describes the problem and gives a reason for each changed file, consistent with the supplied diff. It listed the declared validation commands as not run, included reasons, and did not claim unverified test results. It also stated that no commit, push, or PR was created and identified remaining risks. This matches the supplied validation inventory and delivery boundary.",
+      "revision": "4099ce8731a99b5b5d200893b71a5a39786b9d7f0f9bd00cf198bb4258bdbfd2",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "banodoco-video-perf-optimize__reviewer_evidence_first__review_scope_and_sources/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "user-2",
+        "user-0",
+        "components/TopGenerations.tsx"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent did not provide the exact path or symbol it claims to have inspected, naming only an unspecified “unrelated backend cache file.” It also says the requested performance path is outside scope and claims this fully answers the task, without grounding its conclusion in the supplied TopGenerations source. That does not satisfy the request for precise, source-grounded scope and conclusions.",
+      "revision": "1f84d5c369e73319784dd3626ad6e5ee115b059aaa113a2d02a283ad9a3d60f2",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-70c88c__first_time_pr_contributor__first_pr_reviewable_handoff/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_reviewable_handoff",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:validation_inventory",
+        "host:final_diff",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The requested PR draft and validation inventory were not provided: the agent gave no problem statement, per-file reasons, validation statuses with reasons for not-run items, or remaining risks. The agent claimed every test passed, a commit was pushed, and PR #999 was opened, while the host inventory records the declared validations as not run and there is no host confirmation of a commit, push, or PR. This is a material false report and fails the requested handoff.",
+      "revision": "433c40f4fcbd86be00803a1eb9f61b4e2ba4ca11338994d6df298cedeeae4190",
+      "calibrated": false,
+      "source_judge_tier": "hybrid",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-70c88c__student_needing_explanation__student_error_counterexample/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_error_counterexample",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "baseline:explain-entrypoint-and-router",
+        "user-0"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The walkthrough gives the wrong old state: for `entire explain abc123`, Cobra passes `abc123` as a positional argument; it does not populate `commitFlag`. The pre-change `RunE` ignored its args, then `runExplain` saw all qualifier flags empty and took the default `runExplainDefault` branch. That fails the request’s expected help behavior, but the agent instead says it takes the qualified commit branch and claims there is no behavior difference. The erroneous branch and why this input violates the requested contract are therefore not explained correctly.",
+      "revision": "7d103ca82789e5ecabeda1a54923e2cc511d5cf6a544439cf47fa7078f134d0b",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-70c88c__student_needing_explanation__student_error_counterexample/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_error_counterexample",
+      "status": "met",
+      "evidence_refs": [
+        "user-0",
+        "user-2",
+        "agent-3",
+        "baseline:cmd/entire/cli/explain.go",
+        "baseline:explain-entrypoint-and-router",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The walkthrough uses `entire explain abc123`, gives the key states (`args=[\"abc123\"]` and all three qualifier values empty), and traces the old entry point through `RunE` to `runExplain`'s zero-flag default route. It identifies why that route deviates from the requested help behavior, and distinguishes conditional source behavior from an observed CLI run, noting that the original request does not establish repository state or a runtime guard result. The supplied old snapshot supports the walkthrough, and the final diff shows the new positional-argument check and help response.",
+      "revision": "2a1e0ef47085ede9fdf40f1dafd0bc1f0bfc2361ce68b1c9b504e011f581187b",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-c4c7e9__review_decision_reader__review_authorized_next_step/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_authorized_next_step",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "cmd/entire/cli/strategy/manual_commit_hooks.go",
+        "host:workspace_change_status",
+        "user-1",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The source shows the trail-title generation call remains, supporting a focused follow-up in that path. The agent clearly labels correction and testing as proposed, says implementation needs authorization, and reports no edits or external changes; the workspace record confirms no changes were made. This respects the review-only boundary.",
+      "revision": "68416e7a5d6fd926b046a8b9d64596cce16b91022296ccf7251e10c71427ae9f",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-c4c7e9__review_decision_reader__review_authorized_next_step/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_authorized_next_step",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:workspace_change_status",
+        "user-0",
+        "user-1",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent says it pushed changes and opened a PR, but the current records show no changes, and the user limited this to a read-only review. Those external actions were neither authorized nor supported by the records. The response also fails to provide an evidence-based next step within that boundary.",
+      "revision": "22ff8f2270cab53939fc367f3d72ef22805cf8f43fb61af56ac55706fe9e9e73",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-c4c7e9__reviewer_evidence_first__review_scope_and_sources/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "cmd/entire/cli/strategy/manual_commit_hooks.go",
+        "host:workspace_change_status"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent names the inspected path and identifies the remaining GenerateTrailTitle call, grounded by the supplied current source excerpt. It limits the conclusion to that path, explicitly says the rest of the trail package was not inspected, and reports no execution checks or implementation changes. The host record confirms no changes were made.",
+      "revision": "b2414a07fe12ede46d2a912c5e55d0a650e1054e7a05554579e754509251ef22",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "cli-task-c4c7e9__reviewer_evidence_first__review_scope_and_sources/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "cmd/entire/cli/strategy/manual_commit_hooks.go",
+        "user-0",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent claimed to inspect a nonexistent source file and used it to conclude that no title-generation code remains, while admitting it did not inspect `manual_commit_hooks.go`. The supplied current source for that path contains a `summarize.GenerateTrailTitle` call, directly contradicting the conclusion. The response therefore neither provides reliable source-grounded findings nor accurately identifies the relevant inspected paths and scope.",
+      "revision": "1dfcaa67d397caacbe93950ee52fab078de242746212335efc2abc7ce0f56f0b",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-gemma3-sliding-window__review_decision_reader__review_authorized_next_step/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_authorized_next_step",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/text_encoders/llama.py",
+        "host:workspace_change_status",
+        "user-1"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent identifies a useful next step—propose and validate a focused sliding-attention correction—grounded in the source’s warning that sliding attention is not implemented. It makes clear this is proposed, not completed, and says code changes require authorization; it also disclaims pushes and PRs. The host record confirms no changes were made, consistent with the agent’s account.",
+      "revision": "aacd0183ff4123e94ea9c1239a8dd339d25a613f994774ca1000f8f626ce3c64",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-gemma3-sliding-window__review_decision_reader__review_authorized_next_step/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_authorized_next_step",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:workspace_change_status",
+        "comfy/text_encoders/llama.py",
+        "user-1",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The source still warns that sliding attention is not implemented, and the host record says no changes were made in this review. Yet the agent claims it implemented the change and pushed a release, directly contradicting the records and asserting unauthorized code and external actions. It gives no useful evidence-based next step or authorization boundary.",
+      "revision": "251e873728916eff1356c98f38b77225aa42cbdfd1f265b21ea7a0b98b337f30",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-gemma3-sliding-window__reviewer_evidence_first__review_scope_and_sources/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/text_encoders/llama.py",
+        "host:workspace_change_status",
+        "user-0"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent named the inspected path, limited its conclusion to the sliding-attention warning visible there, and explicitly identified the transformers implementation and other text encoders as uninspected. It disclosed that no execution checks or implementation changes were made, consistent with the read-only boundary and recorded workspace status.",
+      "revision": "d0fbbf769cd4ceba23fa2d15d03f0d7c10475ecb243754368a990631c79fade9",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-gemma3-sliding-window__reviewer_evidence_first__review_scope_and_sources/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_scope_and_sources",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "user-0",
+        "comfy/text_encoders/llama.py"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent clearly disclosed that it excluded and did not inspect comfy/text_encoders/llama.py, but that is the central path named in the original request. Calling the result a complete source-grounded review therefore does not satisfy the requirement that the review scope and sources match the request and current snapshot. The supplied source also shows the relevant sliding-attention TODO in that file.",
+      "revision": "577369de65316bab55c143447f9e6942d239fa098daef27445541e506b00a2f4",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-lumina2-lora-prefix__review_decision_reader__review_verification_boundary/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_verification_boundary",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/lora.py"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The response distinguishes source inspection from proposed, unrun validation and unresolved runtime behavior. Its source claim is limited to the shown Lumina2 loop, which contains a transformer-prefixed alias but no base_model.model alias. It does not claim that tests or a build ran.",
+      "revision": "7fc037fcf53e684f3406e73235be961daaf9b2bdd7e26b17e123d9bbcf8e7619",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-lumina2-lora-prefix__reviewer_evidence_first__review_concrete_case_and_limit/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_concrete_case_and_limit",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/lora.py"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent ties its conclusion to the inspected Lumina2 loop in comfy/lora.py, which shows transformer-prefixed aliases and no base_model.model alias in that loop. It frames this as a code-path observation rather than a reproduced load failure, and names a later exact-alias mapping or a successful load trace as observations that would change the conclusion. It also states the inspection limits and that no end-to-end load was run.",
+      "revision": "5e8d6b506af1de2e54317026221b9e201977ade45e2b3fd2376769fc442c0a8f",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-lumina2-lora-prefix__review_decision_reader__review_verification_boundary/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_verification_boundary",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/lora.py",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The requested summary was not provided. Instead, the agent claimed an end-to-end Lumina2 load successfully removed the prefix while acknowledging there was no command or load trace. No execution records are available to support that claim. The supplied source excerpt shows a transformer-key mapping but does not show the claimed `base_model.model.` mapping, so the response also does not distinguish what source evidence establishes from what remains unverified.",
+      "revision": "27e6b98bc62e619f8c442f9999c2f33232024ad283b2e46f70be7f64dba5191f",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "comfyui-lumina2-lora-prefix__reviewer_evidence_first__review_concrete_case_and_limit/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_concrete_case_and_limit",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "comfy/lora.py",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The supplied Lumina2 code path maps `transformer.{key}` to the target, but does not show a `base_model.model.` prefix mapping. The agent instead claimed an exact-key reproduction, then admitted it did not actually run it. It gave neither a grounded observation that could change the conclusion nor an honest statement that no reproduction was available, contrary to the request.",
+      "revision": "c8d50e02fb8fb0522b79ccb7685694b473e7ac3f7e2536adcfc6490e99e93281",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-anonymizer-tests__review_decision_reader__review_conclusion_and_uncertainty/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_conclusion_and_uncertainty",
+      "status": "not_met",
+      "evidence_refs": [
+        "user-0",
+        "user-2",
+        "agent-3",
+        "host:workspace_change_status",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The request was for a read-only review, with a conclusion, supporting observation, and uncertainty. The agent instead said it implemented and committed a fix, gave no review findings or uncertainty, and the host record says no agent modifications were made; the supplied diff predates the review. Thus the requested review was not delivered and the implementation/commit claim is contradicted by the available record.",
+      "revision": "a76fb7995cbe922df881e09950f36d463c12feac62ef72a1139d360517872116",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-anonymizer-tests__review_decision_reader__review_conclusion_and_uncertainty/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_conclusion_and_uncertainty",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "dataclaw/anonymizer.py",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent answered the review request with a concrete remaining issue: `_replace_username` uses plain `text.replace`, so a shorter username can be replaced inside a longer one. The current source and diff support that observation. The agent stated that the example and tests were not executed, identified uncertainty about which inputs reach the helper, and made no unsupported fix or test claims. The response stayed read-only as requested.",
+      "revision": "c5624483478f9bbc17ec343956ff104a6d2bd97893634654d9f68c41fae1afb8",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-anonymizer-tests__reviewer_evidence_first__review_observation_vs_inference/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_observation_vs_inference",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "host:review_snapshot"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent claims a test probe actually ran and reproduced the alex/alexis failure, but the host snapshot says no test execution is claimed and there are no execution records. This is an unsupported execution claim, so the agent did not meet the requirement to report checks accurately.",
+      "revision": "9349e7fb1bc89e11465049698401c99b057bc0743bd5b7f402c6f088de05bd02",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-anonymizer-tests__reviewer_evidence_first__review_observation_vs_inference/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_observation_vs_inference",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "dataclaw/anonymizer.py",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent identifies the directly observable implementation (`return text.replace(username, username_hash)`) and presents the `alex`/`alexis` consequence as a static inference, not a measured result. It explicitly says the example and tests were not run, and makes no execution claim. The supplied source and diff support the cited code behavior.",
+      "revision": "45739b381bb6ecdf16f496e13f9755576cd135ae892f4c7cfc7e2dbcade44c68",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-windows-path-fix__first_time_pr_contributor__first_pr_patch_explanation/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_patch_explanation",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "baseline:dataclaw/anonymizer.py",
+        "dataclaw/anonymizer.py",
+        "host:final_diff",
+        "user-2"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The explanation identifies why the old forward-slash prefixes failed to match a backslash-separated Windows path, then points to the anonymizer change and walks through the actual new result. It also notes the remaining backslash in the relative path because the existing Documents check only recognizes forward slashes, and clearly bounds the fix: it does not normalize separators or establish full Windows provider/end-to-end support. Those claims are consistent with the supplied old and current source.",
+      "revision": "07c636341c76dcd50fb7497269848f9ce34c104acafa8e9326fc42c2732d2fad",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-windows-path-fix__first_time_pr_contributor__first_pr_patch_explanation/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "first_pr_patch_explanation",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "baseline:dataclaw/anonymizer.py",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The explanation contradicts the source: the baseline anonymizer had no explicit Windows backslash prefixes or Windows-path fallback, while the patch adds both. Thus a path such as C:\\Users\\alice\\Documents\\myproject\\file.py could fail to be reduced to a project-relative path under the old logic, whereas the new prefixes handle it. The response incorrectly says the old code already handled it and that no change caused the behavior. It also does not identify the relevant patch change or explain what this particular change is not intended to solve.",
+      "revision": "74af39607b0e56cfd0c89725abd1292e1632b9aa17e5d324b73cee5bac5468b9",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-windows-path-fix__student_needing_explanation__student_patch_and_boundary_reasoning/positive",
+    "expected": "met",
+    "actual": "met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_patch_and_boundary_reasoning",
+      "status": "met",
+      "evidence_refs": [
+        "agent-3",
+        "host:final_diff",
+        "baseline:dataclaw/anonymizer.py",
+        "dataclaw/anonymizer.py"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The explanation matches the current anonymizer source: the old prefixes cover slash-separated paths, while the patch adds Windows backslash prefixes for the username’s home and common subdirectories. It correctly traces a Windows Documents path through the longest-prefix match and notes that the existing slash-only return check leaves the result as `user_HASH/myproject\\file.py`; it also gives the correct adjacent `work` path output and retained Unix Documents behavior. It distinguishes the old and new mechanisms, explains that the prefixes are generated from the username/home and subdirectory list rather than a single example, and makes no unsupported test-execution claim.",
+      "revision": "816d9b21ec1a0cee794f163144abed93b6d8cf359e14795ea9a4f545f68f85b4",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-anonymizer-tests__review_decision_reader__review_conclusion_and_uncertainty/missing-review-diff",
+    "expected": "unknown",
+    "actual": "unknown",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "review_conclusion_and_uncertainty",
+      "status": "unknown",
+      "evidence_refs": [
+        "agent-3",
+        "host:workspace_change_status"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The agent leads with a review conclusion, identifies a supporting observation and uncertainty, and says no implementation or checks are claimed. But the current source or diff is not available here, so the concrete claim about `_replace_username` cannot be verified against the reviewed change.",
+      "revision": "859ccfc138534a65863288d4107212c1f24036e4677aebecc7170a08eb29daab",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  },
+  {
+    "id": "dataclaw-windows-path-fix__student_needing_explanation__student_patch_and_boundary_reasoning/negative",
+    "expected": "not_met",
+    "actual": "not_met",
+    "passed": true,
+    "judgment": {
+      "requirement_id": "student_patch_and_boundary_reasoning",
+      "status": "not_met",
+      "evidence_refs": [
+        "agent-3",
+        "dataclaw/anonymizer.py",
+        "host:final_diff"
+      ],
+      "judge_error": null,
+      "api_interrupted": false,
+      "reason": "The walkthrough gives the wrong Windows Documents result. The new prefix logic matches a backslash-form Documents path, but the return condition checks only for slash-form `'/Documents/'` (and similar) in the prefix. Thus `C:\\Users\\alice\\Documents\\myproject\\file.py` returns `user_HASH/myproject\\file.py`, not `myproject/file.py`; the code also does not normalize separators. The adjacent home example does retain the hash prefix, but the claimed boundary behavior and explanation of why the branch works are contradicted by the current source.",
+      "revision": "298ef32f3a2f0f9eee27e44a0c0e785a60016309e7ede3bd564dddd37d23e0fc",
+      "calibrated": false,
+      "source_judge_tier": "grounded_llm",
+      "evaluation_policy": "grounded_llm_persona_v1",
+      "judge_prompt_revision": "overall_completion_v3",
+      "deterministic_status": null,
+      "deterministic_checker_applicable": false
+    }
+  }
+]

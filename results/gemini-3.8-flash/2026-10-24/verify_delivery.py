@@ -1,4 +1,4 @@
-"""Verify the public summary delivery; no model calls or containers."""
+"""Verify the complete recorded-results delivery; no model calls or containers."""
 import csv
 import hashlib
 import json
@@ -33,9 +33,8 @@ def main():
         path = ROOT / relative
         assert path.stat().st_size == entry['bytes'], relative
         assert digest(path) == entry['sha256'], relative
-    expected = {str(path.relative_to(HERE)) for path in HERE.rglob('*')
-                if path.is_file() and '__pycache__' not in path.parts
-                and path.name not in {'public-summary.zip', 'bundle_manifest.json'}}
+    expected = set(manifest['public_summary_members'])
+    assert len(expected) == len(manifest['public_summary_members'])
     with zipfile.ZipFile(HERE / 'public-summary.zip') as archive:
         assert set(archive.namelist()) == expected
         assert len(archive.namelist()) == len(expected)
@@ -52,7 +51,13 @@ def main():
         metrics = json.loads(path.read_text())['overall']
         assert metrics['selected'] == 99
         assert metrics['joint_success_rate'] is None
-    print(f'PASS: {len(names)} manifest files, LFS ZIP, 297 cumulative records, '
+    archive_info = json.loads((HERE / 'evidence-archives.json').read_text())
+    indexed = {entry['path']: entry for entry in manifest['files']}
+    for entry in archive_info['archives']:
+        relative = str((HERE / entry['path']).relative_to(ROOT))
+        assert indexed[relative]['sha256'] == entry['sha256']
+        assert indexed[relative]['bytes'] == entry['bytes']
+    print(f'PASS: {len(names)} manifest files, three LFS archives, 297 cumulative records, '
           '600 campaign outcomes, 24 unresolved evaluations')
 
 

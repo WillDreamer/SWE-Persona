@@ -1,0 +1,9 @@
+{
+  "group": "main--high--swe-bench-pro-mini",
+  "returncode": 0,
+  "allowed": true,
+  "markers": [
+    "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/cache/main/high/calibration/0ce7c57c4e31f365020b/gate.json"
+  ],
+  "sampled_at": "2026-10-23T22:16:29.165605+00:00"
+}

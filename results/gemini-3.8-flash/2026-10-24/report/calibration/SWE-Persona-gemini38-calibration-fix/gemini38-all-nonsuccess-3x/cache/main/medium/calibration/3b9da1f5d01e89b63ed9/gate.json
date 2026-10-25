@@ -1,0 +1,8 @@
+{
+  "profile": "deep-swe",
+  "api_config_sha256": "6cf6d66d58eada3f794ba6f0ce0dd15463ce3d9378182c1fa0e260641875a70b",
+  "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+  "passed": true,
+  "worker_exit_code": 0,
+  "execution_allowed": true
+}

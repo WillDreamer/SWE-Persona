@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "allowed": true,
+  "gate": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/gate.json",
+  "gate_sha256": "791aaf2b8aaa322e10b3a4f5870b1edcbebf10d2dafa3dcd597766b34b5bc3d4",
+  "sampled_at": "2026-10-23T06:50:53.073822+00:00"
+}

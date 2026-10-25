@@ -1,0 +1,9 @@
+{
+  "output": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair",
+  "audit": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/audit.json",
+  "reconciled": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/reconciled/comparison.json",
+  "selected_retries": 24,
+  "score_corrections": 7,
+  "retained_unresolved": 17,
+  "pid": 515899
+}

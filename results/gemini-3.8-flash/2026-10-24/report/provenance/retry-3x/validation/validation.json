@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "offline_tests_passed": 6,
+  "dry_runs_passed": 18,
+  "dry_runs_total": 18,
+  "results": [
+    {
+      "group": "main--low--swe-bench-pro-mini",
+      "task_id": "swepro/swepro-r0101-fd39042a71-designer",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--low--swe-bench-pro-mini.log"
+    },
+    {
+      "group": "main--low--terminal-bench-3",
+      "task_id": "tb3/batched-eval-parity",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--low--terminal-bench-3.log"
+    },
+    {
+      "group": "repair--low--swe-bench-pro-shell",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/repair--low--swe-bench-pro-shell.log"
+    },
+    {
+      "group": "main--low--swe-bench-live",
+      "task_id": "swelive/0001-c--student_needing_explanation",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--low--swe-bench-live.log"
+    },
+    {
+      "group": "main--low--deep-swe",
+      "task_id": "deepswe/abs-module-cache-flags--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--low--deep-swe.log"
+    },
+    {
+      "group": "main--low--swe-together",
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--low--swe-together.log"
+    },
+    {
+      "group": "main--medium--terminal-bench-3",
+      "task_id": "tb3/batched-eval-parity",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--medium--terminal-bench-3.log"
+    },
+    {
+      "group": "repair--medium--swe-bench-pro-mini",
+      "task_id": "swepro/swepro-r0035-be662e3c3c-analyst",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/repair--medium--swe-bench-pro-mini.log"
+    },
+    {
+      "group": "repair--medium--swe-bench-pro-shell",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/repair--medium--swe-bench-pro-shell.log"
+    },
+    {
+      "group": "main--medium--swe-together",
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--medium--swe-together.log"
+    },
+    {
+      "group": "main--medium--swe-bench-live",
+      "task_id": "swelive/0001-c--student_needing_explanation",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--medium--swe-bench-live.log"
+    },
+    {
+      "group": "main--medium--deep-swe",
+      "task_id": "deepswe/abs-module-cache-flags--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--medium--deep-swe.log"
+    },
+    {
+      "group": "main--high--swe-bench-pro-mini",
+      "task_id": "swepro/swepro-r0101-fd39042a71-designer",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--high--swe-bench-pro-mini.log"
+    },
+    {
+      "group": "main--high--terminal-bench-3",
+      "task_id": "tb3/batched-eval-parity",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--high--terminal-bench-3.log"
+    },
+    {
+      "group": "repair--high--swe-bench-pro-shell",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/repair--high--swe-bench-pro-shell.log"
+    },
+    {
+      "group": "main--high--swe-bench-live",
+      "task_id": "swelive/0001-c--student_needing_explanation",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--high--swe-bench-live.log"
+    },
+    {
+      "group": "main--high--deep-swe",
+      "task_id": "deepswe/abs-module-cache-flags--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--high--deep-swe.log"
+    },
+    {
+      "group": "main--high--swe-together",
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "returncode": 0,
+      "passed": true,
+      "log": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/preflight/main--high--swe-together.log"
+    }
+  ]
+}

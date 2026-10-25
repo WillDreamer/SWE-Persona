@@ -1,0 +1,146 @@
+[
+  {
+    "key": "low/deepswe/numba-stencil-boundary-modes--first_time_pr_contributor",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/low/0088/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swepro/swepro-r0484-fbf25c6bff-analyst",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0028/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0031/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0032/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0036/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0042/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swelive/0744-java--founder_leaked_production_key",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0058/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swelive/0426-js--laptop_data_scientist",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0059/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swelive/0465-js--student_needing_explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0065/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/swelive/0381-go--designer_after_hard_reset",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0066/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/deepswe/dateutil-rfc5545-timezone-interop--student_needing_explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0076/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/deepswe/go-git-worktree-merge-conflicts--manager_no_code",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0081/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "medium/deepswe/langchain-request-coalescing--first_time_pr_contributor",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/medium/0087/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swepro/swepro-r0323-2ca4637996-founder",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0027/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0032/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0033/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0038/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0040/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0001-c--student_needing_explanation",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0048/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0954-cs--shop_owner_cannot_install",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0050/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0146-cpp--analyst_without_index_permission",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0052/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0872-ts--terse_lead_with_flaky_test",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0056/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0744-java--founder_leaked_production_key",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0058/run-config.json",
+    "stderr": ""
+  },
+  {
+    "key": "high/swelive/0426-js--laptop_data_scientist",
+    "returncode": 0,
+    "run_config": "repositories/SWE-Persona-gemini38-errors-fix/runs/error-repair/preflight/high/0059/run-config.json",
+    "stderr": ""
+  }
+]

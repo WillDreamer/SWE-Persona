@@ -1,0 +1,18 @@
+{
+  "state": "completed",
+  "pid": 2234010,
+  "started_at": "2026-10-23T06:48:14.876917+00:00",
+  "selected": 2,
+  "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814",
+  "driver_sha256": "b03d00d31619f952384c994d6c57f2a4323a401aeb68e82db398665024d27562",
+  "output": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair",
+  "time_limit_multiplier": 3,
+  "agent_timeout_sec": 360,
+  "simulator_judge_timeout_sec": 900,
+  "processed": 2,
+  "active": [],
+  "calibration_allowed": true,
+  "calibration_gate": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/gate.json",
+  "updated_at": "2026-10-23T07:22:13.266069+00:00",
+  "finished_at": "2026-10-23T07:22:13.267280+00:00"
+}

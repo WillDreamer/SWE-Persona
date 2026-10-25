@@ -1,0 +1,116 @@
+{
+  "state": "running",
+  "pid": 4047782,
+  "started_at": "2026-10-21T23:29:08.250257+00:00",
+  "stage": "scored/low",
+  "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+  "driver_sha256": "43c809b64cfca355552663fa74d867a86b97dea1682c3f2baca49ae3bdecb974",
+  "config_sha256": {
+    "low": "0fe2c955de50a064d20e52a4b259d3fc2a0f32e5d6612f4ae3dc6a9cdc0eddc6",
+    "medium": "b19a04ebeb420ff84b96c7c7bef63af3c222a1e20348dcb5e09c680b9afc7e17",
+    "high": "3e299b8dedd75bebbb0c95f8a5831dc7779569d7f2a1d3d8507a82b3dc7af6c4"
+  },
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "previous_campaign": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair",
+  "parent_campaign": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning",
+  "planned_attempts": 60,
+  "selection": {
+    "low": [
+      "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer"
+    ],
+    "medium": [
+      "swepro/swepro-r0035-be662e3c3c-analyst",
+      "swepro/swepro-r0101-fd39042a71-designer",
+      "swepro/swepro-r0142-d030ff4e18-analyst",
+      "swepro/swepro-r0197-63a9085600-analyst",
+      "swepro/swepro-r0211-30ba7c67ae-shop-owner",
+      "swepro/swepro-r0323-2ca4637996-founder",
+      "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "swepro/swepro-r0487-81a9507a5f-founder",
+      "swepro/swepro-r0690-57b6d04789-designer",
+      "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer"
+    ],
+    "high": [
+      "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer"
+    ]
+  },
+  "workers": 2,
+  "time_limit_multipliers": {
+    "low": 1,
+    "medium": 1,
+    "high": 2
+  },
+  "skip_policy": "Audited exhausted empty-output smoke cases only; retain evaluation errors and continue independent pairs.",
+  "calibration_policy": "Reuse all six successful frozen-runtime calibrations; never resample a failed gate.",
+  "skipped_pairs": [
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/low/0000/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/medium/0001/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/high/0000/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    }
+  ],
+  "smoke_source": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1",
+  "authorization": "User requested debugging retries and skipping unworkable empty-output cases.",
+  "updated_at": "2026-10-21T23:29:08.335791+00:00"
+}

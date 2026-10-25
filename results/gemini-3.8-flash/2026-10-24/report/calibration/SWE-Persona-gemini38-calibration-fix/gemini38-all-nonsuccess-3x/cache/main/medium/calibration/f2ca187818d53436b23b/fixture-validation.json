@@ -1,0 +1,9 @@
+{
+  "protocol": "swe-together-calibration-fixtures-v3",
+  "source_files_verified": 26,
+  "controls": 37,
+  "executions_synthesized": false,
+  "fixture_execution_records": 6,
+  "bounded_synthetic_snapshot_controls": 18,
+  "suite_sha256": "79f027d6d825d1d0fe5263d92ac6df72319330258a29dcbd31fa33edecb1f3fb"
+}

@@ -1,0 +1,7 @@
+{
+  "output": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair",
+  "manifest": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/manifest.json",
+  "selection": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/selection.json",
+  "policy": "Separate calibration fixture repair and two blocked medium retries; retain original failed gate and attempt records.",
+  "pid": 2234010
+}

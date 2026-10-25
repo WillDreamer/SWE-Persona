@@ -1,0 +1,1336 @@
+{
+  "selected": 99,
+  "workers": 2,
+  "started": 13,
+  "time_limit_multiplier": 1,
+  "attempted": 11,
+  "running": 2,
+  "active_tasks": [
+    "tb3/layout-config-recreation2",
+    "tb3/music-harmony"
+  ],
+  "status_counts": {
+    "fail": 11
+  },
+  "selection": [
+    {
+      "task_id": "tb3/batched-eval-parity",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/cargo-flight-dispatch",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/cli-2ph-simplex",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/fin-saccr-rwa",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/formal-crypto",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/freecad-impeller",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/freecad-spring-clip",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/glycan-ms2-elucidation",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/gsea-proteomics",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/interleaved-vigenere",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/layout-config-recreation",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/layout-config-recreation2",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/music-harmony",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/photonic-waveguide-routing",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/pretrain-shard-corruption",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/protein-autointerp-disulfide",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/react-lead-form",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/risk-scorer-replay",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/satb-audio-transcription",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/takens-embedding-lean",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/telecom-entity-resolution",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "tb3/uefi-bootkit",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "profile": "terminal-bench-3"
+    },
+    {
+      "task_id": "swepro/swepro-r0035-be662e3c3c-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0101-fd39042a71-designer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0142-d030ff4e18-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0197-63a9085600-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0211-30ba7c67ae-shop-owner",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0323-2ca4637996-founder",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0487-81a9507a5f-founder",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0690-57b6d04789-designer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-mini"
+    },
+    {
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swelive/0001-c--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0118-cpp--analyst_without_index_permission",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0954-cs--shop_owner_cannot_install",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0517-rust--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0146-cpp--analyst_without_index_permission",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0262-go--laptop_data_scientist",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0406-js--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0280-go--manager_no_code",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0872-ts--terse_lead_with_flaky_test",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0741-java--laptop_data_scientist",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0744-java--founder_leaked_production_key",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0426-js--laptop_data_scientist",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0430-js--senior_race_review_no_tutorial",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0325-go--senior_race_review_no_tutorial",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0431-js--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0362-go--manager_no_code",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0910-ts--founder_leaked_production_key",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0465-js--student_needing_explanation",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swelive/0381-go--designer_after_hard_reset",
+      "source_benchmark": "SWE-bench-Live MultiLang",
+      "profile": "swe-bench-live"
+    },
+    {
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    },
+    {
+      "task_id": "swtogether/cli-task-c4c7e9--reviewer_evidence_first",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    },
+    {
+      "task_id": "swtogether/comfyui-lumina2-lora-prefix--reviewer_evidence_first",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    },
+    {
+      "task_id": "swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    },
+    {
+      "task_id": "deepswe/abs-module-cache-flags--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/actionlint-action-pinning-lint--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/cattrs-partial-structuring-recovery--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/clack-async-autocomplete-options--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/cliffy-config-file-parsing--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/dateutil-rfc5545-timezone-interop--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/dynamodb-toolbox-lazy-recursive-schemas--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/fastapi-implicit-head-options--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/go-critic-doc-link-checker--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/go-genai-streamed-function-args--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/go-git-worktree-merge-conflicts--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/helm-array-merge-strategies--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/httpx-multipart-response-parsing--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/httpx-streaming-json-iteration--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/kcp-go-multiplexed-kcp-streams--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/koota-pair-relation-tracking--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/langchain-request-coalescing--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/numba-stencil-boundary-modes--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/ofetch-per-origin-circuit-breaker--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/opa-template-string-reconstruction--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/participle-grammar-conflict-analysis--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/pest-character-class-coalescing--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/psd-tools-blend-range-api--manager_no_code",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/python-statemachine-state-data-scoping--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/scriggo-method-declarations--first_time_pr_contributor",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/sqlite-utils-safe-import-checkpoints--shop_owner_cannot_install",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/testem-per-launcher-reports--student_needing_explanation",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    },
+    {
+      "task_id": "deepswe/textual-richlog-follow-state--designer_after_hard_reset",
+      "source_benchmark": "DeepSWE",
+      "profile": "deep-swe"
+    }
+  ],
+  "results": [
+    {
+      "task_id": "tb3/batched-eval-parity",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "a00baad256c6e3f1cb3b16e027e8a4f2a7478853d51a671e1b4621ec91065a84",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "batched-eval-parity-persona-89f8f995/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 14400.0,
+        "effective_sec": 14400.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 14400.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 14400.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 92707.309989973,
+              "deadline_monotonic": 107107.309989973,
+              "limit_sec": 14400.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 94999.195996614,
+              "deadline_monotonic": 96499.195996614,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2291.886006640998,
+            "verification": 118.69572139299999,
+            "preparation": 6.2175543759949505
+          },
+          "elapsed_sec": 2416.799282409993,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0000"
+    },
+    {
+      "task_id": "tb3/cargo-flight-dispatch",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "d33561ce196d28d5ee321270e93e9ac5a93425a2381e5c19ece6773a59c73750",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "cargo-flight-dispatch-persona-0a0b26ff/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 3600.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1200.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 600.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 3600.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 92704.586100428,
+              "deadline_monotonic": 96304.586100428,
+              "limit_sec": 3600.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 93815.861033656,
+              "deadline_monotonic": 95015.861033656,
+              "limit_sec": 1200.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1111.2749332279927,
+            "verification": 22.468502435003757,
+            "preparation": 3.4871890180074843
+          },
+          "elapsed_sec": 1137.230624681004,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0001"
+    },
+    {
+      "task_id": "tb3/cli-2ph-simplex",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "0af2610a0e909967322dba6315e0fef7e2b6f58b2ffd4cdbab03f54c00e97dcc",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": true,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "cli-2ph-simplex-persona-27b5dab2/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 2500.0,
+        "effective_sec": 2500.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1200.0,
+        "internal_budget": {
+          "episode_timeout_sec": 2500.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 600.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 2500.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 93842.108415976,
+              "deadline_monotonic": 96342.108415976,
+              "limit_sec": 2500.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 96116.272119506,
+              "deadline_monotonic": 97316.272119506,
+              "limit_sec": 1200.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2274.1637035299937,
+            "verification": 120.14225724799326,
+            "preparation": 2.8167536920082057
+          },
+          "elapsed_sec": 2397.122714469995,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0002"
+    },
+    {
+      "task_id": "tb3/fin-saccr-rwa",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "6a5a07658ac5854c3ba2b3a3d0e1865a78f26432d21a6a44dbea013d73eb956c",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "fin-saccr-rwa-persona-5f7221f5/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 9000.0,
+        "effective_sec": 9000.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1200.0,
+        "internal_budget": {
+          "episode_timeout_sec": 9000.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 600.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 9000.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 95121.174228909,
+              "deadline_monotonic": 104121.174228909,
+              "limit_sec": 9000.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 96556.718659922,
+              "deadline_monotonic": 97756.718659922,
+              "limit_sec": 1200.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1435.544431012997,
+            "verification": 15.73920139799884,
+            "preparation": 2.270623443007935
+          },
+          "elapsed_sec": 1453.5542558540037,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0003"
+    },
+    {
+      "task_id": "tb3/formal-crypto",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "05dcd29b5c20033e78ec44359bb44daa5a87802f0d7b11525ce15aea557bd04f",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": true,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "formal-crypto-persona-fa5bc576/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 7200.0,
+        "effective_sec": 7200.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 6000.0,
+        "internal_budget": {
+          "episode_timeout_sec": 7200.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 5400.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 7200.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 96240.940332145,
+              "deadline_monotonic": 103440.940332145,
+              "limit_sec": 7200.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 97919.894775464,
+              "deadline_monotonic": 103919.894775464,
+              "limit_sec": 6000.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1678.9544433190022,
+            "verification": 497.232823888,
+            "preparation": 3.4871464889874915
+          },
+          "elapsed_sec": 2179.6744136959896,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0004"
+    },
+    {
+      "task_id": "tb3/freecad-impeller",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "f111ac59ffa8ca3be5b1213a83ad4d472ea5fc49eb05ff31fb9c94e40aca1732",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "freecad-impeller-persona-0a56468e/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 9000.0,
+        "effective_sec": 9000.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1200.0,
+        "internal_budget": {
+          "episode_timeout_sec": 9000.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 600.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 9000.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 96576.195548572,
+              "deadline_monotonic": 105576.195548572,
+              "limit_sec": 9000.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 99127.351874727,
+              "deadline_monotonic": 100327.351874727,
+              "limit_sec": 1200.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2551.1563261550036,
+            "verification": 27.71923292700376,
+            "preparation": 2.7274671909981407
+          },
+          "elapsed_sec": 2581.6030262730055,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0005"
+    },
+    {
+      "task_id": "tb3/freecad-spring-clip",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "b3b5ccc43be6246d5da6e794cdb7d329b8b2a6c614fb29a43deeceded68a6596",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "freecad-spring-clip-persona-ccd0f274/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 9000.0,
+        "effective_sec": 9000.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1200.0,
+        "internal_budget": {
+          "episode_timeout_sec": 9000.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 600.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 9000.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 98420.986284504,
+              "deadline_monotonic": 107420.986284504,
+              "limit_sec": 9000.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 100881.590791828,
+              "deadline_monotonic": 102081.590791828,
+              "limit_sec": 1200.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2460.6045073239948,
+            "verification": 15.23153939099575,
+            "preparation": 2.881098263998865
+          },
+          "elapsed_sec": 2478.7171449789894,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0006"
+    },
+    {
+      "task_id": "tb3/glycan-ms2-elucidation",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "878986d2922c2c1903a8d7bfb0a98af6101e9e7251ec153effd218994532d280",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "glycan-ms2-elucidation-persona-de9dd691/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "verification_complete": true,
+      "outcome_reason": "api_interrupted",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Preserved work has an unmet or unverified required component; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": true,
+        "api_interrupted": true,
+        "native_pass": false,
+        "persona_pass": false,
+        "budget_exhausted": false,
+        "artifacts_available": true,
+        "agent_progress": true,
+        "score": 0,
+        "failure_reasons": []
+      },
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 9000.0,
+        "effective_sec": 9000.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 9000.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 300.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 9000.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 99158.937092527,
+              "deadline_monotonic": 108158.937092527,
+              "limit_sec": 9000.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 99776.161514807,
+              "deadline_monotonic": 100676.161514807,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 617.2244222799927,
+            "verification": 16.075812973009306,
+            "preparation": 2.8373483890027273
+          },
+          "elapsed_sec": 636.1375836420048,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0007"
+    },
+    {
+      "task_id": "tb3/gsea-proteomics",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "3349667869e66f93ae114d9ec6231a915c11a2625a73eb80dd1e0b86fda36d28",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "gsea-proteomics-persona-06ac4a3d/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 9000.0,
+        "effective_sec": 9000.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 9000.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 300.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 9000.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 99796.410454873,
+              "deadline_monotonic": 108796.410454873,
+              "limit_sec": 9000.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 102016.672481369,
+              "deadline_monotonic": 102916.672481369,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2220.2620264959987,
+            "verification": 16.46085652700276,
+            "preparation": 3.0199329539900646
+          },
+          "elapsed_sec": 2239.7428159769916,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0008"
+    },
+    {
+      "task_id": "tb3/interleaved-vigenere",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "426d5dd70fe8c9e094c3d4cbd5075149c2f88bf0e3ae582d155f108445ad76e6",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": false,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "interleaved-vigenere-persona-ad2b1174/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 14400.0,
+        "effective_sec": 14400.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 1500.0,
+        "internal_budget": {
+          "episode_timeout_sec": 14400.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 900.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 14400.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 100900.61925216,
+              "deadline_monotonic": 115300.61925216,
+              "limit_sec": 14400.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 103634.733148846,
+              "deadline_monotonic": 105134.733148846,
+              "limit_sec": 1500.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 2734.1138966860017,
+            "verification": 21.026312424990465,
+            "preparation": 2.8032583160093054
+          },
+          "elapsed_sec": 2757.9434674270015,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0009"
+    },
+    {
+      "task_id": "tb3/layout-config-recreation",
+      "source_benchmark": "Terminal-Bench 3.0",
+      "source_subset": "terminal-bench-3",
+      "content_sha256": "d9ad627cf26fe2143382acb5f32e6cc066b9bbddce3ba62627824d83dafa3120",
+      "harness_version": "0.5.0rc9",
+      "profile": "terminal-bench-3",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "layout-config-recreation-persona-4b654d0c/persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 3600.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 24,
+          "max_agent_queries_per_turn": null,
+          "max_simulator_decisions": 64,
+          "verifier_timeout_sec": 180.0,
+          "timing_policy_id": "terminal-bench-3"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 3600.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 102036.498271051,
+              "deadline_monotonic": 105636.498271051,
+              "limit_sec": 3600.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 103822.754155876,
+              "deadline_monotonic": 104722.754155876,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1786.2558848250046,
+            "verification": 19.7868367619958,
+            "preparation": 2.3313270959915826
+          },
+          "elapsed_sec": 1808.374048682992,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0010"
+    }
+  ],
+  "stopped": false,
+  "blocked_profiles": [],
+  "note": "Errors and invalid episodes must be reported separately from pass/fail."
+}

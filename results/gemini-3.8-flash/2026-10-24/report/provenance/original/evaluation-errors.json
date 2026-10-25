@@ -1,0 +1,542 @@
+{
+  "scope": "49 selected outcomes excluded from normal pass/fail grading; archived superseded calibration failures are not included.",
+  "counts": {
+    "Malformed agent response": {
+      "low": 1,
+      "medium": 0,
+      "high": 0
+    },
+    "API timeout retries exhausted": {
+      "low": 2,
+      "medium": 7,
+      "high": 13
+    },
+    "Skipped after exhausted empty-output smoke": {
+      "low": 1,
+      "medium": 1,
+      "high": 1
+    },
+    "Empty model output after retries": {
+      "low": 8,
+      "medium": 3,
+      "high": 2
+    },
+    "Invalid applicability evidence": {
+      "low": 1,
+      "medium": 0,
+      "high": 0
+    },
+    "Persona requirements not fully verified": {
+      "low": 0,
+      "medium": 2,
+      "high": 2
+    },
+    "Task/persona incompatibility": {
+      "low": 0,
+      "medium": 1,
+      "high": 1
+    },
+    "Endpoint database connection error": {
+      "low": 0,
+      "medium": 2,
+      "high": 0
+    },
+    "Reference-patch preflight timeout": {
+      "low": 0,
+      "medium": 0,
+      "high": 1
+    }
+  },
+  "cases": [
+    {
+      "level": "low",
+      "task_id": "tb3/formal-crypto",
+      "profile": "terminal-bench-3",
+      "status": "invalid",
+      "category": "Malformed agent response",
+      "detail": "Agent response raised JSONDecodeError; episode ended provider_or_protocol_error.",
+      "result_path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0004/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0028/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "Skipped after exhausted empty-output smoke",
+      "detail": "Same SWE-Pro r0006 task skipped at all three efforts, as authorized.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-scored/scored/low/0000/result.json",
+      "original_outcome_reason": "skipped_after_empty_output_smoke"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-scored/scored/low/0001/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-scored/scored/low/0003/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0038/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0040/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0041/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0043/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0044/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0046/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/low/0047/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "low",
+      "task_id": "swelive/0325-go--senior_race_review_no_tutorial",
+      "profile": "swe-bench-live",
+      "status": "infrastructure_error",
+      "category": "Invalid applicability evidence",
+      "detail": "Simulator fit decision lacked required exact public-issue evidence.",
+      "result_path": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/scored/low/0061/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0197-63a9085600-analyst",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0025/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0323-2ca4637996-founder",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0027/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0028/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "Skipped after exhausted empty-output smoke",
+      "detail": "Same SWE-Pro r0006 task skipped at all three efforts, as authorized.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0031/result.json",
+      "original_outcome_reason": "skipped_after_empty_output_smoke"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0032/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Persona requirements not fully verified",
+      "detail": "Turn budget exhausted; final persona grade unavailable.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0033/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0034/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0036/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0037/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Persona requirements not fully verified",
+      "detail": "Turn budget exhausted; final persona grade unavailable.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0038/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0040/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0044/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0045/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swelive/0325-go--senior_race_review_no_tutorial",
+      "profile": "swe-bench-live",
+      "status": "invalid",
+      "category": "Task/persona incompatibility",
+      "detail": "Applicability check found review-only persona incompatible with implementation task.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0061/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "medium",
+      "task_id": "deepswe/scriggo-method-declarations--first_time_pr_contributor",
+      "profile": "deep-swe",
+      "status": "infrastructure_error",
+      "category": "Endpoint database connection error",
+      "detail": "HTTP 401 wrapper reported database FATAL: sorry, too many clients already.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0095/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "medium",
+      "task_id": "deepswe/textual-richlog-follow-state--designer_after_hard_reset",
+      "profile": "deep-swe",
+      "status": "infrastructure_error",
+      "category": "Endpoint database connection error",
+      "detail": "HTTP 401 wrapper reported database FATAL: sorry, too many clients already.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0098/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0197-63a9085600-analyst",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0025/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0211-30ba7c67ae-shop-owner",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0026/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0323-2ca4637996-founder",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0027/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0484-fbf25c6bff-analyst",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0028/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0690-57b6d04789-designer",
+      "profile": "swe-bench-pro-mini",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0030/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "Skipped after exhausted empty-output smoke",
+      "detail": "Same SWE-Pro r0006 task skipped at all three efforts, as authorized.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0031/result.json",
+      "original_outcome_reason": "skipped_after_empty_output_smoke"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0033/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0034/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0035/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Empty model output after retries",
+      "detail": "SWE-Pro shell stopped after two adapter attempts produced no usable output.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0037/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Persona requirements not fully verified",
+      "detail": "Turn budget exhausted; final persona grade unavailable.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0038/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0039/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0040/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0043/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "profile": "swe-bench-pro-shell",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0045/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "profile": "swe-bench-pro-shell",
+      "status": "invalid",
+      "category": "Persona requirements not fully verified",
+      "detail": "Turn budget exhausted; final persona grade unavailable.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0046/result.json",
+      "original_outcome_reason": "persona_requirement_checks_missing"
+    },
+    {
+      "level": "high",
+      "task_id": "swelive/0426-js--laptop_data_scientist",
+      "profile": "swe-bench-live",
+      "status": "infrastructure_error",
+      "category": "Reference-patch preflight timeout",
+      "detail": "Official reference verification exited 124 before agent execution.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0059/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "high",
+      "task_id": "swelive/0325-go--senior_race_review_no_tutorial",
+      "profile": "swe-bench-live",
+      "status": "invalid",
+      "category": "Task/persona incompatibility",
+      "detail": "Applicability check found review-only persona incompatible with implementation task.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0061/result.json",
+      "original_outcome_reason": null
+    },
+    {
+      "level": "high",
+      "task_id": "deepswe/clack-async-autocomplete-options--manager_no_code",
+      "profile": "deep-swe",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0074/result.json",
+      "original_outcome_reason": "api_interrupted"
+    },
+    {
+      "level": "high",
+      "task_id": "deepswe/helm-array-merge-strategies--student_needing_explanation",
+      "profile": "deep-swe",
+      "status": "infrastructure_error",
+      "category": "API timeout retries exhausted",
+      "detail": "Coding-agent API timeout recovery exhausted; no usable agent work for normal grading.",
+      "result_path": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/high/0082/result.json",
+      "original_outcome_reason": "api_interrupted"
+    }
+  ]
+}

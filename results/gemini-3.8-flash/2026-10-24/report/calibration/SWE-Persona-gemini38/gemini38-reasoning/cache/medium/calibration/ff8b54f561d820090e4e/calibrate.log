@@ -1,0 +1,22 @@
+scope_good                pass     ok
+scope_omits_unrelated     fail     ok
+explanation_good          pass     ok
+explanation_generic       fail     ok
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/sherryj/Desktop/SWE-Persona-gemini38/src/swe_persona/worker.py", line 276, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/home/sherryj/Desktop/SWE-Persona-gemini38/src/swe_persona/worker.py", line 234, in main
+    return validate_rubric.main()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sherryj/Desktop/SWE-Persona-gemini38/runs/gemini38-reasoning/cache/medium/calibration-input-148wxqe7/task/portable/runtime-v3/runner/validate_rubric.py", line 240, in main
+    output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+  File "/home/sherryj/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1047, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sherryj/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sherryj/Desktop/SWE-Persona-gemini38/runs/gemini38-reasoning/cache/medium/calibration/ff8b54f561d820090e4e/rubric_report.azure/openai/gpt-6-luna.registered-evidence-ids-v2.json'

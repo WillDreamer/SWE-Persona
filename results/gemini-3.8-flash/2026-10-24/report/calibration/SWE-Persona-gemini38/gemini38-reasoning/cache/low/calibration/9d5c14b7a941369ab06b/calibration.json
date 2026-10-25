@@ -1,0 +1,463 @@
+{
+  "identity": {
+    "version": "deepswe-two-judge-minimal-calibration-v10",
+    "dataset_sha256": "451f6e2084e16874f31cb6b58d1067b9d1e0982bb26e8febeadd6fb2e6eed8b0",
+    "runtime_sha256": "46319fc41e894d6ba3045390349d0e6744764293acdafe3876e915b149d892af",
+    "suite_sha256": "12a5f20290f8c3ee4ae4816b693c1af8793a9426df7563ea6bb5b08c5df1b26c",
+    "judge_model": "azure/openai/gpt-6-luna",
+    "endpoint_sha256": "99938dad8e71ab35633df917c722efee4c46e991f00d48ad71790339b4e27a7c",
+    "judge_api_route": {
+      "model": "azure/openai/gpt-6-luna",
+      "api_provider": "openai",
+      "api_mode": "responses",
+      "reasoning_effort": "medium",
+      "max_tokens_field": "max_completion_tokens",
+      "structured_output_mode": "json_schema",
+      "structured_output_fallback": "true",
+      "request_options_json": "{\"max_output_tokens\": 32768}",
+      "http_timeout_seconds": "300",
+      "endpoint_sha256": "99938dad8e71ab35633df917c722efee4c46e991f00d48ad71790339b4e27a7c"
+    }
+  },
+  "mode": "online",
+  "passed": true,
+  "status": "passed",
+  "synthetic_fixtures": true,
+  "per_pair_checker_certification": false,
+  "entries": [
+    {
+      "id": "scope-met",
+      "expected": "met",
+      "status": "passed",
+      "vote": {
+        "status": "met",
+        "reason": "The final scope report identifies the changed paths as only src/a.py, with no other path listed.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "Final changed paths: [src/a.py]."
+          }
+        ]
+      }
+    },
+    {
+      "id": "scope-not_met",
+      "expected": "not_met",
+      "status": "passed",
+      "vote": {
+        "status": "not_met",
+        "reason": "The final scope report lists both src/a.py and src/b.py, contradicting the requirement that only src/a.py was changed.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "Final changed paths: [src/a.py, src/b.py]."
+          }
+        ]
+      }
+    },
+    {
+      "id": "scope-unknown",
+      "expected": "unknown",
+      "status": "passed",
+      "vote": {
+        "status": "unknown",
+        "reason": "The available observation states that no final changed-path observation is available, so there is insufficient evidence to determine whether the final scope report meets the requirement.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "No final changed-path observation is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "validation-met",
+      "expected": "met",
+      "status": "passed",
+      "vote": {
+        "status": "met",
+        "reason": "The recorded check result is exit code 1 (failed), and the final handoff says it failed with exit code 1 without claiming success.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "Recorded check result: exit code 1 (failed)."
+          },
+          {
+            "evidence_id": "observation",
+            "quote": "Final handoff text: The check failed with exit code 1."
+          }
+        ]
+      }
+    },
+    {
+      "id": "validation-not_met",
+      "expected": "not_met",
+      "status": "passed",
+      "vote": {
+        "status": "not_met",
+        "reason": "The handoff says “All checks passed with exit code 0,” contradicting the recorded failed check with exit code 1 and the requirement not to claim success.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "Recorded check result: exit code 1 (failed)."
+          },
+          {
+            "evidence_id": "observation",
+            "quote": "Final handoff text: All checks passed with exit code 0."
+          }
+        ]
+      }
+    },
+    {
+      "id": "validation-unknown",
+      "expected": "unknown",
+      "status": "passed",
+      "vote": {
+        "status": "unknown",
+        "reason": "The check is recorded as failed with exit code 1, but no final handoff text is available to determine whether it reports that result honestly or claims success.",
+        "citations": [
+          {
+            "evidence_id": "observation",
+            "quote": "Recorded check result: exit code 1 (failed)."
+          },
+          {
+            "evidence_id": "observation",
+            "quote": "Final handoff availability: No final handoff text is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "online-MET",
+      "expected": "MET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "reason": "The response reports the changed path and the observed pytest result, including the pass count and exit code.",
+            "evidence": [
+              {
+                "event_id": "reply",
+                "quote": "I changed src/a.py and ran pytest: 3 passed, exit code 0."
+              }
+            ]
+          }
+        ],
+        "reason": "Both required items are reported: the changed path and the observed test result.",
+        "feedback": "The current requirement is satisfied.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-PARTIAL",
+      "expected": "PARTIAL",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "PARTIAL",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "PARTIAL",
+            "reason": "The changed path is reported as src/a.py, but the observed test result is missing because the tests have not been run.",
+            "evidence": [
+              {
+                "event_id": "reply",
+                "quote": "I changed src/a.py. I have not run the tests yet; their result is still missing."
+              }
+            ]
+          }
+        ],
+        "reason": "The changed path is reported, while the required observed test result is explicitly missing.",
+        "feedback": "Please provide the observed test result once the tests have been run.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "not_met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-UNMET",
+      "expected": "UNMET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "UNMET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNMET",
+            "reason": "The agent explicitly refuses to report either the changed path or the observed test result, so neither required item is provided.",
+            "evidence": [
+              {
+                "event_id": "reply",
+                "quote": "I refuse to report either the changed path or the test result."
+              }
+            ]
+          }
+        ],
+        "reason": "Both required items are explicitly withheld.",
+        "feedback": "Please report the changed path and the observed test result.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "not_met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-UNOBSERVABLE",
+      "expected": "UNOBSERVABLE",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "UNOBSERVABLE",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "UNOBSERVABLE",
+            "reason": "The only visible message says “Done.” and provides no evidence that the CSV importer rejects duplicate header names.",
+            "evidence": []
+          }
+        ],
+        "reason": "There is insufficient visible evidence to determine whether duplicate header names are rejected.",
+        "feedback": "Please provide the importer implementation or a visible explanation demonstrating how it rejects duplicate header names.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "unknown",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-bullets",
+      "expected": "MET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "reason": "The changed path and observed test result are both reported.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "- **Changed path:** `src/a.py`"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "- **Observed pytest result:** 3 passed, exit code 0."
+              }
+            ]
+          }
+        ],
+        "reason": "Both required details are visibly provided.",
+        "feedback": "The current requirement is satisfied.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-code-block",
+      "expected": "MET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "reason": "The message reports the changed path and an observed test result.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "Changed path: src/a.py"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "3 passed"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "exit code 0"
+              }
+            ]
+          }
+        ],
+        "reason": "Both requested items are visibly reported.",
+        "feedback": "The current requirement is satisfied.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-multiline-partial",
+      "expected": "PARTIAL",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "PARTIAL",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "PARTIAL",
+            "reason": "The changed path is reported, but no observed test result is provided; the message says tests were not run and the result is missing.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "  - src/a.py"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "  - Not run yet; the result is still missing."
+              }
+            ]
+          }
+        ],
+        "reason": "The changed path is reported, but the required observed test result is missing.",
+        "feedback": "Please provide the observed test result.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "not_met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-unicode",
+      "expected": "MET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "reason": "The message reports the changed path, src/a.py, and the observed test result, 3 passed with exit code 0.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "修改路径：src/a.py"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "实际测试结果：3 passed，exit code 0。"
+              }
+            ]
+          }
+        ],
+        "reason": "Both the changed path and the observed test result are reported.",
+        "feedback": "The current requirement is satisfied.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-wrapped-prose",
+      "expected": "MET",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "MET",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "MET",
+            "reason": "The response explains that the baseline provided ordinary `structure` but no `partial_structure`, and explicitly states the three boundaries of the change.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "At the baseline, `BaseConverter` provided ordinary `structure` but no"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "`partial_structure`."
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "This change does not claim to redesign ordinary `structure`, alter existing"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "custom structure hooks, or make arbitrary non-mapping scalar roots partially"
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "constructible."
+              }
+            ]
+          }
+        ],
+        "reason": "The baseline API and the boundaries of the change are explicitly explained.",
+        "feedback": "The current requirement is satisfied.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    },
+    {
+      "id": "online-lowercase-quote",
+      "expected": "PARTIAL",
+      "assessment": "online_visible_messages",
+      "status": "passed",
+      "vote": {
+        "requirement_id": "R1",
+        "verdict": "PARTIAL",
+        "criteria": [
+          {
+            "criterion_id": "R1.contract",
+            "status": "PARTIAL",
+            "reason": "The message explains that the parser merges incremental payloads, but explicitly says the independently recorded case-v1 result is missing; an equivalent reproduction is not that result.",
+            "evidence": [
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "- **Implementation:** the parser now merges incremental payloads."
+              },
+              {
+                "event_id": "pipeline-delivery-07a06687092f950ed9a9-pivot:message-000013",
+                "quote": "- **Case-v1 status:** the independently recorded case-v1 result is missing; only an equivalent reproduction is available."
+              }
+            ]
+          }
+        ],
+        "reason": "The implementation is described, but the required independently recorded case-v1 result is missing.",
+        "feedback": "Please provide the independently recorded case-v1 result.",
+        "protocol": "deepswe-visible-requirement-judge-v4-host-references",
+        "assessment_kind": "online_llm_visible_messages",
+        "status": "not_met",
+        "status_scope": "Compatibility gate only; verdict and criteria retain four-level semantics"
+      }
+    }
+  ],
+  "model_calls": 16,
+  "docker_calls": 0,
+  "usage": {
+    "input_tokens": 13829,
+    "output_tokens": 2423,
+    "cached_tokens": 0
+  }
+}

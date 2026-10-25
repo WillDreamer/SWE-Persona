@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-21T23:52:43.119149+00:00",
+  "successor": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers",
+  "workers": 8,
+  "tests_passed": 5,
+  "adopted_running_attempts": 4,
+  "frozen_runtimes_unchanged": true,
+  "note": "Unified queue now owns remaining attempts; original task subprocesses retain their budgets and output directories."
+}

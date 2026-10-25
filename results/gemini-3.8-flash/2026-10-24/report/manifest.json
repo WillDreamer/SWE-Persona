@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-10-24T04:41:23.050926+00:00",
+  "model": "gcp/google/gemini-3.8-flash",
+  "agent_endpoint": "https://inference-api.nvidia.com/v1",
+  "agent_api": "chat_completions",
+  "simulator_and_judge": "azure/openai/gpt-6-luna",
+  "simulator_effort": "medium",
+  "simulator_api": "responses",
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "excluded_task": "tb3/exam-pdf-eval (H100 required)",
+  "selected_per_effort": 99,
+  "efforts": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "formal_full_selection_score": null,
+  "reporting_status": "partial-coverage multi-campaign diagnostic; not a single matched-budget leaderboard score",
+  "cumulative_status_counts": {
+    "fail": 221,
+    "invalid": 17,
+    "pass": 52,
+    "infrastructure_error": 3,
+    "calibration_error": 4
+  },
+  "corrections": 7,
+  "corrections_add_successes": false,
+  "runtime_variants": [
+    {
+      "repository": "SWE-Persona-gemini38",
+      "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+      "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+      "requirements_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "repository": "SWE-Persona-gemini38-calibration-fix",
+      "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+      "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+      "requirements_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "repository": "SWE-Persona-gemini38-together-fix",
+      "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814",
+      "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+      "requirements_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "repository": "SWE-Persona-gemini38-errors-fix",
+      "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+      "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+      "requirements_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    }
+  ],
+  "source_files_preserved": true,
+  "readme_upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+  "upstream_upload_command_or_destination": null,
+  "hardware_provenance": "provenance/retry-3x/validation/host.json",
+  "rate_notes": "Formal joint_success_rate remains null with unresolved errors; valid-only and observed component rates retain denominators."
+}

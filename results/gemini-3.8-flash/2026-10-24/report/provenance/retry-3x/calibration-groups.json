@@ -1,0 +1,200 @@
+[
+  {
+    "group": "main--low--terminal-bench-3",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "terminal-bench-3",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/low",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "low",
+    "source": "main"
+  },
+  {
+    "group": "main--low--swe-bench-pro-mini",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-bench-pro-mini",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/low",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "low",
+    "source": "main"
+  },
+  {
+    "group": "repair--low--swe-bench-pro-shell",
+    "repo": "repositories/SWE-Persona-gemini38-calibration-fix",
+    "profile": "swe-bench-pro-shell",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/repair/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/repair/low",
+    "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+    "level": "low",
+    "source": "repair"
+  },
+  {
+    "group": "main--low--swe-bench-live",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-bench-live",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/low",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "low",
+    "source": "main"
+  },
+  {
+    "group": "main--low--swe-together",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-together",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/low",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "low",
+    "source": "main"
+  },
+  {
+    "group": "main--low--deep-swe",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "deep-swe",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/low.json",
+    "config_sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/low",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "low",
+    "source": "main"
+  },
+  {
+    "group": "main--medium--terminal-bench-3",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "terminal-bench-3",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/medium",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "medium",
+    "source": "main"
+  },
+  {
+    "group": "repair--medium--swe-bench-pro-mini",
+    "repo": "repositories/SWE-Persona-gemini38-calibration-fix",
+    "profile": "swe-bench-pro-mini",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/repair/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/repair/medium",
+    "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+    "level": "medium",
+    "source": "repair"
+  },
+  {
+    "group": "repair--medium--swe-bench-pro-shell",
+    "repo": "repositories/SWE-Persona-gemini38-calibration-fix",
+    "profile": "swe-bench-pro-shell",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/repair/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/repair/medium",
+    "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+    "level": "medium",
+    "source": "repair"
+  },
+  {
+    "group": "main--medium--swe-bench-live",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-bench-live",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/medium",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "medium",
+    "source": "main"
+  },
+  {
+    "group": "main--medium--swe-together",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-together",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/medium",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "medium",
+    "source": "main"
+  },
+  {
+    "group": "main--medium--deep-swe",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "deep-swe",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/medium.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/medium",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "medium",
+    "source": "main"
+  },
+  {
+    "group": "main--high--terminal-bench-3",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "terminal-bench-3",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "high",
+    "source": "main"
+  },
+  {
+    "group": "main--high--swe-bench-pro-mini",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-bench-pro-mini",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "high",
+    "source": "main"
+  },
+  {
+    "group": "repair--high--swe-bench-pro-shell",
+    "repo": "repositories/SWE-Persona-gemini38-calibration-fix",
+    "profile": "swe-bench-pro-shell",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/repair/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/repair/high",
+    "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+    "level": "high",
+    "source": "repair"
+  },
+  {
+    "group": "main--high--swe-bench-live",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-bench-live",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "high",
+    "source": "main"
+  },
+  {
+    "group": "main--high--swe-together",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "swe-together",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "high",
+    "source": "main"
+  },
+  {
+    "group": "main--high--deep-swe",
+    "repo": "repositories/SWE-Persona-gemini38",
+    "profile": "deep-swe",
+    "config": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/configs/main/high.json",
+    "config_sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853",
+    "cache": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high",
+    "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "level": "high",
+    "source": "main"
+  }
+]
