@@ -1,0 +1,9 @@
+{
+  "group": "main--high--swe-together",
+  "returncode": 0,
+  "allowed": true,
+  "markers": [
+    "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/gate.json"
+  ],
+  "sampled_at": "2026-10-23T01:21:26.854389+00:00"
+}

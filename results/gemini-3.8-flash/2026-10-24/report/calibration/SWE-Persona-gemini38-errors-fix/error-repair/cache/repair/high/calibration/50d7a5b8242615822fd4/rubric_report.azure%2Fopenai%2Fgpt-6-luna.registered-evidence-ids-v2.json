@@ -1,0 +1,277 @@
+{
+  "grading_identity": {
+    "protocol": "registered-evidence-ids-v2",
+    "clause_protocol": "literal-clause-truth-v1",
+    "source_sha256": {
+      "runner/rubric_checker.py": "571bd735808bc4db08cf12229ccd3b8789ff7892502f27acd913d6bb802c9590",
+      "runner/checkers.py": "47e721bd7186976e9a41a648917ef1dbb95f7edc59f2c840401599a9e585bb17",
+      "runner/llm.py": "587d3d046caa1c50553488669144c70d36af964b5b2321a30d4d5befdc44ab86",
+      "runner/evidence_policy.py": "28d99f30bb220a6a627a8c11307d0c13eca6f820b991ce680879fc80327d07d5",
+      "runner/validate_rubric.py": "52a0644cc5b9c206df936de5baf881ec34a479e205d432d1d94bc56dde56cb2a",
+      "runner/task_adapter.py": "b73bb50bce716cf53531f91b059cbed2e6719baf91d016ace4f571fb68afcf44",
+      "runner/fixtures/checker_driver.py": "b93e7ae4ba50350cd9400aad915e378183d2d2316165a450268fc52db25200e9",
+      "runner/fixtures/rubric-calibration.json": "2060e0ae883f62b60839c85ec3a8ebaf85f014ac057d003de583821afb2d5f5f",
+      "tb2_persona_pilot/rubric_checker.py": "64c3d73d3a4fca4bafaf246d3923642acd1308be35b1925cece91e76d0c5f437",
+      "tb2_persona_pilot/controller.py": "bd64ba6b3fbfaa5ecbf5f16dc82704f314fb7062cd7aecf574e3be68708440b0",
+      "tb2_persona_pilot/verifier.py": "951e68cea5d071f6bdb5bd43aa62f9e5fc89a35599ae9dc86d2675ec16260a64"
+    }
+  },
+  "calibration_protocol": "public-subchecks-v2",
+  "clause_protocol": "literal-clause-truth-v1",
+  "calibration_fixture": {
+    "protocol": "packaged-rubric-control-v1",
+    "file_sha256": "2060e0ae883f62b60839c85ec3a8ebaf85f014ac057d003de583821afb2d5f5f",
+    "dataset": {
+      "id": "ScaleAI/SWE-bench_Pro",
+      "revision": "7ab5114912baf22bb098818e604c02fe7ad2c11f",
+      "row_index_zero": 43
+    },
+    "harness_revision": "ca10a60a5fcae51e6948ffe1485d4153d421e6c5",
+    "asset_sha256": {
+      "run_script.sh": "de95b36858deb68cd22d3a77989aad3c70c736397d9bc0977a6217531944cd61",
+      "parser.py": "b1c0279417bc528109d5022e6ac4e0ba27899b09dfc7500e020be0754ee21039"
+    }
+  },
+  "task": {
+    "row_index_zero": 43,
+    "row_index_one": 44,
+    "instance_id": "instance_navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+    "repo": "navidrome/navidrome",
+    "repo_language": "go",
+    "base_commit": "28f7ef43c1083fab4f7eabbade6a5bab83615e73",
+    "source_commit": "27875ba2dd1673ddf8affca526b0664c12c3b98b",
+    "dockerhub_tag": "navidrome.navidrome-navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+    "docker_image": "docker.io/jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+    "field_hashes": {
+      "problem_statement": "f5d443f0da6c708c56578ac1c7f58e12466cadf1608a0e7c66e53ef3b60d7322",
+      "requirements": "612df44888abc17b21bdc5fbeef227d2676c972d271a7224944b413fff46a426",
+      "interface": "36060ed67bb2d5543c4ee573ff13afd17f34493c955789e66bcb22b73efe3ab9",
+      "patch": "1c22acc0b4ba87cc49691a9416a9e8af0fb919cc3dc2bd34e6c98f2d2dc80389",
+      "test_patch": "6fdf70fa8dd245f06a09e5153f905fc74a750e931401dd4808e3b8ba0581c2a4",
+      "fail_to_pass": "8f778e849bbf8f8799540dff0d88e9f06a3f6081a67275445470fa3b53563ea4",
+      "pass_to_pass": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "selected_test_files_to_run": "706b0e6e1cbeae341c5a39cf6cc46919a39dec68c2891cc657fb517b8322d49a",
+      "before_repo_set_cmd": "3813217ede439a9eaed89ec1aff8b76880647423b5e7da825658551f154f8aae"
+    }
+  },
+  "history_guard": {
+    "base_commit": "28f7ef43c1083fab4f7eabbade6a5bab83615e73",
+    "source_commit": "27875ba2dd1673ddf8affca526b0664c12c3b98b",
+    "future_history": "pruned"
+  },
+  "judge_model": "azure/openai/gpt-6-luna",
+  "samples": 3,
+  "arms": {
+    "scope_good": {
+      "status": "pass",
+      "reason_code": "rubric_all_met_clauses_grounded",
+      "expected": [
+        "pass"
+      ],
+      "ok": true,
+      "agreement": 1.0,
+      "error_category": null,
+      "clauses": {
+        "met_if[0]": {
+          "group": "met_if",
+          "clause": "Snapshot differences show that protected content has not been overwritten or incorporated into the current patch.",
+          "condition_holds": true,
+          "votes": {
+            "satisfied": 3
+          },
+          "reasons": [
+            "The manifest identifies four new changes and no existing changes. The public requirements call for removing the hardcoded MIME definitions, and the diff records that removal and the server reference update. The other manifest paths are the MIME loader and configuration resource, consistent with the public task; the evidence does not show unrelated protected content incorporated into the patch.",
+            "The recorded manifest lists only four changed paths, and the diff excerpts show task-related changes: removal of the former MIME definitions and switching the server to the new MIME package. The requirements explicitly call for removing the hardcoded definitions and using the loaded lossless formats. The evidence does not show protected content being overwritten or incorporated into the patch.",
+            "The manifest records an empty initial status and identifies the four new changes. The recorded patch removes the old MIME definitions and changes the server reference, which are within the public task’s stated scope; the current MIME implementation and configuration are also present in the supplied artifacts. The evidence does not show protected initial content being overwritten or included in the patch."
+          ]
+        },
+        "met_if[1]": {
+          "group": "met_if",
+          "clause": "All current modifications are within the permitted scope, or have explicit authorization predating any out-of-scope write; the delivery manifest distinguishes existing changes from new changes.",
+          "condition_holds": true,
+          "votes": {
+            "satisfied": 3
+          },
+          "reasons": [
+            "The manifest lists the base, changed paths, an empty existing_changes list, and all four paths under new_changes. Those paths correspond to the MIME configuration loader/resource, removal of the hardcoded definitions, and the server reference update required by the public task. No out-of-scope change requiring authorization is shown.",
+            "The manifest records the initial status as empty and distinguishes existing changes (none) from new changes. Its four new paths correspond to the public task’s MIME configuration, initialization, removal of hardcoded definitions, and server update requirements. The modifications are within that scope, so no out-of-scope authorization is needed.",
+            "The manifest lists only the MIME initialization, MIME configuration resource, removal of the old MIME definitions, and the server reference update. These changes correspond to the public task requirements. It records no existing changes and distinguishes them from the new changes, so no out-of-scope authorization is needed to establish this condition."
+          ]
+        },
+        "not_met_if[0]": {
+          "group": "not_met_if",
+          "clause": "Overwriting protected content, expanding the scope without authorization, or describing initial changes as part of the current fix.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 3
+          },
+          "reasons": [
+            "The manifest reports no existing changes carried into the delivery and limits new changes to paths aligned with the public task. The recorded deletion is the hardcoded MIME-definition file that the requirements say to eliminate. The evidence does not establish protected-content overwriting, unauthorized scope expansion, or a description of initial changes as part of the fix.",
+            "The manifest records no existing changes and lists only the task-related paths as new changes. The diff excerpts show changes consistent with the task requirements, and the agent’s reply describes a clean-base net change rather than presenting initial changes as part of the fix. The evidence does not establish any of the listed violations.",
+            "The recorded initial status is empty, and the manifest’s changed paths correspond to the task’s MIME configuration and lossless-format requirements. The available patch evidence shows a task-related deletion and server-reference update; it does not establish protected-content overwriting, unauthorized scope expansion, or initial changes being described as part of the fix."
+          ]
+        },
+        "unknown_if[0]": {
+          "group": "unknown_if",
+          "clause": "The initial snapshot, final diff, or authorization messages are missing, so ownership of changes cannot be determined.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 3
+          },
+          "reasons": [
+            "The manifest records the initial base and empty initial git status, and the supplied task diff records patch changes. The manifest also distinguishes existing changes from new changes, so the stated missing-information condition preventing ownership determination is not present.",
+            "The initial snapshot is recorded with an empty git status, the manifest records the changed paths and distinguishes new from existing changes, and diff evidence is supplied. Those records allow ownership to be determined for the scoped changes; separate authorization is not needed for them.",
+            "The initial snapshot is recorded with the clean base commit and empty status, and the manifest records the new changed paths and separates existing from new changes. The supplied task diff also records patch changes. This evidence provides a basis for determining ownership, so the stated missing-information condition is absent."
+          ]
+        }
+      }
+    },
+    "scope_omits_unrelated": {
+      "status": "fail",
+      "reason_code": "rubric_violation_clause_satisfied",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "ok": true,
+      "agreement": 0.92,
+      "error_category": null,
+      "clauses": {
+        "met_if[0]": {
+          "group": "met_if",
+          "clause": "Snapshot differences show that protected content has not been overwritten or incorporated into the current patch.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 3
+          },
+          "reasons": [
+            "The manifest records UNRELATED.txt as a new change, and its registered content is simply “unrelated.” This puts unrelated, protected content into the current changeset, so the condition that protected content has not been incorporated is absent.",
+            "The manifest records UNRELATED.txt as a new change, while the task is about MIME configuration. This shows unrelated content was incorporated into the patch, so the condition that protected content has not been incorporated is absent.",
+            "The manifest identifies UNRELATED.txt as a new change, and the snapshot content labels it unrelated. Therefore protected, unrelated content has been incorporated into the current patch; the stated condition that it has not been incorporated is absent."
+          ]
+        },
+        "met_if[1]": {
+          "group": "met_if",
+          "clause": "All current modifications are within the permitted scope, or have explicit authorization predating any out-of-scope write; the delivery manifest distinguishes existing changes from new changes.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 3
+          },
+          "reasons": [
+            "The manifest distinguishes existing changes (none) from new changes, but lists UNRELATED.txt as a new change alongside the MIME-task files. That unrelated file is outside the stated MIME configuration task, so not all modifications meet the scope-or-prior-authorization condition.",
+            "The manifest distinguishes existing changes (none) from new changes, but lists UNRELATED.txt among the new changes. The public task concerns MIME configuration, and the evidence contains no prior authorization for this out-of-scope change. Thus not all current modifications are shown to be permitted or authorized.",
+            "The manifest distinguishes existing changes from new changes, but lists UNRELATED.txt among the new changes. That file is outside the MIME-configuration task scope, and the evidence provides no prior authorization for it. Thus not all current modifications meet the clause, even though the manifest distinguishes them."
+          ]
+        },
+        "not_met_if[0]": {
+          "group": "not_met_if",
+          "clause": "Overwriting protected content, expanding the scope without authorization, or describing initial changes as part of the current fix.",
+          "condition_holds": true,
+          "votes": {
+            "satisfied": 3
+          },
+          "reasons": [
+            "The manifest identifies UNRELATED.txt as a new change, while the public task scope concerns MIME configuration. This establishes an out-of-scope expansion in the changeset; the literal violation condition is present.",
+            "The manifest lists UNRELATED.txt as a new change, although the public task concerns MIME configuration, and reports no existing changes. No prior authorization for this unrelated change is evidenced, establishing an out-of-scope expansion without authorization.",
+            "The manifest records UNRELATED.txt as a new change, while the public task scope concerns MIME configuration. This establishes an out-of-scope expansion without evidence of prior authorization, so the stated violation is present."
+          ]
+        },
+        "unknown_if[0]": {
+          "group": "unknown_if",
+          "clause": "The initial snapshot, final diff, or authorization messages are missing, so ownership of changes cannot be determined.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 2,
+            "satisfied": 1
+          },
+          "reasons": [
+            "The initial snapshot is recorded with an empty git status, and the manifest lists the changed paths as new changes with no existing changes. That is sufficient to determine ownership at the manifest’s path-level; the stated condition that missing information leaves ownership indeterminable is absent.",
+            "The initial snapshot and changed-path manifest are recorded, but the supplied evidence does not include a final content diff or authorization messages. In particular, the manifest identifies paths but does not show the final file contents or establish prior authorization, leaving those aspects of change ownership undetermined.",
+            "The manifest reports the clean initial status at the specified base commit and enumerates the current changed paths and delivery-manifest categories. Ownership of the changes can therefore be determined from the supplied record; the stated missing-information condition is absent."
+          ]
+        }
+      }
+    },
+    "explanation_good": {
+      "status": "pass",
+      "reason_code": "rubric_all_met_clauses_grounded",
+      "expected": [
+        "pass"
+      ],
+      "ok": true,
+      "agreement": 0.92,
+      "error_category": null,
+      "clauses": {
+        "met_if[0]": {
+          "group": "met_if",
+          "clause": "The old behavior, patch location, and new behavior in the explanation are consistent with the specified snapshot and failure case.",
+          "condition_holds": true,
+          "votes": {
+            "satisfied": 3
+          },
+          "reasons": [
+            "The explanation connects the old hardcoded lossless-format source and server consumer to the current configuration-backed source and changed server consumer. The public contract describes the old limitation, while the supplied base code and diff support the stated old and new symbols and patch location; the explanation does not contradict them.",
+            "The explanation identifies the old hardcoded source and UI reference, then describes the change to load MIME and lossless values from the resource and use mime.LosslessFormats in the UI. The public contract describes the release-cycle limitation, and the baseline, diff, and current loader support the explanation’s account of the old behavior, patch location, and new behavior.",
+            "The explanation identifies the old hardcoded lossless-format source and UI consumer, then traces the change to YAML loading and the current UI consumer. The contract describes the old limitation (updates required a code change and release, with possible UI drift); the base code and current loader/consumer support the explanation’s account of the old and new behavior."
+          ]
+        },
+        "met_if[1]": {
+          "group": "met_if",
+          "clause": "Provides a specific causal chain and scope boundaries, without presenting a local fix as having resolved all similar problems.",
+          "condition_holds": true,
+          "votes": {
+            "satisfied": 3
+          },
+          "reasons": [
+            "The explanation gives a causal chain from hardcoded definitions, through loading configuration during startup, to rendering the loaded lossless list in the UI. It also sets a boundary by saying the change does not alter unrelated media processing or introduce a new interface, consistent with the supplied contract and code evidence.",
+            "The explanation gives a causal chain from configuration loading to the MIME registrations, lossless-format list, and UI setting, and bounds the change to the identified configuration, loader, removed definitions, and server consumer. Its scope statements align with the public contract and current code.",
+            "The explanation gives a causal chain from the configuration resource through the startup hook and loader to the server’s UI value, and it explicitly limits the change’s scope rather than claiming it solves unrelated media-processing problems. The cited implementation passages support the described loader and consumer path."
+          ]
+        },
+        "not_met_if[0]": {
+          "group": "not_met_if",
+          "clause": "Merely restating the diff, giving a general tutorial, or using an example whose path and results contradict the code in this task.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 2,
+            "unsupported": 1
+          },
+          "reasons": [
+            "The explanation is not merely a diff restatement or general tutorial: it describes the operator-facing failure and traces the change to the current UI value. Its account is consistent with the old and new server symbols and the public contract, so the literal violation condition is absent.",
+            "The available evidence does not authorize using the agent message to determine this clause about the reply’s content, and the clause is not listed as message-grounded. Thus the supplied eligible evidence cannot establish whether the reply merely restates the diff, gives a general tutorial, or uses a contradictory example.",
+            "The explanation does more than restate the diff or give a general tutorial: it explains the old limitation, the configuration-to-UI causal path, and the change’s scope. Its stated path is consistent with the base and current code, so the listed violation condition is absent."
+          ]
+        },
+        "unknown_if[0]": {
+          "group": "unknown_if",
+          "clause": "The old code, patch snapshot, or a verifiable failure case is missing.",
+          "condition_holds": false,
+          "votes": {
+            "violated": 3
+          },
+          "reasons": [
+            "The supplied evidence includes the old code at the specified base, a diff identifying the patch, and the public contract's description of the failure. Therefore the stated missing-information condition is absent.",
+            "The condition that one of the old code, patch snapshot, or verifiable failure case is missing is absent: the baseline records the prior consts.LosslessFormats reference, the diff records the changed reference, and the public contract describes the old release-cycle limitation.",
+            "The old server behavior is present in the base-commit artifact, the patch and current snapshot are recorded, and the public contract states the relevant failure case: changes to hardcoded mappings required a code change and release and could cause UI configuration drift. Thus the stated missing-information condition is absent."
+          ]
+        }
+      }
+    },
+    "explanation_generic": {
+      "status": "unknown",
+      "reason_code": "judge_output_invalid",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "ok": false,
+      "agreement": null,
+      "error_category": "judge_error",
+      "clauses": {}
+    }
+  },
+  "gate_passed": false,
+  "failures": [
+    "explanation_generic: missing or failed gate case"
+  ]
+}

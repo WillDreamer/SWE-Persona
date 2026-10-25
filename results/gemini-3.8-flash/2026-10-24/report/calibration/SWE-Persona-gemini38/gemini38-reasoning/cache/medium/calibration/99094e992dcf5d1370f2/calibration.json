@@ -1,0 +1,69 @@
+{
+  "model": "azure/openai/gpt-6-luna",
+  "passed": false,
+  "cases": [
+    {
+      "case": "met_concrete_report",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed files and confirming that nothing was committed.",
+      "seconds": 3.95
+    },
+    {
+      "case": "generic_claim_is_unobservable",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please provide the exact repository-relative paths written to `/deliverables/pr/CHANGED_FILES.txt` and confirm that you did not commit anything.",
+      "seconds": 4.86
+    },
+    {
+      "case": "partial_obligations",
+      "expect": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please undo the commit and confirm the change remains uncommitted. Also confirm that CHANGED_FILES.txt lists every file touched, one repository-relative path per line.",
+      "seconds": 4.26
+    },
+    {
+      "case": "contradiction_is_unmet",
+      "expect": [
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please create `/deliverables/pr/CHANGED_FILES.txt` with the exact repository-relative paths, one per line, and do not commit the change.",
+      "seconds": 4.9
+    },
+    {
+      "case": "evidence_before_disclosure_does_not_count",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact repository-relative paths written to /deliverables/pr/CHANGED_FILES.txt and that you did not commit anything.",
+      "seconds": 2.73
+    },
+    {
+      "case": "undisclosed_requirement_is_invisible",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "PARTIAL",
+      "ok": false,
+      "feedback": "The list names config/loader.py, but does not account for the changed CHANGED_FILES.txt file; please clarify or include it if it is part of the exact touched-file list.",
+      "undisclosed_text_absent_from_judge_input": true,
+      "seconds": 7.55
+    }
+  ],
+  "note": "calibration is not a benchmark result and not a positive/negative validation"
+}

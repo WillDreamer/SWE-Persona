@@ -1,0 +1,56 @@
+{
+  "state": "finished_with_errors",
+  "pid": 4176987,
+  "started_at": "2026-10-21T23:52:21.717144+00:00",
+  "workers": 8,
+  "selected_total": 297,
+  "selected_per_level": 99,
+  "runtime_sha256": {
+    "main": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "repair": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606"
+  },
+  "driver_sha256": "b9921cf30679e13c21d9a3749065c1ef984bf1a7c838b243c876ca7c125aba3a",
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "time_limit_multipliers": {
+    "low": 1,
+    "medium": 1,
+    "high": 2
+  },
+  "adopted_at_start": 4,
+  "inherited_results": 97,
+  "new_attempts_planned": 196,
+  "skipped_pairs": [
+    {
+      "level": "low",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/low/0000/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    },
+    {
+      "level": "medium",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/medium/0001/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    },
+    {
+      "level": "high",
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "smoke_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/high/0000/result.json",
+      "reason": "empty_output_recovery_exhausted"
+    }
+  ],
+  "sources": {
+    "main": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning",
+    "repair": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-scored"
+  },
+  "concurrency_policy": "Eight total task slots, including adopted episodes; each task/level pair owns exactly one selected attempt.",
+  "previous_workers": 4,
+  "historical_attempts_preserved": true,
+  "authorization": "User explicitly requested another worker increase.",
+  "updated_at": "2026-10-22T09:46:14.983593+00:00",
+  "processed": 297,
+  "running": 0,
+  "pending": 0,
+  "active_tasks": [],
+  "finished_at": "2026-10-22T09:46:14.963773+00:00"
+}

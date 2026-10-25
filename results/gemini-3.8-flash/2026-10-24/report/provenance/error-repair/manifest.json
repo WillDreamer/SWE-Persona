@@ -1,0 +1,44 @@
+{
+  "state": "finished_with_errors",
+  "created_at": "2026-10-23T22:07:27.661496+00:00",
+  "workers": 4,
+  "calibration_workers": 2,
+  "selected_total": 24,
+  "selected_by_level": {
+    "low": 1,
+    "medium": 12,
+    "high": 11
+  },
+  "source_campaign": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x",
+  "source_manifest_sha256": "6f6cdd575bd63ed248ce86aa0a8428bab0b3a1c09886fd4ae7001eebb7cb6cf2",
+  "driver_sha256": "df14ffd01f5011304271da0a48d18c325b93c947317f5d90fafc853c5d8a5a9f",
+  "runtime_sha256": {
+    "repair": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835"
+  },
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "time_limit_multipliers": {
+    "low": 3,
+    "medium": 3,
+    "high": 6
+  },
+  "api_timeouts_sec": {
+    "agent": 360,
+    "user_simulator_and_judge": 900
+  },
+  "gold_preflight_floor_sec": 900,
+  "time_scope": "Existing 3x/3x/6x interaction limits; configured 360/900s API requests now propagate through SWE-Live. Native gold preflight floor increased separately from 300 to 900 seconds.",
+  "policy": "One fresh attempt per selected error after repair; four workers reduce endpoint and verifier contention. Never retry a failed calibration implicitly.",
+  "preserved_unresolved": 17,
+  "score_corrections": 7,
+  "pid": 515899,
+  "started_at": "2026-10-23T22:12:51.708088+00:00",
+  "updated_at": "2026-10-24T03:00:59.411671+00:00",
+  "processed": 24,
+  "running_tasks": 0,
+  "running_calibrations": 0,
+  "pending_tasks": 0,
+  "calibration_completed": 8,
+  "calibration_passed": 7,
+  "active": [],
+  "finished_at": "2026-10-24T03:00:59.371236+00:00"
+}

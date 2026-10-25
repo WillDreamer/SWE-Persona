@@ -1,0 +1,20 @@
+ M README.md
+ M SHA256SUMS
+ M release.json
+ M scripts/evaluate.py
+ M src/swe_persona/cli.py
+ M src/swe_persona/swe_live.py
+ M src/swe_persona/swe_together.py
+ M src/swe_persona/time_limit.py
+ M src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+ M src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+ M src/swe_persona/vendor/tb3/run.py
+ M swe-persona-lite.parquet
+ M tests/test_deepswe_runtime_repair.py
+ M tests/test_together_calibration_fixtures.py
+?? scripts/run_gemini38.py
+?? scripts/run_together_calibration_repair.py
+?? tests/test_time_multiplier.py

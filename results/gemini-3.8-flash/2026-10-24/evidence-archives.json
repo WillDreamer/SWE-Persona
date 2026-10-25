@@ -1,0 +1,17 @@
+{
+  "delivery_status": "full_recorded_evidence_included",
+  "archives": [
+    {
+      "name": "gemini38-results.zip",
+      "bytes": 5324779,
+      "sha256": "be6c41b7ec3dea22429ca1b4d4163a308c5b08c4077fe715c98e751d098c7053",
+      "path": "artifacts/gemini38-results.zip"
+    },
+    {
+      "name": "gemini38-evidence.tar.gz",
+      "bytes": 1989528968,
+      "sha256": "0843b0f88ab5652c6fbd13a44a4b1f1d13d9ae2db2dfb38705bb2ab1361765e0",
+      "path": "artifacts/gemini38-evidence.tar.gz"
+    }
+  ]
+}

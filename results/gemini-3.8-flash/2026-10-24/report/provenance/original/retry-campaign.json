@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T01:10:06.485214+00:00",
+  "retry_campaign": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x",
+  "scope": "All 277 non-successful pairs, including errors and skips",
+  "previous_results_unchanged": true,
+  "time_budget_factor_from_previous": 3,
+  "api_timeouts_sec": {
+    "agent": 360,
+    "simulator_judge": 900
+  },
+  "interaction_multipliers_from_task_default": {
+    "low": 3,
+    "medium": 3,
+    "high": 6
+  }
+}

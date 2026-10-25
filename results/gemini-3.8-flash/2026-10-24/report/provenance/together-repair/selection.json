@@ -1,0 +1,72 @@
+[
+  {
+    "key": "medium/swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+    "level": "medium",
+    "index": 67,
+    "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+    "profile": "swe-together",
+    "source_benchmark": "SWE-Together",
+    "source": "main",
+    "repo": "repositories/SWE-Persona-gemini38-together-fix",
+    "config": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/config.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814",
+    "cache": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache",
+    "calibration_receipt": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/calibration-results/medium/swe-together.json",
+    "group": "main--medium--swe-together",
+    "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0067/result.json",
+    "prior_result_sha256": "02aa0a858f4c6199d5b6f9579979f04490291a4a74e4e2c12371367ad8e356e3",
+    "prior_status": "fail",
+    "prior_audit_reason": "correctness_persona_or_non_time_limit_failure",
+    "previous_timeout_eligible": false,
+    "prior_multiplier": 1.0,
+    "retry_multiplier": 3.0,
+    "prior_interaction_seconds": 1800.0,
+    "retry_interaction_seconds": 5400.0,
+    "prior_api_timeouts": {
+      "agent": 120,
+      "user_simulator": 300
+    },
+    "retry_api_timeouts": {
+      "agent": 360.0,
+      "user_simulator": 900.0
+    },
+    "blocked_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0067/result.json",
+    "blocked_result_sha256": "1fdfede5c56b5597632f423d6a75c787dfdeae04f93c8adc6580f50dc8717247"
+  },
+  {
+    "key": "medium/swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+    "level": "medium",
+    "index": 70,
+    "task_id": "swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+    "profile": "swe-together",
+    "source_benchmark": "SWE-Together",
+    "source": "main",
+    "repo": "repositories/SWE-Persona-gemini38-together-fix",
+    "config": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/config.json",
+    "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+    "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814",
+    "cache": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache",
+    "calibration_receipt": "repositories/SWE-Persona-gemini38/runs/gemini38-reasoning/calibration-results/medium/swe-together.json",
+    "group": "main--medium--swe-together",
+    "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0070/result.json",
+    "prior_result_sha256": "87b4ecd934a07c7aa70aa480aed7ef1f91aa96d5820d8286e2bdd5e947097609",
+    "prior_status": "fail",
+    "prior_audit_reason": "interaction_time_exhausted",
+    "previous_timeout_eligible": true,
+    "prior_multiplier": 1.0,
+    "retry_multiplier": 3.0,
+    "prior_interaction_seconds": 1800.0,
+    "retry_interaction_seconds": 5400.0,
+    "prior_api_timeouts": {
+      "agent": 120,
+      "user_simulator": 300
+    },
+    "retry_api_timeouts": {
+      "agent": 360.0,
+      "user_simulator": 900.0
+    },
+    "blocked_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0070/result.json",
+    "blocked_result_sha256": "73d590db4da5def29dfc34b6830e50ef5381363690bd8a835a2284192089b217"
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "model": "azure/openai/gpt-6-luna",
+  "fixture_protocol": "mini-repository-file-list-v2",
+  "passed": true,
+  "cases": [
+    {
+      "case": "met_concrete_report",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed files in the requested delivery file and leaving the changes uncommitted.",
+      "seconds": 5.44
+    },
+    {
+      "case": "generic_claim_is_unobservable",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the exact repository-relative paths written to /deliverables/pr/CHANGED_FILES.txt and whether you left the change uncommitted.",
+      "seconds": 2.32
+    },
+    {
+      "case": "partial_obligations",
+      "expect": [
+        "PARTIAL",
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please undo the commit and leave the changes uncommitted.",
+      "seconds": 2.43
+    },
+    {
+      "case": "contradiction_is_unmet",
+      "expect": [
+        "UNMET"
+      ],
+      "verdict": "UNMET",
+      "ok": true,
+      "feedback": "Please write the exact repository-relative file list to /deliverables/pr/CHANGED_FILES.txt and do not commit changes.",
+      "seconds": 2.25
+    },
+    {
+      "case": "evidence_before_disclosure_does_not_count",
+      "expect": [
+        "UNOBSERVABLE"
+      ],
+      "verdict": "UNOBSERVABLE",
+      "ok": true,
+      "feedback": "Please confirm the file list was written to the requested path and that no commit was made.",
+      "seconds": 1.75
+    },
+    {
+      "case": "undisclosed_requirement_is_invisible",
+      "expect": [
+        "MET"
+      ],
+      "verdict": "MET",
+      "ok": true,
+      "feedback": "Thanks for listing the changed repository file in the requested delivery artifact and leaving the change uncommitted.",
+      "undisclosed_text_absent_from_judge_input": true,
+      "seconds": 3.27
+    }
+  ],
+  "note": "calibration is not a benchmark result and not a positive/negative validation"
+}

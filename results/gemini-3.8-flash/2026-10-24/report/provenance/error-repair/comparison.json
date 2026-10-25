@@ -1,0 +1,457 @@
+{
+  "updated_at": "2026-10-24T03:00:59.379075+00:00",
+  "source": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x",
+  "selected": 24,
+  "time_policy": "Existing 3x/3x/6x interaction limits; configured 360/900s API requests now propagate through SWE-Live. Native gold preflight floor increased separately from 300 to 900 seconds.",
+  "levels": {
+    "low": {
+      "running": 0,
+      "scores": {
+        "overall": {
+          "selected": 1,
+          "attempted": 1,
+          "not_attempted": 0,
+          "status_counts": {
+            "infrastructure_error": 1
+          },
+          "valid_evaluations": 0,
+          "complete_native_and_persona_grading": 0,
+          "total_timeouts": 0,
+          "joint_passes": 0,
+          "joint_success_rate": null,
+          "joint_success_rate_valid_only": null,
+          "provisional_evaluations": 0,
+          "score_status": "standard",
+          "provisional_joint_success_rate": null,
+          "provisional_joint_success_rate_valid_only": null,
+          "native_grades_observed": 0,
+          "native_pass_rate_observed": null,
+          "persona_grades_observed": 0,
+          "persona_pass_rate_observed": null
+        },
+        "by_source_benchmark": {
+          "DeepSWE": {
+            "selected": 1,
+            "attempted": 1,
+            "not_attempted": 0,
+            "status_counts": {
+              "infrastructure_error": 1
+            },
+            "valid_evaluations": 0,
+            "complete_native_and_persona_grading": 0,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": null,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 0,
+            "native_pass_rate_observed": null,
+            "persona_grades_observed": 0,
+            "persona_pass_rate_observed": null
+          }
+        },
+        "by_profile": {
+          "deep-swe": {
+            "selected": 1,
+            "attempted": 1,
+            "not_attempted": 0,
+            "status_counts": {
+              "infrastructure_error": 1
+            },
+            "valid_evaluations": 0,
+            "complete_native_and_persona_grading": 0,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": null,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 0,
+            "native_pass_rate_observed": null,
+            "persona_grades_observed": 0,
+            "persona_pass_rate_observed": null
+          }
+        },
+        "notes": [
+          "Rates are fractions in [0, 1].",
+          "joint_success_rate is null until every selected task has a valid pass/fail outcome.",
+          "An enforced total timeout is a valid failure with zero joint credit; unexecuted component grades remain unknown.",
+          "Errors, cancelled/skipped tasks, calibration failures and dry runs are excluded from valid-only rates and remain in status counts.",
+          "Valid-only and observed-grade rates use the displayed denominators; they are not full-selection scores.",
+          "Compare models only with matched selection, runtime, simulator/judge, API settings, budgets and hardware.",
+          "Degraded SWE-Together calibration permits diagnostic execution only: formal joint rates remain null; provisional rates and observed component grades are retained."
+        ]
+      }
+    },
+    "medium": {
+      "running": 0,
+      "scores": {
+        "overall": {
+          "selected": 12,
+          "attempted": 12,
+          "not_attempted": 0,
+          "status_counts": {
+            "pass": 1,
+            "fail": 10,
+            "invalid": 1
+          },
+          "valid_evaluations": 11,
+          "complete_native_and_persona_grading": 7,
+          "total_timeouts": 4,
+          "joint_passes": 1,
+          "joint_success_rate": null,
+          "joint_success_rate_valid_only": 0.09090909090909091,
+          "provisional_evaluations": 0,
+          "score_status": "standard",
+          "provisional_joint_success_rate": null,
+          "provisional_joint_success_rate_valid_only": null,
+          "native_grades_observed": 11,
+          "native_pass_rate_observed": 0.18181818181818182,
+          "persona_grades_observed": 7,
+          "persona_pass_rate_observed": 0.2857142857142857
+        },
+        "by_source_benchmark": {
+          "DeepSWE": {
+            "selected": 3,
+            "attempted": 3,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 3
+            },
+            "valid_evaluations": 3,
+            "complete_native_and_persona_grading": 3,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": 0.0,
+            "joint_success_rate_valid_only": 0.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 3,
+            "native_pass_rate_observed": 0.0,
+            "persona_grades_observed": 3,
+            "persona_pass_rate_observed": 0.0
+          },
+          "SWE-bench Pro": {
+            "selected": 5,
+            "attempted": 5,
+            "not_attempted": 0,
+            "status_counts": {
+              "pass": 1,
+              "fail": 3,
+              "invalid": 1
+            },
+            "valid_evaluations": 4,
+            "complete_native_and_persona_grading": 4,
+            "total_timeouts": 0,
+            "joint_passes": 1,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": 0.25,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 4,
+            "native_pass_rate_observed": 0.25,
+            "persona_grades_observed": 4,
+            "persona_pass_rate_observed": 0.5
+          },
+          "SWE-bench-Live MultiLang": {
+            "selected": 4,
+            "attempted": 4,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 4
+            },
+            "valid_evaluations": 4,
+            "complete_native_and_persona_grading": 0,
+            "total_timeouts": 4,
+            "joint_passes": 0,
+            "joint_success_rate": 0.0,
+            "joint_success_rate_valid_only": 0.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 4,
+            "native_pass_rate_observed": 0.25,
+            "persona_grades_observed": 0,
+            "persona_pass_rate_observed": null
+          }
+        },
+        "by_profile": {
+          "deep-swe": {
+            "selected": 3,
+            "attempted": 3,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 3
+            },
+            "valid_evaluations": 3,
+            "complete_native_and_persona_grading": 3,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": 0.0,
+            "joint_success_rate_valid_only": 0.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 3,
+            "native_pass_rate_observed": 0.0,
+            "persona_grades_observed": 3,
+            "persona_pass_rate_observed": 0.0
+          },
+          "swe-bench-live": {
+            "selected": 4,
+            "attempted": 4,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 4
+            },
+            "valid_evaluations": 4,
+            "complete_native_and_persona_grading": 0,
+            "total_timeouts": 4,
+            "joint_passes": 0,
+            "joint_success_rate": 0.0,
+            "joint_success_rate_valid_only": 0.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 4,
+            "native_pass_rate_observed": 0.25,
+            "persona_grades_observed": 0,
+            "persona_pass_rate_observed": null
+          },
+          "swe-bench-pro-mini": {
+            "selected": 1,
+            "attempted": 1,
+            "not_attempted": 0,
+            "status_counts": {
+              "pass": 1
+            },
+            "valid_evaluations": 1,
+            "complete_native_and_persona_grading": 1,
+            "total_timeouts": 0,
+            "joint_passes": 1,
+            "joint_success_rate": 1.0,
+            "joint_success_rate_valid_only": 1.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 1,
+            "native_pass_rate_observed": 1.0,
+            "persona_grades_observed": 1,
+            "persona_pass_rate_observed": 1.0
+          },
+          "swe-bench-pro-shell": {
+            "selected": 4,
+            "attempted": 4,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 3,
+              "invalid": 1
+            },
+            "valid_evaluations": 3,
+            "complete_native_and_persona_grading": 3,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": 0.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 3,
+            "native_pass_rate_observed": 0.0,
+            "persona_grades_observed": 3,
+            "persona_pass_rate_observed": 0.3333333333333333
+          }
+        },
+        "notes": [
+          "Rates are fractions in [0, 1].",
+          "joint_success_rate is null until every selected task has a valid pass/fail outcome.",
+          "An enforced total timeout is a valid failure with zero joint credit; unexecuted component grades remain unknown.",
+          "Errors, cancelled/skipped tasks, calibration failures and dry runs are excluded from valid-only rates and remain in status counts.",
+          "Valid-only and observed-grade rates use the displayed denominators; they are not full-selection scores.",
+          "Compare models only with matched selection, runtime, simulator/judge, API settings, budgets and hardware.",
+          "Degraded SWE-Together calibration permits diagnostic execution only: formal joint rates remain null; provisional rates and observed component grades are retained."
+        ]
+      }
+    },
+    "high": {
+      "running": 0,
+      "scores": {
+        "overall": {
+          "selected": 11,
+          "attempted": 11,
+          "not_attempted": 0,
+          "status_counts": {
+            "pass": 2,
+            "calibration_error": 4,
+            "fail": 4,
+            "infrastructure_error": 1
+          },
+          "valid_evaluations": 6,
+          "complete_native_and_persona_grading": 4,
+          "total_timeouts": 4,
+          "joint_passes": 2,
+          "joint_success_rate": null,
+          "joint_success_rate_valid_only": 0.3333333333333333,
+          "provisional_evaluations": 0,
+          "score_status": "standard",
+          "provisional_joint_success_rate": null,
+          "provisional_joint_success_rate_valid_only": null,
+          "native_grades_observed": 5,
+          "native_pass_rate_observed": 0.4,
+          "persona_grades_observed": 4,
+          "persona_pass_rate_observed": 0.5
+        },
+        "by_source_benchmark": {
+          "SWE-bench Pro": {
+            "selected": 5,
+            "attempted": 5,
+            "not_attempted": 0,
+            "status_counts": {
+              "pass": 1,
+              "calibration_error": 4
+            },
+            "valid_evaluations": 1,
+            "complete_native_and_persona_grading": 1,
+            "total_timeouts": 0,
+            "joint_passes": 1,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": 1.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 1,
+            "native_pass_rate_observed": 1.0,
+            "persona_grades_observed": 1,
+            "persona_pass_rate_observed": 1.0
+          },
+          "SWE-bench-Live MultiLang": {
+            "selected": 6,
+            "attempted": 6,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 4,
+              "pass": 1,
+              "infrastructure_error": 1
+            },
+            "valid_evaluations": 5,
+            "complete_native_and_persona_grading": 3,
+            "total_timeouts": 4,
+            "joint_passes": 1,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": 0.2,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 4,
+            "native_pass_rate_observed": 0.25,
+            "persona_grades_observed": 3,
+            "persona_pass_rate_observed": 0.3333333333333333
+          }
+        },
+        "by_profile": {
+          "swe-bench-live": {
+            "selected": 6,
+            "attempted": 6,
+            "not_attempted": 0,
+            "status_counts": {
+              "fail": 4,
+              "pass": 1,
+              "infrastructure_error": 1
+            },
+            "valid_evaluations": 5,
+            "complete_native_and_persona_grading": 3,
+            "total_timeouts": 4,
+            "joint_passes": 1,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": 0.2,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 4,
+            "native_pass_rate_observed": 0.25,
+            "persona_grades_observed": 3,
+            "persona_pass_rate_observed": 0.3333333333333333
+          },
+          "swe-bench-pro-mini": {
+            "selected": 1,
+            "attempted": 1,
+            "not_attempted": 0,
+            "status_counts": {
+              "pass": 1
+            },
+            "valid_evaluations": 1,
+            "complete_native_and_persona_grading": 1,
+            "total_timeouts": 0,
+            "joint_passes": 1,
+            "joint_success_rate": 1.0,
+            "joint_success_rate_valid_only": 1.0,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 1,
+            "native_pass_rate_observed": 1.0,
+            "persona_grades_observed": 1,
+            "persona_pass_rate_observed": 1.0
+          },
+          "swe-bench-pro-shell": {
+            "selected": 4,
+            "attempted": 4,
+            "not_attempted": 0,
+            "status_counts": {
+              "calibration_error": 4
+            },
+            "valid_evaluations": 0,
+            "complete_native_and_persona_grading": 0,
+            "total_timeouts": 0,
+            "joint_passes": 0,
+            "joint_success_rate": null,
+            "joint_success_rate_valid_only": null,
+            "provisional_evaluations": 0,
+            "score_status": "standard",
+            "provisional_joint_success_rate": null,
+            "provisional_joint_success_rate_valid_only": null,
+            "native_grades_observed": 0,
+            "native_pass_rate_observed": null,
+            "persona_grades_observed": 0,
+            "persona_pass_rate_observed": null
+          }
+        },
+        "notes": [
+          "Rates are fractions in [0, 1].",
+          "joint_success_rate is null until every selected task has a valid pass/fail outcome.",
+          "An enforced total timeout is a valid failure with zero joint credit; unexecuted component grades remain unknown.",
+          "Errors, cancelled/skipped tasks, calibration failures and dry runs are excluded from valid-only rates and remain in status counts.",
+          "Valid-only and observed-grade rates use the displayed denominators; they are not full-selection scores.",
+          "Compare models only with matched selection, runtime, simulator/judge, API settings, budgets and hardware.",
+          "Degraded SWE-Together calibration permits diagnostic execution only: formal joint rates remain null; provisional rates and observed component grades are retained."
+        ]
+      }
+    }
+  },
+  "paired_outcomes": {
+    "infrastructure_error -> infrastructure_error": 2,
+    "infrastructure_error -> pass": 3,
+    "infrastructure_error -> fail": 14,
+    "invalid -> invalid": 1,
+    "infrastructure_error -> calibration_error": 3,
+    "invalid -> calibration_error": 1
+  }
+}

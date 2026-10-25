@@ -1,0 +1,225 @@
+{
+  "selected": 2,
+  "attempted": 2,
+  "results": [
+    {
+      "task_id": "swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+      "source_benchmark": "SWE-Together",
+      "source_subset": "swe-together",
+      "content_sha256": "7a456c2dc2c3088384ca7225401dad6ade91a5b45116a58fc083248471356cd5",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-together",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": true,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "stop_reason": "user_accepted",
+      "interaction_stall_policy": {
+        "policy": "silent-no-progress-v2",
+        "threshold": 4,
+        "enabled": true
+      },
+      "calibration": {
+        "passed": true,
+        "status": "passed",
+        "execution_allowed": true,
+        "score_provisional": false,
+        "policy": "swe-together-calibration-gate-v1",
+        "mode": "bounded",
+        "controls": 37,
+        "report": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/calibration.json"
+      },
+      "score_provisional": false,
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 1800.0,
+        "effective_sec": 5400.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 1800.0,
+          "max_user_turns": 200,
+          "max_agent_queries_per_turn": 8,
+          "max_simulator_decisions": 200,
+          "verifier_timeout_sec": 120.0,
+          "timing_policy_id": "coding_1800s_finalization_180s_native_verifier_separate"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 5400.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 216801.560863064,
+              "deadline_monotonic": 222201.560863064,
+              "limit_sec": 5400.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 217666.765166496,
+              "deadline_monotonic": 218566.765166496,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 865.2043034320232,
+            "verification": 17.259683302982012,
+            "preparation": 4.292430748988409
+          },
+          "elapsed_sec": 886.7564174839936,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/attempts/0070",
+      "blocked_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0070/result.json",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0070/result.json",
+      "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814"
+    },
+    {
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "source_benchmark": "SWE-Together",
+      "source_subset": "swe-together",
+      "content_sha256": "810472269ae26a1232ddb4ea47ca83f45c51c8c501b4a80759e403541e14af7c",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-together",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 0,
+      "details": [
+        "persona-result.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "verification_complete": false,
+      "outcome_reason": "interaction_stalled",
+      "interaction_stall_assessment": {
+        "status": "fail",
+        "reason": "Preserved work has an unmet or unverified required component; zero joint credit",
+        "policy": "silent-no-progress-v2",
+        "verification_complete": false,
+        "api_interrupted": false,
+        "native_pass": false,
+        "persona_pass": null,
+        "budget_exhausted": false,
+        "artifacts_available": true,
+        "agent_progress": true,
+        "interaction_stalled": true,
+        "outcome_reason": "interaction_stalled"
+      },
+      "stop_reason": "interaction_stalled",
+      "interaction_stalled": true,
+      "interaction_stall_policy": {
+        "policy": "silent-no-progress-v2",
+        "threshold": 4,
+        "enabled": true
+      },
+      "calibration": {
+        "passed": true,
+        "status": "passed",
+        "execution_allowed": true,
+        "score_provisional": false,
+        "policy": "swe-together-calibration-gate-v1",
+        "mode": "bounded",
+        "controls": 37,
+        "report": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/calibration.json"
+      },
+      "score_provisional": false,
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 1800.0,
+        "effective_sec": 5400.0,
+        "time_limit_multiplier": 3.0,
+        "overridden": true,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 900.0,
+        "internal_budget": {
+          "episode_timeout_sec": 1800.0,
+          "max_user_turns": 200,
+          "max_agent_queries_per_turn": 8,
+          "max_simulator_decisions": 200,
+          "verifier_timeout_sec": 120.0,
+          "timing_policy_id": "coding_1800s_finalization_180s_native_verifier_separate"
+        },
+        "internal_limits_preserved": false,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 5400.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 216801.465224814,
+              "deadline_monotonic": 222201.465224814,
+              "limit_sec": 5400.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 218635.638839479,
+              "deadline_monotonic": 219535.638839479,
+              "limit_sec": 900.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1834.173614665022,
+            "verification": 40.15879173798021,
+            "preparation": 4.226788350992138
+          },
+          "elapsed_sec": 1878.5591947539942,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 0,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "evidence_directory": "repositories/SWE-Persona-gemini38-together-fix/runs/medium-together-calibration-repair/attempts/0067",
+      "blocked_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/medium/0067/result.json",
+      "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers/attempts/medium/0067/result.json",
+      "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814"
+    }
+  ],
+  "status_counts": {
+    "fail": 2
+  },
+  "running": 0,
+  "selection": [
+    {
+      "task_id": "swtogether/dataclaw-windows-path-fix--student_needing_explanation",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    },
+    {
+      "task_id": "swtogether/agent-swarm-task-ea4bd8--first_time_pr_contributor",
+      "source_benchmark": "SWE-Together",
+      "profile": "swe-together"
+    }
+  ]
+}

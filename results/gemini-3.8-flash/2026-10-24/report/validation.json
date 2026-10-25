@@ -1,0 +1,12 @@
+{
+  "verified_at": "2026-10-24T05:00:00.795579+00:00",
+  "runtime_fingerprints_verified": 4,
+  "dataset_checksum_verified": true,
+  "cumulative_results": 297,
+  "separate_campaign_result_entries": 600,
+  "result_detail_paths_verified": 882,
+  "evidence_files_verified": 83242,
+  "archive_sha256": "0843b0f88ab5652c6fbd13a44a4b1f1d13d9ae2db2dfb38705bb2ab1361765e0",
+  "credential_matches": 0,
+  "formal_full_selection_rates_null": true
+}

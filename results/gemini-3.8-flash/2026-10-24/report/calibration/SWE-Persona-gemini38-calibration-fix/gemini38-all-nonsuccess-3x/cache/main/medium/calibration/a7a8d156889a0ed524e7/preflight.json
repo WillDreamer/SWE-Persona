@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-23T01:12:59.432439+00:00",
+  "ready": true,
+  "model_calls": 0,
+  "checks": [
+    {
+      "check": "api_dns_tls",
+      "http_status": 404
+    }
+  ],
+  "blocker": null
+}

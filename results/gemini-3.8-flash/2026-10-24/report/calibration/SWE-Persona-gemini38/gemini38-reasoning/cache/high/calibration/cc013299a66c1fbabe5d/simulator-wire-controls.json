@@ -1,0 +1,200 @@
+[
+  {
+    "binding_file": "full109/bindings/agent-swarm-task-ea4bd8__first_time_pr_contributor__first_pr_reviewable_handoff.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please continue with the implementation plan. This is my first PR: do not commit, push, submit, or clean the workspace. I can't confirm the initial workspace state from what I can see, so inspect and report existing changes before editing, and preserve them. After the implementation, please perform the requested end-to-end verification and check whether the pinned npm versions are latest; then address the follow-up requests for agentmail-mcp in the default .mcp.json and lazy-loading agent tasks in the UI.\n\nBefore finishing, give me a reviewable PR draft: the problem, per-file reasons for changes, validation results, and remaining risks. Separately list the items in the actual validation commands declared by the repository and task verifier, with each command reported as run, failed, or not run that were actually run, failed, and were not run; deliver according to deliver in the current conversation; claim a commit, push, or PR only if the original task authorized it and a host record confirms it happened, and do not fabricate a commit ID or say that a PR has already been opened.",
+      "requirement_id": "first_pr_reviewable_handoff"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/agent-swarm-task-ea4bd8__student_needing_explanation__student_learning_constraints_and_check.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Let me also make the constraints for this exercise explicit: the final implementation must satisfy the frozen task runtime bounds are 4 CPUs, 4 GiB memory, 10 GiB storage, a 600-second image-build timeout, and a 120-second verifier timeout. Required verification for this run is bounded static validation (shell syntax, diff whitespace, and relevant acceptance-pattern checks). If the Docker CLI is unavailable, a Docker build or container E2E is optional and must be marked unverified; never claim it passed.; please adjust the current proposal if it does not comply. Also use the task plan and supplied acceptance gates: reduce apt-install RUN blocks from three to at most two; pin the named npm packages; move marketplace installation and static wts/workspace setup to build time; lazy-load agent tasks; preserve per-agent runtime setup. For the result-prediction question, use a source-only change and explain which Docker layers rebuild; for the error-location question, use a missing marketplace plugin or wts config and identify the responsible build-time layer versus entrypoint to give me one result-prediction question and one error-location question, listing the questions first and the reference answers and corresponding supporting code afterward.",
+      "requirement_id": "student_learning_constraints_and_check"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/amytis-task-e3714e__first_time_pr_contributor__first_pr_reviewable_handoff.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "This is my first PR, so please don’t commit, push, submit on my behalf, or clean the workspace. First, inspect the relevant series URL/configuration code and the initial workspace changes without modifying anything; explain which changes already existed so we can keep this fix isolated. The issue to investigate is that `autoPaths: true` does not work when `customPaths` is empty. After showing me the smallest justified fix, proceed with the issue and its tests without including unrelated changes.\n\nBefore finishing, give me a reviewable PR draft: the problem, per-file reasons for changes, validation results, and remaining risks. Separately list the items in commands declared by repository scripts and the frozen task verifier; report each as run, failed, or not run that were actually run, failed, and were not run; deliver according to deliver the patch and evidence here; do not claim a commit, push, or PR creation, and do not fabricate a commit ID or say that a PR has already been opened.",
+      "requirement_id": "first_pr_reviewable_handoff"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/amytis-task-e3714e__manager_no_code__manager_business_acceptance_and_risk.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please investigate and fix the reported series URL issue, then verify the change. Also give me conclusions I can use for acceptance: for user-observable inputs and outputs in the frozen task request, clarify what users do, what they should now see, and what has actually been checked. Then explain how do not claim behavior outside the changed path or validation evidence affects delivery; still use no more than three points, and provide no technical operations.",
+      "requirement_id": "manager_business_acceptance_and_risk"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/banodoco-video-perf-optimize__review_decision_reader__review_verification_boundary.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please continue the original task of running the application locally, and also optimize TopGenerations and ModelTrends; you’re authorized to make and validate changes to those components. Summarize which claims were checked against source or actual execution, which checks were only proposed, and what cannot yet be concluded.",
+      "requirement_id": "review_verification_boundary"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/banodoco-video-perf-optimize__reviewer_evidence_first__review_scope_and_sources.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please optimize TopGenerations and ModelTrends, and continue working toward running the application locally. Changes are authorized only for those components.\n\nPlease state the exact paths or symbols you inspected for this request, what is outside the review scope, and which conclusions come from those sources. Keep the original task permissions unchanged.",
+      "requirement_id": "review_scope_and_sources"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/cli-task-70c88c__first_time_pr_contributor__first_pr_reviewable_handoff.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "I’m opening my first PR, so please don’t submit anything on my behalf or clean the workspace. I don’t have confirmed information about whether the initial workspace contains other changes; preserve any pre-existing changes and keep them out of this patch.\n\nBefore finishing, give me a reviewable PR draft: the problem, per-file reasons for changes, validation results, and remaining risks. Separately list the items in the actual validation commands declared by the repository and task verifier, with each command reported as run, failed, or not run that were actually run, failed, and were not run; deliver according to deliver in the current conversation; claim a commit, push, or PR only if the original task authorized it and a host record confirms it happened, and do not fabricate a commit ID or say that a PR has already been opened.",
+      "requirement_id": "first_pr_reviewable_handoff"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/cli-task-70c88c__student_needing_explanation__student_error_counterexample.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please explain the error path first; explanations and task-verifiable self-checks are required deliverables, not optional style. Do not edit before creating a branch.\n\nDo not just tell me which line to change yet. I am adding a deliverable requirement: use the concrete failing or surprising input, observed behavior, and expected behavior described in the original request for cli-task-70c88c; distinguish any missing detail to follow the actual pre-change entry point and branches that handle that input; cite source locations to the error, list the key intermediate values, and explain where the first deviation from the expected behavior occurs and why this is not a valid result.",
+      "requirement_id": "student_error_counterexample"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/cli-task-c4c7e9__review_decision_reader__review_authorized_next_step.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "I don’t have findings yet. Please check the branch for leftover trail-title generation code and report the evidence. Keep this read-only for now; I’ll authorize removal after we confirm what remains.\n\nTell me the next useful action, who would need to authorize it if it changes code or external state, and what evidence supports doing it now. Do not say an action has happened unless it appears in the current records.",
+      "requirement_id": "review_authorized_next_step"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/cli-task-c4c7e9__reviewer_evidence_first__review_scope_and_sources.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please answer whether stale trail-generation code remains, without making changes. Please state the exact paths or symbols you inspected for this request, what is outside the review scope, and which conclusions come from those sources. Keep the original task permissions unchanged.",
+      "requirement_id": "review_scope_and_sources"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/comfyui-gemma3-sliding-window__review_decision_reader__review_authorized_next_step.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please continue the read-only comparison of ComfyUI and the reference implementation, and explain what sliding attention would require. Tell me the next useful action, who would need to authorize it if it changes code or external state, and what evidence supports doing it now. Do not say an action has happened unless it appears in the current records.",
+      "requirement_id": "review_authorized_next_step"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/comfyui-gemma3-sliding-window__reviewer_evidence_first__review_scope_and_sources.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please state the exact paths or symbols you inspected for this request, what is outside the review scope, and which conclusions come from those sources. Keep the original task permissions unchanged.",
+      "requirement_id": "review_scope_and_sources"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/comfyui-lumina2-lora-prefix__review_decision_reader__review_verification_boundary.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please answer my original question about whether ComfyUI removes the `base_model.model` prefix when loading LoRAs, with a clear conclusion and relevant source evidence. Keep this review-only; don't make changes.\n\nSummarize which claims were checked against source or actual execution, which checks were only proposed, and what cannot yet be concluded.",
+      "requirement_id": "review_verification_boundary"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/comfyui-lumina2-lora-prefix__reviewer_evidence_first__review_concrete_case_and_limit.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please answer my original question using the relevant LoRA-loading code path; don't ask me to restate it. Give one concrete case or code path supporting your conclusion and state what additional observation would change it. If no reproduction is available, say so instead of inventing one.",
+      "requirement_id": "review_concrete_case_and_limit"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/dataclaw-anonymizer-tests__review_decision_reader__review_conclusion_and_uncertainty.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Please lead with the answer to my original question, then state the strongest supporting observation and the most important uncertainty. Do not replace the requested review with an unsolicited implementation. First review `git diff main windows` and explain any identified anonymizer issues. You are now authorized to fix those issues, add regression tests in `tests/test_anonymizer.py`, and examine regex compilation/caching while preserving existing behavior. After the fixes, review the resulting diff; no commit is required.",
+      "requirement_id": "review_conclusion_and_uncertainty"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/dataclaw-anonymizer-tests__reviewer_evidence_first__review_observation_vs_inference.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "You’re authorized to finish the review, fix the anonymizer issues you identify, add regression tests in `tests/test_anonymizer.py`, and examine regex compilation/caching while preserving existing behavior. Start by reviewing `git diff main windows`; then review the resulting diff. Ground findings in source locations and distinguish observed evidence from hypotheses.\n\nBefore finishing, separate what you directly observed from what you infer. For each test or probe you mention, say whether it actually ran and what it showed; do not present a proposal as a measured result.",
+      "requirement_id": "review_observation_vs_inference"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/dataclaw-windows-path-fix__first_time_pr_contributor__first_pr_patch_explanation.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "I also need to be able to explain this PR myself: please use In this repo, what changes do we need to support Windows? to walk through why the old code was wrong, then point out which change in the changed source paths that implement the behavior requested in instruction.md changed the result; also make clear what this particular change is not intended to solve.",
+      "requirement_id": "first_pr_patch_explanation"
+    },
+    "errors": []
+  },
+  {
+    "binding_file": "full109/bindings/dataclaw-windows-path-fix__student_needing_explanation__student_patch_and_boundary_reasoning.json",
+    "passed": true,
+    "decision": {
+      "action": "message",
+      "kind": "persona",
+      "content": "Now explain correctness: how does the changed source paths that implement the behavior requested in instruction.md block the error just discussed while preserving existing behavior outside the reported failing configuration? Please manually walk through the requested behavior at its boundary and an adjacent valid input that must retain existing behavior, identify the differences between the new and old branches, and explain why this is not hardcoded for just one test.",
+      "requirement_id": "student_patch_and_boundary_reasoning"
+    },
+    "errors": []
+  }
+]

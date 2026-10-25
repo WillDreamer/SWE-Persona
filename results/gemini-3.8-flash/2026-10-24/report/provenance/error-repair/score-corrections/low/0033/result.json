@@ -1,0 +1,104 @@
+{
+  "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+  "source_benchmark": "SWE-bench Pro",
+  "source_subset": "swe-bench-pro-shell",
+  "content_sha256": "07dfd05a9e4e78060e85dbe387b682658c8eabbf392f6f967d1d1dacbbdea005",
+  "harness_version": "0.5.0rc9",
+  "profile": "swe-bench-pro-shell",
+  "status": "fail",
+  "native_pass": false,
+  "persona_pass": null,
+  "joint_success": false,
+  "worker_exit_code": 0,
+  "details": [
+    "instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan-student_needing_explanation-20261002-a1/episode.json"
+  ],
+  "note": "Native tests failed before the optional first_patch requirement activated. Persona remains ungraded; this is not joint success.",
+  "persona_requirement_coverage": {
+    "expected_ids": [
+      "req.v4.student_needing_explanation.01"
+    ],
+    "required_check_ids": [],
+    "loaded_ids": [
+      "req.v4.student_needing_explanation.01"
+    ],
+    "checked_ids": [],
+    "missing_loaded_ids": [],
+    "missing_check_ids": [],
+    "complete": true,
+    "persona_pass": null
+  },
+  "outcome_reason": "native_failed_before_conditional_persona_activation",
+  "verification_complete": false,
+  "time_limit": {
+    "policy": "agent-user-wall-clock-v2",
+    "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+    "default_sec": 3600.0,
+    "effective_sec": 10800.0,
+    "time_limit_multiplier": 3.0,
+    "overridden": true,
+    "cleanup_grace_sec": 30,
+    "preparation_sec": 7200.0,
+    "verification_sec": 4800.0,
+    "internal_budget": {
+      "episode_timeout_sec": 3600.0,
+      "max_user_turns": 6,
+      "max_agent_queries_per_turn": 12,
+      "max_simulator_decisions": null,
+      "verifier_timeout_sec": 4200.0,
+      "timing_policy_id": "swe-bench-pro-shell"
+    },
+    "internal_limits_preserved": false,
+    "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+    "internal_limit_audit": "internal-time-limits.jsonl",
+    "execution": {
+      "policy": "agent-user-wall-clock-v2",
+      "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+      "timeout_sec": 10800.0,
+      "timed_out": false,
+      "timeout_phase": null,
+      "interaction_started": true,
+      "phase_events": [
+        {
+          "phase": "interaction",
+          "started_monotonic": 198314.778661839,
+          "deadline_monotonic": 209114.778661839,
+          "limit_sec": 10800.0
+        },
+        {
+          "phase": "verification",
+          "started_monotonic": 198674.44027887,
+          "deadline_monotonic": 203474.44027887,
+          "limit_sec": 4800.0
+        }
+      ],
+      "phase_elapsed_sec": {
+        "interaction": 359.6616170310008,
+        "verification": 37.62280706301681,
+        "preparation": 10.563454514980549
+      },
+      "elapsed_sec": 407.84787860899814,
+      "cleanup_elapsed_sec": 0,
+      "cleanup_grace_sec": 30,
+      "signals": [],
+      "process_exit_code": 0,
+      "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+    }
+  },
+  "evidence_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0033",
+  "run_directory": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0033",
+  "prior_result": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/attempts/low/0033/result.json",
+  "prior_status": "fail",
+  "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+  "time_limit_multiplier": 3.0,
+  "retry_api_timeouts": {
+    "agent": 360.0,
+    "user_simulator": 900.0
+  },
+  "outcome_policy": "conditional-native-failure-v1",
+  "prior_result_sha256": "99a2acdb0ed2594acca1c43d96bf407c9b9bdc51d5b9dc89e4c50e0f89157331",
+  "correction_policy": "conditional-native-failure-v1",
+  "correction_runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+  "episode_runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+  "corrected_at": "2026-10-23T22:07:21.243106+00:00"
+}

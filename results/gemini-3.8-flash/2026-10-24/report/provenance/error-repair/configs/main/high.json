@@ -1,0 +1,30 @@
+{
+  "agent": {
+    "api": "chat_completions",
+    "base_url": "https://inference-api.nvidia.com/v1",
+    "model": "gcp/google/gemini-3.8-flash",
+    "api_key_env": "NVIDIA_API_KEY",
+    "strict_json_schema": true,
+    "structured_output_mode": "json_schema",
+    "structured_output_fallback": true,
+    "timeout_sec": 360.0,
+    "max_tokens_field": "max_tokens",
+    "request_options": {
+      "reasoning_effort": "high"
+    }
+  },
+  "user_simulator": {
+    "api": "responses",
+    "base_url": "https://inference-api.nvidia.com/v1",
+    "model": "azure/openai/gpt-6-luna",
+    "api_key_env": "NVIDIA_API_KEY",
+    "strict_json_schema": true,
+    "structured_output_mode": "json_schema",
+    "structured_output_fallback": true,
+    "timeout_sec": 900.0,
+    "request_options": {
+      "reasoning_effort": "medium",
+      "max_output_tokens": 32768
+    }
+  }
+}

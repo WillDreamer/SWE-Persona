@@ -1,0 +1,8 @@
+{
+  "profile": "swe-bench-pro-shell",
+  "api_config_sha256": "b1bafdac24a3be8a87dfaf21496df19fda7031d7a5db5744dc40804913ab9a25",
+  "runtime_sha256": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606",
+  "passed": true,
+  "worker_exit_code": 0,
+  "execution_allowed": true
+}

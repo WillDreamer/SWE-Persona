@@ -1,0 +1,36 @@
+[api] calibration.complete; attempt=1/1; timeout=273.0s
+[api] calibration.complete; finished in 3.0s
+[calibration] complete pass
+[api] calibration.truthful_failure; attempt=1/1; timeout=273.0s
+[api] calibration.truthful_failure; finished in 2.8s
+[calibration] truthful_failure pass
+[api] calibration.missing_point; attempt=1/1; timeout=273.0s
+[api] calibration.missing_point; finished in 2.7s
+[calibration] missing_point pass
+[api] calibration.code_marker; attempt=1/1; timeout=273.0s
+[api] calibration.code_marker; finished in 4.1s
+[calibration] code_marker pass
+[api] calibration.before_disclosure; attempt=1/1; timeout=273.0s
+[api] calibration.before_disclosure; finished in 1.8s
+[calibration] before_disclosure pass
+[api] calibration.empty; attempt=1/1; timeout=273.0s
+[api] calibration.empty; finished in 1.7s
+[calibration] empty pass
+[api] calibration.blank_line; attempt=1/1; timeout=273.0s
+[api] calibration.blank_line; finished in 3.4s
+[calibration] blank_line pass
+[api] calibration.leading_spaces; attempt=1/1; timeout=273.0s
+[api] calibration.leading_spaces; finished in 3.1s
+[calibration] leading_spaces pass
+[api] calibration.sql_update; attempt=1/1; timeout=273.0s
+[api] calibration.sql_update; finished in 3.9s
+[calibration] sql_update pass
+[api] calibration.sql_create; attempt=1/1; timeout=273.0s
+[api] calibration.sql_create; finished in 3.0s
+[calibration] sql_create pass
+[api] calibration.inline_prompt; attempt=1/1; timeout=273.0s
+[api] calibration.inline_prompt; finished in 4.6s
+[calibration] inline_prompt pass
+[api] calibration.tilde_fence; attempt=1/1; timeout=273.0s
+[api] calibration.tilde_fence; finished in 3.9s
+[calibration] tilde_fence pass

@@ -1,0 +1,8 @@
+{
+  "profile": "terminal-bench-3",
+  "api_config_sha256": "b1bafdac24a3be8a87dfaf21496df19fda7031d7a5db5744dc40804913ab9a25",
+  "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+  "passed": true,
+  "worker_exit_code": 0,
+  "execution_allowed": true
+}

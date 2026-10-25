@@ -1,0 +1,23 @@
+{
+  "base_runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+  "runtime_sha256": "edce00d5b9de74e1fde7ba0bd139cea6aa6d0856a129091338714f034280c814",
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "config_sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e",
+  "changed_runtime_files": [
+    "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json",
+    "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json",
+    "src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py"
+  ],
+  "original_failed_gate": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/gate.json",
+  "original_gate_sha256": "de9692b875d5d2fea100890dd61d6c616e6081604b3528091a1c34639d10d719",
+  "reason": "The old negative claims checks ran without execution evidence, explicitly satisfying the rubric unknown_if. The replacement admits no checks ran, then accepts uncovered scenarios, explicitly satisfying not_met_if.",
+  "unchanged": [
+    "all 37 expected verdicts",
+    "all 36 other controls",
+    "artifacts and execution records",
+    "bindings, grading prompts and gate policy",
+    "models, reasoning, output limits and 3x retry budgets"
+  ],
+  "python": "repositories/SWE-Persona-gemini38/.venv/bin/python",
+  "dependency_lock_sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+}

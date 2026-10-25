@@ -1,0 +1,293 @@
+{
+  "overall": {
+    "selected": 94,
+    "attempted": 94,
+    "not_attempted": 0,
+    "status_counts": {
+      "fail": 67,
+      "pass": 10,
+      "infrastructure_error": 11,
+      "invalid": 6
+    },
+    "valid_evaluations": 77,
+    "complete_native_and_persona_grading": 67,
+    "total_timeouts": 6,
+    "joint_passes": 10,
+    "joint_success_rate": null,
+    "joint_success_rate_valid_only": 0.12987012987012986,
+    "provisional_evaluations": 0,
+    "score_status": "standard",
+    "provisional_joint_success_rate": null,
+    "provisional_joint_success_rate_valid_only": null,
+    "native_grades_observed": 76,
+    "native_pass_rate_observed": 0.2236842105263158,
+    "persona_grades_observed": 67,
+    "persona_pass_rate_observed": 0.23880597014925373
+  },
+  "by_source_benchmark": {
+    "DeepSWE": {
+      "selected": 28,
+      "attempted": 28,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 28
+      },
+      "valid_evaluations": 28,
+      "complete_native_and_persona_grading": 28,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 28,
+      "native_pass_rate_observed": 0.03571428571428571,
+      "persona_grades_observed": 28,
+      "persona_pass_rate_observed": 0.0
+    },
+    "SWE-Together": {
+      "selected": 3,
+      "attempted": 3,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 3
+      },
+      "valid_evaluations": 3,
+      "complete_native_and_persona_grading": 0,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 3,
+      "native_pass_rate_observed": 0.6666666666666666,
+      "persona_grades_observed": 0,
+      "persona_pass_rate_observed": null
+    },
+    "SWE-bench Pro": {
+      "selected": 22,
+      "attempted": 22,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 8,
+        "pass": 4,
+        "infrastructure_error": 4,
+        "invalid": 6
+      },
+      "valid_evaluations": 12,
+      "complete_native_and_persona_grading": 12,
+      "total_timeouts": 0,
+      "joint_passes": 4,
+      "joint_success_rate": null,
+      "joint_success_rate_valid_only": 0.3333333333333333,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 12,
+      "native_pass_rate_observed": 0.5,
+      "persona_grades_observed": 12,
+      "persona_pass_rate_observed": 0.4166666666666667
+    },
+    "SWE-bench-Live MultiLang": {
+      "selected": 19,
+      "attempted": 19,
+      "not_attempted": 0,
+      "status_counts": {
+        "infrastructure_error": 7,
+        "fail": 6,
+        "pass": 6
+      },
+      "valid_evaluations": 12,
+      "complete_native_and_persona_grading": 11,
+      "total_timeouts": 6,
+      "joint_passes": 6,
+      "joint_success_rate": null,
+      "joint_success_rate_valid_only": 0.5,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 11,
+      "native_pass_rate_observed": 0.7272727272727273,
+      "persona_grades_observed": 11,
+      "persona_pass_rate_observed": 0.7272727272727273
+    },
+    "Terminal-Bench 3.0": {
+      "selected": 22,
+      "attempted": 22,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 22
+      },
+      "valid_evaluations": 22,
+      "complete_native_and_persona_grading": 16,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 22,
+      "native_pass_rate_observed": 0.0,
+      "persona_grades_observed": 16,
+      "persona_pass_rate_observed": 0.1875
+    }
+  },
+  "by_profile": {
+    "deep-swe": {
+      "selected": 28,
+      "attempted": 28,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 28
+      },
+      "valid_evaluations": 28,
+      "complete_native_and_persona_grading": 28,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 28,
+      "native_pass_rate_observed": 0.03571428571428571,
+      "persona_grades_observed": 28,
+      "persona_pass_rate_observed": 0.0
+    },
+    "swe-bench-live": {
+      "selected": 19,
+      "attempted": 19,
+      "not_attempted": 0,
+      "status_counts": {
+        "infrastructure_error": 7,
+        "fail": 6,
+        "pass": 6
+      },
+      "valid_evaluations": 12,
+      "complete_native_and_persona_grading": 11,
+      "total_timeouts": 6,
+      "joint_passes": 6,
+      "joint_success_rate": null,
+      "joint_success_rate_valid_only": 0.5,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 11,
+      "native_pass_rate_observed": 0.7272727272727273,
+      "persona_grades_observed": 11,
+      "persona_pass_rate_observed": 0.7272727272727273
+    },
+    "swe-bench-pro-mini": {
+      "selected": 7,
+      "attempted": 7,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 2,
+        "pass": 4,
+        "infrastructure_error": 1
+      },
+      "valid_evaluations": 6,
+      "complete_native_and_persona_grading": 6,
+      "total_timeouts": 0,
+      "joint_passes": 4,
+      "joint_success_rate": null,
+      "joint_success_rate_valid_only": 0.6666666666666666,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 6,
+      "native_pass_rate_observed": 0.8333333333333334,
+      "persona_grades_observed": 6,
+      "persona_pass_rate_observed": 0.8333333333333334
+    },
+    "swe-bench-pro-shell": {
+      "selected": 15,
+      "attempted": 15,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 6,
+        "infrastructure_error": 3,
+        "invalid": 6
+      },
+      "valid_evaluations": 6,
+      "complete_native_and_persona_grading": 6,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": null,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 6,
+      "native_pass_rate_observed": 0.16666666666666666,
+      "persona_grades_observed": 6,
+      "persona_pass_rate_observed": 0.0
+    },
+    "swe-together": {
+      "selected": 3,
+      "attempted": 3,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 3
+      },
+      "valid_evaluations": 3,
+      "complete_native_and_persona_grading": 0,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 3,
+      "native_pass_rate_observed": 0.6666666666666666,
+      "persona_grades_observed": 0,
+      "persona_pass_rate_observed": null
+    },
+    "terminal-bench-3": {
+      "selected": 22,
+      "attempted": 22,
+      "not_attempted": 0,
+      "status_counts": {
+        "fail": 22
+      },
+      "valid_evaluations": 22,
+      "complete_native_and_persona_grading": 16,
+      "total_timeouts": 0,
+      "joint_passes": 0,
+      "joint_success_rate": 0.0,
+      "joint_success_rate_valid_only": 0.0,
+      "provisional_evaluations": 0,
+      "score_status": "standard",
+      "provisional_joint_success_rate": null,
+      "provisional_joint_success_rate_valid_only": null,
+      "native_grades_observed": 22,
+      "native_pass_rate_observed": 0.0,
+      "persona_grades_observed": 16,
+      "persona_pass_rate_observed": 0.1875
+    }
+  },
+  "notes": [
+    "Rates are fractions in [0, 1].",
+    "joint_success_rate is null until every selected task has a valid pass/fail outcome.",
+    "An enforced total timeout is a valid failure with zero joint credit; unexecuted component grades remain unknown.",
+    "Errors, cancelled/skipped tasks, calibration failures and dry runs are excluded from valid-only rates and remain in status counts.",
+    "Valid-only and observed-grade rates use the displayed denominators; they are not full-selection scores.",
+    "Compare models only with matched selection, runtime, simulator/judge, API settings, budgets and hardware.",
+    "Degraded SWE-Together calibration permits diagnostic execution only: formal joint rates remain null; provisional rates and observed component grades are retained."
+  ]
+}

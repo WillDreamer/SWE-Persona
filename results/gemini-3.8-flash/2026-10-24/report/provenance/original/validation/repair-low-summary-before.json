@@ -1,0 +1,226 @@
+{
+  "selected": 17,
+  "workers": 2,
+  "started": 4,
+  "time_limit_multiplier": 1,
+  "attempted": 2,
+  "running": 2,
+  "active_tasks": [
+    "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+    "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer"
+  ],
+  "status_counts": {
+    "infrastructure_error": 1,
+    "fail": 1
+  },
+  "selection": [
+    {
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0021-a2ce046925-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0094-3cb0483d5f-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0188-d8b02f0ef8-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0217-fc2ace7c1f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0239-02e60b02f3-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0240-e0a74f12f5-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0249-eeac9659d4-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0407-ff6452c3be-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0412-6739671e21-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0426-9ef8f7599f-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0489-768f8160df-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0542-0a2d724118-first-time-pr-contributor",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0615-2d7c5cc958-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0638-a38f07345c-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    },
+    {
+      "task_id": "swepro/swepro-r0679-6e27f72ba4-boundary-case-test-reviewer",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell"
+    }
+  ],
+  "results": [
+    {
+      "task_id": "swepro/swepro-r0006-53f390170d-first-time-pr-contributor",
+      "status": "infrastructure_error",
+      "episode_started": false,
+      "skipped": true,
+      "outcome_reason": "skipped_after_empty_output_smoke",
+      "native_pass": null,
+      "persona_pass": null,
+      "joint_success": null,
+      "verification_complete": false,
+      "related_smoke_attempt": "repositories/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair-retry1/smoke/low/0000/result.json",
+      "note": "User-authorized skip after bounded empty-output recovery. No scored episode executed; not a model failure.",
+      "source_benchmark": "SWE-bench Pro",
+      "profile": "swe-bench-pro-shell",
+      "run_directory": "0000"
+    },
+    {
+      "task_id": "swepro/swepro-r0064-5c41ef8fe5-student-needing-explanation",
+      "source_benchmark": "SWE-bench Pro",
+      "source_subset": "swe-bench-pro-shell",
+      "content_sha256": "07dfd05a9e4e78060e85dbe387b682658c8eabbf392f6f967d1d1dacbbdea005",
+      "harness_version": "0.5.0rc9",
+      "profile": "swe-bench-pro-shell",
+      "status": "fail",
+      "native_pass": false,
+      "persona_pass": null,
+      "joint_success": false,
+      "worker_exit_code": 1,
+      "details": [
+        "instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan-student_needing_explanation-20261002-a1/episode.json"
+      ],
+      "note": "Invalid and infrastructure errors are not task failures.",
+      "verification_complete": false,
+      "outcome_reason": "api_interrupted",
+      "api_recovery_assessment": {
+        "status": "fail",
+        "reason": "Preserved work has an unmet or unverified required component; zero joint credit",
+        "policy": "api-recovery-and-artifact-assessment-v1",
+        "verification_complete": false,
+        "api_interrupted": true,
+        "native_pass": false,
+        "persona_pass": null,
+        "budget_exhausted": false,
+        "artifacts_available": true,
+        "agent_progress": true
+      },
+      "persona_requirement_coverage": {
+        "expected_ids": [
+          "req.v4.student_needing_explanation.01"
+        ],
+        "required_check_ids": [],
+        "loaded_ids": [
+          "req.v4.student_needing_explanation.01"
+        ],
+        "checked_ids": [],
+        "missing_loaded_ids": [],
+        "missing_check_ids": [],
+        "complete": true,
+        "persona_pass": null
+      },
+      "error": "Traceback (most recent call last):\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_transports/default.py\", line 101, in map_httpcore_exceptions\n    yield\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_transports/default.py\", line 250, in handle_request\n    resp = self._pool.handle_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py\", line 256, in handle_request\n    raise exc from None\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py\", line 236, in handle_request\n    response = connection.handle_request(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py\", line 103, in handle_request\n    return self._connection.handle_request(request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py\", line 136, in handle_request\n    raise exc\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py\", line 106, in handle_request\n    ) = self._receive_response_headers(**kwargs)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py\", line 177, in _receive_response_headers\n    event = self._receive_event(timeout=timeout)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py\", line 217, in _receive_event\n    data = self._network_stream.read(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py\", line 126, in read\n    with map_exceptions(exc_map):\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/lib/python3.12/contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py\", line 14, in map_exceptions\n    raise to_exc(exc) from exc\nhttpcore.ReadTimeout: The read operation timed out\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_base_client.py\", line 1080, in request\n    response = self._send_request(\n               ^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_client.py\", line 491, in _send_request\n    response = self._send_with_auth_retry(request, stream=stream, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_client.py\", line 469, in _send_with_auth_retry\n    response = super()._send_request(request, stream=stream, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_base_client.py\", line 1005, in _send_request\n    return self._client.send(request, stream=stream, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_client.py\", line 914, in send\n    response = self._send_handling_auth(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_client.py\", line 942, in _send_handling_auth\n    response = self._send_handling_redirects(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_client.py\", line 979, in _send_handling_redirects\n    response = self._send_single_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_client.py\", line 1014, in _send_single_request\n    response = transport.handle_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_transports/default.py\", line 249, in handle_request\n    with map_httpcore_exceptions():\n         ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/lib/python3.12/contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/httpx/_transports/default.py\", line 118, in map_httpcore_exceptions\n    raise mapped_exc(message) from exc\nhttpx.ReadTimeout: The read operation timed out\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/src/swe_persona/api_recovery.py\", line 74, in retry_transport\n    result = operation(min(request_timeout, remaining))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/src/swe_persona/api.py\", line 170, in <lambda>\n    operation=lambda seconds:self.client.with_options(timeout=seconds).chat.completions.create(**kwargs)\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py\", line 298, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py\", line 1296, in create\n    return self._post(\n           ^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_base_client.py\", line 1375, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/.venv/lib/python3.12/site-packages/openai/_base_client.py\", line 1098, in request\n    raise APITimeoutError(request=request) from err\nopenai.APITimeoutError: Request timed out.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/runner/run_episode.py\", line 840, in main\n    agent_turn = agent.run_turn(user_message, turn)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/runner/portable_shell.py\", line 46, in run_turn\n    result = super().run_turn(user_message, turn, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/tb2_persona_pilot/agent.py\", line 160, in run_turn\n    text = self.llm.text(messages, role=f\"agent.turn{turn}\", max_output_tokens=None)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/runner/portable_shell.py\", line 19, in text\n    return self.client.text(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/tb2_persona_pilot/llm.py\", line 178, in text\n    return self._call(messages, role=role, max_output_tokens=max_output_tokens, attempts=attempts)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/runs/calibration-repair/cache/low/input-n0e26ran/task/portable/runtime-v3/tb2_persona_pilot/llm.py\", line 226, in _call\n    out, usage, extra = self._azure_responses(messages, max_output_tokens, schema, schema_name)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/src/swe_persona/worker.py\", line 108, in response\n    data=RoleAPI(config,self._sp_role,out/'api').raw(messages,schema,schema_name,max_output_tokens)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/src/swe_persona/api.py\", line 172, in raw\n    response=retry_transport(operation,request_timeout=request_timeout,deadline=deadline,audit=audit)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sherryj/Desktop/SWE-Persona-gemini38-calibration-fix/src/swe_persona/api_recovery.py\", line 86, in retry_transport\n    raise APITransportExhausted(attempt, type(error).__name__) from error\nswe_persona.api_recovery.APITransportExhausted: API transport recovery exhausted after 3 attempts (APITimeoutError)\n",
+      "time_limit": {
+        "policy": "agent-user-wall-clock-v2",
+        "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+        "default_sec": 3600.0,
+        "effective_sec": 3600.0,
+        "time_limit_multiplier": 1.0,
+        "overridden": false,
+        "cleanup_grace_sec": 30,
+        "preparation_sec": 7200.0,
+        "verification_sec": 4800.0,
+        "internal_budget": {
+          "episode_timeout_sec": 3600.0,
+          "max_user_turns": 6,
+          "max_agent_queries_per_turn": 12,
+          "max_simulator_decisions": null,
+          "verifier_timeout_sec": 4200.0,
+          "timing_policy_id": "swe-bench-pro-shell"
+        },
+        "internal_limits_preserved": true,
+        "scaled_internal_limits": "episode interaction and cumulative coding durations only",
+        "internal_limit_audit": "internal-time-limits.jsonl",
+        "execution": {
+          "policy": "agent-user-wall-clock-v2",
+          "scope": "agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification",
+          "timeout_sec": 3600.0,
+          "timed_out": false,
+          "timeout_phase": null,
+          "interaction_started": true,
+          "phase_events": [
+            {
+              "phase": "interaction",
+              "started_monotonic": 103902.141409629,
+              "deadline_monotonic": 107502.141409629,
+              "limit_sec": 3600.0
+            },
+            {
+              "phase": "verification",
+              "started_monotonic": 104957.465950322,
+              "deadline_monotonic": 109757.465950322,
+              "limit_sec": 4800.0
+            }
+          ],
+          "phase_elapsed_sec": {
+            "interaction": 1055.3245406930073,
+            "verification": 119.93854834500235,
+            "preparation": 9.705138325996813
+          },
+          "elapsed_sec": 1184.9682273640065,
+          "cleanup_elapsed_sec": 0,
+          "cleanup_grace_sec": 30,
+          "signals": [],
+          "process_exit_code": 1,
+          "note": "Cleanup grace is outside the scoring budget. Unfinished verification is not synthesized."
+        }
+      },
+      "run_directory": "0002"
+    }
+  ],
+  "stopped": false,
+  "blocked_profiles": [],
+  "note": "Errors and invalid episodes must be reported separately from pass/fail."
+}

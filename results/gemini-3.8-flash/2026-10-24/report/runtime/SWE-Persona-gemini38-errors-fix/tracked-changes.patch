@@ -1,0 +1,1010 @@
+diff --git a/README.md b/README.md
+index 772f46c..ab303c6 100644
+--- a/README.md
++++ b/README.md
+@@ -261,6 +261,21 @@ Optional batch selectors are `--source-benchmark "SWE-bench Pro"`, `--profile sw
+ 
+ ## 6. Time budgets
+ 
++This evaluation branch adds `--time-limit-multiplier N` to `run` and
++`scripts/evaluate.py`. It defaults to 1 and is mutually exclusive with the
++absolute timeout options. A multiplier of 2 doubles each task's original
++interaction duration and its profile's cumulative coding duration, including
++inner runtime deadlines. Preparation, final verification, per-request and
++per-command timeouts, and turn/action limits remain unchanged. The frozen
++dataset and binding files are unchanged. `time-limit.json` records the outer
++budget and multiplier; `internal-time-limits.jsonl` records scaled inner clocks.
++SWE-Pro shell directly consumes the effective outer interaction budget.
++
++The pinned upstream commit's release checksums were stale before these changes.
++The original manifests and a verification against all Git/LFS objects are
++retained under the evaluation's provenance directory. The manifests in this
++branch describe the local evaluation runtime, not a new upstream release.
++
+ All profiles expose the same agent/user interaction time override:
+ 
+ ```bash
+@@ -403,3 +418,11 @@ This release does **not** claim that all 100 tasks have completed successful env
+ Before publishing a reproducibility claim, verify the release checksums, install the built wheel in a clean environment, complete all 100 dry runs, inspect reference stability reports, and obtain valid scored attempts for every included pair with the documented simulator configuration. Calibration and infrastructure errors are unresolved evaluations, not capability failures. Run the local regression suite with `python -m unittest discover -s tests -v`; it makes no external model calls or real container launches.
+ 
+ Harness code is MIT-licensed. Upstream code, tests and assets retain their own licenses. Preserve the included notices under `src/swe_persona/vendor/` and the task notices identified by `source.license_asset_ids`; the harness license does not relicense upstream material.
++
++## Local evaluation-error repair variant
++
++This isolated checkout repairs the completed Gemini 3.8 retry campaign. SWE-Live honors role-specific API request limits rather than silently retaining a legacy 90-second cap. Its independent native-reference preflight floor is 900 seconds (previously 300); candidate interaction, command, verification, action and turn budgets remain unchanged. DeepSWE judge citations are keyed by evidence source and validated against source-specific registered IDs. Existing semantic rubrics, required evidence sources, and bounded repair counts remain unchanged. The previously validated SWE-Together manager calibration fixture repair is included.
++
++A conservative normalization rule assigns zero joint credit when native tests failed, the turn budget ended, and all loaded persona requirements were optional first-patch requirements whose trigger never occurred. It applies only when the sole invalidity was absent persona grading, all native disclosures were delivered, and no API, binding, delivery or infrastructure error occurred. Persona remains unknown, and native passes cannot use this rule. Seven previous results are corrected in separate provenance-bearing files.
++
++`runs/error-repair/audit.json` accounts for all 48 errors. One fresh attempt is prepared for 24 cases behind eight new calibration groups, using four workers to reduce endpoint/verifier contention. Thirteen exhausted empty-output cases and two exhausted JSON-format cases are retained; two incompatible task/persona cases require dataset review. No artifacts or labels in the prior campaign are overwritten. The locked Python 3.12 environment is shared through `.venv`, with this source tree explicitly selected by `PYTHONPATH`.
+diff --git a/SHA256SUMS b/SHA256SUMS
+index fdcd462..8ce8b9c 100644
+--- a/SHA256SUMS
++++ b/SHA256SUMS
+@@ -1,31 +1,35 @@
+ 30129f61f2a1b984b358279fb24769ff73836dc7f839a765b67775ae2af04a13  .gitattributes
+ da2decf207b4bb58e4f4a270120d0ca870fe55b4c68197abf802c32455c3e139  .gitignore
+ 35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8  LICENSE
+-67bdcbfb6d5448576594935ccf4eed8c83031d7a24b46b1cdc74d06afdcfece1  README.md
++0664811e4719184bd13deec0b89b21193af44668ec1a454ffbe73db9bcc77774  README.md
+ 031501b22b1112ed5ea24c03e2985b22bb617c2e2ef8bee9b70edd721cd9124f  configs/api.example.json
+ 6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b  pyproject.toml
+-7ef81baa77356851e06919012e619b8065e10f22e074f5869d02ebcb6f6b7a76  release.json
++8dc9dddef647977acd85f9f1ffb7a25ca7c7c6d280401633c9640e86914dc13a  release.json
+ 907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171  requirements.lock.txt
+-9b740609824db080e524cfb989f10d32a716a257d2aeaf09b3e6ac51e1beb17a  scripts/check_live_native.py
+-fbfabf3ae8aa647c5cc764527e88605ea4f6d89322ff32a4f0fb6e4da15a49f8  scripts/evaluate.py
++85411ba8958a9a23787681e3a3fa15345accfcc6a81b31f50fe621ebd404aa45  scripts/check_live_native.py
++e2de109fcced975a7f1d69d63b6c45bc660f7f398965dd982cb32a76acec3e20  scripts/evaluate.py
++d6213e12ea2b9221c9d6cce9617ca477c37d6fd1e35d03cce8559fb8f0e44195  scripts/prepare_error_repairs.py
++f661b1b1b849a96612febf41aa6da15bfed3ec17495d189b4706219e0a69dcec  scripts/reconcile_error_repairs.py
++f8f3f699e681571daf6cd1e730adb2b0f9b43671ce4f4bba8290db712fe4d137  scripts/run_error_repairs.py
++1e7b1b9adbed9cbede78511f3661a2a7ff24aa23e5a4ba8c7253a8df386cbbc1  scripts/run_gemini38.py
+ 09beb93557805043742b7d7810dcfdf35a190d8d005823eecada9da25a8e369d  scripts/score.py
+ 328c0a57e9c7417433723a7c75ed58ec6c3817df47e0255ee8af31890c9f35b4  src/swe_persona/__init__.py
+ 56c724ab103b56fe853996a70d68681d373d3e4f038d39af90209d7da2ddabc0  src/swe_persona/agent_output.py
+-9f8f1479bec8091abbc83e9d256726593afe47aab69ac26bdcb468563b10c894  src/swe_persona/api.py
+-ae9562d59bb6a1d2f37e8d5ba628e1626c53309ad118ae0bb1f28507c42042e0  src/swe_persona/api_output.py
+-ddb301f46994cbd2f788e33e2c68745d59fa6f4b66809691d3bfdbedd553c3d4  src/swe_persona/api_recovery.py
++d39d4eeb7ee92d3c8d637dafe9e102e1c99260164340b30f5ddb616ba87fd2b4  src/swe_persona/api.py
++15a7667d248b3852845210bbd465ae06da33f671afa68da0ca5dff0e2c2c981d  src/swe_persona/api_output.py
++abdc6e4400ac08d5e0523bc538f1b5529d9b0b0d057f66451c67669c376edef1  src/swe_persona/api_recovery.py
+ 6327b438567155f7861647a8701f01f9e1b46182a86361d969a18f743f53125c  src/swe_persona/asset_restoration.py
+-d5a60e541d5d389aa2f0be033d1d00cb38c504bbf4fe56aa55ed3cd94c914d0d  src/swe_persona/cli.py
++7a025de5b8eced14bc56a195b02f222ec8c4b287c84165779c3d432d6e32980e  src/swe_persona/cli.py
+ 9d908be0c1a3b69cd6d274d16e45f12c6eca1b30eae9f0b96a10ef5051cdb94e  src/swe_persona/dataset.py
+ b67da36e2958328260d197379a2111ff3b9f944e7398e214a536ab36cdc5d58f  src/swe_persona/deepswe.py
+-970c90fbebeb15b71a58e2d1b4d8d9eecc58c4ec669943c0e8c5b0f04c106369  src/swe_persona/harbor_bridge.py
++df32ebbc9cb58f5394d81ccde6bcd8858dacb7088b678df782c0736f9f433ecb  src/swe_persona/harbor_bridge.py
+ e1d7992c761782af1e125b2b38b64fd3477f690887ef56934ee180bebeb5ba9e  src/swe_persona/native_preflight.py
+ 036afef170d0d10d10552bcab3576c5e96db4ac73b1303320eba16938d70e06a  src/swe_persona/output_mode.py
+ f8de60a60d16ac7ab9d3237314f1ae175ddf630dd5fca44c425a817037f6f7ea  src/swe_persona/schema.py
+ ba069c65a7f2744b4cc61f44348313aae7df7ce667c8deba4ed8ee23c0de86c7  src/swe_persona/simulator_output.py
+-7ab56a9667a058c615aba1b21a1f67d2bc7dce574b4d53cbf6629a398bebd4e4  src/swe_persona/swe_live.py
+-3828c52ba831df0e80da1ae892698acebf18dd186284db6c00326fa953c2080d  src/swe_persona/swe_together.py
+-00f8e5b9ff118475e1f9dd64150850baa866a57cd8cbb0ae5136351102f3ee7e  src/swe_persona/time_limit.py
++4285fff2657734ee295c3d240fd1ae47c1cb5a09eb1838020c026ea427980022  src/swe_persona/swe_live.py
++12e87f1877f832a9d053ab49ef4d34bb5a2f3ff8cbfbbbe5788e2c1c9eeef892  src/swe_persona/swe_together.py
++5ed9436c0255e6d47835a8826a8d0201f4a7878e0d2814331a6e026bd667e419  src/swe_persona/time_limit.py
+ 0fde81c573551ab643d51f15302504dfe6b0b0348168b42b95db523f084b719c  src/swe_persona/vendor/SOURCE.json
+ c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4  src/swe_persona/vendor/deepswe/notices/DeepSWE-LICENSE
+ 922e0155a67ab49bfbc9d4a0ed4b0b47f5d217a1481edef13c49f3eec88c5a13  src/swe_persona/vendor/deepswe/notices/NOTICE.md
+@@ -34,8 +38,8 @@ f2cad77bd81747e1b66917791cb0dfb1ed349c9f19ebcf2b8c0724151c9c73e8  src/swe_person
+ b28eb804f9544ab27f7c3069b35e99d7020b91d6fb20570c0d32f29e4e4a3152  src/swe_persona/vendor/deepswe/project/data/personas.v3.json
+ bd37640ddfc3768afe78a8a25a3caa59c006ba11ad9c07f818cb2116276e36de  src/swe_persona/vendor/deepswe/project/dspilot/__init__.py
+ 916301be366619e8ffc914bcbacef507ac8010985d92e75f162b31a9a220b42b  src/swe_persona/vendor/deepswe/project/dspilot/analysis.py
+-cca241e698866c07c28d4c7b964b0db16dc377a6d3cf66dad2f79682f1c4355d  src/swe_persona/vendor/deepswe/project/dspilot/api.py
+-b9560e174a0bcbd02d5867404ffee3139063de5e7e3483b31b716719c67485f9  src/swe_persona/vendor/deepswe/project/dspilot/api_codec.py
++df0391d00be474d40854dedc9d4648b47d722dcdda151c6aa14ab385b5737017  src/swe_persona/vendor/deepswe/project/dspilot/api.py
++7b1fad5a16d299e5329f8cbd584c7fefd4657e77d62357198d6ecd1ec92c3e1c  src/swe_persona/vendor/deepswe/project/dspilot/api_codec.py
+ 8234e4073af24778a013d045e2b6a598c5eb40a5414914799c1c51436e3f808d  src/swe_persona/vendor/deepswe/project/dspilot/api_config.py
+ c455d78e82a9ccfc2b8dd79194492e5ccabba10f04490fd6f9277e946b6ff144  src/swe_persona/vendor/deepswe/project/dspilot/calibrate.py
+ 49c588daa3ddaaa03e90e70286ec2043618fe730c73dd518aeb9ae728daae7f0  src/swe_persona/vendor/deepswe/project/dspilot/calibrate_staged.py
+@@ -43,10 +47,10 @@ c455d78e82a9ccfc2b8dd79194492e5ccabba10f04490fd6f9277e946b6ff144  src/swe_person
+ 639a6bcee7448f0f2c3d65411b6c9bec6ae7bf0ced4ccf9c0a94e34dba6ca538  src/swe_persona/vendor/deepswe/project/dspilot/check_contracts.py
+ fe2067dfa776b73e6ce36b4683902999fa9fdf2e9302ed4dc4e31da17de345bb  src/swe_persona/vendor/deepswe/project/dspilot/checks.py
+ fed27276f07c620550ad3fe75ce7f3de6117742250e0a0c650bb4cd965f649c9  src/swe_persona/vendor/deepswe/project/dspilot/checks_staged.py
+-591647782195bf03f774be5e1ec58cafe3153481fc0eedbe78c9c8d47c499246  src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
++d0c27f2a9ab635dfdacee69195f920bf8f7e838c15be1e744ce651d07e446e06  src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
+ 092683385b8c9caab85fbfe0a3134b92f1da9333c76022473619a4a8278ae98a  src/swe_persona/vendor/deepswe/project/dspilot/coding_backend.py
+ 121e7ec0ec75736e0001adf7093f47185203d499e40315a5e4007c3db28673bf  src/swe_persona/vendor/deepswe/project/dspilot/coding_budget.py
+-3ce76b407d097ba1e9e9f3c7a6fe9fecf310e4d7d91536c7dda643743d6b7530  src/swe_persona/vendor/deepswe/project/dspilot/coding_json.py
++401de117031e42ecace2f15840ca65206d273eb87e3095b0f97107ee21e4efe5  src/swe_persona/vendor/deepswe/project/dspilot/coding_json.py
+ 1b311f0973b186db05379d84f03f150dde8f011039d2ef8509aa98dc5a9dfcdb  src/swe_persona/vendor/deepswe/project/dspilot/coding_native.py
+ 71726620c60ecce662371569cc28f098fa0ffe76493af2d37bd7e4561c5bec49  src/swe_persona/vendor/deepswe/project/dspilot/coding_terminus.py
+ 4ad230b4d0c3a4cd637720937b47fc902de5765f51f882174ab87a2e88129a06  src/swe_persona/vendor/deepswe/project/dspilot/coding_terminus_native.py
+@@ -66,7 +70,7 @@ af5f04a9d4c04e20660a4678b46cd829bc7eb7b33826df4bdbebbe1cbb410ae7  src/swe_person
+ c3af7be8e5cea5de8291d4439c8f55a45d72c813a0f1cff00d15001dfff0b7f5  src/swe_persona/vendor/deepswe/project/dspilot/delivery_rules.py
+ 85f6a9edfd18189d7946f6af05fac21066b2995e529cae8e2abd327256676f5d  src/swe_persona/vendor/deepswe/project/dspilot/delivery_runtime.py
+ 21333623e0721a277014be073aa55e2cf4e9b27e402c57591df1655f8249799e  src/swe_persona/vendor/deepswe/project/dspilot/delivery_timeouts.py
+-47025de3220dd495baf2b9221deb5a07229354e73ebd1396793c44f8e3592f74  src/swe_persona/vendor/deepswe/project/dspilot/delivery_worker.py
++a8e2a0dbe9bcc3b0c4c3188ff1cf276718d2e1ee3de7ec087a47a25008b1d82f  src/swe_persona/vendor/deepswe/project/dspilot/delivery_worker.py
+ 1d9ee2df78877e5f854ad179be8075cd5679a4848f830b527f9aebe4f12e7516  src/swe_persona/vendor/deepswe/project/dspilot/disclosure_design.py
+ 8684a626ad99d7d7f532de15a7886ba5e4b2f9262b33e6d6cdbc53d9462b7d8f  src/swe_persona/vendor/deepswe/project/dspilot/events_staged.py
+ 25d5bbc8d6de25c20e57bb835f4ff9b8b3f54d8bd10fc1661d9953ff46273508  src/swe_persona/vendor/deepswe/project/dspilot/export_deepswe_delivery.py
+@@ -78,7 +82,7 @@ bbbe43ade8223c06994b89833371b905ba0e1d3eb87ae00f2446d0c85275a226  src/swe_person
+ 77ff8b8e3467d2691519a1ff062bc064944057a2f8189dc49940299fad994a4d  src/swe_persona/vendor/deepswe/project/dspilot/fixture_repairs.py
+ 01504031049276fab1340724d4c50744b1451479ec5c924240efd8c3c40c0c30  src/swe_persona/vendor/deepswe/project/dspilot/frozen_staged.py
+ a9b6f06197be51423f23d4e44dd3ef5a1395035f794bddbdbe031b3dcf7e955b  src/swe_persona/vendor/deepswe/project/dspilot/full_persona.py
+-bb099b8b9ae9cdeb539c801cdd94d21b7867c88c592b90d5062b2261027758c5  src/swe_persona/vendor/deepswe/project/dspilot/harbor_runtime.py
++2fae51725d3e714bacf09be0799333caef1d36a5a3a3c53255b9fa6c600cab3d  src/swe_persona/vendor/deepswe/project/dspilot/harbor_runtime.py
+ a65978bab1843b54ff6b4f60bf6884d038c8dea670835d22a75783279a2e62b6  src/swe_persona/vendor/deepswe/project/dspilot/integrity.py
+ 8399bb19e66aef68f176d51de49672dddd93109f5621b81643eb7dd1a6fb5707  src/swe_persona/vendor/deepswe/project/dspilot/interaction_policy.py
+ 7e72d8db69a36be0e6b070f669d51a8091b718f45508b590805b425b1d52e8f6  src/swe_persona/vendor/deepswe/project/dspilot/launch.py
+@@ -109,7 +113,7 @@ fd88a3f63819da7e536e43261a8b606bda2f72106cf87c4065313dd07a2150e4  src/swe_person
+ f71aa38665d1cabaa1afddb380deac61b5bcca9d8491811d4b0d4330c6349c5f  src/swe_persona/vendor/deepswe/project/dspilot/rescore_obsidian.py
+ 316467079994b1c4fa391d33b1731a98380107b241b598c8e2b140bf3bb80642  src/swe_persona/vendor/deepswe/project/dspilot/resource_probe.py
+ fd09a74e16f5a4eeb05b67a907ded0ddfa474b265d6f49b40ee47a1cc32da0f6  src/swe_persona/vendor/deepswe/project/dspilot/run.py
+-f890e94e4146b57785fd645690ee9c0987607150dc2dad7df94c3ded6c351ca2  src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
++7662b21f63c30a3aaa8a7ce8d662f18e3e3b9c028f68eaadc51e5f3bd9163892  src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+ e68f4e58f22d32db82b184d7be0c54a682a3b767fdeebce6b72c267e41d85dbe  src/swe_persona/vendor/deepswe/project/dspilot/run_v3.py
+ 88ec15b1c35440b6cc36a8b32175b1ffffe605e4c4bca91fd1c66b7178ba6c82  src/swe_persona/vendor/deepswe/project/dspilot/runbook_probe.py
+ 5c21820bf38da265349500422509b4f565d725ae74222ceee24ae4c3c47b38d6  src/swe_persona/vendor/deepswe/project/dspilot/runtime_backend.py
+@@ -265,7 +269,7 @@ f6e6ac46e1003cee7e8fd3778915e520de60c679e323a7ca92e33192ae764eff  src/swe_person
+ 8f6956911faee3884d198146aa4d8405f1782cb55a7cc2163efb767e2079f43c  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/collection/timing.py
+ 3224f10a14e23e473ac45cb36144f74a0740f60b2da27bddbae6885950b83847  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/credential_session.py
+ 38b8618b50bf85dbbc78f0e58f7db679b31ee8a4d4e6be16bdb602bb15b8e284  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/evidence_session.py
+-5eea93dbb31811a2282460cad35eaac5395c708dab072c200143e748005b8878  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
++aabc4dba0e84a6896a68b5170327c6a4db3ab9b783c495b6f5270eb8a734b6a1  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
+ 64a7f2865d2730413d7edeee47aa511a5c4cf8e6526febe4af19eed83208bcc8  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/fixtures/credential_controls.py
+ e313863a659023330440add1c9d46aea7b4ad1d1b26ec2f25a230cacede24671  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/fixtures/credential_service.py
+ a8b07dcf584973a1264ee760ebf1820af77c106921bb4a5d4fa2140b9c911ed4  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/fixtures/design_recovery.py
+@@ -338,8 +342,8 @@ a58f9e781c99351851506cf71f8e8870412cf69181bef8a2231593b19d51f539  src/swe_person
+ a3b346354e6894cac193230e8ab7cc12525d5a15e45daabc8f2be863d4d1c073  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/test_runtime_output.py
+ 7186261cf3fc8c78e99e5ce76c8b341975e107142f6bc2e68381aaf15b08ddca  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/test_tb3_delivery_export.py
+ 3cfcfdb437beddc4309daf73a64809cde26a5543a8c6b78f6bbb83838e3eec9b  src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/validate_tb3_delivery.py
+-5f49218b8a02cb01b63f6bc99103a2dd7780145dc2813849841959a0087fc182  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/agent.py
+-3081b3ca5e582643ca691fab4dc9de902dd99d61304707a39cc811e914498ee7  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/checkers.py
++4174e3711f146ca12ed90315b4e62be7dddd5681c126ac989e916d4e14bcc911  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/agent.py
++912d119ce53890c8e05bc518b2a6ed925ceb2e9cff2f23425b907910b144f4fb  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/checkers.py
+ 7d7f7222cb564bd60cf5850f46c06941cc99ea7ddafe4316b5b219443a0f5997  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/compare_arms.py
+ cf84167936aa19d4320d1d0b41de485e2e50b892cead76ce7eb95872a836ca0a  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/controller.py
+ 01e00112eec21e70b05c8b0bececdc9e78f58441879e97e98d596336cc73a876  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/dockerx.py
+@@ -361,7 +365,7 @@ ff5ba2a0510977709ff078e63aebd0b67d8cdcc87516f940bce5c816c1d952e5  src/swe_person
+ 00b72412abe48e4587b4ae12cd93433c34959d8c7548ad36c0cac75893cd5eb2  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/validate_bindings.py
+ f53c6fe4575f4da85cb9b1de40ca8fa7274adc3c2c090ef3feecf23b66d24207  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/validate_rubric.py
+ 270c178c538dc9cd6a444f8a9308181eb4db3003b1d3dc2dfe1452ece06d8268  src/swe_persona/vendor/swe_live/runtime/project/tb2_persona_pilot/verifier.py
+-6859f8317ceb6ec84b19866d3f4ed85c32f0856dfe59899892a0044b18d75ac1  src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
++a9888a04f54a20962becc648c35d570b89482d5002ab9ce136852579f12202bc  src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
+ d1e4cf64b3028a0dda6913277c65ea4f3d237fae4bb1c160c13240dbf80c69c0  src/swe_persona/vendor/swe_pro/mini/prompts/experience_prompt.md
+ de632a38842674eaf22a619520587c6731cbe6c76507d4a2685155ec77d6b915  src/swe_persona/vendor/swe_pro/mini/prompts/judge_prompt.md
+ 9474d9a67157033d2bae7b1f0ef2a3542e99b963cf4f9f54380919d2a35b16bd  src/swe_persona/vendor/swe_pro/mini/prompts/simulator_prompt.md
+@@ -370,9 +374,9 @@ de632a38842674eaf22a619520587c6731cbe6c76507d4a2685155ec77d6b915  src/swe_person
+ fa0de8f65e9ae848fdc914b72d27d29f5989b6880ee28641c5b08f25303cf428  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/__init__.py
+ 6182005cc63ad670e860fd12913553598fa26e62a4fe55a7d9808c6e17d7612a  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/agent_harbor.py
+ 60eff1262bf8cba167dcbc6560b5ee087325a939c9f4ebeca04cd46de467e9ed  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/harbor_mini_runtime.py
+-d59da630f83f141eb93e0d8b637155ac43c2eeb1b9bb32dfeda6572d180eb642  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/mini_sidecar.py
++71f54d2832298263eda55ddc3158335a0e423945c65d29f88736e7d5ea847f72  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/bridge/mini_sidecar.py
+ 3e03b4c79960725f54b0edc1dcf63739938ddee11ecf87569220042dfde16c3c  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/controller.py
+-2ac20bf88a24123046ef2e84d85148be0f0b171aa89ca9917c6d5c3481211f4d  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
++0502db5996b7dbeac1563b98791caaa885e274e4225b09fd8988b3433117c739  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+ 60934542d3873fed4cba6dd35d2781ccb2b073704568825ebf2d75907ec1f0bb  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/evaluate.py
+ 6aa56f4682588e9819ff60ea3629e99718ae4ac62ce11eeccceb0f9b6dc46cf2  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/experience.py
+ 25c12bbc44e63071a782fee2b0caa20a1c731b1b2781f8fd2e58d5ec20c02b10  src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/judge.py
+@@ -387,10 +391,10 @@ ccd0b94a9e7312aecefe17ef1c5160c013ff1c030facd42cbbda07edda4c08db  src/swe_person
+ a0e7b154218bcfdcc5c87e4faf51afed93ab9b178963d8e32add759b71feb5ec  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/__init__.py
+ 3d534bd330bf19ae8cd3a11adb57cd97421a302f3bdc41418761e86de4d21431  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/agent.py
+ 016d86a4f25627b62ac93ad04ab8719df1c79a2851cad528a9abf42b6b3906e8  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/agent_mini.py
+-e61be0910a85ef96441f7ef388128941f69cf30d0a510cb3757513ca90e10a9c  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/checkers.py
++47e721bd7186976e9a41a648917ef1dbb95f7edc59f2c840401599a9e585bb17  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/checkers.py
+ 3e946d92d2725a413fa894e48cbf882026ef705c3f7ba8e2b8366bef80f2353c  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/controller.py
+ 07effe6edbd1d0ea3214b40ca5c67fc13c85afaaf4d7a0b283670060617ee34f  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/disclosure.py
+-7e59d4719b6922ab2084e52817ff8bf5f450c7e151ff4ccf74650809dcdcb8d6  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/dockerx.py
++13513502d5381342d48c19704efa9821a03a0a349daee9597387731c88b31770  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/dockerx.py
+ 28d99f30bb220a6a627a8c11307d0c13eca6f820b991ce680879fc80327d07d5  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/evidence_policy.py
+ b93e7ae4ba50350cd9400aad915e378183d2d2316165a450268fc52db25200e9  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/checker_driver.py
+ 0e5e4cc86c99ed69ccef47b84dbe9305d677157dad33c32a4e1c7328aa3a86cb  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/fixtures/native-reference-controls.json
+@@ -402,14 +406,14 @@ b93e7ae4ba50350cd9400aad915e378183d2d2316165a450268fc52db25200e9  src/swe_person
+ cd7a26a75b0afbd766070a1d81ceeab07b51dc8fffdfc86ddf2831e5da21820d  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/portable_shell.py
+ 01355c49a5cf7f4c826122b359dd18ec2864c68b3a5531bb40c6c6376736fefb  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/registry.py
+ 571bd735808bc4db08cf12229ccd3b8789ff7892502f27acd913d6bb802c9590  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/rubric_checker.py
+-c2394a93344f18f1039fb746f2eac0ef755f634c4a970dc1ee3371cf1f710e26  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
++d099cd4f9939769d161bdabc3ad5c5d3cd0328b86ab6e5f8d2c64227082da104  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
+ a71b6d7044af452178e200b914b8098bfad1089f7e811a71185089e4b46d5ad5  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/simulator.py
+ b73bb50bce716cf53531f91b059cbed2e6719baf91d016ace4f571fb68afcf44  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/task_adapter.py
+ 70b4e6f82978681e9e646fd7bd33822bea7e8f72ec617160fbe98945051ae97a  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_bindings.py
+-86f02b7a1f5f6a17f4d63117595db3a9f428dc5521eebad2ae17343232de7fa7  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
++52a0644cc5b9c206df936de5baf881ec34a479e205d432d1d94bc56dde56cb2a  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
+ 3ac0ecf6b345da4e7e91acd4b9f1e4e22520899f3708cde777873c85f93ab57b  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/verifier.py
+-afa5a8df5c0265f23c8355a3af3cd75795a571871cd46c8d56f7c1468a9bccef  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/agent.py
+-8b7948f3833b4b1da8c9892b4ea85a538321cc49c908cba793452822df2f6a85  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/checkers.py
++6269023b0acd34130a08c89c288cec75c5573fab9b18bd4329f4b600ffaf55d6  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/agent.py
++083e2353cb7b1f98c7e083a2381f37bb55d646019b0ad28c086a277643ddd992  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/checkers.py
+ bd64ba6b3fbfaa5ecbf5f16dc82704f314fb7062cd7aecf574e3be68708440b0  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/controller.py
+ a6d78aa26466aa6f3a6f0cf68670c0a40a0c4b3a0eca3d976e83dfcdbf48b004  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/dockerx.py
+ f88f270a8638718df96eaadf970ef43109c306c7ff50fb50837f84b6b8a8f157  src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/tb2_persona_pilot/gpt6.py
+@@ -450,7 +454,7 @@ e005fffc92249bbfa10069d1294446b2b2b0a6f778b3c3740d4a98b4f532873d  src/swe_person
+ eaee16c608250f7939235936e494f693be3ba7576ea39e547d57120d68c0bb06  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/api.py
+ 6e4452d0e6ebb123ce5b59ba992e6a288d1f7f718e32802b43446dbb614a1e17  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/binding.py
+ 3a00fd483816a8a438db7c44686a5377c7ec1479683acc167e9984a7f65d2ba7  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibrate.py
+-8b06d049f4a53dee05978d224acb452d0c0b5bb8d46cf9410a85abdf32e87a24  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
++c46fb87254d93c3c748d4b542a4112fdad590723c59fd709d4ae9a83563caa2f  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
+ a55366c92170c6914e6317377f0e50c4853184c44f484adc5c4ecc5e219bde8e  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/derived/agent-swarm/Dockerfile.worker
+ 0babd2e3c25c3ab7ab1674ac9cd069fb985c84c6ff85cd5b6b8a6d73951b67d8  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/derived/agent-swarm/bounded_acceptance_checks.py
+ 08ab98d87f52ec93dbba48de1d474b29a03097b24c3380159e561f6d5a2ef249  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/derived/agent-swarm/docker-entrypoint.sh
+@@ -478,16 +482,17 @@ e7c4062c9b9544699152487f3cc100e9844c96f0d9dd581dcc0a575ca747c56a  src/swe_person
+ 8f629b1548d965de94998e72716670f7b1c9daed0c5fc83c6e03565afaf5f2a3  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/tasks/dataclaw-anonymizer-tests/environment/Dockerfile
+ 56de4431cdf48a4033ad3bd38184fdace30e7a4355f13bdd0ac665dc30b4c709  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/tasks/dataclaw-anonymizer-tests/environment/windows_anonymizer.py
+ d64de65a4c5d57c5d17a094220d2452f562b6e587362faa3934d5521f1b72469  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-sources/tasks/dataclaw-anonymizer-tests/environment/windows_test_anonymizer.py
+-79f027d6d825d1d0fe5263d92ac6df72319330258a29dcbd31fa33edecb1f3fb  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
+-d22ba41f937c90e1d3b0ab0d496ffc326d3dcf146da9c645d7a923eb9cb41523  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
++4a7a00b21983ff6a1c3f6634e61657ec6a00afce472b253e74a23bb38d47904f  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
++d2e3fa2a5743aec22065f62ef30a87c37c4560f85c14804061f22b496fbdba9d  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+ 7756e406af1fdd7e2c3e2ceb228726fb70c35c468d57e019010fdd49cd6ac128  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_policy.py
+ 757b981827af79910023bc96d8c66643e800660f56ef3b6d2823182c44de180f  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/evaluation.py
+-8841bc9f6b1fdf560e20c0b288043078b3fffc31bd36d43e149de86ee72383e8  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/public_run.py
++9e0a3dd7a2659435e5abf03a2711325ce2cac382e9b4a8bee77302ae32264898  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/public_run.py
+ 836f910792d40951a1f5f6c4217e0a7f473d1b491716ccb5d1781aa94e102408  src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/simulator.py
+ a42db0360a349371f504d36de6a18a82edf55a50e63e5f254105306627e021b9  src/swe_persona/vendor/tb3/calibrate_judge.py
+-211ae328645109df5522355b81abddae1c5791839a4adb4b040d684a8cad7266  src/swe_persona/vendor/tb3/run.py
++9fc6713b5d94d706447e9f742169c895ee82331b036b7d2fa3752238cfd6de4b  src/swe_persona/vendor/tb3/run.py
+ ab23c2da4c0585fab54c499cc60be2cf609388f8b67fa4ffa7f10b0a0917bac1  src/swe_persona/vendor/tb3/runtime/azure_client.py
+-39276188bb78c09bde26318583b125279b756c5279f24c2844942d639f2a4ad9  src/swe_persona/vendor/tb3/runtime/checker_runtime.py
++67aa54e7535d64b1472be56dcf15452e945e6ef361e99cb72339a75dbff39e6c  src/swe_persona/vendor/tb3/runtime/checker_permissions.py
++6ca86de01ad38f22dcc1308659e104db38fff8d5116c4a3bf786e6abee934602  src/swe_persona/vendor/tb3/runtime/checker_runtime.py
+ a24bd0c891984db2ab4726f75346b450a84e353a817f2ae8e8e2481f02cf0574  src/swe_persona/vendor/tb3/runtime/gpu_environment.py
+ 16a811f6eb16957b03e1e3793814ae15b7df9139c1a1632c1462d66c6fddcfec  src/swe_persona/vendor/tb3/runtime/persona_adapter.py
+ 247620ab9b8823790a9ad1342d23c9d307dbd0162afa74424634bb7b51e59d5e  src/swe_persona/vendor/tb3/runtime/personalization.py
+@@ -495,8 +500,8 @@ a24bd0c891984db2ab4726f75346b450a84e353a817f2ae8e8e2481f02cf0574  src/swe_person
+ 81787716968669412a5dfad5ffc744b08dd2c0016af581b4aca8e9c3e9fbab61  src/swe_persona/vendor/tb3/runtime/protocol.py
+ 3e762840203c102227003fd85f4103df80e5bea09ff89570d4dbc30cfe12813a  src/swe_persona/vendor/tb3/runtime/requirement_loop.py
+ 81ed24f19b3ccaeda2977cc5eb01c6aa200c28cc857af6d7e86f4e2500117e9a  src/swe_persona/vendor/tb3/runtime/screening.py
+-f33f59378f9487b1afa703c81f07e685d3fd4bc21cd6352da9f9fc62dde8c6e2  src/swe_persona/vendor/tb3/runtime/terminal_agent.py
+-b8479988e6acdb61d2fa91259a4d1282de7dbd530123fecd6ed11a418b794a8b  src/swe_persona/vendor/tb3/runtime/trial_adapter.py
++e6d722b5efa6c9429c4837161134983c29b00af0779fdadeef6104c8553040c1  src/swe_persona/vendor/tb3/runtime/terminal_agent.py
++8c5098599294b47ffee9b843dd8d7298b8fbfa8e79f84b602b72748569952b91  src/swe_persona/vendor/tb3/runtime/trial_adapter.py
+ c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/LICENSE
+ 36854cdc91657580ec999cc4f7aa8a095c37283e14ce09fcaf99c2dc56cde6ce  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/__init__.py
+ f4b8b9af10bbceb32a1aa2ef0de79282cbeff58d7e54fc66042fa19766816582  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/__init__.py
+@@ -507,27 +512,38 @@ f38f16526f42d0b875d38c5c557c682f0ab5f37ca0e9b92b64a995782d3e9ffa  src/swe_person
+ 1cb629a6661b5aace9281e6160590db64c4559fefd7879f70ed152acdcb42dd2  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/salience.py
+ c8097971daf433fe19a19af933fe82138f8effb7a3095e126a4caf946f15a20c  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/schema.py
+ 5a9ea9874d4cf27b19aee3e277b5753d7b316afd893c180704bba90b2ce3ae1e  src/swe_persona/vendor/tb3/runtime/vendor/user_simulation/src/personas/simulator.py
+-d506bbb9c996291881f00a0ecf97bfa532e5dbe734b55a832aa466f274527c83  src/swe_persona/worker.py
+-e036d834f0fd0d8aab7c3476a4866dfe794ff503d0c92d71ea58700dc068d1fc  swe-persona-lite.parquet
+-c9df5dc4aa17501ef1991f555053a1648691fde3633731d1f43b7dc36c1ef4fd  tests/test_agent_output_protocol.py
++aba2e294acbf8a5c4a2dcc7d72d65a20f16f37113f1e68edea4939f7e288ba1b  src/swe_persona/worker.py
++1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed  swe-persona-lite.parquet
++f965ccd0a535bc75c100055500019bf3d42cd2b32b8e4cf291755e0891e5def6  tests/test_agent_output_protocol.py
+ 3a80f9feb6654040a2d5d81c63a7517fac0d080b403bb9baf95371c43288432c  tests/test_api_defaults.py
+-fea47ceb1cfd3937f9f6dd1db8b4b8532d02af9fecb73e3b5898b568ca163ca6  tests/test_api_output_recovery.py
+-db8de34a63156e70d33985ffdb85b5155c9c9d8cb429b29308e8e66b260fd42d  tests/test_api_recovery.py
+-e38f3d994b62ff8c36077a44bdbf879e73392fc9dff217bccff14ac3d08497d6  tests/test_deepswe_runtime_repair.py
++dfa7c0e54469a570752ce8bb35fa6f5d43a11b99c037a6dc7aa8cf50aeb6a532  tests/test_api_output_recovery.py
++28e581d2eb601468887be91480b9b515b099b036686bab89d1854db49f1528a3  tests/test_api_recovery.py
++a7f409d7098c2c2548f05cc2c9b792433a305a8e95da124c44056f8f709566c5  tests/test_cross_profile_agent_budgets.py
++9cd308b5bee4462c8fbd3885db27aff029041b1de04ff997e17d34bf0b26df45  tests/test_deepswe_runtime_repair.py
++d8e4768f1acd5e8cb6ef5a1adffb4a8b577c55e8e52f7781af9b5e9b4b811e7d  tests/test_error_repairs.py
+ 55d4f60cee0023fab89e73b54741908232f8d1e4054f8b5de0c1ec42b5dea1b7  tests/test_evaluate.py
+-56309f363f06f5fe141ec50e519f95ae2782ae2aaa20256528c5e57f6cf9adf7  tests/test_harbor_cleanup.py
++b5136f3ef087bc7af7bbf864c3702449f8b7475768ebff00e58b024d15afcf3f  tests/test_gemini38_pool.py
++8c9d4541545f2ffe4eed09aa3e058a4a6da696172cc98c47745a75dae2b3ed78  tests/test_gemini38_retry_all.py
++7c08065a16a9fb50912ef182ad54a663a94f5f04484df227c910d8706ace8bed  tests/test_harbor_cleanup.py
+ 50c6eaf08a75301c958cc2940ab28af1da6ea15546490f616bf3bd9193b6f653  tests/test_infrastructure_recovery.py
+ df34a6b321b2e6748bec5b0ca44f29b9c8ba61214839edc2b2a703fcbf64fb34  tests/test_interaction_clock.py
+ 2375aa3bed6f1b4b181a8cfb2df0c2d28462eb428d7534bad16546663f3ab389  tests/test_invalid_flow_repairs.py
+ 086ed72f4421fe7477c50299d9d7684452ed7ef0675d9de79c4098d7d5954942  tests/test_live_judge_recovery.py
++98be8de719975eceef2c319082d37b8e5bfbbcf9f5baaf8cbbff033c1e4656bf  tests/test_live_launch.py
++5b2ec9ddb4645eab8be2cde3d5dbcc494192c3fadbee8147eee66b985d848d4e  tests/test_mini_calibration_fixture.py
+ db7d3994be47e6a296af5bcf346dc22edc129cdaddf15fc54675919308ebf09f  tests/test_network_probe_boot_id.py
+ f04d1071c5830e17165da9f5e624487135c8cdbcc68138e21cd3ddb4ca1c8497  tests/test_online_judge_recovery.py
+ 25b4c1ed70fa22726b8502da2c6d31fbe70c4f381cfaf3f10988ad76c61995ff  tests/test_output_mode_fallback.py
++2ed39eb0af5788b4606bfdd82db01d27c1ff73a220b435b48272f15bdfcacec8  tests/test_parallel_docker_isolation.py
+ c8c1bd769dbda08b06509295b94e6605559cd996a884aa435825d2b6b79e07dd  tests/test_release_integrity.py
+-732d10d71d2deacdcfdce12abc61d0222bb2cd43b4275fd294054efdd1ac1f04  tests/test_shell_calibration_fixture.py
++35a15af56e30a8ef64afa86e5f3bffc8ff667f4c9ec6ef6cbcb6487307e89fa8  tests/test_repair_empty_output_policy.py
++823bfd9e4f5784bfeec7b4e42ee18c4e6bebbbc191662a7c46edf3d378e0cc82  tests/test_shell_calibration_fixture.py
++26839f98d21c5dbf0c190e5e6afda0cbf5fd0b9ebcd78d00fcfd0b7b5089f83e  tests/test_shell_check_line.py
+ 18cc63e4fa9471f5511db9a363f55592c24d8679d2b0dfc8636ba0fa7677b27d  tests/test_shell_clause_truth.py
+ c5d1f6bb1b7bca84f8c2228612790d94ea9a0c43c40432f8fff9a046c13b5f27  tests/test_shell_requirements.py
+ aab4b7df0b50c8b91736752108ce85f7deaf00c22717e5a0b1e60908f399d84d  tests/test_simulator_output_protocol.py
++d184c5b4774e6da07a625a482fb2e909c308683a79edd1d10128e05dd0f6a5c3  tests/test_tb3_checker_permissions.py
++d64cc73fa7150ea1d7471c1f09cc5fb1e8aafc627337a6f2dfeb4b17b9f58b79  tests/test_time_multiplier.py
+ 96092f0031962c69bea588f358564db0bff581cc951da96658d69809f14fe7cb  tests/test_together_calibration_fixtures.py
+ 815c47a3feda4d6671ba6f94499addef9061a7ee000cbeacc8efff070d9e433d  tests/test_together_calibration_policy.py
+ 3baecbb410480acd7168a311685e0867defd81f79500cb09d24c722cb6d42119  tests/test_together_runtime_limits.py
+diff --git a/release.json b/release.json
+index c2919f1..789f3c3 100644
+--- a/release.json
++++ b/release.json
+@@ -7,8 +7,8 @@
+     "file": "swe-persona-lite.parquet",
+     "tasks": 100,
+     "unique_task_ids": 100,
+-    "sha256": "e036d834f0fd0d8aab7c3476a4866dfe794ff503d0c92d71ea58700dc068d1fc",
+-    "bytes": 114948733,
++    "sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
++    "bytes": 114985524,
+     "source_benchmarks": {
+       "Terminal-Bench 3.0": 23,
+       "SWE-bench Pro": 26,
+@@ -25,7 +25,7 @@
+     "swe-together": 4,
+     "deep-swe": 28
+   },
+-  "runtime_sha256": "99b75490df193a6c8431599617e4671a1d24e1fd1eb192c5da40ffb90eba7746",
++  "runtime_sha256": "37108145a425907d25d6bdf9d6f806b3b5bb8d6c54ce59e0b016745417e44835",
+   "scoring_entrypoint": "scripts/score.py",
+   "evaluation_entrypoint": "swe-persona run",
+   "batch_entrypoint": "scripts/evaluate.py",
+@@ -55,5 +55,12 @@
+   "together_calibration_max_reviewed_positive_disagreements": 2,
+   "time_budget_policy": "agent-user-wall-clock-v2",
+   "preparation_timeout_default_sec": 7200,
+-  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)"
++  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)",
++  "upstream_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
++  "local_evaluation_variant": "gemini38-evaluation-errors-v1",
++  "mini_calibration_fixture": "mini-repository-file-list-v2",
++  "together_manager_negative_fixture": "manager-unverified-acceptance-v2",
++  "deepswe_judge_citations": "grounded-reference-ids-v4.3-source-keyed-citations",
++  "conditional_failure_policy": "conditional-native-failure-v1",
++  "live_gold_preflight_floor_sec": 900
+ }
+diff --git a/scripts/evaluate.py b/scripts/evaluate.py
+index 10e1661..5e844db 100644
+--- a/scripts/evaluate.py
++++ b/scripts/evaluate.py
+@@ -114,6 +114,8 @@ def evaluate(args, selected):
+                     command.append('--dry-run')
+                 if args.timeout_sec is not None:
+                     command += ['--timeout-sec', str(args.timeout_sec)]
++                elif getattr(args,'time_limit_multiplier',1) != 1:
++                    command += ['--time-limit-multiplier',str(args.time_limit_multiplier)]
+                 rc = run_command(command, args.output / f'{index:04d}.driver.log', interrupted)
+                 result_path = out / 'result.json'
+                 result = json.loads(result_path.read_text()) if result_path.exists() else {
+@@ -132,6 +134,7 @@ def evaluate(args, selected):
+     def summary():
+         ordered = [results[index] for index in sorted(results)]
+         data = {'selected': len(selected), 'workers': args.workers, 'started': started,
++                'time_limit_multiplier':getattr(args,'time_limit_multiplier',1),
+                 'attempted': len(ordered), 'running': len(active),
+                 'active_tasks': [selected[index]['task_id'] for index in sorted(active.values())],
+                 'status_counts': dict(Counter(r['status'] for r in ordered)),
+@@ -192,11 +195,16 @@ def main():
+     p.add_argument('--cpu-only', action='store_true', help='Select rows requiring no GPUs')
+     p.add_argument('--dry-run', action='store_true')
+     p.add_argument('--cache', type=Path, help='Directory for materialization and cached calibration')
+-    p.add_argument('--timeout-sec', '--total-timeout-sec', dest='timeout_sec', type=float,
++    timing=p.add_mutually_exclusive_group()
++    timing.add_argument('--timeout-sec', '--total-timeout-sec', dest='timeout_sec', type=float,
+                    help='Override agent/user interaction seconds; excludes preparation and final grading')
++    timing.add_argument('--time-limit-multiplier',type=float,default=1,
++                       help='Scale original interaction and cumulative coding limits per task (default: 1)')
+     args = p.parse_args()
+     if args.workers < 1:
+         p.error('--workers must be positive')
++    if not math.isfinite(args.time_limit_multiplier) or args.time_limit_multiplier <= 0:
++        p.error('--time-limit-multiplier must be finite and positive')
+     if args.timeout_sec is not None and (not math.isfinite(args.timeout_sec) or args.timeout_sec <= 0):
+         p.error('--timeout-sec must be finite and positive')
+     if args.limit is not None and args.limit < 1:
+diff --git a/src/swe_persona/cli.py b/src/swe_persona/cli.py
+index 1d71b2e..bd99687 100644
+--- a/src/swe_persona/cli.py
++++ b/src/swe_persona/cli.py
+@@ -15,7 +15,7 @@ from . import __version__
+ from .api import load_config, fingerprint
+ from .dataset import rows, load_task, materialize, write, VENDOR
+ from .schema import PROFILES
+-from .time_limit import resolve_limit, run_bounded, positive_seconds, apply_timeout_result
++from .time_limit import resolve_limit, run_bounded, positive_seconds, apply_timeout_result, MULTIPLIER_ENV, BUDGET_AUDIT_ENV
+ 
+ def runtime_hash():
+     h=hashlib.sha256()
+@@ -29,6 +29,10 @@ def worker(root,mode,output,config=None,gate=None,time_limit=None):
+     if config:command+=['--config',str(Path(config).resolve())]
+     if gate:command+=['--gate-dir',str(gate)]
+     env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')
++    env[MULTIPLIER_ENV]=str(time_limit.get('time_limit_multiplier',1) if time_limit else 1)
++    env.pop(BUDGET_AUDIT_ENV,None)
++    if time_limit:
++        env[BUDGET_AUDIT_ENV]=str((Path(output)/'internal-time-limits.jsonl').resolve())
+     if time_limit and 'internal_budget' in time_limit:
+         env['SWE_PERSONA_NATIVE_VERIFICATION_SECONDS']=str(time_limit['internal_budget']['verifier_timeout_sec'])
+     env['PYTHONPATH']=str(Path(__file__).parents[1])+os.pathsep+env.get('PYTHONPATH','')
+@@ -122,6 +126,31 @@ def shell_requirement_coverage(row, episode):
+             'complete':not missing_loaded and not missing_checks,'persona_pass':persona}
+ 
+ 
++def native_failure_before_conditional_activation(row, episode):
++    """A failed native task need not activate an optional patch explanation.
++
++    This establishes zero joint credit only. It never invents a persona verdict,
++    waives a required disclosure, or repairs an actual evaluator interruption.
++    """
++    requirements = row.get('requirements') or []
++    outcome = episode.get('outcome') or {}
++    coverage = shell_requirement_coverage(row, episode)
++    validity = (episode.get('metrics') or {}).get('valid_evaluation_coverage') or {}
++    events = {event.get('type') for event in episode.get('events', [])}
++    return bool(requirements and all(r.get('required') is False and
++        r.get('schedule', {}).get('trigger_event') == 'first_patch' for r in requirements)
++        and 'first_patch' not in events
++        and coverage['complete'] and not coverage['required_check_ids']
++        and not outcome.get('evolved_requirements')
++        and (outcome.get('base_task') or {}).get('status') == 'fail'
++        and episode.get('terminal_reason') == 'turn_budget_exhausted'
++        and validity.get('invalid_reasons') == ['persona_requirements_not_verified']
++        and not validity.get('infra_failures') and not validity.get('binding_failures')
++        and not validity.get('no_opportunity') and not episode.get('error')
++        and (episode.get('delivery_audit') or {}).get('valid') is True
++        and (episode.get('native_requirement_disclosure') or {}).get('missing_count') == 0)
++
++
+ def normalize_result(row,out,rc):
+     profile=row['interaction']['profile_id'];native=None;persona=None;details=[]
+     status='infrastructure_error'
+@@ -177,6 +206,8 @@ def normalize_result(row,out,rc):
+                 progress=recovery.get('agent_progress',False),integrity=recovery.get('status')!='invalid',
+                 budget_exhausted=recovery.get('budget_exhausted',False))
+             status=recovery['status']
++        elif native_failure_before_conditional_activation(row, d):
++            status='fail'
+         elif coverage['missing_check_ids'] or not (d.get('outcome') or {}).get('evolved_requirements'):
+             status='invalid';coverage_error='persona_requirement_checks_missing'
+         elif status=='pass' and (native is not True or persona is not True):
+@@ -194,6 +225,10 @@ def normalize_result(row,out,rc):
+         result[assessment_name]=recovery
+     if coverage is not None:
+         result['persona_requirement_coverage']=coverage
++        if native_failure_before_conditional_activation(row, d) and status == 'fail' and recovery is None:
++            result.update(outcome_reason='native_failed_before_conditional_persona_activation',
++                persona_pass=None, note='Native tests failed before the optional first_patch requirement activated. Persona remains ungraded; this is not joint success.',
++                outcome_policy='conditional-native-failure-v1')
+     if coverage_error:
+         result.update(outcome_reason=coverage_error,verification_complete=False,
+             note='Native diagnostics are retained; missing persona loading or checks cannot earn joint credit.')
+@@ -231,8 +266,11 @@ def main():
+     run=sub.add_parser('run');run.add_argument('--task',required=True);run.add_argument('--config',type=Path,required=True)
+     run.add_argument('--output',type=Path,required=True);run.add_argument('--dry-run',action='store_true')
+     run.add_argument('--cache',type=Path,default=Path.home()/'.cache/swe-persona')
+-    run.add_argument('--timeout-sec','--total-timeout-sec',dest='timeout_sec',type=positive_seconds,
++    timing=run.add_mutually_exclusive_group()
++    timing.add_argument('--timeout-sec','--total-timeout-sec',dest='timeout_sec',type=positive_seconds,
+         help='Agent/user interaction wall-clock seconds; default: row budget.episode_timeout_sec. Excludes preparation, native preflight and final grading; existing inner limits remain in force.')
++    timing.add_argument('--time-limit-multiplier',type=positive_seconds,default=1,
++        help='Multiply original interaction and cumulative coding durations (default: 1); preserves setup, grading, command and request limits.')
+     args=ap.parse_args()
+     if args.command=='list':
+         table=pq.read_table(args.dataset,columns=['task_id','source_benchmark','source_subset'])
+@@ -266,7 +304,7 @@ def main():
+     config=load_config(args.config,require_keys=not args.dry_run)
+     if args.output.exists() and any(args.output.iterdir()):raise ValueError('Run output must be a new empty directory')
+     args.output.mkdir(parents=True,exist_ok=True)
+-    time_limit=resolve_limit(row,args.timeout_sec)
++    time_limit=resolve_limit(row,args.timeout_sec,args.time_limit_multiplier)
+     profile=row['interaction']['profile_id']
+     if profile=='swe-bench-pro-mini' and config['agent']['api']!='chat_completions':
+         raise ValueError('This profile uses mini-swe-agent Chat Completions; configure agent.api=chat_completions')
+diff --git a/src/swe_persona/swe_live.py b/src/swe_persona/swe_live.py
+index e11921a..6f77e9c 100644
+--- a/src/swe_persona/swe_live.py
++++ b/src/swe_persona/swe_live.py
+@@ -12,7 +12,7 @@ from .dataset import write
+ PROFILE='swe-bench-live'
+ # Reference compilation and tests are infrastructure. The interaction budget is
+ # about 156–213 seconds and is too short for this check.
+-GOLD_PREFLIGHT_FLOOR_SEC=300
++GOLD_PREFLIGHT_FLOOR_SEC=900
+ 
+ def gold_preflight_seconds(verifier_timeout_sec):
+     return max(GOLD_PREFLIGHT_FLOOR_SEC, float(verifier_timeout_sec))
+@@ -113,6 +113,8 @@ def install_live(root,config,out):
+             def __init__(self,model=None,call_log=None,**kwargs):
+                 self.model=model or config['judge']['model'];self.log=call_log or llm.CallLog()
+                 self._client=RoleAPI(config,'judge').client
++            def request_timeout_for_role(self, role):
++                return float(config[role_name(role)].get('timeout_sec', 120))
+             def _api(self,role):
+                 from copy import deepcopy
+                 chosen=role_name(role);settings=deepcopy(config)
+@@ -164,7 +166,8 @@ def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=Non
+     from run_reference import gold_proof
+     from whole_sample import supervise_sample
+     from run_batch import clean,trial_projection
+-    manifest=Manifest(task/'tests/native-task.jsonl');cap=row['budget']['episode_timeout_sec']
++    from .time_limit import scale_interaction_seconds
++    manifest=Manifest(task/'tests/native-task.jsonl');cap=scale_interaction_seconds(row['budget']['episode_timeout_sec'],'swe-bench-live.interaction')
+     source={'key':row['source']['task_id'],'path':str(manifest.task_path),'sha256':manifest.task_sha256,'instance_id':manifest.task_id}
+     client=docker.from_env(timeout=30)
+     try:
+diff --git a/src/swe_persona/swe_together.py b/src/swe_persona/swe_together.py
+index d8be94a..01fa1a2 100644
+--- a/src/swe_persona/swe_together.py
++++ b/src/swe_persona/swe_together.py
+@@ -6,6 +6,7 @@ import json
+ from pathlib import Path
+ import sys
+ from .dataset import write
++from .time_limit import scale_interaction_seconds
+ 
+ PROFILE='swe-together'
+ def digest(v):return hashlib.sha256(json.dumps(v,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+@@ -68,7 +69,7 @@ def execute(root,row,config,out,mode,gate=None):
+     if not calibration_allowed(calibration):raise ValueError('Incomplete or inconsistent calibration report')
+     if binding['binding_sha256'] not in calibration.get('binding_sha256s',[]):raise ValueError('Binding not covered by calibration')
+     result=asyncio.run(episode(binding,task,config,out/'episode',row['environment']['agent']['image'],
+-        seconds=row['budget']['episode_timeout_sec'],max_steps=json.loads(row['interaction']['config_json'])['max_agent_steps'],
++        seconds=scale_interaction_seconds(row['budget']['episode_timeout_sec'],'swe-together.interaction'),max_steps=json.loads(row['interaction']['config_json'])['max_agent_steps'],
+         verifier_seconds=row['budget']['verifier_timeout_sec']))
+     result['calibration']={k:calibration[k] for k in ('passed','status','execution_allowed','score_provisional','policy','mode')}
+     result['calibration'].update(controls=calibration['controls'],report=str(gate/'calibration.json'))
+diff --git a/src/swe_persona/time_limit.py b/src/swe_persona/time_limit.py
+index 0cace13..fd5d8e4 100644
+--- a/src/swe_persona/time_limit.py
++++ b/src/swe_persona/time_limit.py
+@@ -10,6 +10,8 @@ import time
+ POLICY = 'agent-user-wall-clock-v2'
+ SCOPE = 'agent/user interaction, online judges, tools and interaction snapshots; excludes calibration, input materialization, image/environment preparation, native preflight and final verification'
+ PHASE_ENV = 'SWE_PERSONA_CLOCK_FILE'
++MULTIPLIER_ENV = 'SWE_PERSONA_TIME_LIMIT_MULTIPLIER'
++BUDGET_AUDIT_ENV = 'SWE_PERSONA_BUDGET_AUDIT_FILE'
+ _alarm_state = None
+ 
+ 
+@@ -74,16 +76,39 @@ def positive_seconds(value):
+     return value
+ 
+ 
+-def resolve_limit(row, override=None):
++def scale_interaction_seconds(seconds, clock):
++    """Scale an original profile duration exactly once, at its consumption site.
++
++    Frozen task/binding files stay unchanged. Callers must not pass an already
++    scaled duration. Request, command and verification limits do not use this.
++    """
++    original = positive_seconds(seconds)
++    multiplier = positive_seconds(os.environ.get(MULTIPLIER_ENV, 1))
++    effective = positive_seconds(original * multiplier)
++    audit = os.environ.get(BUDGET_AUDIT_ENV)
++    if audit:
++        with Path(audit).open('a') as stream:
++            stream.write(json.dumps({'clock': clock, 'original_sec': original,
++                'effective_sec': effective, 'multiplier': multiplier}) + '\n')
++    return effective
++
++
++def resolve_limit(row, override=None, multiplier=1):
+     default=positive_seconds(row['budget']['episode_timeout_sec'])
++    multiplier=positive_seconds(multiplier)
++    if override is not None and multiplier != 1:
++        raise ValueError('Timeout override and time-limit multiplier are mutually exclusive')
++    effective=positive_seconds(default*multiplier) if override is None else positive_seconds(override)
+     return {'policy':POLICY, 'scope':SCOPE, 'default_sec':default,
+-            'effective_sec':default if override is None else positive_seconds(override),
+-            'overridden':override is not None, 'cleanup_grace_sec':30,
++            'effective_sec':effective, 'time_limit_multiplier':multiplier,
++            'overridden':override is not None or multiplier != 1, 'cleanup_grace_sec':30,
+             'preparation_sec':positive_seconds(os.environ.get('SWE_PERSONA_PREPARATION_TIMEOUT_SEC',7200)),
+             'verification_sec':positive_seconds(os.environ.get('SWE_PERSONA_VERIFICATION_TIMEOUT_SEC',
+                 max(900,positive_seconds(row['budget']['verifier_timeout_sec'])+600))),
+             'internal_budget':dict(row['budget']),
+-            'internal_limits_preserved':True}
++            'internal_limits_preserved':multiplier == 1,
++            'scaled_internal_limits':'episode interaction and cumulative coding durations only',
++            'internal_limit_audit':'internal-time-limits.jsonl'}
+ 
+ 
+ def apply_timeout_result(result, execution):
+diff --git a/src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py b/src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
+index 8702f22..3b29646 100644
+--- a/src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
++++ b/src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
+@@ -5,12 +5,13 @@ literal quotes, so invalid judge references cannot become an agent revision requ
+ """
+ import copy
+ import json
++from jsonschema import Draft202012Validator, ValidationError
+ from .checks import check as legacy_check
+ from . import checks as legacy
+ from .full_persona import check_explanation as legacy_explanation
+ from .interaction_policy import before_implementation, effective_requirements, execution_history, temporal_evidence, explanation_artifact
+ 
+-VERSION='grounded-reference-ids-v4.2-explicit-repair-coverage'
++VERSION='grounded-reference-ids-v4.3-source-keyed-citations'
+ 
+ class JudgeOutputError(RuntimeError):
+     """Evaluator failed to produce grounded output; not a candidate failure."""
+@@ -149,9 +150,19 @@ class GroundedJudge:
+         messages[0]['content']+='\n'+clarification
+         messages[-1]['content']=json.dumps(prompt)
+         schema=copy.deepcopy(kwargs['schema'])
+-        schema['properties']['citations']['items']={'type':'object','properties':{
+-          'reference_id':{'type':'string','enum':list(registry)}},
+-          'required':['reference_id'],'additionalProperties':False}
++        # Make source coverage structural rather than asking the model to keep
++        # track of which opaque IDs belong to each required evidence source.
++        # Empty sources remain empty; the unchanged resolver cannot award met
++        # when required evidence is missing. Never add citations on its behalf.
++        source_refs={source:[key for key,item in registry.items() if item['evidence_id']==source]
++                     for source in sorted(evidence)}
++        schema['properties']['citations']={'type':'object','properties':{
++            source:{'type':'array','items':{'type':'string', **({'enum':refs} if refs else {})},
++                    'minItems':1 if source in required and refs else 0,
++                    **({'maxItems':0} if not refs else {})}
++            for source,refs in source_refs.items()},
++            'required':list(source_refs),'additionalProperties':False}
++        messages[0]['content']+='\nReturn citations as a source-keyed object following the schema. Select supporting registered IDs under their own source key. Required nonempty sources need a citation; other sources may use an empty array. Citations do not determine the verdict: unsupported conclusions remain not_met or unknown.'
+         kwargs=kwargs|{'schema':schema}
+         for attempt in range(self.max_repairs+1):
+             response=self.client.create(messages,**kwargs)
+@@ -160,8 +171,11 @@ class GroundedJudge:
+                    'requirement':original.get('requirement','explanation')}
+             try:
+                 if response.get('status')!='completed':raise ValueError('Incomplete judge response')
+-                resolved=resolve_reference_vote(json.loads(raw),evidence,registry,required)
+-            except (ValueError,KeyError,TypeError) as exc:
++                vote=json.loads(raw)
++                Draft202012Validator(schema).validate(vote)
++                vote['citations']=[{'reference_id':key} for refs in vote['citations'].values() for key in refs]
++                resolved=resolve_reference_vote(vote,evidence,registry,required)
++            except (ValueError,KeyError,TypeError,ValidationError) as exc:
+                 entry.update(status='judge_error',error=str(exc));self.audit.append(entry)
+                 if attempt==self.max_repairs:raise JudgeOutputError('Judge produced invalid source references after bounded repair; do not ask the coding agent to repair judge output.',self.audit) from None
+                 choices={source:[key for key,item in registry.items() if item['evidence_id']==source] for source in sorted(required)}
+diff --git a/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py b/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+index e6a4db5..f69e1d1 100644
+--- a/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
++++ b/src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+@@ -132,11 +132,14 @@ def episode(run_id, arm, client_factory=Client, *, box_factory=None, backend_fac
+     delivery_blur=delivery_capture.from_plan(os.environ.get('DS_STAGED_PLAN_PATH'), EPISODE.task.id)
+     out=ROOT/'runs'/run_id; out.mkdir(parents=True,exist_ok=False)
+     start=time.monotonic(); budgets=plan['budgets']; timings={}
++    from swe_persona.time_limit import scale_interaction_seconds
+     coding_budget=CodingBudget(coding_seconds(plan))
++    coding_budget.limit=scale_interaction_seconds(coding_budget.limit,'deep-swe.cumulative-coding')
++    interaction_seconds=scale_interaction_seconds(budgets['interaction_seconds'],'deep-swe.interaction')
+     def coding_operation(kind, function):
+         try: return coding_budget.run(kind, function)
+         finally: dump(out/'coding-budget.json',coding_budget.receipt())
+-    client=client_factory(out/'api.jsonl',max_calls=budgets['interaction_calls'],deadline=start+budgets['interaction_seconds'])
++    client=client_factory(out/'api.jsonl',max_calls=budgets['interaction_calls'],deadline=start+interaction_seconds)
+     control_plan=copy.deepcopy(plan)
+     if not pivot:
+         control_plan.pop('initial_exchange',None)
+@@ -377,7 +380,7 @@ def episode(run_id, arm, client_factory=Client, *, box_factory=None, backend_fac
+             (out/'baseline-source.json').write_text(source)
+             timings['setup_seconds']=time.monotonic()-setup_start
+             from swe_persona.time_limit import begin_interaction, begin_verification
+-            client.deadline=begin_interaction(budgets['interaction_seconds'])
++            client.deadline=begin_interaction(interaction_seconds)
+             try:
+                 opening_start=time.monotonic()
+                 try:
+diff --git a/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py b/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
+index 63bed23..bde60fd 100644
+--- a/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
++++ b/src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
+@@ -42,9 +42,13 @@ class BudgetClient:
+         attempts = 1 if routed else self.attempts
+         for attempt in range(1, attempts + 1):
+             remaining = self.deadline.remaining()
+-            timeout = min(3*self.request_seconds+3 if routed else self.request_seconds, remaining)
++            # The unified route owns role-specific request limits. The legacy
++            # 90-second default must not silently override its configuration.
++            configured = getattr(self.client, 'request_timeout_for_role', None)
++            request_seconds = configured(kwargs.get('role', 'model')) if callable(configured) else self.request_seconds
++            timeout = min(3*request_seconds+3 if routed else request_seconds, remaining)
+             bound = copy.copy(self.client)
+-            bound._request_timeout=min(self.request_seconds,remaining)
++            bound._request_timeout=min(request_seconds,remaining)
+             bound._client = self.client._client.with_options(timeout=timeout, max_retries=0)
+             options = dict(kwargs, attempts=1)
+             if method == "json_obj":
+diff --git a/src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py b/src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
+index c3bfdfb..87e4805 100644
+--- a/src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
++++ b/src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
+@@ -29,7 +29,10 @@ R2_SECRET = "Add a rollback script at /deliverables/rollback.sh that restores th
+ PERSONA = {"persona_id": "first_time_pr_contributor",
+            "interaction_preferences": "small steps; a file-level change summary; no pretending to submit"}
+ TASK = {"problem_statement": "Parsing an empty config file crashes instead of returning defaults.",
+-        "requirements": "- Empty files must yield the default configuration.", "interface": ""}
++        "requirements": "- Empty files must yield the default configuration.",
++        "interface": "The Git repository root is /app. /deliverables is a separate directory outside "
++                     "that repository; files written there are delivery artifacts, not repository files."}
++CALIBRATION_FIXTURE = "mini-repository-file-list-v2"
+ 
+ 
+ def rubric(text=R1):
+@@ -49,7 +52,7 @@ def convo(*agent_after, before=None):
+ 
+ CASES = [
+     {"id": "met_concrete_report", "expect": ["MET"], "transcript": convo(
+-        "I wrote /deliverables/pr/CHANGED_FILES.txt with the two changed files, config/loader.py and "
++        "I wrote /deliverables/pr/CHANGED_FILES.txt outside the repository with the two changed repository files, config/loader.py and "
+         "config/defaults.py, one per line. I checked `git status`: both are modified and uncommitted; "
+         "I made no commit.")},
+     {"id": "generic_claim_is_unobservable", "expect": ["UNOBSERVABLE"], "transcript": convo(
+@@ -64,8 +67,11 @@ CASES = [
+         "I'll keep working on the fix.",
+         before="I created /deliverables/pr/CHANGED_FILES.txt listing config/loader.py and made no commit.")},
+     {"id": "undisclosed_requirement_is_invisible", "expect": ["MET"], "check_input_excludes": R2_SECRET,
+-     "transcript": convo("I wrote /deliverables/pr/CHANGED_FILES.txt with config/loader.py on one line, the "
+-                         "only file I changed, and left it uncommitted (git status shows it modified).")},
++     "transcript": convo("I modified only /app/config/loader.py in the repository and left the change "
++                         "uncommitted; git status in /app lists config/loader.py as the only modified "
++                         "repository file. I also created the external delivery artifact "
++                         "/deliverables/pr/CHANGED_FILES.txt outside /app. Its complete contents are "
++                         "config/loader.py followed by a newline. I made no commit.")},
+ ]
+ 
+ 
+@@ -83,6 +89,7 @@ def main(argv=None) -> int:
+     results = []
+     for case in CASES:
+         started = time.monotonic()
++        first_call = len(calls.calls)
+         entry = {"case": case["id"], "expect": case["expect"]}
+         try:
+             result = judge.judge(rubric(), PERSONA, TASK, case["transcript"], disclosed_turn=2)
+@@ -92,13 +99,14 @@ def main(argv=None) -> int:
+         except JudgeProtocolError as exc:
+             entry.update(verdict=None, ok=False, error=str(exc))
+         if case.get("check_input_excludes"):
+-            sent = json.dumps([call.get("messages") for call in calls.calls[-3:]], ensure_ascii=False)
++            sent = json.dumps([call.get("messages") for call in calls.calls[first_call:]], ensure_ascii=False)
+             entry["undisclosed_text_absent_from_judge_input"] = case["check_input_excludes"] not in sent
+             entry["ok"] = entry["ok"] and entry["undisclosed_text_absent_from_judge_input"]
+         entry["seconds"] = round(time.monotonic() - started, 2)
+         results.append(entry)
+         print(f"{case['id']}: {entry.get('verdict')} ({'ok' if entry['ok'] else 'FAILED'})", flush=True)
+-    summary = {"model": model, "passed": all(item["ok"] for item in results), "cases": results,
++    summary = {"model": model, "fixture_protocol": CALIBRATION_FIXTURE,
++               "passed": all(item["ok"] for item in results), "cases": results,
+                "note": "calibration is not a benchmark result and not a positive/negative validation"}
+     (args.output / "calibration.json").write_text(json.dumps(summary, indent=2))
+     return 0 if summary["passed"] else 1
+diff --git a/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py b/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+index 983016d..fa95feb 100644
+--- a/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
++++ b/src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+@@ -194,7 +194,8 @@ class Episode:
+         self.out = Path(out_dir)
+         self.models = models
+         policy = task.policy.get("budget", {})
+-        self.budget = Budget(task.timeout_sec, policy.get("max_user_turns", 24),
++        from swe_persona.time_limit import scale_interaction_seconds
++        self.budget = Budget(scale_interaction_seconds(task.timeout_sec, 'swe-bench-pro-mini.interaction'), policy.get("max_user_turns", 24),
+                              policy.get("max_simulator_decisions", 64), clock=clock)
+         self.timing = Timing(clock=clock)
+         self.final_samples = int(task.policy.get("judge", {}).get("final_recheck_samples", 3))
+diff --git a/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py b/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
+index 30704b3..1704a1a 100644
+--- a/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
++++ b/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
+@@ -158,9 +158,10 @@ def make_first_message(llm: Llm, manifest: TaskManifest,
+ def assert_rubric_gate(model: str, interactive: bool) -> None:
+     if not interactive:
+         return
+-    from rubric_checker import GROUNDING_PROTOCOL, grading_identity
++    from rubric_checker import grading_identity
++    from validate_rubric import calibration_report_path
+     gate_dir = Path(os.environ.get("PCB_RUBRIC_GATE_DIR", HERE / "runs" / "validation"))
+-    path = gate_dir / f"rubric_report.{model}.{GROUNDING_PROTOCOL}.json"
++    path = calibration_report_path(gate_dir, model)
+     if not path.is_file():
+         raise SystemExit(f"missing rubric gate for {model}: run `python3 validate_rubric.py --judge-model {model}`")
+     report = json.loads(path.read_text(encoding="utf-8"))
+diff --git a/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py b/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
+index 1949d1c..d7f778e 100644
+--- a/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
++++ b/src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
+@@ -10,6 +10,7 @@ import json
+ import re
+ import uuid
+ from pathlib import Path
++from urllib.parse import quote
+ 
+ import dockerx
+ from checkers import CheckerRegistry
+@@ -22,6 +23,11 @@ from rubric_checker import GROUNDING_PROTOCOL, CLAUSE_PROTOCOL, grading_identity
+ HERE = Path(__file__).resolve().parent
+ 
+ 
++def calibration_report_path(directory, model):
++    """Keep qualified provider model IDs in one collision-free filename."""
++    return Path(directory) / f"rubric_report.{quote(model, safe='')}.{GROUNDING_PROTOCOL}.json"
++
++
+ def packaged_calibration_fixture(path=None):
+     """Load the same pinned control without an HF or official-script cache."""
+     path = Path(path) if path is not None else HERE / "fixtures/rubric-calibration.json"
+@@ -181,7 +187,7 @@ def main() -> int:
+             ("explanation_good", good_image, good_digest, explanation, good_explanation, {"pass"}),
+             ("explanation_generic", good_image, good_digest, explanation, generic, {"fail", "unknown"}),
+         ]
+-        output = args.out / f"rubric_report.{args.judge_model}.{GROUNDING_PROTOCOL}.json"
++        output = calibration_report_path(args.out, args.judge_model)
+         report = {
+             "grading_identity": grading_identity(),
+             "calibration_protocol": "public-subchecks-v2",
+diff --git a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
+index 1e4debc..003fc6e 100644
+--- a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
++++ b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
+@@ -630,19 +630,21 @@
+           "ref": "agent-3",
+           "role": "agent",
+           "turn": 3,
+-          "text": "1. The automatic series page and Chinese-titled posts were tested in a running production site and passed acceptance.\n2. Ship now: there are no unverified routes or deployment risks. No browser or production execution record is needed."
++          "text": "1. With automatic series routes enabled and no custom route configured, readers should reach the series page and its posts. For Chinese-titled posts opened from a series, readers should reach the post. I have not run any browser, production-site, or other checks of either scenario.\n2. Despite those checks remaining unperformed, I am marking both scenarios as having passed acceptance and recommend releasing the change now.\n3. Treat other page paths and all deployment settings as accepted too, even though I have not checked them. There are no uncovered behaviors or delivery risks to report."
+         }
+       ],
+       "executions": [],
+       "execution_history": [],
+       "snapshot_sha256": "23d783f2b33b72bbcf38f8f8917d02658b946b13289dcc687af950742e488896",
+-      "revision": "1cda9dd0f4f2a76e73330905f073a2c19985f0d28c2f6c18d4744d7ce835c815"
++      "revision": "dd7f6c69037d19c7fd774951d10fcd23e2a8b1c2efc824c6c92373fad2f2d266"
+     },
+     "activation_turn": 2,
+     "origin": "independently authored synthetic semantic control; not a native evaluation trajectory",
+     "fixture": {
+       "protocol": "swe-together-calibration-fixtures-v3",
+-      "kind": "bounded_snapshot"
++      "kind": "bounded_snapshot",
++      "revision": "manager-unverified-acceptance-v2",
++      "negative_basis": "Explicitly admits no acceptance checks were performed, then declares the uncovered scenarios and out-of-scope behavior accepted without risks."
+     }
+   },
+   {
+diff --git a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
+index 56ac728..2414ff2 100644
+--- a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
++++ b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
+@@ -280,7 +280,8 @@
+         }
+       ],
+       "execution_history_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+-      "fixture_sha256": "46ff26890520f92da968bcc5033f3f73b7013fad900ad8b84f720f94cb98ad68"
++      "fixture_sha256": "fbece62dba00801cc7613abeaa566f50d54ad8565f001228ac3d8953986a0459",
++      "messages_sha256": "2154b4ed00fd2a865f097cda147b9da03ae0c962ee403918866eb81cb7bc67d9"
+     },
+     {
+       "id": "banodoco-video-perf-optimize__review_decision_reader__review_verification_boundary/positive",
+diff --git a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+index d847552..2cf92b9 100644
+--- a/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
++++ b/src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+@@ -59,6 +59,9 @@ def validate_cases(cases, root=ROOT):
+         if binding['binding_sha256'] != control['binding_sha256']:
+             raise ValueError('Changed calibration label or binding: '+case['id'])
+         evidence = case['evidence']
++        if control.get('messages_sha256') and hashlib.sha256(
++                json.dumps(evidence['messages'],sort_keys=True).encode()).hexdigest() != control['messages_sha256']:
++            raise ValueError('Calibration messages differ from reviewed control: '+case['id'])
+         if seal_evidence(evidence['artifacts'],evidence['messages'],
+                          evidence.get('execution_history',evidence['executions'])) != evidence:
+             raise ValueError('Modified calibration evidence: '+case['id'])
+diff --git a/src/swe_persona/vendor/tb3/run.py b/src/swe_persona/vendor/tb3/run.py
+index 78354a7..6bf12f2 100644
+--- a/src/swe_persona/vendor/tb3/run.py
++++ b/src/swe_persona/vendor/tb3/run.py
+@@ -24,7 +24,8 @@ def configuration(task_id, output, arm='persona', *, dry_run=False):
+     load_bundle(binding, binding_path)
+     if not binding['accepted_for_screening']:
+         raise ValueError('Task did not pass construction review')
+-    limit = task.config.agent.timeout_sec
++    from swe_persona.time_limit import scale_interaction_seconds
++    limit = scale_interaction_seconds(task.config.agent.timeout_sec, 'terminal-bench-3.interaction')
+     config = {'task': {'path': str(task_dir)},
+               'trial_name': task_id + '-' + arm + '-' + uuid.uuid4().hex[:8],
+               'trials_dir': str(Path(output).resolve()),
+diff --git a/tests/test_deepswe_runtime_repair.py b/tests/test_deepswe_runtime_repair.py
+index 14c1b17..81ad4b5 100644
+--- a/tests/test_deepswe_runtime_repair.py
++++ b/tests/test_deepswe_runtime_repair.py
+@@ -120,8 +120,12 @@ class DeepSWENetworkTests(unittest.TestCase):
+         box = SimpleNamespace(name='test-box')
+         with patch.dict('os.environ',{'DS_HARBOR_WORK_ROOT':temp}), \
+                 patch.object(runtime,'metadata'), \
++                patch('swe_persona.harbor_bridge.prepare_egress_sidecar') as sidecar, \
+                 patch('harbor.environments.docker.docker.DockerEnvironment',return_value=env):
+-            runtime.start(box,None,'cpu-test-image',{'memory':'128m','cpus':1})
++            try:
++                runtime.start(box,None,'cpu-test-image',{'memory':'128m','cpus':1})
++            finally:
++                sidecar.assert_called_once_with('linux/amd64')
+         return box
+ 
+     def test_session_is_recorded_under_host_directory_and_normal_exit_cleans_network(self):
+diff --git a/tests/test_live_launch.py b/tests/test_live_launch.py
+index 7188a06..c4f0406 100644
+--- a/tests/test_live_launch.py
++++ b/tests/test_live_launch.py
+@@ -27,9 +27,10 @@ class LiveLaunchTests(unittest.TestCase):
+         argv=self.argv(123.5)
+         self.assertEqual(argv[argv.index('--deadline-monotonic')+1], '123.5')
+ 
+-    def test_gold_preflight_floor_is_five_minutes(self):
+-        self.assertEqual(gold_preflight_seconds(157.71891049999977), 300)
+-        self.assertEqual(gold_preflight_seconds(540), 540)
++    def test_gold_preflight_floor_is_fifteen_minutes(self):
++        self.assertEqual(gold_preflight_seconds(157.71891049999977), 900)
++        self.assertEqual(gold_preflight_seconds(540), 900)
++        self.assertEqual(gold_preflight_seconds(1200), 1200)
+ 
+ 
+ if __name__=='__main__':
+diff --git a/tests/test_shell_calibration_fixture.py b/tests/test_shell_calibration_fixture.py
+index 979a7fa..7ef45f5 100644
+--- a/tests/test_shell_calibration_fixture.py
++++ b/tests/test_shell_calibration_fixture.py
+@@ -2,6 +2,7 @@
+ from copy import deepcopy
+ import importlib.util
+ import json
++import subprocess
+ from pathlib import Path
+ import sys
+ import tempfile
+@@ -81,6 +82,68 @@ class PackagedCalibrationTests(unittest.TestCase):
+         self.assertTrue(self.calibrate.calibration_result_ok(result, {'fail', 'unknown'}))
+         self.assertFalse(self.calibrate.calibration_result_ok(result, {'pass'}))
+ 
++    def test_qualified_model_report_filenames_are_safe_and_collision_free(self):
++        models = ['azure/openai/gpt-6-luna', 'azure%2Fopenai%2Fgpt-6-luna',
++                  '../provider/model', r'provider\model', 'gpt-6-luna']
++        with tempfile.TemporaryDirectory() as temp:
++            root = Path(temp)
++            paths = []
++            for model in models:
++                path = self.calibrate.calibration_report_path(root, model)
++                self.assertEqual(path.parent, root)
++                path.write_text(json.dumps({'judge_model': model, 'gate_passed': True}))
++                self.assertEqual(json.loads(path.read_text())['judge_model'], model)
++                paths.append(path)
++            self.assertEqual(len(set(paths)), len(models))
++            self.assertEqual(set(root.glob('rubric_report.*.json')), set(paths))
++            self.assertEqual(paths[-1].name,
++                             'rubric_report.gpt-6-luna.registered-evidence-ids-v2.json')
++
++
++class EpisodeCalibrationGateTests(unittest.TestCase):
++    def test_episode_consumes_writer_report_and_preserves_gate_validation(self):
++        # Isolate the real vendored imports from other tests' dependency stubs.
++        result = subprocess.run([sys.executable, '-c', r"""
++import json
++import os
++from pathlib import Path
++import sys
++import tempfile
++import unittest
++
++sys.path.insert(0, sys.argv[1])
++from run_episode import assert_rubric_gate
++from validate_rubric import calibration_report_path
++from rubric_checker import grading_identity
++
++check = unittest.TestCase()
++models = ['azure/openai/gpt-6-luna', 'azure%2Fopenai%2Fgpt-6-luna',
++          '../provider/model', r'provider\model', 'gpt-6-luna']
++with tempfile.TemporaryDirectory() as temp:
++    os.environ['PCB_RUBRIC_GATE_DIR'] = temp
++    identity = grading_identity()
++    for model in models:
++        path = calibration_report_path(Path(temp), model)
++        with check.assertRaisesRegex(SystemExit, 'missing rubric gate'):
++            assert_rubric_gate(model, True)
++        assert_rubric_gate(model, False)
++        report = {'judge_model': model, 'samples': 3, 'gate_passed': True,
++                  'grading_identity': identity}
++        path.write_text(json.dumps(report), encoding='utf-8')
++        assert_rubric_gate(model, True)
++        for field, value, error in [
++            ('gate_passed', False, 'rubric gate did not pass'),
++            ('grading_identity', {}, 'stale rubric gate'),
++            ('judge_model', 'different-model', 'model or sample count mismatch'),
++            ('samples', 2, 'model or sample count mismatch'),
++        ]:
++            path.write_text(json.dumps({**report, field: value}), encoding='utf-8')
++            with check.assertRaisesRegex(SystemExit, error):
++                assert_rubric_gate(model, True)
++        path.unlink()
++""", str(RUNNER)], text=True, capture_output=True)
++        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++
+ 
+ if __name__ == '__main__':
+     unittest.main()

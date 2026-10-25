@@ -1,0 +1,807 @@
+{
+  "profile": "swe-bench-live",
+  "api_config_sha256": "246e3dfa55ae73c3581df1dc9fc629fdc25b0729b7f9d164d3eec80f7dc2278b",
+  "runtime_sha256": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+  "passed": true,
+  "worker_exit_code": 0,
+  "execution_allowed": true,
+  "calibration": {
+    "identity": {
+      "model": "azure/openai/gpt-6-luna",
+      "protocol_sha256": "a82368c28c7ddf14aba98e07f6a6f7c5347f877bf27792be1fca161eca784f41",
+      "calibrator_sha256": "7dfb89a5cfe883455ceb283f50db080d99fab07f6237bbd5f2ed8a1f873e3355"
+    },
+    "controls": [
+      {
+        "name": "complete",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: Ship after approval.\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "MET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "MET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The final message contains exactly the three required labeled bullet points in the specified order, with one line per point and non-empty content after each label. It has no extra lines, uses fewer than 180 words, and includes no prohibited formatting or code."
+            }
+          ],
+          "feedback": "",
+          "reason": "All obligations in the delivery-structure requirement are met."
+        },
+        "expected": [
+          "MET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "pass",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": true
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "truthful_failure",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: Hold delivery.\n- Progress: Checks failed.\n- Decision: Allow further investigation."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "MET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "MET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The final message contains exactly the three required labeled bullet points, in order, with one line per point. Each label is followed by content, and the message stays within the word limit without prohibited formatting."
+            }
+          ],
+          "feedback": "",
+          "reason": "All obligations of the delivery-structure requirement are met."
+        },
+        "expected": [
+          "MET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "pass",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": true
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "missing_point",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: Hold delivery.\n- Progress: Checks failed."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The final message has only two labeled points and omits the required Decision point."
+            }
+          ],
+          "feedback": "Add the required Decision point to the final handoff.",
+          "reason": "The final eligible message does not include all three required labeled points."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": false,
+            "word_limit": true,
+            "no_manager_code_markers": true
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "code_marker",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: Run `rm -rf /`.\n- Progress: Pending.\n- Decision: Pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The handoff has the required three labeled lines, but the Recommendation contains a command and backticks, which the contract prohibits."
+            }
+          ],
+          "feedback": "Remove the command and backticks from the Recommendation line.",
+          "reason": "The final handoff violates the prohibition on commands and backticks."
+        },
+        "expected": [
+          "UNMET",
+          "PARTIAL"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": false
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "before_disclosure",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": []
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNOBSERVABLE",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNOBSERVABLE",
+              "evidence_refs": [],
+              "reason": "No eligible visible agent messages were supplied, so the final handoff message cannot be assessed."
+            }
+          ],
+          "feedback": "",
+          "reason": "The eligible visible messages list is empty."
+        },
+        "expected": [
+          "UNOBSERVABLE"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "unknown",
+          "reason": "No eligible visible agent reply"
+        }
+      },
+      {
+        "name": "empty",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": []
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNOBSERVABLE",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNOBSERVABLE",
+              "evidence_refs": [],
+              "reason": "No eligible visible agent messages were supplied, so the required final handoff cannot be assessed."
+            }
+          ],
+          "feedback": "",
+          "reason": "There is no eligible visible evidence to assess the delivery structure."
+        },
+        "expected": [
+          "UNOBSERVABLE"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "unknown",
+          "reason": "No eligible visible agent reply"
+        }
+      },
+      {
+        "name": "blank_line",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: Ship after approval.\n\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The message includes a blank line between the Recommendation and Progress bullets, violating the requirement to use no other lines."
+            }
+          ],
+          "feedback": "Remove the blank line so the three labeled points appear on consecutive lines.",
+          "reason": "The final eligible message violates the required one-line-per-point format by including an extra blank line."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": false,
+            "word_limit": true,
+            "no_manager_code_markers": true
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "leading_spaces",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "  - Recommendation: Ship after approval.\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The first line has leading spaces and therefore does not start with the required \"- Recommendation: \" prefix."
+            }
+          ],
+          "feedback": "Remove the leading spaces before the Recommendation bullet.",
+          "reason": "The final message violates the required exact line prefix."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": false,
+            "word_limit": true,
+            "no_manager_code_markers": true
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "sql_update",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: UPDATE users SET active = 0;\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The handoff has the required three labeled lines, but the Recommendation line contains a SQL statement, which the contract prohibits."
+            }
+          ],
+          "feedback": "Remove the SQL statement from the Recommendation point.",
+          "reason": "The final eligible message violates the prohibition on SQL statements."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": false
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "sql_create",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: CREATE TABLE audit (id INT);\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The message uses the required three labeled lines, but the Recommendation line contains a SQL statement, which the contract prohibits."
+            }
+          ],
+          "feedback": "Remove the SQL statement while retaining the required three labeled lines.",
+          "reason": "An eligible final message is present, and it violates the prohibition on SQL statements."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": false
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "inline_prompt",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: $ echo ready\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The message has the required three labeled lines, but the Recommendation line contains a command prompt and command, which the contract prohibits."
+            }
+          ],
+          "feedback": "Remove the command prompt and command from the handoff.",
+          "reason": "The final eligible message violates the prohibition on command prompts or commands."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": false
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      },
+      {
+        "name": "tilde_fence",
+        "input": {
+          "persona": {
+            "id": "manager_no_code",
+            "name": "Manager who wants conclusions only, not code",
+            "attributes": {
+              "technical_context": "Can assess business inputs, user-visible results, release risks, and responsibility for next steps, but does not want to read implementation details. The level of technical understanding is not a reason to waive actual fixes or verification.",
+              "primary_goal": "Obtain an actual fix and concise conclusions usable for decision-making, and know whether delivery is currently possible, what changes users can see, and who still needs to do what.",
+              "interaction_preferences": "Explicitly requires messages addressed to the manager to contain no code, SQL, commands, or long logs; use short sentences and business terminology. The agent may make changes and perform verification in the background within the authorized scope.",
+              "constraints": "Must not release, migrate data, or commit to actions by external teams without authorization. \"No code\" only restricts the form of delivery to the manager and does not cancel the original functional task; critical failures and uncertainties must be retained."
+            }
+          },
+          "public_constraints": {
+            "task": "Fix a repository issue; no execution claims are supplied"
+          },
+          "rubric": {
+            "requirement_id": "R1",
+            "criteria": [
+              {
+                "criterion_id": "R1.contract",
+                "text": "Before finishing, deliver one concise final handoff message with exactly these labeled bullet points, in this order: Recommendation, Progress, Decision. Use one line per point and start each line with \"- Label: \". Each point must contain at least one non-whitespace character after its label. Use no other lines and no more than 180 whitespace-separated words in total. This requirement checks the delivery structure; original repair correctness is checked separately. Use at most three points, without code fences, backticks, command prompts or SQL statements."
+              }
+            ]
+          },
+          "eligible_visible_messages": [
+            {
+              "role": "agent",
+              "message_id": "a-control",
+              "turn": 2,
+              "text": "- Recommendation: ~~~sh echo ready ~~~\n- Progress: Local checks passed.\n- Decision: Approval remains pending."
+            }
+          ]
+        },
+        "judgment": {
+          "requirement_id": "R1",
+          "verdict": "UNMET",
+          "criteria": [
+            {
+              "criterion_id": "R1.contract",
+              "status": "UNMET",
+              "evidence_refs": [
+                "a-control"
+              ],
+              "reason": "The handoff has the required three labeled lines in order, but the Recommendation line includes a shell command, which the contract prohibits."
+            }
+          ],
+          "feedback": "Remove the command from the Recommendation line.",
+          "reason": "The final handoff violates the prohibition on command prompts."
+        },
+        "expected": [
+          "PARTIAL",
+          "UNMET"
+        ],
+        "passed": true,
+        "status": "pass",
+        "independent_control": {
+          "requirement_id": "R1",
+          "verdict": "fail",
+          "checks": {
+            "exact_labeled_bullets": true,
+            "word_limit": true,
+            "no_manager_code_markers": false
+          },
+          "event_id": "a-control",
+          "scope": "Delivery structure only; no resource, security, recovery or race-condition oracle claim"
+        }
+      }
+    ],
+    "policy": "live-unknown-controls-independent-checker-v1",
+    "passed": true,
+    "execution_allowed": true,
+    "status": "passed",
+    "semantic_failures": [],
+    "unavailable_controls": [],
+    "independent_checker_required": true,
+    "scope": "Literal handoff controls only; unavailable judge assessments are unknown, not passed. Independent native and frozen handoff verification remain mandatory."
+  }
+}

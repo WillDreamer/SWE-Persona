@@ -1,0 +1,2120 @@
+{
+  "schema": "swe-persona-results-delivery-v2",
+  "delivery_status": "full_recorded_evidence_included",
+  "public_summary_members": [
+    "README.md",
+    "attempt-ledger.csv",
+    "campaign-overview.csv",
+    "campaigns/cumulative-diagnostic/high/scores.json",
+    "campaigns/cumulative-diagnostic/low/scores.json",
+    "campaigns/cumulative-diagnostic/medium/scores.json",
+    "campaigns/error-repair/high/scores.json",
+    "campaigns/error-repair/low/scores.json",
+    "campaigns/error-repair/medium/scores.json",
+    "campaigns/original-selected/high/scores.json",
+    "campaigns/original-selected/low/scores.json",
+    "campaigns/original-selected/medium/scores.json",
+    "campaigns/retry-3x/high/scores.json",
+    "campaigns/retry-3x/low/scores.json",
+    "campaigns/retry-3x/medium/scores.json",
+    "campaigns/together-repair/medium/scores.json",
+    "configuration.json",
+    "cumulative-diagnostic.pdf",
+    "cumulative-diagnostic.png",
+    "cumulative-diagnostic.svg",
+    "evidence-archives.json",
+    "per-profile.csv",
+    "results-by-campaign.csv",
+    "runtime-fingerprints.json",
+    "score.py",
+    "unresolved-evaluations.csv",
+    "verify_delivery.py"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 509,
+      "sha256": "aa933f5a270d7c70dc5a62ae3fcb022eaa282cb6628dee5056bbbdc02ee78d42"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/README.md",
+      "bytes": 6199,
+      "sha256": "a3f2d565fe2110d9171ad1334beb70cefebff3bf256e5ecedb13bce7bb7c4f59"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/artifacts/SHA256SUMS.txt",
+      "bytes": 178,
+      "sha256": "9a99d5ecd37585e95076e246048af009ed4b63d42aa45f3a05fb661055eb3f7c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/artifacts/gemini38-evidence.tar.gz",
+      "bytes": 1989528968,
+      "sha256": "0843b0f88ab5652c6fbd13a44a4b1f1d13d9ae2db2dfb38705bb2ab1361765e0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/artifacts/gemini38-results.zip",
+      "bytes": 5324779,
+      "sha256": "be6c41b7ec3dea22429ca1b4d4163a308c5b08c4077fe715c98e751d098c7053"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/attempt-ledger.csv",
+      "bytes": 284803,
+      "sha256": "aecc9100486e92b938d54229d0a840d74d69af9dbc3483de7d0055f382b3fa5a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaign-overview.csv",
+      "bytes": 1853,
+      "sha256": "97049b0262e744ff5ea3694d45e18520ae1e21ea2252dd4e0934e049b87a8183"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/high/scores.json",
+      "bytes": 9756,
+      "sha256": "884e57f218ab7cda278f51e34a04edc7aec702c48e74a3ebd155035973abaa73"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/low/scores.json",
+      "bytes": 9781,
+      "sha256": "2b4a7f2befe72d6389267c5746d4dcc0439bf991201da861e7294f12c62bab97"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/medium/scores.json",
+      "bytes": 9584,
+      "sha256": "abc5aefead154b71153f8f2886431f42173c4cdaee6c3fc6a13bf09509660739"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/high/scores.json",
+      "bytes": 5209,
+      "sha256": "1e7ad8823706f98132950007b2fa8754845ff2892ebce23cf169ddd46dbf0486"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/low/scores.json",
+      "bytes": 2899,
+      "sha256": "8886e6652a8f18989e56b03329d7c7581adc8d15e806a51a6a3ee8516682a7cd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/medium/scores.json",
+      "bytes": 6448,
+      "sha256": "68c0f4730c34194a1e8a72ba1ce873fda33afa3dd83527211b319832eb193f2a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/high/scores.json",
+      "bytes": 9728,
+      "sha256": "e09c049b070ea3e74f82c826705e35c5ed396f442d74d1cb26ae34c916312201"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/low/scores.json",
+      "bytes": 9705,
+      "sha256": "5696754acb7c958a4590537aef4cdae72414b6bd0969874b11e80bc5505efd13"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/medium/scores.json",
+      "bytes": 9660,
+      "sha256": "f3640554d6fbe5cbe1ed45021e293b36e3aec6c7069345693c493cf012d5f75b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/high/scores.json",
+      "bytes": 9703,
+      "sha256": "41140e7fe451f43e9822ed4c5282b49cb2bfdb32cf11b323f4a1a5c8b25004e4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/low/scores.json",
+      "bytes": 9704,
+      "sha256": "971867cf8e7b15fbe779444b4aa965db77bfa148465a99fcd7f3131718ac2505"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/medium/scores.json",
+      "bytes": 9765,
+      "sha256": "017e6bf4f62a008c49e07e96b962660cf34b7bff8b5bb310f30a61809f2b7ba6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/together-repair/medium/scores.json",
+      "bytes": 2848,
+      "sha256": "365f5e1f1904c53f362677cafac21575acff87bb2146593f2a26db7db8c3889b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/configuration.json",
+      "bytes": 1490,
+      "sha256": "94f9db897b98e94e65c6373e1ee9ddf6f1ab129fe86188601f73450221fab9ac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.pdf",
+      "bytes": 26081,
+      "sha256": "fe630488a4403cacf3f2a10bf17a1f99be733155f70784035974ba1f4549e8de"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.png",
+      "bytes": 60619,
+      "sha256": "79fd7ccb61b4815c7542b5920412779984a28c72e44eadf6e2ef549d4e2f5f0a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.svg",
+      "bytes": 58639,
+      "sha256": "92f4b82dfcd05f8c07144748a01a2befd972e4bf571dd2a712f8f30a59aaade3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/evidence-archives.json",
+      "bytes": 502,
+      "sha256": "658e9057f50aedde0f6f54a3b7da27c62056581ea26651aa59adc44834321979"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/per-profile.csv",
+      "bytes": 9098,
+      "sha256": "267863391f28c2e829f9c691a18758b7405e0c4ff030d36a24d1e6e9c53ce0e9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/public-summary.zip",
+      "bytes": 151691,
+      "sha256": "3c9358fd7b6223284a8d2fc944f6647e853a324d2548f409b61d39eec1c6ad3d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/README.txt",
+      "bytes": 5237,
+      "sha256": "51db37b74cd8676c08ff9303a5ca3cdc952c4f06f778432081d8a9b14a0fe7bd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/SHA256SUMS.txt",
+      "bytes": 63007,
+      "sha256": "d9d4497668d0ac5a6ab51266eba4c7c22f7ab9dd92a1cbc71ae9f815059dc74a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/attempt-ledger.csv",
+      "bytes": 284803,
+      "sha256": "aecc9100486e92b938d54229d0a840d74d69af9dbc3483de7d0055f382b3fa5a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/build_package.py",
+      "bytes": 24841,
+      "sha256": "319a812b2723b02e4d2919a38fdd83a3c9415fb28df165d77104f871fd9887f4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/760be27a8bf2e35738fe/calibrate.log",
+      "bytes": 1736,
+      "sha256": "f1e046c4e82129829249f0d379a4fbce8bb311cddf69031631acfc6934e6ad43"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/760be27a8bf2e35738fe/gate.json",
+      "bytes": 292,
+      "sha256": "cff5af59cfa5d9dae660fe16df74d11d00543574db3ae9cf3c1c966d16db1461"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/760be27a8bf2e35738fe/session-network-cleanup.json",
+      "bytes": 478,
+      "sha256": "89829eb70c706bf68ebbde6fdf9bf3f30b0229f5c7bae6ae9c246d0078067b1d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/9d2b3d50202dbfac58f7/calibrate.log",
+      "bytes": 5081,
+      "sha256": "bd3743e0f4d9f037d6031e93ac8feac0639891f463a78480a9c4cb6f3be5aa9a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/9d2b3d50202dbfac58f7/calibration.json",
+      "bytes": 5075,
+      "sha256": "d75065fef4700df8842cc690cc1a98d5e5d649313ad0358499af4469704020eb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/9d2b3d50202dbfac58f7/gate.json",
+      "bytes": 287,
+      "sha256": "598da3c7620666ae1cef79fb21b8ddce00122e53a67451fe6570eeb51398eab9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/9d2b3d50202dbfac58f7/preflight.json",
+      "bytes": 197,
+      "sha256": "f8afbfa91f7fb5b48db779a5a92a147029b0d152d00b80d07202b2ba2fcbb77c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/9d2b3d50202dbfac58f7/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "5f912bd7aadd04694ecb5bfab477fd7a26551efbc48a07dbfe72af88062adf0e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/b86b1cb193b58f898c10/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/b86b1cb193b58f898c10/calibration.json",
+      "bytes": 2038,
+      "sha256": "96d9733d0549e3991e82bfea0b9d61d629fb0dc0656f5db4b95f6ff636ced6f0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/b86b1cb193b58f898c10/gate.json",
+      "bytes": 289,
+      "sha256": "e784ad54b259859092f3b83d45b9eecf62a58c58108820c8af93c8ec022df644"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/b86b1cb193b58f898c10/session-network-cleanup.json",
+      "bytes": 89,
+      "sha256": "2a135599bd40e22cbc0928d2aebf86417f69db04c772511ce8110611bd76a288"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/calibrate.log",
+      "bytes": 5759,
+      "sha256": "ca21d3d2c25668da714cdf174b179cd30c7275c0bec503f47f8c4d424604c0ae"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/calibration.json",
+      "bytes": 69328,
+      "sha256": "04b4e4dbca4b7ea68819b8d086ae921a20c631a8492543e04303badfcc3cad3d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/gate.json",
+      "bytes": 72104,
+      "sha256": "020fef7aa6542be2d9ec76309e365623ede127af96eb15dc597ead367cc901d4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/progress.json",
+      "bytes": 48773,
+      "sha256": "b3f000141bf29549bf0a04ace607a6702547668e5639dfa64a646fb01337d8a8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "f3735c3547611e7c4fe305c6f464753dcf062158eef992f26affe376fd9e2336"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/cc013299a66c1fbabe5d/simulator-wire-controls.json",
+      "bytes": 15742,
+      "sha256": "3e2abc1025169e0be7350091aed7fc2475cd5035259c0ecf7bbd5d88f2afeb0b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fca8e00906be1238758b/calibrate.log",
+      "bytes": 1674,
+      "sha256": "468b481e91c3d2d7f0ce961ef7a0832ba291a1a09ebee1ce6c4092e7aeb18c3b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fca8e00906be1238758b/calibration.json",
+      "bytes": 42697,
+      "sha256": "3d749c877a49780909ab7157054b4df53cf9a5f439a5d118b35cf0caa68d942f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fca8e00906be1238758b/gate.json",
+      "bytes": 44596,
+      "sha256": "40f035a55575f24b7e040fe55e8234fb071661166a545cea6f5d6dd5f6137024"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fca8e00906be1238758b/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "13045a9eb9dceebf7e9738fa981d61922187af55160d4331abc13e789f166db3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fe0f20e66cb07abcd225/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fe0f20e66cb07abcd225/calibration.json",
+      "bytes": 18053,
+      "sha256": "8bd2ee2c16ba12d2fd56c8ccaf6a93f751321c4fe1296f8a39a5a3a511d67c45"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fe0f20e66cb07abcd225/gate.json",
+      "bytes": 279,
+      "sha256": "ea32fbb4166d56efafeb1d9da3f969afbf19c4696566ee1a288f4960fc220e2a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/high/calibration/fe0f20e66cb07abcd225/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "17b3fe2ac3f55cb2288675171b4778718fb4d9db51526f3fcedfd2a329414c6a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/calibrate.log",
+      "bytes": 5759,
+      "sha256": "f5f43626ed153c32ea050f53617c05dbc8ab374886d0c39a05808c571fce6869"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/calibration.json",
+      "bytes": 68872,
+      "sha256": "4edaf78bf75b67935f69c88ec404d38c9e26cd7187bca62f77c9fdc65c5fc7df"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/gate.json",
+      "bytes": 71642,
+      "sha256": "858b9e2bee7b82210d7a22fd4fb8e173b9113355060ebff3b40243706bc9910b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/progress.json",
+      "bytes": 48847,
+      "sha256": "ad6b00436d4377f75656175d8ac9f5ee9f9a46882f5a869957cdd264ae3e06c8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "cfe9ff1028eee20da8818f36c6e14a270f20459c726cf6e433f23a3e9110c6fb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/255edc483133f7492983/simulator-wire-controls.json",
+      "bytes": 15218,
+      "sha256": "a01128b2026339f7cc7b6d8ea725a141129e6094db79f3b5f033531c0765d44a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/337201569a95055148c9/calibrate.log",
+      "bytes": 1734,
+      "sha256": "86db0a8c56910f79f9c56aa86907a0f462331bf41b1454634028996daca8ddef"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/337201569a95055148c9/gate.json",
+      "bytes": 292,
+      "sha256": "6cc64619d740a1e51159e1681e942169929af6fe604b2f2a9d53484b49dfc765"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/337201569a95055148c9/session-network-cleanup.json",
+      "bytes": 478,
+      "sha256": "1a6cd829a92fb0b6981e0960737296598eacf62d02e91664ad175ff2c434ca41"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/4551a0cb56a8f94a4afb/calibrate.log",
+      "bytes": 1674,
+      "sha256": "dd979ea04a709c1e22d09285e2e39ac8d30279daa21293aae599c79d6970e2e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/4551a0cb56a8f94a4afb/calibration.json",
+      "bytes": 42658,
+      "sha256": "8b904c2851064b470e64c4a7ba79ea594e7e677999bf9297b03d73e72273982b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/4551a0cb56a8f94a4afb/gate.json",
+      "bytes": 44557,
+      "sha256": "16700fdf2c02fecd3363c585a448c309799043b55d02405b6855de6614f94f82"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/4551a0cb56a8f94a4afb/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "02c7e62a31675fcfd1f9155e55ef110a9eb53f285577133659113d84e6ccf28f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/77a43e46fc731f2831bf/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/77a43e46fc731f2831bf/calibration.json",
+      "bytes": 2091,
+      "sha256": "97482eea3e0b5dbdda23655159d91d4240b4313932d3507a5e2556a8ce739389"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/77a43e46fc731f2831bf/gate.json",
+      "bytes": 289,
+      "sha256": "767cafc1bc9bc4f29078b7191cb39b3a5892c1f7549974235f31fbc5696b274a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/77a43e46fc731f2831bf/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "403c61cd50753eb8ebaf48d4d41b83ba096cf86ba5aa524ad656d9bb65fd2250"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/9d5c14b7a941369ab06b/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/9d5c14b7a941369ab06b/calibration.json",
+      "bytes": 17952,
+      "sha256": "2f43b5fd441b7f7e6bfefad7886898f8d0810ddec44b633da0b9381180a4bc81"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/9d5c14b7a941369ab06b/gate.json",
+      "bytes": 279,
+      "sha256": "373891c3aae30bc78df948bb5f38b84e59618da2d27c2921e2fffe8abb6d5e29"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/9d5c14b7a941369ab06b/session-network-cleanup.json",
+      "bytes": 88,
+      "sha256": "8d7fe67a0d8f169d5c6e1fab37a78090f1e7d6bbadec1768058930df2b84fc12"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/c0605aedfa1f2b7b7be9/calibrate.log",
+      "bytes": 4901,
+      "sha256": "a59e1e0f8a9cc953faae7975ee5dcd98baec980df64bee61317b82715622173e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/c0605aedfa1f2b7b7be9/calibration.json",
+      "bytes": 4895,
+      "sha256": "f749e580352ba21ea7d34a524ed3c3a211ce77aa7266d7992849c09f021f98ed"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/c0605aedfa1f2b7b7be9/gate.json",
+      "bytes": 287,
+      "sha256": "341841563fa2ddf646aef5be68c781f75fc6bbe0a3fc9b8eb3122fd5909db266"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/c0605aedfa1f2b7b7be9/preflight.json",
+      "bytes": 197,
+      "sha256": "da9b1a9cba074be9ebc4995eebb26018e55c0e764cbf9c88f106df1c0a87c5bf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/low/calibration/c0605aedfa1f2b7b7be9/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "d7ad3ef7bd2f1582d9b765a59c7d9f18f06ef86587b9d472ea8c0d84a39ec234"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/074c50c5ecc86de94b1b/calibrate.log",
+      "bytes": 5025,
+      "sha256": "4b5d90e5d977fd5dfbce08932f119116e06589a66c97e96b71401f836519a75a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/074c50c5ecc86de94b1b/calibration.json",
+      "bytes": 5019,
+      "sha256": "1cf763080ca4e65c20fa73031e42e913026f08548f7bc743168029798c55be87"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/074c50c5ecc86de94b1b/gate.json",
+      "bytes": 287,
+      "sha256": "572b56abf29b2e08745d682d93c0008789a2df16e3d27d8f59d95a4f7e2a3e24"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/074c50c5ecc86de94b1b/preflight.json",
+      "bytes": 197,
+      "sha256": "9e5f7180aced241b5f1eb2c8c5d0b848cc9a8da125a76bd3adf7e1aafa961cea"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/074c50c5ecc86de94b1b/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "96b08f75845c0760e7d8bd54aec704498f4d81bec921180ee82b5389cc22edd9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/4cb9c43485e3751f1f73/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/4cb9c43485e3751f1f73/calibration.json",
+      "bytes": 17920,
+      "sha256": "0ecc2dfb944c7ca3d05bd53b2aa3375128e7f3c174ef4adfa25b78e12775781e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/4cb9c43485e3751f1f73/gate.json",
+      "bytes": 279,
+      "sha256": "52364bf1cc5f733b3e0c33fcca616b40c9daf55dae34c4bdee99c408991c06e7"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/4cb9c43485e3751f1f73/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "0d5f1390eab8c526aebf207ca47fde5002d182dd6de4dc286a537701df5beb12"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/8e726c16563f2d05c62a/calibrate.log",
+      "bytes": 1674,
+      "sha256": "acb5a5eb23157cecf167138a29aed87d5862af931393c8f9a240da9e3cabab2a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/8e726c16563f2d05c62a/calibration.json",
+      "bytes": 42570,
+      "sha256": "f5c41d6341f7defe9944e25e1426547ca7f0b98b62ad07c63a3ab99f690fb6d0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/8e726c16563f2d05c62a/gate.json",
+      "bytes": 44469,
+      "sha256": "718782e960ae69f4ede19695ebd89e3d1238f7c0f5b77f8a4c72d87f74725678"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/8e726c16563f2d05c62a/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "960e9ac07bee3af367dbbced462f13166181682c0b009234b4fec379433e6480"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/calibrate.log",
+      "bytes": 5759,
+      "sha256": "47cef06cd2c9b752a49e600408cfad1014f5d61c976b69aed3ae783b00866f5d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/calibration.json",
+      "bytes": 69354,
+      "sha256": "0a0b8e96ad4dd57725754b6308471752378fc06edfaf44c527769a4095927ffa"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/gate.json",
+      "bytes": 72134,
+      "sha256": "8367fe82d7734f8d325565d43f16fa23af4c2d41a11f893318a4b81ad863a4d4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/progress.json",
+      "bytes": 48985,
+      "sha256": "e72f1f1547316565f70b6f595d79aa59d689bf385fc6a4c6fd9b6d712ddb3f53"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "51566ea855040d2e984e4e46f5534c31613f70c7b90800e7fb3774d669df839f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/90f3739b950d1bb86ca3/simulator-wire-controls.json",
+      "bytes": 15552,
+      "sha256": "9235162c043acdb534f1d12a80aa407cd4eb77df33521aeef526d02b59545abe"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/99094e992dcf5d1370f2/calibrate.log",
+      "bytes": 262,
+      "sha256": "bcd47578213de500194734a512fbb96ffbf49bc1ddc054249641754df910fb81"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/99094e992dcf5d1370f2/calibration.json",
+      "bytes": 2231,
+      "sha256": "3a6ed365817e7677d933c6d54de1db66dfb0d15a792decc3b60b455b5f3de30d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/99094e992dcf5d1370f2/gate.json",
+      "bytes": 291,
+      "sha256": "1e66bcd0edda62284c709f0ae073ad5071097b26104d4ed296052940bc6857f8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/99094e992dcf5d1370f2/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "7c2ef036ad5c9cedf6cdc785ec4ef65234e702df3c7094a47c09db46c42c9c9c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/ff8b54f561d820090e4e/calibrate.log",
+      "bytes": 1740,
+      "sha256": "953d40446686f544f5dd1e3c58246bd9601ccc049b60940f8e8618819bc9bda9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/ff8b54f561d820090e4e/gate.json",
+      "bytes": 292,
+      "sha256": "7fb214d05cefc1d9a337cc67c96bd97b349d3b1c6e5bb2c98ff94582020d4234"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38/gemini38-reasoning/cache/medium/calibration/ff8b54f561d820090e4e/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "58a01d9deb2582fe959fcac5e80dbcba1dfd5a8f1e143fe891724ce6fad1584c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/cce2c3b0caf69b0a11b3/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/cce2c3b0caf69b0a11b3/calibration.json",
+      "bytes": 2071,
+      "sha256": "8ee55a761e9aa2b34adb2f93c99961601802c380d70f4b87d2c7ca5a5a3f7d02"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/cce2c3b0caf69b0a11b3/gate.json",
+      "bytes": 289,
+      "sha256": "d46612f847113ecefd9fe863d4ba318a38b0d1f712a7a188880502aa23533cea"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/cce2c3b0caf69b0a11b3/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "ba4dda9124b583c9362f92d5ab4f2661d0b2daad663e4f52de7c1b7f7c8f2a82"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/ce1e3e9978bca2170569/calibrate.log",
+      "bytes": 373,
+      "sha256": "b01b555357c001aada3012843e3cd6eaf5057b6a5849b6857998cb028ee7cc73"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/ce1e3e9978bca2170569/gate.json",
+      "bytes": 290,
+      "sha256": "bf4b06996bc44aa36b701781ed5988eaea765c18013e71343d451e82cb652723"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/ce1e3e9978bca2170569/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 24338,
+      "sha256": "60144833bb97183e5671638fc1cb35d6a2e1dab180262178cb7bc0ff194b4cb0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/high/calibration/ce1e3e9978bca2170569/session-network-cleanup.json",
+      "bytes": 478,
+      "sha256": "46010330da378f68e8a2f1e062dbafce7f289ab3b3121dc5d06e88e15929506b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/23532258298da3275066/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/23532258298da3275066/calibration.json",
+      "bytes": 2083,
+      "sha256": "5bb23d1d4c5f2e51f682ed6d5043ea1d192304ea59d74c5ab1eb8a43d248906b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/23532258298da3275066/gate.json",
+      "bytes": 289,
+      "sha256": "328cf778986fb26e5ca1069577bb87ea68f2284f81d0a734ca772fa9fcd89bab"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/23532258298da3275066/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "a7a87e04d5dbe50f3b5c86940da4ffc200119c79cb385cb31c82e108e3d73fa2"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/9052f00c90897bb596d1/calibrate.log",
+      "bytes": 372,
+      "sha256": "6cd714a4995e57e0bde617e02c8f248d414ce66e86f8bfebd51aa3bc7d424ee1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/9052f00c90897bb596d1/gate.json",
+      "bytes": 290,
+      "sha256": "c5ad787416a9ac848c8c7c006de2e4e3c6192443ed5295d7d06f682a07aa433b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/9052f00c90897bb596d1/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 24530,
+      "sha256": "d1b710cfdd51d7d5407a9c0740478339c8074a33fad3ea5c9c51700e82b51c65"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/low/calibration/9052f00c90897bb596d1/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "2b901e3ac8071c1c134a853d38fdfe9399ce5d33d29bff8ba89d810e7e8d5688"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/494cd4b21c6ef2e9e7ed/calibrate.log",
+      "bytes": 375,
+      "sha256": "3ef113f52a3021096b1e9beb38ff2bb7fa595d2feb88dd69b34b8d80106383ab"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/494cd4b21c6ef2e9e7ed/gate.json",
+      "bytes": 290,
+      "sha256": "b682b66673b3fd8567ea557baa689c139f5745b66e37e92f294d792cbdea166c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/494cd4b21c6ef2e9e7ed/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 25178,
+      "sha256": "d0ae261ba78d24193fba65e283f268874f2c1e82e2cc4e11ce8f20bbb93835a4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/494cd4b21c6ef2e9e7ed/session-network-cleanup.json",
+      "bytes": 478,
+      "sha256": "974bc1cdec05906d0b323278afe1c1add76dde216ffacabab2ea4c11d8780944"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/e4c1d462811e6770f0b3/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/e4c1d462811e6770f0b3/calibration.json",
+      "bytes": 2018,
+      "sha256": "1e608dbc67eec87186f83b6c873e73e7e164ba8e08d6a80832a8c7993989bc60"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/e4c1d462811e6770f0b3/gate.json",
+      "bytes": 289,
+      "sha256": "c0b2fdc01f7bbb8f5b8543c36cfadc5253b1f83a6ed50f7c057c83ed7a693af3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/calibration-repair/cache/medium/calibration/e4c1d462811e6770f0b3/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "5eed572b7658a602985dc01f4266f16bf785fad135a782e5698d0b3b8a813674"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/calibrate.log",
+      "bytes": 5759,
+      "sha256": "1d0d14917f425e654c28fd48dd6ad72202734854bb1a43c368e529a9c3d929ba"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/calibration.json",
+      "bytes": 68880,
+      "sha256": "c01b288119f45b7df1121423b5979fdf3bb1780d3d9db72813cb665dd54bf6a3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/gate.json",
+      "bytes": 71666,
+      "sha256": "22a129aff5965dfd294b7271fd3322cc146699cf483b7e12c9f6e1bf1d5bb86d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/progress.json",
+      "bytes": 48293,
+      "sha256": "6f8e949f0eae9d49ac2227aaf775870ba44147b2b5ceb5f9079ccd6d4e87b5d6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "2cf15cffcede10ad5e5628fd85db395eb2e22db14bfb20718b08553f44e60d1c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/0066b11725efde452d3e/simulator-wire-controls.json",
+      "bytes": 15764,
+      "sha256": "f0a0aa1f2f55e9d36a8d708ffa6dca93f7a8bcb8fdea60d56aaf4ee9fea3abed"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/032758ecec53dcdd0b58/calibrate.log",
+      "bytes": 4980,
+      "sha256": "7e7b11e13196b111f9ccebbc5a8895b10fef5960ba175a335b88c2b8129b3b5e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/032758ecec53dcdd0b58/calibration.json",
+      "bytes": 4974,
+      "sha256": "9cd6971e758d2dfdea11a151ca55167b88de59cf401e0cd1e6f513979ecedacf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/032758ecec53dcdd0b58/gate.json",
+      "bytes": 287,
+      "sha256": "3bb0b890ecd96e49543ba9cdbdb390cea331e368d445e7f3328194911212dd40"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/032758ecec53dcdd0b58/preflight.json",
+      "bytes": 197,
+      "sha256": "8d71f4b591df3f88f4475707f49f851e39747b1c141c1ede8f22eb973f42b767"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/032758ecec53dcdd0b58/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "686c5ddecb57eb51de54d357046af7a1cd1435aaec3f1e1b37c9c4dff6b8c15b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/1106b8aa2d0b64b5526d/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/1106b8aa2d0b64b5526d/calibration.json",
+      "bytes": 18031,
+      "sha256": "6baa65c509b7a6d3ea76a1f443fc49216d17af5820a7dd8f06a291b78d0a30d0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/1106b8aa2d0b64b5526d/gate.json",
+      "bytes": 279,
+      "sha256": "3009186c1e75cbe03f0834cf536983fb62f223723bcab3226ce18ce93e843525"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/1106b8aa2d0b64b5526d/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "9903c36ad72d6139c9f06a5deb8860d6daec97876ba6a54e701b30c36d1b1a55"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/8faf2fd3f9c3fb8909b8/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/8faf2fd3f9c3fb8909b8/calibration.json",
+      "bytes": 2074,
+      "sha256": "2831253303a7e3a58c7c489df58712ede225dced48b950308b4bfbbb4b7ab590"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/8faf2fd3f9c3fb8909b8/gate.json",
+      "bytes": 289,
+      "sha256": "71074f661ffd4f855c126ec0ec9f74a82f8d716ed4a6ec2195e5cabf588ae6db"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/8faf2fd3f9c3fb8909b8/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "67e2409ae0060966d423ab247e0fbd30de4a680ab92ec9fffeffd3581be2a921"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/d6a9630be67c81fd4474/calibrate.log",
+      "bytes": 1674,
+      "sha256": "6a822f7b8a7f9f235a6a9acca136585b19a62db4709f5776b193a59ea330d00f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/d6a9630be67c81fd4474/calibration.json",
+      "bytes": 42579,
+      "sha256": "89f1aa85bff725fa281d85f3054520815f6345b788a768816a1d6c0b2d7649e7"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/d6a9630be67c81fd4474/gate.json",
+      "bytes": 44478,
+      "sha256": "bfeb07eb295e9f41611354f16b7cd18bfda1757770447ccc1d5c2e0affaab954"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/high/calibration/d6a9630be67c81fd4474/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "86ed6c64cf24752438d7e15185ff9e5e46c8296509e1fcae71de9d3c1b564cea"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/41ee0ecbd683adabe017/calibrate.log",
+      "bytes": 5012,
+      "sha256": "63c43dfc46a458f2a7676ee278748fad2eb4be4a953634a0e5fc91f44693e378"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/41ee0ecbd683adabe017/calibration.json",
+      "bytes": 5012,
+      "sha256": "63c43dfc46a458f2a7676ee278748fad2eb4be4a953634a0e5fc91f44693e378"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/41ee0ecbd683adabe017/gate.json",
+      "bytes": 287,
+      "sha256": "0b849cdf6d177b3206a6369b29bfd089ce666d57c40dcfebeb1ff3881fc10611"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/41ee0ecbd683adabe017/preflight.json",
+      "bytes": 197,
+      "sha256": "863e3a711b823bb86e75f093971477f5568b364ffd2acdec71be070e71bf7d94"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/41ee0ecbd683adabe017/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "e969e1683eaf1bc08da69eba5d7b5e864f2bd4801d00b353b3769a716ff95a47"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/calibrate.log",
+      "bytes": 5759,
+      "sha256": "c5eb223ab8df771fdcac81e07ec427aa3ca48760c771fa70e11e1a0e133dd347"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/calibration.json",
+      "bytes": 67916,
+      "sha256": "79883782bc78fed81285a8be1567b17a6c9698e5c500dcb8461ac97a78e4c953"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/gate.json",
+      "bytes": 70686,
+      "sha256": "ad6099d3f85561b46287d821251bf5a09a09d4924683bee87dea008724d95338"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/progress.json",
+      "bytes": 48213,
+      "sha256": "c1db424311faeabe3ab2b5463e77f808aeea5dcb63bfb69de643a74dad7e8a68"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "19520dc62b4e50bf9a7d7031ba63505011c9946283758ea627f87c3d0bdeec4e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/4e3d9f55a6e9a15437e5/simulator-wire-controls.json",
+      "bytes": 14896,
+      "sha256": "d72550aa023d6f84c8132eb1906defb00f90b08cb152786a27b92f89840a5b1c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/90115302b7fc901b663f/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/90115302b7fc901b663f/calibration.json",
+      "bytes": 17874,
+      "sha256": "086f1979cea134c8db6c539f5b7383121486a5cab960b601a09fdd7e27a4682b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/90115302b7fc901b663f/gate.json",
+      "bytes": 279,
+      "sha256": "2ad1d47d414900495d96d2c8e5dde34f7aa9a5440dd0a32d9a57e997db382933"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/90115302b7fc901b663f/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "bf23b8c36345324bfcc4a46b09528a7ad83c7f6861d42e898ece11d4ab4d3f62"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/cb6abc680e6348fe3c7b/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/cb6abc680e6348fe3c7b/calibration.json",
+      "bytes": 2068,
+      "sha256": "8489e1016275fd6d1a75d9a13e1f923d9beecb13a5119503f48bab4e17d54f22"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/cb6abc680e6348fe3c7b/gate.json",
+      "bytes": 289,
+      "sha256": "51ad6082f5fe0bf8c6f3eb37e283d166050a6cd2b2b9c1345684180c69fd3084"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/cb6abc680e6348fe3c7b/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "f399abcd6cf6f93ad0b6dc96a80d6eb373b487eae06df6aa93d3a21bd6e01c64"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/e018bb2bfadc9e59fc9e/calibrate.log",
+      "bytes": 1674,
+      "sha256": "d4a9fc991c9177622c451497b1ded74003c7df2dfbe3a61cba82ed309230898c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/e018bb2bfadc9e59fc9e/calibration.json",
+      "bytes": 42617,
+      "sha256": "22a7daad590c42d422f95e481cd61996070ec397d7f4609faeb0589da8bca02e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/e018bb2bfadc9e59fc9e/gate.json",
+      "bytes": 44516,
+      "sha256": "d545dde8c1df60adaeddb7aa13158d6252d08374db9fcf2e344cc73d927e4c8d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/low/calibration/e018bb2bfadc9e59fc9e/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "007d37879b661df9b232138222ae63af70d54b9e9425535efc70b9564d03ab55"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/3b9da1f5d01e89b63ed9/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/3b9da1f5d01e89b63ed9/calibration.json",
+      "bytes": 17852,
+      "sha256": "58bbfe9ab479b480b539065318a131aa349b545bf6d631abf7d6a7d32baf95c5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/3b9da1f5d01e89b63ed9/gate.json",
+      "bytes": 279,
+      "sha256": "10264d80bab3168a5f26e8962bf35b9d27bee561a38747d94cbab0bf9475daeb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/3b9da1f5d01e89b63ed9/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "93cc70e0fdc677242043edba7b39afd65d6c79ebc29454fb7abc08bf9c055668"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/a7a8d156889a0ed524e7/calibrate.log",
+      "bytes": 4999,
+      "sha256": "c26ecc926601838cdfbabea6406b155c0e17aca425fa002b639e68955f0eeb58"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/a7a8d156889a0ed524e7/calibration.json",
+      "bytes": 4993,
+      "sha256": "235f2cac7ad1482de0a50800f728458f1acc68cced6f25b9ce9e56329462fb78"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/a7a8d156889a0ed524e7/gate.json",
+      "bytes": 287,
+      "sha256": "7370b28726257675a4e6a82c67973eec066c6864b5beddebac94a4220807b3b6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/a7a8d156889a0ed524e7/preflight.json",
+      "bytes": 197,
+      "sha256": "c39825e88120c96a3a4439f0a69ab26e5f98901e80e3e6544e393c43ae729573"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/a7a8d156889a0ed524e7/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "eed98674a3fa8c5d4ce76b722863f17cba4c0db8811af3aec62184c72080beb1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/e771ca90775130ed40bb/calibrate.log",
+      "bytes": 1674,
+      "sha256": "32ba539f9dd6ee84d3e8c61baef5445ed0d7ee2947139ec85254362e19510774"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/e771ca90775130ed40bb/calibration.json",
+      "bytes": 42773,
+      "sha256": "dc67f81a63d891f506102533eb344cbb2898f9d2d2f9d59c3452b609653bb595"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/e771ca90775130ed40bb/gate.json",
+      "bytes": 44672,
+      "sha256": "439bacf4a43bba28324d949c658a1c048f615a426ef1f1d47eb94adeb28c0724"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/e771ca90775130ed40bb/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "c327c79875a69dbd74ac418483e9c5d3a821ea031f2da9cb5e55457409538924"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/calibrate.log",
+      "bytes": 5760,
+      "sha256": "fa1da5e3ed6efd9d7a368d092997942845ecaba24d5999343afe9aa5be2de042"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/calibration.json",
+      "bytes": 69038,
+      "sha256": "897259d138ab4a2619897a338c0764a82fa9c57e16aae0f0167b1df981ee967d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "2ec58f4e308e0fb5858f83c97492494475db866bae9a0f11ff06cc203a938bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/gate.json",
+      "bytes": 71824,
+      "sha256": "de9692b875d5d2fea100890dd61d6c616e6081604b3528091a1c34639d10d719"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/progress.json",
+      "bytes": 48374,
+      "sha256": "74f2c5daf782e85ad094de08f385c537ff945ec5f67ed1c86a50e0a803249dfc"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "d84ac579f9573e69b38da154d3d072ebb15ad1887bf6be7353b1a3bac41b0ab1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/main/medium/calibration/f2ca187818d53436b23b/simulator-wire-controls.json",
+      "bytes": 15752,
+      "sha256": "7b51d704528ecbc64291d72eb1e9cfab10fab756030789619c0e48ff6d75592a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/high/calibration/8a9c1d6dee049f75bcec/calibrate.log",
+      "bytes": 388,
+      "sha256": "505891689b4ea097a26f533d61441b47b8c810f57041c65da57a30cec61db2ba"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/high/calibration/8a9c1d6dee049f75bcec/gate.json",
+      "bytes": 290,
+      "sha256": "3921141ad58f276798ec9c5e80af8444b543a7bddbcb28c2611b898885e68566"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/high/calibration/8a9c1d6dee049f75bcec/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 24506,
+      "sha256": "39e3cfd16f5fa11c555ec2c9d3538c1addc554bdc4f8da3fce6aa5bc10349989"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/high/calibration/8a9c1d6dee049f75bcec/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "5be4f635283f9daebee4c53054dca26f500a9261f1573b9abc6a529ab7bead03"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/low/calibration/e96110bf36fc5ef9c2ee/calibrate.log",
+      "bytes": 387,
+      "sha256": "476f61b9bb0d64bebff71693cd2308d4450131cd857473babb121555a8d64b44"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/low/calibration/e96110bf36fc5ef9c2ee/gate.json",
+      "bytes": 290,
+      "sha256": "1b4501a749909a17608afe12f994633fa799f3c2d3919f23144e3f4b91ea7273"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/low/calibration/e96110bf36fc5ef9c2ee/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 24124,
+      "sha256": "5035348ed277aecb6d4cbad9df1a79c3e4dc5f0edfe66efe9511cf07ffe37adb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/low/calibration/e96110bf36fc5ef9c2ee/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "12bcd305f5a0e8051cb6ac1a84880804d9a5cfa4964438c3fe129a4e0aca4b4b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/14afc135414e74b3d54b/calibrate.log",
+      "bytes": 390,
+      "sha256": "533afd01ac11bb175218f85b1d7a040a3c6281128db0c34711de251c1ec25fac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/14afc135414e74b3d54b/gate.json",
+      "bytes": 290,
+      "sha256": "b811cdee4c1b41e12961c19f3980c078cfe8ca76a13e439264c96e75461a3ade"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/14afc135414e74b3d54b/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 25252,
+      "sha256": "e03fd13cdf2a8a270ab6d2ecb63b9a7e3d267129965643ebf9f8e3ff000c8209"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/14afc135414e74b3d54b/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "194043a8a2a3d9dcc58a6208943eab62f0f8573c5e4b950ef7de8d74f0705e7d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/1bde2ac7ee7e5a3b8a25/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/1bde2ac7ee7e5a3b8a25/calibration.json",
+      "bytes": 2130,
+      "sha256": "2f4477e2d6da296670c17379c559a0a8214cbb81b3ac2800c91d18a29525866a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/1bde2ac7ee7e5a3b8a25/gate.json",
+      "bytes": 289,
+      "sha256": "f6f3764049fb99892a38e26a73fec9486c0dd21ba30bd719a0eb9a16b455a391"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-calibration-fix/gemini38-all-nonsuccess-3x/cache/repair/medium/calibration/1bde2ac7ee7e5a3b8a25/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "133ef12d5c67461f4779c6481b090417ee1b847fa95f01e15dc47ca9f49ba31d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/0ce7c57c4e31f365020b/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/0ce7c57c4e31f365020b/calibration.json",
+      "bytes": 2229,
+      "sha256": "808e0bbc6c1292d7ae2a5cc45b2c6c38c3b91557c28374400d1baf38403e0eb6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/0ce7c57c4e31f365020b/gate.json",
+      "bytes": 289,
+      "sha256": "f14be7046b01ddfa501ad58eeeed73ef403159bcf77acac1af7d2aec40df4d09"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/0ce7c57c4e31f365020b/session-network-cleanup.json",
+      "bytes": 89,
+      "sha256": "e946e9fb1936cfb092e863c00f27df44a61eacd415863fdbc0547ad8517dff0b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/c9f928d8d1ae7cc5bffb/calibrate.log",
+      "bytes": 1674,
+      "sha256": "350ea639a15fc454c06f4c99b2d3d9cf1443a080dba1cf04ed3b56b048836822"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/c9f928d8d1ae7cc5bffb/calibration.json",
+      "bytes": 42547,
+      "sha256": "4b5da6969138e6b1b313a5e39a0584d1915da46661a22abadc6381add21404ba"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/c9f928d8d1ae7cc5bffb/gate.json",
+      "bytes": 44446,
+      "sha256": "fa4b0d76af998c43380a0c944be5eb8c3aa47ac6acbe1563c659c4b6afd932a9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/high/calibration/c9f928d8d1ae7cc5bffb/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "3d84117f6dbcc5b2a4fb8ced2c42e6f773724d80739e5d5f3c8589e4ddac8834"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/low/calibration/1710418f2434cfaca373/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/low/calibration/1710418f2434cfaca373/calibration.json",
+      "bytes": 17842,
+      "sha256": "2cea34301575bc7634d1120995598b96e795ada1e951834c4079060c54101393"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/low/calibration/1710418f2434cfaca373/gate.json",
+      "bytes": 279,
+      "sha256": "b18798d41f05ae19afdca2a41daddd53a25576543c8915682e540038420d366d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/low/calibration/1710418f2434cfaca373/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "d0fdfd2897234990b0237e784d04070bb25154c8fad5491e1524378d61a95063"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/09e547305a9c8c6b2622/calibrate.log",
+      "bytes": 1674,
+      "sha256": "34a20e5edfee5cd390b4b9286a4b30afa24e3f3566e5b95e376d1bc44d170bca"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/09e547305a9c8c6b2622/calibration.json",
+      "bytes": 42574,
+      "sha256": "31c0628c48881bc68b0a50c9a7c0dbff2a55d18067077b54b6748ad601b00271"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/09e547305a9c8c6b2622/gate.json",
+      "bytes": 44473,
+      "sha256": "4440f245a441b36042c0049dc6ae5e471a8bae91f8f04938814dcf7f576819ed"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/09e547305a9c8c6b2622/session-network-cleanup.json",
+      "bytes": 89,
+      "sha256": "e6be47198440cb589a5f8cea982e062a51ab5fe7eacbdcd6f20e66d1c24b617e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/55655c7920f65ecfd4e9/calibrate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/55655c7920f65ecfd4e9/calibration.json",
+      "bytes": 17771,
+      "sha256": "4b77b28b47f69badf7ad9e747d08d8f8561cfc1cf99cf33c57d1d9e7473e4255"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/55655c7920f65ecfd4e9/gate.json",
+      "bytes": 279,
+      "sha256": "89495a0265db79716092f09bc5f3ee4f41e0d8121f37898d4cddc69c68c44673"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/main/medium/calibration/55655c7920f65ecfd4e9/session-network-cleanup.json",
+      "bytes": 89,
+      "sha256": "b60c4437bd035fe826984c38accff0c9369b23031c1c70f51085e89ef559c070"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/high/calibration/50d7a5b8242615822fd4/calibrate.log",
+      "bytes": 372,
+      "sha256": "2bbde4be9406ba6575ac1b309b8ff4adb5478fbad860d0691d4bf75d1d2b08ac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/high/calibration/50d7a5b8242615822fd4/gate.json",
+      "bytes": 292,
+      "sha256": "3b469e57052a71621e1582954fd9a40c222df700700a6a99309c1f149ad68483"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/high/calibration/50d7a5b8242615822fd4/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 20976,
+      "sha256": "602106e8d9fa8efc436edba5930a01930e4115937888dcbeaef786765479a95e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/high/calibration/50d7a5b8242615822fd4/session-network-cleanup.json",
+      "bytes": 476,
+      "sha256": "8ee7ff6a46ab6a7b6bdef87437018b3c49ade2be631a88cf589cbaf05615951a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/741c34d195b07645eeb9/calibrate.log",
+      "bytes": 371,
+      "sha256": "c5c1249e2f30a81dd4cae487050665511b53e76116e084db51969a1225bfcdc6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/741c34d195b07645eeb9/gate.json",
+      "bytes": 290,
+      "sha256": "197efd3a24f284ae557d92b461c1a0636bd12397147be5a8db9cd18a53f0e5f9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/741c34d195b07645eeb9/rubric_report.azure%2Fopenai%2Fgpt-6-luna.registered-evidence-ids-v2.json",
+      "bytes": 24973,
+      "sha256": "da19dd8b9b17f9e027b08214fe7f0313ffe2a527e077ac13169c63a96382025e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/741c34d195b07645eeb9/session-network-cleanup.json",
+      "bytes": 477,
+      "sha256": "8195240864e62742a1b52d4e6e47a5e0a33c0cb12ae772762dd13858c89e3061"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/7ead81617e56858d2e75/calibrate.log",
+      "bytes": 254,
+      "sha256": "95f1456a88b5e9180fa601900c76be23c2d5632b094498d9c366caf38c82e0e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/7ead81617e56858d2e75/calibration.json",
+      "bytes": 2079,
+      "sha256": "c81c1fb2c12131f53f5073a333057e5b1a266f292571654e4723a93af0c251d9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/7ead81617e56858d2e75/gate.json",
+      "bytes": 289,
+      "sha256": "9a9aaeb47d75c1a21fb1ea3ad2ce4955d471d52fb8109e6eccb3ff4aa0964324"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-errors-fix/error-repair/cache/repair/medium/calibration/7ead81617e56858d2e75/session-network-cleanup.json",
+      "bytes": 90,
+      "sha256": "60afbc74cd55d79ab1cb39b64e2fcb222af41128c6d7c6ed86a094c6095805aa"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/calibrate.log",
+      "bytes": 5759,
+      "sha256": "cf16b830ab49f4b3548b36b90bafe7d60cc87bf45bdec495875428712272f427"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/calibration.json",
+      "bytes": 68889,
+      "sha256": "7feb5b73b59516cc06f7d7e8a1f5cd6ee98389a4c051b4eed1c1d4ce59c9b5e3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/fixture-validation.json",
+      "bytes": 306,
+      "sha256": "734b37ff413d5a014b574f1984236cb18438d30b8fff57971e704f03b5625bc4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/gate.json",
+      "bytes": 71651,
+      "sha256": "791aaf2b8aaa322e10b3a4f5870b1edcbebf10d2dafa3dcd597766b34b5bc3d4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/progress.json",
+      "bytes": 48885,
+      "sha256": "55f493807056413e578e89d39b94b79427c1462649529ee3163430b50b329130"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/session-network-cleanup.json",
+      "bytes": 91,
+      "sha256": "aa7be92350c8de69f94a09b4e01561a4cbdb718e0af03c22e91d3b48a4c193a6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/calibration/SWE-Persona-gemini38-together-fix/medium-together-calibration-repair/cache/calibration/30cdaa61361edc1d316d/simulator-wire-controls.json",
+      "bytes": 15205,
+      "sha256": "e38869f6e37b1bcd96b05e85f6e179471c36fdc2b54946c44efd8c81331b6bee"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaign-overview.csv",
+      "bytes": 1853,
+      "sha256": "97049b0262e744ff5ea3694d45e18520ae1e21ea2252dd4e0934e049b87a8183"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/high/scores.json",
+      "bytes": 9756,
+      "sha256": "884e57f218ab7cda278f51e34a04edc7aec702c48e74a3ebd155035973abaa73"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/high/summary.json",
+      "bytes": 402909,
+      "sha256": "bfa48307036a98e06b448793a18d77ded770825ba9d665c33325858d93a22efa"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/low/scores.json",
+      "bytes": 9781,
+      "sha256": "2b4a7f2befe72d6389267c5746d4dcc0439bf991201da861e7294f12c62bab97"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/low/summary.json",
+      "bytes": 413669,
+      "sha256": "36da7ec093e44344d81a0a5969f44b5a2414003b52dfcd6a3b46470715d62018"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/medium/scores.json",
+      "bytes": 9584,
+      "sha256": "abc5aefead154b71153f8f2886431f42173c4cdaee6c3fc6a13bf09509660739"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/cumulative-diagnostic/medium/summary.json",
+      "bytes": 411401,
+      "sha256": "f1fdbae954206a8a7151cce92dcef1466759c06fae8c108e2784d1432d417257"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/high/scores.json",
+      "bytes": 5209,
+      "sha256": "1e7ad8823706f98132950007b2fa8754845ff2892ebce23cf169ddd46dbf0486"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/high/summary.json",
+      "bytes": 33945,
+      "sha256": "7de0617b85af408840d161ee0f47aed464d104390f324d72866b4335829dc950"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/low/scores.json",
+      "bytes": 2899,
+      "sha256": "8886e6652a8f18989e56b03329d7c7581adc8d15e806a51a6a3ee8516682a7cd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/low/summary.json",
+      "bytes": 4678,
+      "sha256": "0c9aebd6eae8eaf7df18878d4025645b28e2e87519097220a212ca615d782a25"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/medium/scores.json",
+      "bytes": 6448,
+      "sha256": "68c0f4730c34194a1e8a72ba1ce873fda33afa3dd83527211b319832eb193f2a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/error-repair/medium/summary.json",
+      "bytes": 53275,
+      "sha256": "416156bc7bf21c5909f46bfd52a866c084cb713eed97d205e9577f5bcf905e2b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/high/scores.json",
+      "bytes": 9728,
+      "sha256": "e09c049b070ea3e74f82c826705e35c5ed396f442d74d1cb26ae34c916312201"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/high/summary.json",
+      "bytes": 485089,
+      "sha256": "0b3b66851006a5dd60ac00203221eb324ad482ae7a790bda919365123612c9c2"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/low/scores.json",
+      "bytes": 9705,
+      "sha256": "5696754acb7c958a4590537aef4cdae72414b6bd0969874b11e80bc5505efd13"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/low/summary.json",
+      "bytes": 417937,
+      "sha256": "8935d8904719efe97d954642e53bbfc1447cfcf3e0b4f22f18e79f5e714d8360"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/medium/scores.json",
+      "bytes": 9660,
+      "sha256": "f3640554d6fbe5cbe1ed45021e293b36e3aec6c7069345693c493cf012d5f75b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/original-selected/medium/summary.json",
+      "bytes": 446114,
+      "sha256": "0b682bc178947b7e2e04cf2d66054975fa07464c315c582b2fe283bcd658a0bb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/high/scores.json",
+      "bytes": 9703,
+      "sha256": "41140e7fe451f43e9822ed4c5282b49cb2bfdb32cf11b323f4a1a5c8b25004e4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/high/summary.json",
+      "bytes": 425425,
+      "sha256": "1c25ad03fd530ffa5c155f790e883a2c82d37983f53e21703b60f7a19fab4a3d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/low/scores.json",
+      "bytes": 9704,
+      "sha256": "971867cf8e7b15fbe779444b4aa965db77bfa148465a99fcd7f3131718ac2505"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/low/summary.json",
+      "bytes": 372743,
+      "sha256": "c4b7d46b9b0db5c4b03f345fbe9d2fc3b40265fb836b0b3abb04d8714f42411f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/medium/scores.json",
+      "bytes": 9765,
+      "sha256": "017e6bf4f62a008c49e07e96b962660cf34b7bff8b5bb310f30a61809f2b7ba6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/retry-3x/medium/summary.json",
+      "bytes": 413569,
+      "sha256": "57ecf387a359c97073d1c8ec1a37fb282c465585a60f8f9bad157fc496dec2b7"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/together-repair/medium/scores.json",
+      "bytes": 2848,
+      "sha256": "365f5e1f1904c53f362677cafac21575acff87bb2146593f2a26db7db8c3889b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/campaigns/together-repair/medium/summary.json",
+      "bytes": 9422,
+      "sha256": "9e512fc9bacf2c011d953b5268f410ca92702e3f497ab8a0f66416572cbc0fa1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/credential-scan.json",
+      "bytes": 243,
+      "sha256": "1283bbfc66c24250d3f39764a7cbad8270dd956d9f10a24721241328fd78712b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/cumulative-diagnostic.pdf",
+      "bytes": 26081,
+      "sha256": "fe630488a4403cacf3f2a10bf17a1f99be733155f70784035974ba1f4549e8de"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/cumulative-diagnostic.png",
+      "bytes": 60619,
+      "sha256": "79fd7ccb61b4815c7542b5920412779984a28c72e44eadf6e2ef549d4e2f5f0a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/cumulative-diagnostic.svg",
+      "bytes": 58639,
+      "sha256": "92f4b82dfcd05f8c07144748a01a2befd972e4bf571dd2a712f8f30a59aaade3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/evidence-inventory.jsonl",
+      "bytes": 21770607,
+      "sha256": "a589d404acd267d747e68aa331c62e1f424cff36f93ca3a5e73f18c76a09c701"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/exclusions.json",
+      "bytes": 30737,
+      "sha256": "c209614436aaeb857b6facfe3a1f212be424dae80502fc0456250e534eb3956a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/manifest.json",
+      "bytes": 2587,
+      "sha256": "f3eb6b2a2c6681d0e831377444c981552009ead13627a48ae784cd7bc9c746b5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/path-map.json",
+      "bytes": 423,
+      "sha256": "cec71528e6a703934c9ad962ff4a53115e9f23cc4922881ffb9af3b58fe0c486"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/per-profile.csv",
+      "bytes": 9098,
+      "sha256": "267863391f28c2e829f9c691a18758b7405e0c4ff030d36a24d1e6e9c53ce0e9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/audit.json",
+      "bytes": 36081,
+      "sha256": "2dca9c1a03d636b7d3f9eb727d6347f2d082a7b5000af2ddbeca4d4c2b5dc9ff"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-groups.json",
+      "bytes": 4579,
+      "sha256": "b156dbc9ef96d80f3f3f10ea5aa4a4cb3636c69a8aa47388a3d053f13f957248"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/main--high--swe-bench-live.json",
+      "bytes": 282,
+      "sha256": "a98d2d2afc9dac760c5195dec017b95df0c4b6a3dbd288c119c34309707d475a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/main--high--swe-bench-pro-mini.json",
+      "bytes": 286,
+      "sha256": "bba83a6aace26c11d8cfa7a9120fdb7cf24d1809dceca220e1740949010782b2"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/main--low--deep-swe.json",
+      "bytes": 274,
+      "sha256": "e9cdacd1af0504035a39e1456f18e4a74c14a58c9ff518216c5877936cf98190"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/main--medium--deep-swe.json",
+      "bytes": 280,
+      "sha256": "667a4e4340fb30b36a73c7bf2640cfba6f692d4f4a22d9b81d828a6cc868c5b0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/main--medium--swe-bench-live.json",
+      "bytes": 286,
+      "sha256": "73704d8dd81039508a7d400989f75632f1a12cbdd99c3e9865759fded1e92f80"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/repair--high--swe-bench-pro-shell.json",
+      "bytes": 292,
+      "sha256": "91159ae08ece6652502b0e19ac1a2cbb7b66b047efaf54cee3648bdbd9123456"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/repair--medium--swe-bench-pro-mini.json",
+      "bytes": 294,
+      "sha256": "57c545b45b9d03050a120234b1b4b699119bc47dd3520c843a325fd27ad64826"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/calibration-results/repair--medium--swe-bench-pro-shell.json",
+      "bytes": 295,
+      "sha256": "ed52dde734fba348b4f4029e1f613049099835b2d6738af624065335ac3a2560"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/comparison.json",
+      "bytes": 17968,
+      "sha256": "a44223033d4392dd16e5808d3d187651775044cf44f25924c8aebf9c28f6e6f5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/configs/main/high.json",
+      "bytes": 859,
+      "sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/configs/main/low.json",
+      "bytes": 858,
+      "sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/configs/main/medium.json",
+      "bytes": 861,
+      "sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/configs/repair/high.json",
+      "bytes": 859,
+      "sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/configs/repair/medium.json",
+      "bytes": 861,
+      "sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/manifest.json",
+      "bytes": 1674,
+      "sha256": "dd4a26ccca2f451dedfaa5f1f3fd4678bc9891d0f52ab5755bb12b23f5c7da89"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/high/0046/result.json",
+      "bytes": 4443,
+      "sha256": "919cab1122b58a9aae85deae74ebc07dc0ed425e658f51ef120649e7198464e3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/low/0033/result.json",
+      "bytes": 4394,
+      "sha256": "75a55d8ad61488cabfea7fe114e23e2d3490930889edae2540792c94ea9b6b34"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/low/0038/result.json",
+      "bytes": 4437,
+      "sha256": "8b5d005b19df92c5e79e1feba75b2d370fae6a4b79ceb42a8eb7910aee1fb376"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/low/0046/result.json",
+      "bytes": 4440,
+      "sha256": "98b624efeaef6131d133c5f44faca9e29b6007fa9cd9a2fb5e869fa54e5dc136"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/medium/0033/result.json",
+      "bytes": 4408,
+      "sha256": "ac4ce4a58ce58e8e51413538a8e2e2a73599e4e628e21a5385ebc5b377491714"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/medium/0038/result.json",
+      "bytes": 4437,
+      "sha256": "e2a642713db305300011df6c8b920f643e7006b376afb1ddcdef91d7d0b46bac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/score-corrections/medium/0046/result.json",
+      "bytes": 4447,
+      "sha256": "2227d0b787864b1e3ccdf6d9e138044fc45e73ff7f2dce2316cc85c22779462c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/selection.json",
+      "bytes": 39623,
+      "sha256": "23e8c9dafb99e456766e69afd3b9637ec9048b97e5a96b335af63384f0beb149"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/validation/dry-runs.json",
+      "bytes": 5759,
+      "sha256": "740c93919eda5396e277fa4d9cbbdc603a61adaeb970a0ebb6f35871d9c8cb35"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/validation/runtime-changes.json",
+      "bytes": 2238,
+      "sha256": "bbcf6d3fa801a5a2f25d89b31a7c9fb129227ecd40a1953f3946065c18f251b4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/error-repair/validation/validation.json",
+      "bytes": 384,
+      "sha256": "0eeb9d8e6b79b99ccc7c23c55848d250713b6b80224d4c42a5c7efba7844cd9c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/comparison.json",
+      "bytes": 34936,
+      "sha256": "9ef735e29939d36a048578e76e607736289869fc793ba0fbde519dbc6d1d4f25"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/evaluation-errors.json",
+      "bytes": 26690,
+      "sha256": "6233fcbe187589c57c1862963ec58d7d75600df9c15412500ced11b97814e596"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/manifest.json",
+      "bytes": 2264,
+      "sha256": "4028e3b0fa161b523b9809707284da9ce00c0a655fc7ee9edd4c3c0e8d3760bd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/retry-campaign.json",
+      "bytes": 475,
+      "sha256": "70bf4290511116a576667a349ce91d8f3a953ba0168afd4d2555f99a60750db5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/main-low-summary-before.json",
+      "bytes": 293609,
+      "sha256": "f42429a935ba61830569c94dccc507cea62d81e28d4f7dad6a0b5dc0a184220e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/main-manifest-before.json",
+      "bytes": 9719,
+      "sha256": "7d7e11dda3d3dd47cf5a17c211f651fc723b2c34ef8d61bad6a7db2c3eef65ed"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/main-medium-summary-before.json",
+      "bytes": 49846,
+      "sha256": "cd97130542c18efda95fcf9661db9e1b1f08186259eb2ef876d84f181011d35d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/repair-low-summary-before.json",
+      "bytes": 18770,
+      "sha256": "79a79a1604450b5a3684b010d5bfad61cb63e26ac384b30bcda44dcde2488082"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/repair-manifest-before.json",
+      "bytes": 6294,
+      "sha256": "6b07d6919b04028de331ef206e2a40e1ba876cf26a3973bdba1c4626a683f7bb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/selection.json",
+      "bytes": 246663,
+      "sha256": "9394046f0dc73b79a526aa571d004f93d6a929529b91b536c48092b719bec1b7"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/supervisor-transfer.json",
+      "bytes": 17698,
+      "sha256": "7465ce5109171e4aed7b25e3cbef72f7415491f15da6e1df1e14114c1f2a397d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/original/validation/validation.json",
+      "bytes": 378,
+      "sha256": "57af9fe5149b13afb1dfa8326ad96d9d082fa58dc215ad8fbbe4abd80be3b90c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-groups.json",
+      "bytes": 10779,
+      "sha256": "8f6419fbc04308f6748751af928f70d744e137cd7d1f7c27ef3f1aeb1bbfdb52"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--high--deep-swe.json",
+      "bytes": 295,
+      "sha256": "0f039d1a3a10ad14934f4e88adb83181cf83d8e615802701df66590a4821f5a1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--high--swe-bench-live.json",
+      "bytes": 301,
+      "sha256": "855f020180b0c19b79a2a2cd6363ed8917f9d14963dd28983132efa01180e537"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--high--swe-bench-pro-mini.json",
+      "bytes": 305,
+      "sha256": "6eb91e0c021edebfa64517dc1f51f58754a9aee9935cacb7140b41ace5be1ed9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--high--swe-together.json",
+      "bytes": 299,
+      "sha256": "587b123aa7f1ba6ca6af12141524e23cd7effe5e8f4cde34cd525f2a3cf509a0"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--high--terminal-bench-3.json",
+      "bytes": 303,
+      "sha256": "771baf19dbd3a2770074d0681f080887d99df2a666886f2b9331ea6463880a63"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--low--deep-swe.json",
+      "bytes": 293,
+      "sha256": "4648281f8b56ff0ce2c5cde2793fb23fb2904052bb358315f82e706fade193c5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--low--swe-bench-live.json",
+      "bytes": 299,
+      "sha256": "56cc1cce61c99a2b88b0e018b23f11b6788c5bd3da86c6afabc9d0528878ce76"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--low--swe-bench-pro-mini.json",
+      "bytes": 303,
+      "sha256": "4c60df00d681fc247fb2e6f34e5c876bd1139c6daff0d4945670220da5ec67e1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--low--swe-together.json",
+      "bytes": 297,
+      "sha256": "c8c5a5b509037ba6e6d1c2ad0142de9c1d75f17caf28a7fe4f5c6c4fbb9f08b1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--low--terminal-bench-3.json",
+      "bytes": 301,
+      "sha256": "ae1ccdf27856e50c32e04e827414794aad58dc3726d2c66328bde7d7d54fb098"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--medium--deep-swe.json",
+      "bytes": 299,
+      "sha256": "b662204a51d807bc5ab321367b096a65a048994af2166aee84bf7eb6bfa1c9d1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--medium--swe-bench-live.json",
+      "bytes": 305,
+      "sha256": "025132d3d4c13a195e7cad9f2225f1d34765e56c461974eaf2c7d29f36e63739"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--medium--swe-together.json",
+      "bytes": 304,
+      "sha256": "f84cd3b66f1d96aaf526de5540ed9c882eaff8871b0c5c0bf132c3a9b2965ca8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/main--medium--terminal-bench-3.json",
+      "bytes": 307,
+      "sha256": "09aa8b3ad7330128d356429a4e0985962192a7f04b0c8f2ed6ba47dfa0b9d4fe"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/repair--high--swe-bench-pro-shell.json",
+      "bytes": 310,
+      "sha256": "2b9567443a6bc9d53da187e491c5b8760a29fe946d8c5b639c78cf507402e51c"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/repair--low--swe-bench-pro-shell.json",
+      "bytes": 308,
+      "sha256": "20de810b7ae466a05c5fdbe2544832c6831e4ffaad7f60942a46db860a6fc001"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/repair--medium--swe-bench-pro-mini.json",
+      "bytes": 313,
+      "sha256": "344c0818960b636b8fb6c18380002fce10cbdb36012b78cb600439333f59c5cf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/calibration-results/repair--medium--swe-bench-pro-shell.json",
+      "bytes": 314,
+      "sha256": "d309b3dfa3499ac849390de53b78c08c18c53c0aa283882e62d4c5015ffd4d1b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/comparison.json",
+      "bytes": 35468,
+      "sha256": "0d44406e392790b7140ed580d0d29dcae0ff47a34debbeea8c6d9b391fbcb563"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/main/high.json",
+      "bytes": 859,
+      "sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/main/low.json",
+      "bytes": 858,
+      "sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/main/medium.json",
+      "bytes": 861,
+      "sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/repair/high.json",
+      "bytes": 859,
+      "sha256": "254539e851d52aecc3c192c4e8c8c198b98d7e741637d4a0d6025a9e18b88853"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/repair/low.json",
+      "bytes": 858,
+      "sha256": "eea9afec36670e1d471ccfc8c16cd7ea5766c834cced681461101d2a4fcb20cf"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/configs/repair/medium.json",
+      "bytes": 861,
+      "sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/evaluation-error-repair.json",
+      "bytes": 376,
+      "sha256": "95a5981980cc0c3b45468ea413cc7e8a9cd9674aa1d5afde6522cdc66c8b3927"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/manifest.json",
+      "bytes": 2139,
+      "sha256": "0fa811c4973f0fa7491a54c99790dd6c79369d07f9c0ffb0f2b873e3dca38053"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/retry-error-audit-20261023T0700.json",
+      "bytes": 16856,
+      "sha256": "f60f67e6df638f453d6867f11cbf374c5454c6d429322798f61aa602d81e6f87"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/selection.json",
+      "bytes": 440841,
+      "sha256": "ff45a0f477915fd49737ca9bc34668833f909e9b832954f94db4f8664a6c2159"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/together-calibration-repair.json",
+      "bytes": 493,
+      "sha256": "27026359c9add78b99aef87c5eafc4ef53a41df9f8acd2ef7e0c354a3e5a466d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/validation/host.json",
+      "bytes": 1835,
+      "sha256": "a47c69741334056fecbcbc15a8c5fe7dc0f7a571903d03b6e4729ebdc4b25e0f"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/validation/prior-timeout-audit.json",
+      "bytes": 607943,
+      "sha256": "a2deb84361c90c2987f0564ab1f6003284a8fc2de268d992814285c6668b3503"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/retry-3x/validation/validation.json",
+      "bytes": 5716,
+      "sha256": "4d950cdd646a7d1bcea85bd7199904c09cc25cb1c15610870caf8d3de34b90ba"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/calibration-receipt.json",
+      "bytes": 327,
+      "sha256": "3c4d937b08f184ba8ce9e8f03ec01179edd31b477fe2a533d16d668f13e1f449"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/config.json",
+      "bytes": 861,
+      "sha256": "5fdfd6c52c8d7653764a2dcd3ff6d3e3099e4a970b0db1345526f62f90583b9e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/manifest.json",
+      "bytes": 818,
+      "sha256": "98e6852936f45916ab9974aa1d8aba3b853be27d8f79e27df50b34827fa18bea"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/selection.json",
+      "bytes": 3721,
+      "sha256": "f57057ba96fb94868642e7ed930ebea5d966e11c636ed919180fe8872fcd3a7b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/summary.json",
+      "bytes": 9059,
+      "sha256": "853f497a5a42887022240278a870ff6591eccc0314412a1f59b3f5ee10b0ba5b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/validation/change.json",
+      "bytes": 1584,
+      "sha256": "ace690a01e798fdecae3476944dd98f517b20c66f0e05bcadadf1913d181f784"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/validation/original-calibration-receipt.json",
+      "bytes": 304,
+      "sha256": "f84cd3b66f1d96aaf526de5540ed9c882eaff8871b0c5c0bf132c3a9b2965ca8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/validation/original-failed-gate.json",
+      "bytes": 71854,
+      "sha256": "27664232d7e6f866253d32305b19989cc1a3bd86c3d72209745f104dfcb4aedc"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/provenance/together-repair/validation/validation.json",
+      "bytes": 614,
+      "sha256": "bc5da8021b73ed1433e99e5e6b806c54d993c0d3a2d432708dcf2d55d1a320f8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/results-by-campaign.csv",
+      "bytes": 424629,
+      "sha256": "91259997457d4b71f4893dd8ec97148292f0f15c69b27c1398a95009dc04b35d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/LICENSE",
+      "bytes": 1067,
+      "sha256": "35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/README.md",
+      "bytes": 57402,
+      "sha256": "7144645ac56e44b64b945cff0f1bd1bca4bf38f2f011d8613bbde49c039f131e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/git-status.txt",
+      "bytes": 457,
+      "sha256": "4cfea727d050a76582e06fb177d86231ee4e7b270ebd4617951c1bc42d6f1614"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/pyproject.toml",
+      "bytes": 943,
+      "sha256": "6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/release.json",
+      "bytes": 2502,
+      "sha256": "88be790fc6060a88bde540fee7d8f810094ba14809d9cd15c2f2cf98e1f5e024"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/requirements.lock.txt",
+      "bytes": 1842,
+      "sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38/tracked-changes.patch",
+      "bytes": 44396,
+      "sha256": "78e6828edfdfb01927621036f9abdc549f4e0b7c81675b204701b41e0642a202"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/LICENSE",
+      "bytes": 1067,
+      "sha256": "35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/README.md",
+      "bytes": 57402,
+      "sha256": "7144645ac56e44b64b945cff0f1bd1bca4bf38f2f011d8613bbde49c039f131e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/git-status.txt",
+      "bytes": 1048,
+      "sha256": "bfe1bac15d10a7677383629fb2469897c06b924bf24c5113d582b4a277042e3e"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/pyproject.toml",
+      "bytes": 943,
+      "sha256": "6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/release.json",
+      "bytes": 2567,
+      "sha256": "64ef2d0642ae57b07523c7ec3e5ac1c3927f33905fc7034dd33aca93a469a9c8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/requirements.lock.txt",
+      "bytes": 1842,
+      "sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-calibration-fix/tracked-changes.patch",
+      "bytes": 56886,
+      "sha256": "5d00b9b5127156616cad512d49a838072c778ecf74275e55a0d4b5b5af58ba5a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/LICENSE",
+      "bytes": 1067,
+      "sha256": "35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/README.md",
+      "bytes": 59139,
+      "sha256": "0664811e4719184bd13deec0b89b21193af44668ec1a454ffbe73db9bcc77774"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/git-status.txt",
+      "bytes": 1689,
+      "sha256": "0eee6d5f6bf296605a0726ac9f14af2ad2dcfef36b471a62eae1e06457fe78eb"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/pyproject.toml",
+      "bytes": 943,
+      "sha256": "6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/release.json",
+      "bytes": 2829,
+      "sha256": "8dc9dddef647977acd85f9f1ffb7a25ca7c7c6d280401633c9640e86914dc13a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/requirements.lock.txt",
+      "bytes": 1842,
+      "sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-errors-fix/tracked-changes.patch",
+      "bytes": 80315,
+      "sha256": "b4f1a34c286ded3ba82d8bbf1acb750d3f8401c0e6b7d316647c4efd0547c888"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/LICENSE",
+      "bytes": 1067,
+      "sha256": "35271676f162c7ce38757d532fe1d10911751f819ca3302e51b3635206fc53e8"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/README.md",
+      "bytes": 58581,
+      "sha256": "5db384d027fa2e821f467f60fd98a454cc8c0a84c75a5c6973ce4385e94ef403"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/git-status.txt",
+      "bytes": 870,
+      "sha256": "e4303a9bc400b567fbc1ab8cc94584111fde95470444f11a649552c607efeeef"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/pyproject.toml",
+      "bytes": 943,
+      "sha256": "6771d5be42845536be9db1f62caa1ced2aa6eb3d3ae7e7b23dd4474a019bed1b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/release.json",
+      "bytes": 2590,
+      "sha256": "2d5ce1e824d00fa0c5600b75f43543a6a7d3f688d61b6310a376b50ba59d5ee4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/requirements.lock.txt",
+      "bytes": 1842,
+      "sha256": "907953ae4198e5369c1cc8049096954847ec912c2b555d731f53a48ae03eb171"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime/SWE-Persona-gemini38-together-fix/tracked-changes.patch",
+      "bytes": 55545,
+      "sha256": "82233252dc5639c3b99f7183752e67b6cc06b5b782f91a700e6cb8d884923eac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/runtime-fingerprints.json",
+      "bytes": 1251,
+      "sha256": "5d806c0a3ff7a044b193e73bcad5fb492fc7af5ad07984ea5c10c67dda0b2134"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/score.py",
+      "bytes": 4863,
+      "sha256": "09beb93557805043742b7d7810dcfdf35a190d8d005823eecada9da25a8e369d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/unresolved-evaluations.csv",
+      "bytes": 12065,
+      "sha256": "5b520cfb44c50a311e40242cffc87a4eb951475890232093bc1c37efb5dc02ec"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/validation.json",
+      "bytes": 437,
+      "sha256": "1ce005e8c0e055f35f3bcaabfa531563a5faddb133f213e8807027af04300ae7"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/report/verify_package.py",
+      "bytes": 831,
+      "sha256": "4fd7e7b364208f193766f7ed02cefc7981d14e2cfba9faf83378b743edb484f1"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/results-by-campaign.csv",
+      "bytes": 424629,
+      "sha256": "91259997457d4b71f4893dd8ec97148292f0f15c69b27c1398a95009dc04b35d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/runtime-fingerprints.json",
+      "bytes": 1251,
+      "sha256": "5d806c0a3ff7a044b193e73bcad5fb492fc7af5ad07984ea5c10c67dda0b2134"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/score.py",
+      "bytes": 4863,
+      "sha256": "09beb93557805043742b7d7810dcfdf35a190d8d005823eecada9da25a8e369d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/unresolved-evaluations.csv",
+      "bytes": 12065,
+      "sha256": "5b520cfb44c50a311e40242cffc87a4eb951475890232093bc1c37efb5dc02ec"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/verify_delivery.py",
+      "bytes": 2594,
+      "sha256": "bc75ba56604ca034ac09e31bf8a7b15e243a684b2160ef27cebdac3165c003ab"
+    }
+  ]
+}

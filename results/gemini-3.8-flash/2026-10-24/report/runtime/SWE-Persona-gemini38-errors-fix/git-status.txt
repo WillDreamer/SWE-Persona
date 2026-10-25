@@ -1,0 +1,38 @@
+ M README.md
+ M SHA256SUMS
+ M release.json
+ M scripts/evaluate.py
+ M src/swe_persona/cli.py
+ M src/swe_persona/swe_live.py
+ M src/swe_persona/swe_together.py
+ M src/swe_persona/time_limit.py
+ M src/swe_persona/vendor/deepswe/project/dspilot/checks_v3.py
+ M src/swe_persona/vendor/deepswe/project/dspilot/run_staged.py
+ M src/swe_persona/vendor/swe_live/runtime/project/scripts/swe_live_multilang/reference_v2/execution_policy.py
+ M src/swe_persona/vendor/swe_pro/mini/calibrate_judge.py
+ M src/swe_persona/vendor/swe_pro/mini/runtime/pcb_v6/episode.py
+ M src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/run_episode.py
+ M src/swe_persona/vendor/swe_pro/shell/portable/runtime-v3/runner/validate_rubric.py
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-cases.json
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration-suite.json
+ M src/swe_persona/vendor/swe_together/swe_together_pilot/persona_runtime/calibration_fixtures.py
+ M src/swe_persona/vendor/tb3/run.py
+ M swe-persona-lite.parquet
+ M tests/test_deepswe_runtime_repair.py
+ M tests/test_live_launch.py
+ M tests/test_shell_calibration_fixture.py
+?? .venv
+?? scripts/audit_gemini38_timeouts.py
+?? scripts/prepare_error_repairs.py
+?? scripts/reconcile_error_repairs.py
+?? scripts/resume_gemini38_repairs.py
+?? scripts/retry_gemini38_all.py
+?? scripts/run_error_repairs.py
+?? scripts/run_gemini38.py
+?? scripts/run_gemini38_pool.py
+?? tests/test_error_repairs.py
+?? tests/test_gemini38_pool.py
+?? tests/test_gemini38_retry_all.py
+?? tests/test_mini_calibration_fixture.py
+?? tests/test_repair_empty_output_policy.py
+?? tests/test_time_multiplier.py

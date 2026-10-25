@@ -1,0 +1,54 @@
+{
+  "state": "finished_with_errors",
+  "created_at": "2026-10-23T01:07:42.964112+00:00",
+  "workers": 8,
+  "calibration_workers": 2,
+  "source_campaign": "repositories/SWE-Persona-gemini38-calibration-fix/runs/gemini38-eight-workers",
+  "selected_total": 277,
+  "selected_by_level": {
+    "low": 89,
+    "medium": 94,
+    "high": 94
+  },
+  "prior_passes_excluded": 20,
+  "prior_skips_included": 3,
+  "driver_sha256": "8d412bbc80e8b7d8fec814b749f58a33d7a90cbfdc49db07179ffbfdc865a1e5",
+  "source_manifest_sha256": "93785b636051929d19ed4a22d50eeff878bf4a0d7b21ec874811557ed5f31d01",
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "runtime_sha256": {
+    "main": "48a0fd116e7e1a26ba2595a2e181f8cbce2f6685ad62f01247b1b2a4eda75491",
+    "repair": "ce7ad1731671b2ee2790a95784487aa794f2037f662e935f3e715b14456fa606"
+  },
+  "time_limit_multipliers": {
+    "low": 3,
+    "medium": 3,
+    "high": 6
+  },
+  "api_timeouts_sec": {
+    "agent": 360,
+    "user_simulator_and_judge": 900
+  },
+  "policy": "User broadened scope to all non-successful pairs. One fresh attempt each; retain reasoning effort, model, token budgets, runtime and fixed test/action/turn limits.",
+  "time_scope": "3x previous configured API request timeout and outer/internal interaction/cumulative coding time. Episode deadlines still bound individual requests.",
+  "unchanged_limits": [
+    "action_count",
+    "user_turn_count",
+    "tool_command",
+    "preparation",
+    "verification",
+    "fixed_test_performance"
+  ],
+  "calibration_policy": "One new calibration per runtime/profile/config; failed gates block that group and are never silently resampled.",
+  "comparison_note": "This is a selected retry cohort with larger budgets, not a replacement for the original benchmark score.",
+  "pid": 2562567,
+  "started_at": "2026-10-23T01:09:03.760449+00:00",
+  "updated_at": "2026-10-23T19:25:19.968399+00:00",
+  "processed": 277,
+  "running_tasks": 0,
+  "running_calibrations": 0,
+  "pending_tasks": 0,
+  "calibration_completed": 18,
+  "calibration_passed": 17,
+  "active": [],
+  "finished_at": "2026-10-23T19:25:19.812987+00:00"
+}
