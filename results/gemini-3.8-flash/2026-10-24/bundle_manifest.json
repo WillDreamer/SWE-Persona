@@ -1,0 +1,151 @@
+{
+  "schema": "swe-persona-public-summary-v1",
+  "delivery_status": "summary_only_full_evidence_pending_approval",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 266,
+      "sha256": "b770e80f387ecf9cc0b02a2fd75151fede35f5fb4248b00cf8d261e8e94ce492"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/README.md",
+      "bytes": 4691,
+      "sha256": "6c5b60728a3507330b00c088066543a37297dc95567b35063ca1bb43c5a789f4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/attempt-ledger.csv",
+      "bytes": 284803,
+      "sha256": "aecc9100486e92b938d54229d0a840d74d69af9dbc3483de7d0055f382b3fa5a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaign-overview.csv",
+      "bytes": 1853,
+      "sha256": "97049b0262e744ff5ea3694d45e18520ae1e21ea2252dd4e0934e049b87a8183"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/high/scores.json",
+      "bytes": 9756,
+      "sha256": "884e57f218ab7cda278f51e34a04edc7aec702c48e74a3ebd155035973abaa73"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/low/scores.json",
+      "bytes": 9781,
+      "sha256": "2b4a7f2befe72d6389267c5746d4dcc0439bf991201da861e7294f12c62bab97"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/cumulative-diagnostic/medium/scores.json",
+      "bytes": 9584,
+      "sha256": "abc5aefead154b71153f8f2886431f42173c4cdaee6c3fc6a13bf09509660739"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/high/scores.json",
+      "bytes": 5209,
+      "sha256": "1e7ad8823706f98132950007b2fa8754845ff2892ebce23cf169ddd46dbf0486"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/low/scores.json",
+      "bytes": 2899,
+      "sha256": "8886e6652a8f18989e56b03329d7c7581adc8d15e806a51a6a3ee8516682a7cd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/error-repair/medium/scores.json",
+      "bytes": 6448,
+      "sha256": "68c0f4730c34194a1e8a72ba1ce873fda33afa3dd83527211b319832eb193f2a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/high/scores.json",
+      "bytes": 9728,
+      "sha256": "e09c049b070ea3e74f82c826705e35c5ed396f442d74d1cb26ae34c916312201"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/low/scores.json",
+      "bytes": 9705,
+      "sha256": "5696754acb7c958a4590537aef4cdae72414b6bd0969874b11e80bc5505efd13"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/original-selected/medium/scores.json",
+      "bytes": 9660,
+      "sha256": "f3640554d6fbe5cbe1ed45021e293b36e3aec6c7069345693c493cf012d5f75b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/high/scores.json",
+      "bytes": 9703,
+      "sha256": "41140e7fe451f43e9822ed4c5282b49cb2bfdb32cf11b323f4a1a5c8b25004e4"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/low/scores.json",
+      "bytes": 9704,
+      "sha256": "971867cf8e7b15fbe779444b4aa965db77bfa148465a99fcd7f3131718ac2505"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/retry-3x/medium/scores.json",
+      "bytes": 9765,
+      "sha256": "017e6bf4f62a008c49e07e96b962660cf34b7bff8b5bb310f30a61809f2b7ba6"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/campaigns/together-repair/medium/scores.json",
+      "bytes": 2848,
+      "sha256": "365f5e1f1904c53f362677cafac21575acff87bb2146593f2a26db7db8c3889b"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/configuration.json",
+      "bytes": 1490,
+      "sha256": "94f9db897b98e94e65c6373e1ee9ddf6f1ab129fe86188601f73450221fab9ac"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.pdf",
+      "bytes": 26081,
+      "sha256": "fe630488a4403cacf3f2a10bf17a1f99be733155f70784035974ba1f4549e8de"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.png",
+      "bytes": 60619,
+      "sha256": "79fd7ccb61b4815c7542b5920412779984a28c72e44eadf6e2ef549d4e2f5f0a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/cumulative-diagnostic.svg",
+      "bytes": 58639,
+      "sha256": "92f4b82dfcd05f8c07144748a01a2befd972e4bf571dd2a712f8f30a59aaade3"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/per-profile.csv",
+      "bytes": 9098,
+      "sha256": "267863391f28c2e829f9c691a18758b7405e0c4ff030d36a24d1e6e9c53ce0e9"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/public-summary.zip",
+      "bytes": 151249,
+      "sha256": "3957534aaa6a075098fd46ed8d4efcd5d8b4abd4384146fd21ac903fc5d8ad73"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/results-by-campaign.csv",
+      "bytes": 424629,
+      "sha256": "91259997457d4b71f4893dd8ec97148292f0f15c69b27c1398a95009dc04b35d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/retained-evidence.json",
+      "bytes": 588,
+      "sha256": "61ad2e5b72fd55df3f3bd77fdcda6e9d69651b05be5a23a44a0b0b7db4b4712a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/runtime-fingerprints.json",
+      "bytes": 1251,
+      "sha256": "5d806c0a3ff7a044b193e73bcad5fb492fc7af5ad07984ea5c10c67dda0b2134"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/score.py",
+      "bytes": 4863,
+      "sha256": "09beb93557805043742b7d7810dcfdf35a190d8d005823eecada9da25a8e369d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/unresolved-evaluations.csv",
+      "bytes": 12065,
+      "sha256": "5b520cfb44c50a311e40242cffc87a4eb951475890232093bc1c37efb5dc02ec"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-24/verify_delivery.py",
+      "bytes": 2301,
+      "sha256": "db491bb8c52abaa1214bc26c44deb4ce9e2eff10b830601fb0effff95e83ad8d"
+    }
+  ]
+}

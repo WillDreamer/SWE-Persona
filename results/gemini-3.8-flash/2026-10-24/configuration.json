@@ -1,0 +1,51 @@
+{
+  "model": "gcp/google/gemini-3.8-flash",
+  "agent_api": "chat_completions",
+  "base_url": "https://inference-api.nvidia.com/v1",
+  "max_tokens_field": "max_tokens",
+  "agent_output_budget": "harness automatic",
+  "efforts": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "simulator_and_judge_model": "azure/openai/gpt-6-luna",
+  "simulator_and_judge_api": "responses",
+  "simulator_and_judge_effort": "medium",
+  "simulator_and_judge_output_limit": 32768,
+  "original_interaction_multipliers": {
+    "low": 1,
+    "medium": 1,
+    "high": 2
+  },
+  "retry_interaction_multipliers": {
+    "low": 3,
+    "medium": 3,
+    "high": 6
+  },
+  "original_api_timeout_seconds": {
+    "agent": 120,
+    "simulator_and_judge": 300
+  },
+  "retry_api_timeout_seconds": {
+    "agent": 360,
+    "simulator_and_judge": 900
+  },
+  "dataset_sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+  "benchmark_commit": "842e5a6a665ade335e4d3be3c3fb8887ac5ba19a",
+  "excluded_task": "tb3/exam-pdf-eval",
+  "selected_per_effort": 99,
+  "hardware": {
+    "logical_cpus": 24,
+    "memory_bytes": 134289383424,
+    "python": "3.12.11",
+    "docker": "29.9.2",
+    "compose": "5.6.0"
+  },
+  "final_repair_changes": [
+    "Honor configured SWE-Live request deadlines rather than legacy 90-second cap",
+    "Raise SWE-Live reference preflight floor from 300 to 900 seconds",
+    "Source-keyed DeepSWE judge citations",
+    "Seven zero-credit classification corrections; no added successes"
+  ]
+}

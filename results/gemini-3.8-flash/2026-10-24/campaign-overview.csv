@@ -1,0 +1,14 @@
+campaign,effort,selected,passes,failures,errors,attempted,not_attempted,valid_evaluations,complete_native_and_persona_grading,total_timeouts,joint_success_rate,joint_success_rate_valid_only,provisional_evaluations,score_status,provisional_joint_success_rate,provisional_joint_success_rate_valid_only,native_grades_observed,native_pass_rate_observed,persona_grades_observed,persona_pass_rate_observed
+original-selected,low,99,10,76,13,99,0,86,66,18,,0.11627906976744186,0,standard,,,84,0.15476190476190477,66,0.2727272727272727
+original-selected,medium,99,5,78,16,99,0,83,62,20,,0.060240963855421686,0,standard,,,83,0.0963855421686747,62,0.20967741935483872
+original-selected,high,99,5,74,20,99,0,79,67,20,,0.06329113924050633,0,standard,,,78,0.11538461538461539,67,0.07462686567164178
+retry-3x,low,89,8,67,14,89,0,75,63,7,,0.10666666666666667,0,standard,,,73,0.1232876712328767,63,0.30158730158730157
+retry-3x,medium,94,11,64,19,94,0,75,67,6,,0.14666666666666667,0,standard,,,75,0.16,67,0.29850746268656714
+retry-3x,high,94,10,67,17,94,0,77,67,6,,0.12987012987012986,0,standard,,,76,0.2236842105263158,67,0.23880597014925373
+error-repair,low,1,0,0,1,1,0,0,0,0,,,0,standard,,,0,,0,
+error-repair,medium,12,1,10,1,12,0,11,7,4,,0.09090909090909091,0,standard,,,11,0.18181818181818182,7,0.2857142857142857
+error-repair,high,11,2,4,5,11,0,6,4,4,,0.3333333333333333,0,standard,,,5,0.4,4,0.5
+cumulative-diagnostic,low,99,18,70,11,99,0,88,73,7,,0.20454545454545456,0,standard,,,86,0.22093023255813954,73,0.3972602739726027
+cumulative-diagnostic,medium,99,17,79,3,99,0,96,80,10,,0.17708333333333334,0,standard,,,96,0.19791666666666666,80,0.35
+cumulative-diagnostic,high,99,17,72,10,99,0,89,76,10,,0.19101123595505617,0,standard,,,87,0.27586206896551724,76,0.3026315789473684
+together-repair,medium,2,0,2,0,2,0,2,1,0,0.0,0.0,0,standard,,,2,0.0,1,1.0
