@@ -7,8 +7,8 @@
     "file": "swe-persona-lite.parquet",
     "tasks": 100,
     "unique_task_ids": 100,
-    "sha256": "e036d834f0fd0d8aab7c3476a4866dfe794ff503d0c92d71ea58700dc068d1fc",
-    "bytes": 114948733,
+    "sha256": "1fbfa744b505609e02d83f9a7d7bacb41b3f72777185f131bcdc7aeb10c460ed",
+    "bytes": 114985524,
     "source_benchmarks": {
       "Terminal-Bench 3.0": 23,
       "SWE-bench Pro": 26,
@@ -25,7 +25,7 @@
     "swe-together": 4,
     "deep-swe": 28
   },
-  "runtime_sha256": "99b75490df193a6c8431599617e4671a1d24e1fd1eb192c5da40ffb90eba7746",
+  "runtime_sha256": "477859097aa354c6ed48b6ad27b1652d0f28f7d8a726abdef9d07b31eb54c345",
   "scoring_entrypoint": "scripts/score.py",
   "evaluation_entrypoint": "swe-persona run",
   "batch_entrypoint": "scripts/evaluate.py",
@@ -55,5 +55,6 @@
   "together_calibration_max_reviewed_positive_disagreements": 2,
   "time_budget_policy": "agent-user-wall-clock-v2",
   "preparation_timeout_default_sec": 7200,
-  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)"
+  "verification_watchdog_default": "max(900, budget.verifier_timeout_sec + 600)",
+  "calibration_default_enabled": true
 }

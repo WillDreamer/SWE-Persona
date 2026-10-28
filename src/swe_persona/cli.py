@@ -24,10 +24,11 @@ def runtime_hash():
             h.update(str(p.relative_to(Path(__file__).parent)).encode()+b'\0'+p.read_bytes())
     return h.hexdigest()
 
-def worker(root,mode,output,config=None,gate=None,time_limit=None):
+def worker(root,mode,output,config=None,gate=None,time_limit=None,calibration=True):
     command=[sys.executable,'-B','-m','swe_persona.worker','--root',str(root),'--mode',mode,'--output',str(output)]
     if config:command+=['--config',str(Path(config).resolve())]
     if gate:command+=['--gate-dir',str(gate)]
+    if not calibration:command.append('--no-calibration')
     env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')
     if time_limit and 'internal_budget' in time_limit:
         env['SWE_PERSONA_NATIVE_VERIFICATION_SECONDS']=str(time_limit['internal_budget']['verifier_timeout_sec'])
@@ -210,7 +211,7 @@ def normalize_result(row,out,rc):
         if profile=='swe-together' and d.get('calibration'):
             result['calibration']=d['calibration']
             result['score_provisional']=d['calibration'].get('score_provisional') is True
-    if profile=='swe-together' and (out/'run-config.json').is_file():
+    if (out/'run-config.json').is_file():
         calibration=json.loads((out/'run-config.json').read_text()).get('calibration')
         if calibration:
             result.setdefault('calibration',calibration)
@@ -231,6 +232,8 @@ def main():
     run=sub.add_parser('run');run.add_argument('--task',required=True);run.add_argument('--config',type=Path,required=True)
     run.add_argument('--output',type=Path,required=True);run.add_argument('--dry-run',action='store_true')
     run.add_argument('--cache',type=Path,default=Path.home()/'.cache/swe-persona')
+    run.add_argument('--calibration',action=argparse.BooleanOptionalAction,default=True,
+        help='Run or reuse judge calibration before evaluation (default: enabled); --no-calibration skips startup controls, not episode judging.')
     run.add_argument('--timeout-sec','--total-timeout-sec',dest='timeout_sec',type=positive_seconds,
         help='Agent/user interaction wall-clock seconds; default: row budget.episode_timeout_sec. Excludes preparation, native preflight and final grading; existing inner limits remain in force.')
     args=ap.parse_args()
@@ -271,10 +274,15 @@ def main():
     if profile=='swe-bench-pro-mini' and config['agent']['api']!='chat_completions':
         raise ValueError('This profile uses mini-swe-agent Chat Completions; configure agent.api=chat_completions')
     write(args.output/'run-config.json',{'task_id':row['task_id'],'content_sha256':row['content_sha256'],
-          'runtime_sha256':runtime_hash(),'api_config_sha256':fingerprint(config),'models':config,'time_limit':time_limit})
+          'runtime_sha256':runtime_hash(),'api_config_sha256':fingerprint(config),'models':config,'time_limit':time_limit,
+          'calibration':{'enabled':args.calibration,'status':'not_run' if args.dry_run else 'pending' if args.calibration else 'skipped',
+                         'passed':None,'score_provisional':False}})
     try:
-        gate=None if args.dry_run else calibrate(args.dataset,profile,args.config,args.cache)
+        gate=calibrate(args.dataset,profile,args.config,args.cache) if args.calibration and not args.dry_run else None
     except Exception as exc:
+        run_config=json.loads((args.output/'run-config.json').read_text())
+        run_config['calibration'].update(status='error',execution_allowed=False)
+        write(args.output/'run-config.json',run_config)
         result=normalize_result(row,args.output,2)
         result.update(status='calibration_error',error=str(exc))
         write(args.output/'result.json',result)
@@ -282,8 +290,8 @@ def main():
     if gate is not None:
         value=json.loads((gate/'gate.json').read_text())
         run_config=json.loads((args.output/'run-config.json').read_text())
-        run_config['calibration']={'passed':value['passed'],'execution_allowed':gate_allows_execution(value),
-            'status':value.get('calibration',{}).get('status'),'gate':str(gate),
+        run_config['calibration']={'enabled':True,'passed':value['passed'],'execution_allowed':gate_allows_execution(value),
+            'status':value.get('calibration',{}).get('status') or ('passed' if value['passed'] else 'failed'),'gate':str(gate),
             'score_provisional':value.get('calibration',{}).get('score_provisional',False)}
         write(args.output/'run-config.json',run_config)
     with tempfile.TemporaryDirectory(prefix='input-',dir=args.cache) as temp:
@@ -291,7 +299,7 @@ def main():
         restorations=[json.loads(p.read_text()) for p in root.glob('tasks/*/asset-restoration.json')]
         if restorations:write(args.output/'asset-restoration.json',{'restorations':restorations})
         rc=worker(root,'dry-run' if args.dry_run else 'run',args.output,args.config,gate,
-                  None if args.dry_run else time_limit)
+                  None if args.dry_run else time_limit,calibration=args.calibration)
     if args.dry_run:
         print(json.dumps({'task_id':row['task_id'],'dry_run':rc==0,'log':str(args.output/'dry-run.log')}));return rc
     result=normalize_result(row,args.output,rc)

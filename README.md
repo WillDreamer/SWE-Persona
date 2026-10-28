@@ -6,7 +6,7 @@ SWE-Persona evaluates coding models on software tasks with a simulated user whos
 | --- | ---: |
 | Terminal-Bench 3.0 | 23 |
 | SWE-bench Pro | 26 |
-| SWE-bench-Live MultiLang | 19 |
+| SWE-bench-Live | 19 |
 | SWE-Together | 4 |
 | DeepSWE | 28 |
 | **Total** | **100** |
@@ -16,6 +16,8 @@ The Lite selection contains the same 100 task/persona pairs; public profile name
 ## 1. Install
 
 Use Linux, Python 3.12, Docker Engine with the Compose plugin, and permission to run Docker. The harness pins Harbor 0.23.0 and mini-swe-agent 2.4.6. Image downloads and builds require network access and sufficient disk space. Task CPU, memory, storage and GPU requirements are recorded in Parquet.
+
+When using Docker Desktop on macOS, version **4.95.0 or later** is required to provide the LinuxKit kernel compatible with this benchmark's network-policy adapter.
 
 The SWE-Pro mini network-probe cache reads the host's Linux `boot_id` when available. On macOS, it uses `sysctl -n kern.boottime` with a five-second timeout instead. If neither provides a reboot token, caching is disabled and the Docker kernel probe still runs; missing host metadata alone does not block startup. A failed kernel probe still blocks execution under the required network policy. This cache compatibility does not certify all profiles or tasks on macOS.
 
@@ -154,7 +156,7 @@ Use a new or empty output directory for each attempt. **This command starts the 
 
 The host controller:
 
-1. Reconstructs the selected row and verifies its assets. It runs or reuses the required calibration for this runtime profile and API configuration.
+1. Reconstructs the selected row and verifies its assets. With calibration enabled (the default), it runs or reuses calibration for this runtime profile and API configuration; `--no-calibration` skips this startup step.
 2. Uses Harbor and Docker to prepare the coding environment, then gives the agent the profile's public opening and tools.
 3. Sends observations and the allowed interaction context to the `user_simulator` API. The controller enforces the frozen disclosure schedule and returns the resulting user messages to the agent.
 4. Repeats agent actions, user replies and profile-specific online checks until completion or a limit is reached. The coding model proposes actions; the harness executes them in the task environment.
@@ -187,7 +189,7 @@ The simulator first renders ordinary prose and explicitly selects every current 
 
 The two SWE-bench Pro implementations are packaged together under `src/swe_persona/vendor/swe_pro/`: `mini/` serves `swe-bench-pro-mini` and `shell/` serves `swe-bench-pro-shell`. The task profile selects the appropriate implementation automatically.
 
-The shell adapter exports the frozen binding with `applicability.verdict: "applicable"`. Both dry runs and scored episodes use `registry.build_candidates` and `applicable_candidates`; preparation checks that all Parquet requirement IDs are loaded. Missing or contradictory applicability cannot silently turn a binding into an empty requirement list. The controller reads the shared passed calibration gate and validates its grading identity before registering these requirements in the ledger. Original event triggers, disclosure limits and optional/required schedule flags remain binding.
+The shell adapter exports the frozen binding with `applicability.verdict: "applicable"`. Both dry runs and scored episodes use `registry.build_candidates` and `applicable_candidates`; preparation checks that all Parquet requirement IDs are loaded. Missing or contradictory applicability cannot silently turn a binding into an empty requirement list. With calibration enabled, the controller reads the shared passed calibration gate and validates its grading identity before registering these requirements in the ledger. With `--no-calibration`, it skips that control proof while retaining structural binding validation and requirement registration. Original event triggers, disclosure limits and optional/required schedule flags remain binding.
 
 A progressive shell episode cannot earn joint credit with no persona checks. Final grading must cover every required or activated requirement. Missing loading or missing final checks is reported separately from a demonstrated persona violation; an unavailable persona grade is `null`. Result normalization compares the episode's loaded and graded IDs against the immutable row and disclosure record, so stale or inconsistent `joint_success` fields cannot manufacture a pass. Valid preserved work after an API interruption still follows the common recovery policy. These runtime changes require fresh calibration and new attempts; old episodes without persona disclosure cannot be repaired by post hoc grading.
 
@@ -210,11 +212,28 @@ This snippet makes two real API calls. It only checks the clients; it does not l
 
 ### Calibration and information boundaries
 
-Calibration runs automatically before a scored episode. It may make model calls and start containers. A blocked calibration produces `calibration_error` and prevents episodes for that profile. Other profiles in the batch continue. Gates are cached by profile, API configuration and runtime fingerprint under `~/.cache/swe-persona`. Use `--cache /path/to/cache` on `run` or the batch script to choose another location. SWE-bench-Live has a restricted fallback for unavailable calibration assessments. SWE-Together has a bounded diagnostic mode for reviewed positive-control disagreements, described below. A degraded gate is never reported as a passed calibration.
+Calibration is controlled by `--calibration` / `--no-calibration` on both `swe-persona run` and `scripts/evaluate.py`; it is **enabled by default**. We recommend leaving it enabled for the first run, and after changing the judge model or API settings, to check that the configured judge works with the profile's prompts and structured responses. Some controls admit ambiguous interpretations: a disagreement is a diagnostic to inspect, not by itself proof that the judge is unusable. Once you have confirmed that the judge model/API works and returns usable assessments, you may skip calibration. Grading uses the `user_simulator` API configuration.
+
+```bash
+# First run: enable calibration (also the default).
+swe-persona run --task swepro/swepro-r0035-be662e3c3c-analyst \
+  --config configs/api.local.json --output runs/analyst-calibrated --calibration
+
+# Skip startup controls after confirming the judge works.
+swe-persona run --task swepro/swepro-r0035-be662e3c3c-analyst \
+  --config configs/api.local.json --output runs/analyst-skip-calibration --no-calibration
+
+python scripts/evaluate.py --config configs/api.local.json \
+  --output runs/lite-cpu-skip-calibration --cpu-only --no-calibration
+```
+
+`--no-calibration` skips all startup calibration controls and gate checks, including cached gates. It does not disable episode judges, binding/asset validation, native reference preflight, protected native tests, or final persona grading. Judge errors during an episode retain their existing error handling. `run-config.json` and `result.json` record `calibration.enabled: false`, `status: "skipped"` and `passed: null`; skipping never creates or overwrites a passed calibration cache. Batch `summary.json` also records `calibration_enabled`. `--dry-run` skips calibration regardless of this switch. The explicit `swe-persona calibrate --profile ... --config ...` command still runs calibration independently.
+
+When enabled, calibration may make model calls and start containers. A blocked calibration produces `calibration_error` and prevents episodes for that profile; other profiles in the batch continue. Gates are cached by profile, API configuration and runtime fingerprint under `~/.cache/swe-persona`. Use `--cache /path/to/cache` on `run` or the batch script to choose another location. SWE-bench-Live has a restricted fallback for unavailable calibration assessments. SWE-Together has a bounded diagnostic mode for reviewed positive-control disagreements, described below. A degraded gate is never reported as a passed calibration. References below to required gates or fresh calibration apply when calibration is enabled; use new output directories and retain historical attempts in either mode.
 
 SWE-bench Pro shell uses `literal-clause-truth-v1` for rubric judge responses. Each clause returns `condition_holds: true`, `false`, or `null`, plus its reason and registered evidence IDs. The answer describes whether the **literal clause condition** holds; it is not a pass/fail verdict on the agent. For a `not_met_if` clause such as "an unauthorized edit occurred", `true` establishes that violation and `false` establishes its absence. For an `unknown_if` clause such as "the baseline is missing", a supplied baseline supports `false`. `null` means the eligible evidence cannot establish either truth value; it never means the condition is absent. Both `true` and `false` require eligible grounding. The host converts these answers to the existing clause aggregation vocabulary and retains the original rubrics, majority rule, deterministic checks and final native/persona scoring.
 
-The shell calibration must distinguish both known correct and incorrect scope/explanation controls. Collection or judge errors cannot count as successful negative controls. Its report includes per-clause truth, votes and reasons so a contradictory assessment can be investigated. A failed gate blocks the profile's 17 pairs before agent execution; those entries are unresolved evaluations, not 17 demonstrated agent failures. The clause protocol is included in grading identity and cache keys; changed protocols require new calibration and separate scored attempts. Never bypass a failed gate or rewrite old results after changing the judge protocol.
+The shell calibration must distinguish both known correct and incorrect scope/explanation controls. Collection or judge errors cannot count as successful negative controls. Its report includes per-clause truth, votes and reasons so a contradictory assessment can be investigated. With calibration enabled, a failed gate blocks the profile's 17 pairs before agent execution; those entries are unresolved evaluations, not 17 demonstrated agent failures. The clause protocol is included in grading identity and cache keys; changed protocols require new calibration when enabled and separate scored attempts. If you choose to skip after investigating a disagreement and confirming judge functionality, start a new attempt with `--no-calibration`; retain the failed report and historical results.
 
 The default shell calibration control is packaged in `runner/fixtures/rubric-calibration.json`: the unchanged pinned Navidrome task, reference patch and official runner/parser used by the existing controls. The loader verifies its dataset/harness revision, task field hashes and script hashes. It does not load Hugging Face data or download checker scripts; Docker may still need to pull the declared task image. Reference controls stay on the host and in isolated calibration containers, outside evaluated coding-agent environments. The calibration report records the fixture identity. An explicit upstream `--dataset-index` override in the vendored calibration tool is a separate mode and may need network access. A passed calibration and 17 successful dry runs establish protocol/setup readiness; publishing an end-to-end reproducibility claim still requires valid scored attempts for all 17 pairs.
 
@@ -257,7 +276,7 @@ python scripts/evaluate.py \
 
 The variable accepts one host GPU index or UUID; choose a device allocated to you. CPU tasks receive no GPU reservation. Different GPU hardware must be reported as an environment variant.
 
-Optional batch selectors are `--source-benchmark "SWE-bench Pro"`, `--profile swe-bench-pro-shell` and `--limit N`. `--dataset` defaults to Lite. The driver runs up to two task workers concurrently by default; use `--workers N` to change this or `--workers 1` for sequential evaluation. Within a batch, each runtime profile is calibrated once before its tasks start, with calibration evidence shared through the cache. Each task uses its own numbered output directory and driver log. `summary.json` is updated atomically after task completions, preserves dataset order, and includes active tasks and worker count. A failed calibration blocks only its own profile: affected rows receive `calibration_error` with `episode_started: false`, `blocked_profiles` identifies the affected profiles, and other profiles continue. SIGINT/SIGTERM stops launching tasks and interrupts active task processes for cleanup. Invalid/error outcomes are reported separately. The command returns exit code 0 only when every selected task has a valid pass/fail result (or a successful dry run); a valid model failure does not make the command itself fail. Repeated attempts must use separate directories and must not be combined by selecting the best score.
+Optional batch selectors are `--source-benchmark "SWE-bench Pro"`, `--profile swe-bench-pro-shell` and `--limit N`. `--dataset` defaults to Lite. The driver runs up to two task workers concurrently by default; use `--workers N` to change this or `--workers 1` for sequential evaluation. With calibration enabled, each runtime profile is calibrated once before its tasks start, with calibration evidence shared through the cache; `--no-calibration` skips this step for the whole batch and is forwarded to every task. Each task uses its own numbered output directory and driver log. `summary.json` is updated atomically after task completions, preserves dataset order, and includes active tasks and worker count. When enabled, a failed calibration blocks only its own profile: affected rows receive `calibration_error` with `episode_started: false`, `blocked_profiles` identifies the affected profiles, and other profiles continue. SIGINT/SIGTERM stops launching tasks and interrupts active task processes for cleanup. Invalid/error outcomes are reported separately. The command returns exit code 0 only when every selected task has a valid pass/fail result (or a successful dry run); a valid model failure does not make the command itself fail. Repeated attempts must use separate directories and must not be combined by selecting the best score.
 
 ## 6. Time budgets
 
@@ -398,7 +417,7 @@ One Parquet row contains one frozen task/persona pair. `source_benchmark` identi
 
 The materializer reconstructs hash-checked build contexts, tests and controller bindings. Images and external downloads remain runtime dependencies. Source trajectories and historical model scores are not required for evaluation. The Lite sample is a fixed proportional sample of an adapted cohort, not a claim of an unbiased sample of all upstream tasks; the DeepSWE source cohort was retrospectively curated.
 
-This release does **not** claim that all 100 tasks have completed successful environment and end-to-end validation. Image support, valid structured responses, available external images/assets, and adequate task-specific resources are required. The SWE-Live `swelive/0262-go--laptop_data_scientist` reference has produced an intermittent failure in `Test_handler_download_logs`; a later successful check does not erase that observation or certify stability. Historical model runs are not bundled or silently resumed by this distribution. A new `run` command starts a new attempt and its own required calibration. No task has been removed or replaced to improve model results.
+This release does **not** claim that all 100 tasks have completed successful environment and end-to-end validation. Image support, valid structured responses, available external images/assets, and adequate task-specific resources are required. The SWE-Live `swelive/0262-go--laptop_data_scientist` reference has produced an intermittent failure in `Test_handler_download_logs`; a later successful check does not erase that observation or certify stability. Historical model runs are not bundled or silently resumed by this distribution. A new `run` command starts a new attempt and runs or reuses calibration unless `--no-calibration` is set. No task has been removed or replaced to improve model results.
 
 Before publishing a reproducibility claim, verify the release checksums, install the built wheel in a clean environment, complete all 100 dry runs, inspect reference stability reports, and obtain valid scored attempts for every included pair with the documented simulator configuration. Calibration and infrastructure errors are unresolved evaluations, not capability failures. Run the local regression suite with `python -m unittest discover -s tests -v`; it makes no external model calls or real container launches.
 

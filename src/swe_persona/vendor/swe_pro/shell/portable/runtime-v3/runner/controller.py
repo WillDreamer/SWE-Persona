@@ -162,7 +162,17 @@ class Controller(_BaseController):
         with self._only(requirement_refs):
             return super().verify_active(turn, transcript)
 
+    def _validate_candidate(self, cand, proof):
+        problems = super()._validate_candidate(cand, proof)
+        if os.environ.get('SWE_PERSONA_CALIBRATION_ENABLED') == '0':
+            # Keep structural validation; only the startup control proof is optional.
+            missing_proof = f"not_proven_achievable:{cand.checker['id']}"
+            problems = [problem for problem in problems if problem != missing_proof]
+        return problems
+
     def _achievability_proof(self, validation_report: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+        if os.environ.get('SWE_PERSONA_CALIBRATION_ENABLED') == '0':
+            return {'calibration_status': 'skipped', 'source': '--no-calibration'}
         from rubric_checker import grading_identity
         proof: Dict[str, Any] = {}
         sources: List[str] = []

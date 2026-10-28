@@ -66,7 +66,7 @@ def prepare_image(row,root,out):
     write(out/'image.json',{'requested':image,'image_id':actual,'cpu_only':True})
     return actual
 
-def execute(root,row,config,out,mode,gate=None):
+def execute(root,row,config,out,mode,gate=None,*,calibration_enabled=True):
     project=root/'project';tid=row['source']['task_id'];pid=row['persona']['persona_id']
     sys.path.insert(0,str(project))
     os.environ.update(DS_TASK_ID=tid,DS_PERSONA_ID=pid,DS_PROTOCOL='staged',DS_RUNTIME='harbor',DS_CODING_BACKEND='json_act')
@@ -99,7 +99,8 @@ def execute(root,row,config,out,mode,gate=None):
         value=run(root,out/'source-calibration',client=Client(out/'source-calibration/audit/api.jsonl',max_calls=32,deadline=time.monotonic()+900))
         write(out/'calibration.json',value)
         return 0 if value['passed'] else 2
-    if gate is None or not read(gate/'gate.json').get('passed'):raise ValueError('Passed runtime/API calibration required')
+    if calibration_enabled and (gate is None or not read(gate/'gate.json').get('passed')):
+        raise ValueError('Passed runtime/API calibration required')
     image=prepare_image(row,root,out)
     work=out/'project';shutil.copytree(project,work)
     write(work/'environment-images.json',{tid:image})
@@ -124,6 +125,7 @@ def execute(root,row,config,out,mode,gate=None):
         'error_category':'simulator_message_rejected' if result.get('end_reason')=='simulator_message_error' else None,
         'simulator_message_recoveries':result.get('simulator_message_recoveries',[]),
         'budget_exhausted':result.get('budget_exhausted'),'source_result':str(result_path.relative_to(out)),
-        'historical_pier_equivalence':False,'calibration_report':str(gate/'calibration.json')}
+        'historical_pier_equivalence':False,
+        'calibration_report':str(gate/'calibration.json') if calibration_enabled else None}
     write(out/'persona-result.json',report)
     return 0 if valid else 2

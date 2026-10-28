@@ -90,7 +90,7 @@ def evaluate(args, selected):
         try:
             if stop_launch.is_set():
                 return None
-            if not args.dry_run:
+            if args.calibration and not args.dry_run:
                 with locks[profile]:
                     if stop_launch.is_set():
                         return None
@@ -110,6 +110,7 @@ def evaluate(args, selected):
                     return None
                 command = prefix + ['run', '--task', row['task_id'], '--config', str(args.config.resolve()),
                                     '--output', str(out.resolve()), '--cache', str(cache)]
+                command.append('--calibration' if args.calibration else '--no-calibration')
                 if args.dry_run:
                     command.append('--dry-run')
                 if args.timeout_sec is not None:
@@ -132,6 +133,7 @@ def evaluate(args, selected):
     def summary():
         ordered = [results[index] for index in sorted(results)]
         data = {'selected': len(selected), 'workers': args.workers, 'started': started,
+                'calibration_enabled': args.calibration,
                 'attempted': len(ordered), 'running': len(active),
                 'active_tasks': [selected[index]['task_id'] for index in sorted(active.values())],
                 'status_counts': dict(Counter(r['status'] for r in ordered)),
@@ -191,6 +193,8 @@ def main():
     p.add_argument('--limit', type=int)
     p.add_argument('--cpu-only', action='store_true', help='Select rows requiring no GPUs')
     p.add_argument('--dry-run', action='store_true')
+    p.add_argument('--calibration', action=argparse.BooleanOptionalAction, default=True,
+                   help='Run or reuse judge calibration before evaluation (default: enabled); use --no-calibration to skip startup controls')
     p.add_argument('--cache', type=Path, help='Directory for materialization and cached calibration')
     p.add_argument('--timeout-sec', '--total-timeout-sec', dest='timeout_sec', type=float,
                    help='Override agent/user interaction seconds; excludes preparation and final grading')

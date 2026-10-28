@@ -156,7 +156,7 @@ def make_first_message(llm: Llm, manifest: TaskManifest,
 
 
 def assert_rubric_gate(model: str, interactive: bool) -> None:
-    if not interactive:
+    if not interactive or os.environ.get('SWE_PERSONA_CALIBRATION_ENABLED') == '0':
         return
     from rubric_checker import GROUNDING_PROTOCOL, grading_identity
     gate_dir = Path(os.environ.get("PCB_RUBRIC_GATE_DIR", HERE / "runs" / "validation"))

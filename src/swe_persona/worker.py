@@ -194,6 +194,7 @@ def main():
     ap.add_argument('--config',type=Path);ap.add_argument('--output',type=Path,required=True)
     ap.add_argument('--mode',choices=['dry-run','run','calibrate','live-episode'],required=True)
     ap.add_argument('--gate-dir',type=Path)
+    ap.add_argument('--calibration',action=argparse.BooleanOptionalAction,default=True)
     ap.add_argument('--gold-dir',type=Path)
     ap.add_argument('--sample-seconds',type=float)
     ap.add_argument('--deadline-monotonic',type=float)
@@ -203,6 +204,7 @@ def main():
     config=load_config(args.config,require_keys=args.mode!='dry-run') if args.config else None
     if args.mode!='dry-run' and config is None:raise ValueError('API configuration is required')
     os.environ['PYTHONDONTWRITEBYTECODE']='1';sys.dont_write_bytecode=True
+    os.environ['SWE_PERSONA_CALIBRATION_ENABLED']='1' if args.calibration else '0'
     from .harbor_bridge import align_egress_sidecar_platform, prepare_egress_sidecar
     align_egress_sidecar_platform()
     if os.environ.get('DOCKER_DEFAULT_PLATFORM'):
@@ -216,14 +218,14 @@ def main():
             os.environ[prefix+'_API_KEY']=os.environ.get(config['judge']['api_key_env'],'')
     if profile=='deep-swe':
         from .deepswe import execute
-        return execute(root,row,config,out,args.mode,args.gate_dir)
+        return execute(root,row,config,out,args.mode,args.gate_dir,calibration_enabled=args.calibration)
     if profile=='swe-together':
         from .swe_together import execute
-        return execute(root,row,config,out,args.mode,args.gate_dir)
+        return execute(root,row,config,out,args.mode,args.gate_dir,calibration_enabled=args.calibration)
     if profile=='swe-bench-live':
         from .swe_live import install_live,execute
         install_live(root,config,out)
-        return execute(root,row,config,out,args.mode,args.config,args.gate_dir,args)
+        return execute(root,row,config,out,args.mode,args.config,args.gate_dir,args,calibration_enabled=args.calibration)
     if profile=='terminal-bench-3':install_tb3(root,config,out)
     elif profile=='swe-bench-pro-mini':install_v6(root,config,out)
     else:install_v7(root,row,config,out,args.mode=='calibrate')
@@ -245,7 +247,8 @@ def main():
                               'requirement_loader':'registry.build_candidates + applicable_candidates',
                               'backend':'harbor-docker','profile':profile}));return 0
         prepare_public_submodules(row,out)
-        if args.gate_dir:os.environ['PCB_RUBRIC_GATE_DIR']=str(args.gate_dir.resolve())
+        if args.calibration and args.gate_dir:os.environ['PCB_RUBRIC_GATE_DIR']=str(args.gate_dir.resolve())
+        else:os.environ.pop('PCB_RUBRIC_GATE_DIR',None)
         # ShellAgent uses the shared role API on both chat and Responses services.
         os.environ['PCB_AGENT_ADAPTER']='portable_shell:ShellAgent'
         case,runtime,binding,candidates=entry.prepare(case_id)

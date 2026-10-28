@@ -132,7 +132,7 @@ def install_live(root,config,out):
     return support
 
 
-def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=None):
+def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=None,*,calibration_enabled=True):
     from build_task import validate
     task=root/'tasks'/row['source']['task_id']
     if mode=='dry-run':
@@ -152,11 +152,12 @@ def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=Non
     if mode=='live-episode':
         from run import main as episode_main
         return episode_main(live_episode_argv(task, row, config, episode_args))
-    # The shared CLI has already calibrated this exact profile/API/runtime fingerprint.
+    # The shared CLI checks the gate unless startup calibration was disabled.
     from .cli import gate_allows_execution
-    if gate is None or not gate_allows_execution(json.loads((gate/'gate.json').read_text())):
-        raise ValueError('An approved calibration gate or explicit SWE-Live checker fallback is required')
-    write(out/'calibration-gate.json',json.loads((gate/'gate.json').read_text()))
+    if calibration_enabled:
+        if gate is None or not gate_allows_execution(json.loads((gate/'gate.json').read_text())):
+            raise ValueError('An approved calibration gate or explicit SWE-Live checker fallback is required')
+        write(out/'calibration-gate.json',json.loads((gate/'gate.json').read_text()))
     import docker
     from support import Manifest
     from run_fullset import get_image
@@ -181,6 +182,7 @@ def execute(root,row,config,out,mode,config_path=None,gate=None,episode_args=Non
     trial=out/'trials'/source['key']/'persona'
     command=[sys.executable,'-B','-m','swe_persona.worker','--root',str(root),'--config',str(config_path.resolve()),
         '--output',str(out/'episode-runtime'),'--mode','live-episode','--gold-dir',str(gold)]
+    if not calibration_enabled:command.append('--no-calibration')
     receipt=supervise_sample(command,trial,cap,cleanup=clean);trial_projection(trial,receipt)
     # Prefer the supervisor projection to any partial/late worker result.
     write(out/'persona-result.json',json.loads((trial/'persona-result.json').read_text()))

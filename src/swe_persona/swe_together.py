@@ -47,7 +47,7 @@ def materialize_together(row,root,task):
     write(root/'row.json',{k:v for k,v in row.items() if k!='assets'})
     return root
 
-def execute(root,row,config,out,mode,gate=None):
+def execute(root,row,config,out,mode,gate=None,*,calibration_enabled=True):
     sys.path.insert(0,str(root))
     from swe_together_pilot.persona_runtime.binding import validate
     from swe_together_pilot.persona_runtime.public_run import episode
@@ -60,18 +60,21 @@ def execute(root,row,config,out,mode,gate=None):
     if mode=='calibrate':
         from swe_together_pilot.persona_runtime.calibrate import calibrate
         return 0 if asyncio.run(calibrate(config,out))['execution_allowed'] else 1
-    from .cli import gate_allows_execution
-    if gate is None or not gate_allows_execution(json.loads((gate/'gate.json').read_text())):
-        raise ValueError('Approved unified calibration required')
-    calibration=json.loads((gate/'calibration.json').read_text())
-    from swe_together_pilot.persona_runtime.calibration_policy import calibration_allowed
-    if not calibration_allowed(calibration):raise ValueError('Incomplete or inconsistent calibration report')
-    if binding['binding_sha256'] not in calibration.get('binding_sha256s',[]):raise ValueError('Binding not covered by calibration')
+    calibration={'enabled':False,'passed':None,'status':'skipped','score_provisional':False}
+    if calibration_enabled:
+        from .cli import gate_allows_execution
+        if gate is None or not gate_allows_execution(json.loads((gate/'gate.json').read_text())):
+            raise ValueError('Approved unified calibration required')
+        calibration=json.loads((gate/'calibration.json').read_text())
+        from swe_together_pilot.persona_runtime.calibration_policy import calibration_allowed
+        if not calibration_allowed(calibration):raise ValueError('Incomplete or inconsistent calibration report')
+        if binding['binding_sha256'] not in calibration.get('binding_sha256s',[]):raise ValueError('Binding not covered by calibration')
+        calibration={k:calibration[k] for k in ('passed','status','execution_allowed','score_provisional','policy','mode','controls')}
+        calibration.update(enabled=True,report=str(gate/'calibration.json'))
     result=asyncio.run(episode(binding,task,config,out/'episode',row['environment']['agent']['image'],
         seconds=row['budget']['episode_timeout_sec'],max_steps=json.loads(row['interaction']['config_json'])['max_agent_steps'],
         verifier_seconds=row['budget']['verifier_timeout_sec']))
-    result['calibration']={k:calibration[k] for k in ('passed','status','execution_allowed','score_provisional','policy','mode')}
-    result['calibration'].update(controls=calibration['controls'],report=str(gate/'calibration.json'))
+    result['calibration']=calibration
     result['score_provisional']=calibration['score_provisional']
     # Calibration is attached as a scoped control result, not global judge accuracy.
     write(out/'persona-result.json',result)

@@ -8,3 +8,4 @@ runs/
 inspect/
 configs/api.local.json
 .env
+/tests/
